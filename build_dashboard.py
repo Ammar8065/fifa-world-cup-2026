@@ -212,20 +212,30 @@ players_real = pd.DataFrame(award_rows)
 n_current = int((players_real["xg_source"] == "current").sum())
 n_matched = len(players_real)
 
+# Player-of-the-Tournament impact = season xG weighted by a GENTLE deep-run factor.
+# The old metric (xG/match × P(champion)) let one team's title odds dominate — with
+# Spain ~27% it buried a 0.95-xG/match Harry Kane under Spanish role-players. We use
+# (0.6 + P(reach semi-final)) instead: a soft multiplier (~0.6–1.1×) that still rewards
+# deep runs but lets individual xG output drive the ranking. The list now SORTS BY and
+# DISPLAYS this same impact score, so the visible numbers are always in order.
+players_real["deep_run"]   = players_real["team"].map(
+    lambda t: team_stage.get(t, {}).get("p_semi_final", 0.0))
+players_real["poty_score"] = (players_real["xg"] * (0.6 + players_real["deep_run"])).round(2)
+
 ACOLS = ["player","team","matches","shots","xg","goals","xg_per_match","composite",
-         "flag","team_win_prob","photo","position","club","age","xg_source"]
+         "poty_score","deep_run","flag","team_win_prob","photo","position","club",
+         "age","xg_source"]
 
 # Top Scorer ranks by total xG (raw volume), so a low match floor is fine.
 top_scorers = players_real[players_real["matches"] >= 3].nlargest(20, "xg")[ACOLS].reset_index(drop=True)
-# POTY / Young Player rank by a per-match rate, so require a full sample (≥10
-# matches) — this excludes noisy small-sample tournament fallbacks (a right-back
-# with 0.8 xG/match over 3 games) and keeps the race to genuine current-form players.
-poty_candidates = players_real[players_real["matches"] >= 10].nlargest(10, "composite")[ACOLS].reset_index(drop=True)
+# POTY / Young Player require a full sample (≥10 matches) — excludes noisy small-sample
+# tournament fallbacks (a right-back with 0.8 xG/match over 3 games).
+poty_candidates = players_real[players_real["matches"] >= 10].nlargest(10, "poty_score")[ACOLS].reset_index(drop=True)
 
-# Young Player race: real U-23 squad players with a full season of xG data
+# Young Player race: real U-23 squad players, same impact metric.
 ypool = players_real[(players_real["age"].notna()) &
                      (players_real["age"] <= 23) & (players_real["matches"] >= 10)].copy()
-ypool["score"] = ypool["xg_per_match"] * (ypool["team_win_prob"] + 0.02) * 100
+ypool["score"] = ypool["poty_score"]
 ypoty_df = ypool.nlargest(10, "score")[ACOLS + ["score"]].reset_index(drop=True)
 
 # Rank defenses by expected goals conceded per game vs an average opponent
@@ -684,6 +694,24 @@ body::before {{
   outline-offset:-2px;
   border-radius:4px;
 }}
+.nav-credit {{
+  margin-left:auto; flex-shrink:0;
+  display:flex; align-items:center; gap:11px;
+  padding-left:20px;
+}}
+.nav-credit .nc-by {{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:12px; font-weight:500; color:var(--txt2);
+  text-decoration:none; white-space:nowrap; transition:color .2s;
+}}
+.nav-credit .nc-by:hover {{ color:var(--txt); }}
+.nav-credit .nc-by b {{ color:var(--txt); font-weight:700; }}
+.nav-credit .nc-link {{
+  color:var(--txt3); display:flex; align-items:center;
+  transition:color .2s, transform .15s;
+}}
+.nav-credit .nc-link:hover {{ color:var(--gold); transform:translateY(-1px); }}
+@media (max-width:900px) {{ .nav-credit .nc-by {{ display:none; }} }}
 
 /* ── MAIN LAYOUT ── */
 .main {{ max-width:1280px; margin:0 auto; padding:36px 20px 64px; }}
@@ -1824,6 +1852,18 @@ table.exp-table {{ width:100%; border-collapse:collapse; font-size:12.5px; }}
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       My Team
     </button>
+    <div class="nav-credit">
+      <a class="nc-by" href="https://ammarshahid.netlify.app" target="_blank" rel="noopener">Built by <b>Ammar Shahid</b></a>
+      <a class="nc-link" href="https://ammarshahid.netlify.app" target="_blank" rel="noopener" title="Website — ammarshahid.netlify.app" aria-label="Website">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </a>
+      <a class="nc-link" href="https://github.com/Ammar8065" target="_blank" rel="noopener" title="GitHub — Ammar8065" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.2 11.19.6.11.82-.25.82-.56v-2.2c-3.34.71-4.04-1.59-4.04-1.59-.55-1.37-1.34-1.74-1.34-1.74-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.84 0-1.29.47-2.35 1.23-3.18-.12-.3-.53-1.51.12-3.15 0 0 1.01-.32 3.3 1.21a11.5 11.5 0 0 1 6 0c2.29-1.53 3.3-1.21 3.3-1.21.65 1.64.24 2.85.12 3.15.77.83 1.23 1.89 1.23 3.18 0 4.54-2.81 5.54-5.49 5.83.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.83.56A12.05 12.05 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></svg>
+      </a>
+      <a class="nc-link" href="https://www.linkedin.com/in/ammar-shahid-087520263/" target="_blank" rel="noopener" title="LinkedIn — Ammar Shahid" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
   </nav>
 </div>
 
@@ -1982,7 +2022,7 @@ table.exp-table {{ width:100%; border-collapse:collapse; font-size:12.5px; }}
       <div id="chart-scorers" style="height:420px"></div>
     </div>
     <div class="card">
-      <div class="sec-eyebrow" style="margin-bottom:6px">xG &times; Team Win Probability</div>
+      <div class="sec-eyebrow" style="margin-bottom:6px">Season xG &times; projected deep run</div>
       <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Player of the Tournament Race</div>
       <div id="player-list"></div>
     </div>
@@ -2844,9 +2884,9 @@ function renderPlayers() {{
       ${{pAvatar(p)}}
       <div class="player-info">
         <div class="player-name">${{p.player}}</div>
-        <div class="player-team">${{p.team}}${{p.position ? ' &middot; ' + p.position : ''}}</div>
+        <div class="player-team">${{p.team}}${{p.position ? ' &middot; ' + p.position : ''}} &middot; ${{(+p.xg).toFixed(1)}} xG</div>
       </div>
-      <div class="player-xg">${{(+p.xg).toFixed(2)}}</div>
+      <div class="player-xg" title="Impact = season xG × (0.6 + chance to reach the semi-final)">${{(+p.poty_score).toFixed(1)}}</div>
       <div class="player-goals" style="color:var(--txt3)">${{p.goals}}g</div>
     </div>
   `).join('');
@@ -2858,9 +2898,9 @@ function renderPlayers() {{
       ${{pAvatar(p)}}
       <div class="player-info">
         <div class="player-name">${{p.player}}</div>
-        <div class="player-team">${{p.team}} &middot; Age ${{p.age}}${{p.position ? ' &middot; ' + p.position : ''}}</div>
+        <div class="player-team">${{p.team}} &middot; Age ${{p.age}}${{p.position ? ' &middot; ' + p.position : ''}} &middot; ${{(+p.xg).toFixed(1)}} xG</div>
       </div>
-      <div class="player-xg" style="color:var(--green)">${{(p.xg != null && !Number.isNaN(+p.xg)) ? (+p.xg).toFixed(1) : '—'}}</div>
+      <div class="player-xg" style="color:var(--green)" title="Impact = season xG × (0.6 + chance to reach the semi-final)">${{(p.poty_score != null && !Number.isNaN(+p.poty_score)) ? (+p.poty_score).toFixed(1) : '—'}}</div>
     </div>
   `).join('');
 
