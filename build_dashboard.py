@@ -3063,9 +3063,13 @@ function initTeam() {{
       sel.appendChild(o);
     }});
   }}
+  // Default to the top-ranked team when nothing valid is selected
   if (!sel.value || !TEAMS.find(x => x.team === sel.value)) {{
-    renderTeam(TEAMS[0].team);
     sel.value = TEAMS[0].team;
+  }}
+  // Render on first open (panel empty); preserves the user's pick on return visits
+  if (!document.getElementById('team-content').innerHTML.trim()) {{
+    renderTeam(sel.value);
   }}
 }}
 
