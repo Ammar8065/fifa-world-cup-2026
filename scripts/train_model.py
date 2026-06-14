@@ -1,36 +1,5 @@
 #!/usr/bin/env python3
-"""
-Train a Poisson goals model for the 2026 World Cup simulation
-=============================================================
-Replaces the old hand-tuned composite (arbitrary 0.40/0.30/0.20/0.10 weights and
-manual BASE_RATE/SCALE) in simulate.py with a *fitted* model whose coefficients
-are learned from 49k historical international matches.
-
-Architecture mirrors the reference model in `poisson_goals.pkl`:
-    Pipeline( StandardScaler -> PoissonRegressor(alpha=0.1) )
-predicting the goals scored by team A in a match.
-
-Engineered features (the "Elo-adjusted goals" idea):
-    Offensive rating = Σ_last7 [ goals_scored  × (opponent_elo / 1500) ]
-    Defensive rating = Σ_last7 [ goals_against × (1500 / opponent_elo) ]
-Form is a rolling 7-game window (matching the reference's scale ~12.9 / ~5.66).
-
-Model features (only those we can build for *every historical match*):
-    elo_diff      = team_elo - opp_elo
-    off_rating_a  = team's own offensive rating (7-game form)
-    def_rating_b  = opponent's defensive rating (7-game form)
-    is_home       = 1 if team plays at home (0 on neutral ground / away)
-
-NB: the reference model also uses avg_age_diff, avg_caps_diff, europe_top5_diff.
-We cannot train those: there is no per-match historical squad composition, and the
-`caps` column in our squad file is empty. Squad age is applied separately as a small
-post-hoc tilt for the 2026 teams only (see simulate.py).
-
-Outputs:
-    Data/data/processed/poisson_goals_ours.pkl   — fitted sklearn pipeline
-    Data/data/processed/our_model.json           — readable coefficients + scaler
-    Data/data/processed/team_ratings_2026.csv    — current off/def/elo/age per WC team
-"""
+"""Fit the Poisson goals GLM and 2026 team ratings from historical matches."""
 
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -48,7 +17,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import PoissonRegressor
 from sklearn.metrics import mean_poisson_deviance
 
-# ── Config ──────────────────────────────────────────────────────────────────
+# config
 ELO_AVG      = 1500.0          # constant from the "÷1500" formula (scaler absorbs it)
 FORM_WINDOW  = 7               # last N games for the Elo-adjusted form ratings
 TRAIN_CUTOFF = "1950-01-01"    # ignore very early, low-information football
@@ -75,7 +44,7 @@ FEATURES = ["elo_diff", "off_rating_a", "def_rating_b", "is_home"]
 PROC = Path("Data/data/processed")
 PROC.mkdir(parents=True, exist_ok=True)
 
-# ── Name canonicalisation (kept in sync with simulate.py) ───────────────────
+# name canonicalisation (kept in sync with simulate.py)
 CANON = {
     "Bosnia and Herzegovina": "Bosnia-Herzegovina",
     "DR Congo": "Congo DR",
@@ -90,8 +59,7 @@ CANON = {
 def canon(name: str) -> str:
     return CANON.get(str(name).strip(), str(name).strip())
 
-
-# ── Feature engineering ─────────────────────────────────────────────────────
+# feature engineering
 def build_long(df: pd.DataFrame) -> pd.DataFrame:
     """One row per (team, match) with the team's own goals + opponent context."""
     home = pd.DataFrame({
@@ -112,7 +80,6 @@ def build_long(df: pd.DataFrame) -> pd.DataFrame:
     long = long.sort_values(["team", "date"]).reset_index(drop=True)
     return long
 
-
 def add_form_ratings(long: pd.DataFrame) -> pd.DataFrame:
     """Rolling 7-game SUM of Elo-adjusted goals (offensive & defensive ratings)."""
     long["off_contrib"] = long["gf"] * (long["opp_elo"] / ELO_AVG)
@@ -125,7 +92,6 @@ def add_form_ratings(long: pd.DataFrame) -> pd.DataFrame:
     long["def_rating"] = grp["def_contrib"].transform(
         lambda s: s.shift(1).rolling(FORM_WINDOW, min_periods=FORM_WINDOW).sum())
     return long
-
 
 def assemble_training(long: pd.DataFrame) -> pd.DataFrame:
     """Attach the opponent's defensive rating and build the model frame."""
@@ -143,14 +109,12 @@ def assemble_training(long: pd.DataFrame) -> pd.DataFrame:
     m = m[m["date"] >= TRAIN_CUTOFF].reset_index(drop=True)
     return m
 
-
 def recency_weights(dates: pd.Series) -> np.ndarray:
     ref = dates.max()
     years = (ref - dates).dt.days / 365.25
     return np.power(0.5, years / RECENCY_HALFLIFE_YEARS).to_numpy()
 
-
-# ── Evaluation helpers ──────────────────────────────────────────────────────
+# evaluation helpers
 def outcome_logloss(lam_h, lam_a, gh, ga, max_goals=12):
     """Average log-loss of the W/D/L outcome implied by the predicted lambdas."""
     from math import exp, factorial
@@ -176,8 +140,7 @@ def outcome_logloss(lam_h, lam_a, gh, ga, max_goals=12):
         correct += int(guess == act)
     return float(np.mean(losses)), correct / len(lam_h)
 
-
-# ── Squad firepower (current-season club xG) ────────────────────────────────
+# squad firepower (current-season club xg)
 def _norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z ]", "", s.lower()).strip()
@@ -218,8 +181,7 @@ def squad_firepower(squads: pd.DataFrame, wc_teams: list[str]) -> pd.DataFrame:
                          "club_xg":  [club[t] for t in wc_teams],
                          "intl_xg":  [intl[t] for t in wc_teams]})
 
-
-# ── Current-team ratings (for 2026 simulation) ──────────────────────────────
+# current-team ratings (for 2026 simulation)
 def compute_2026_ratings(long: pd.DataFrame) -> pd.DataFrame:
     groups = pd.read_csv("Data/data/raw/groups.csv")
     groups["team"] = groups["team"].apply(canon)
@@ -277,8 +239,7 @@ def compute_2026_ratings(long: pd.DataFrame) -> pd.DataFrame:
             "off_form", "club_xg", "intl_xg", "avg_age", "form_games"]
     return out[cols]
 
-
-# ── Main ────────────────────────────────────────────────────────────────────
+# main
 def main():
     print("=" * 70)
     print("  Training Poisson goals model (Elo-adjusted offensive/defensive form)")
@@ -377,7 +338,6 @@ def main():
     for _, r in show.iterrows():
         print(f"{r.team:<22}{r.elo:>7.0f}{r.off_form:>10.2f}{r.club_xg:>7.0f}{r.intl_xg:>7.0f}{r.off_rating:>9.2f}{r.def_rating:>7.2f}")
     print("\nDone.")
-
 
 if __name__ == "__main__":
     main()

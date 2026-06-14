@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
-"""
-Current-season player xG scraper (Understat via soccerdata).
-
-Pulls 2025-26 per-player expected-goals data from the big-5 European leagues
-(+ RFPL) and writes a club-level table to Data/scraped/player_xg_current.csv.
-
-This replaces the stale 2022-24 StatsBomb tournament data as the primary signal
-for the Top Scorer / Player-of-the-Tournament / Young Player predictions. The
-club rows are matched to real 2026 national-team squads (by player name) inside
-build_dashboard.py, so a player's *current form* drives the awards.
-
-Understat carries true xG / non-penalty xG / xA per player — the cleanest public
-xG source — which is a big upgrade over event-derived tournament xG from years ago.
-"""
+"""Scrape current-season club xG per player from Understat via soccerdata."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 

@@ -1,22 +1,5 @@
 #!/usr/bin/env python3
-"""
-Golden Ball backtest — World Cup 2022
-=====================================
-Validates the Golden Ball scoring logic (attacking output × how deep the team
-runs) by replaying it on the 2022 World Cup and comparing the predicted ranking
-to the ACTUAL Golden Ball result (Messi 1st, Mbappé 2nd, Modrić 3rd).
-
-Honest scope: the live 2026 model blends *pre-tournament* 2025-26 club form with
-recent-tournament form and the team's projected run. A true pre-tournament backtest
-would need each player's 2021-22 club-season xG, which isn't in this repo. So this
-validates the **core hypothesis the model encodes** — that the award goes to a
-high-output player on a deep-running team — using WC22 tournament output (StatsBomb)
-weighted by each team's actual stage reached. If the logic is sound it should rank
-the real winners at the top.
-
-Source: StatsBomb open data (competition 43, season 106).
-Output: Data/data/processed/gb_backtest_2022.json  (for the dashboard)
-"""
+"""Backtest the Golden Ball scoring logic on the 2022 World Cup (StatsBomb data)."""
 import sys, io, json, time
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -31,15 +14,12 @@ WC22 = (43, 106)
 CACHE = Path("Data/scraped/_wc22_events_cache"); CACHE.mkdir(parents=True, exist_ok=True)
 OUT = Path("Data/data/processed/gb_backtest_2022.json")
 
-# furthest stage → (expected-match credit already captured by matches played) +
-# a "spotlight" multiplier voters give the business end of the tournament
 STAGE_SPOTLIGHT = {
     "Final": 1.6, "Semi-finals": 1.3, "Quarter-finals": 1.1,
     "Round of 16": 1.0, "Group Stage": 0.9, "3rd Place Final": 1.4,
 }
 STAGE_ORDER = ["Group Stage", "Round of 16", "Quarter-finals",
                "Semi-finals", "3rd Place Final", "Final"]
-
 
 def fetch(url, retries=3):
     for a in range(1, retries + 1):
@@ -51,7 +31,6 @@ def fetch(url, retries=3):
             print(f"  retry {a}: {e}")
         time.sleep(0.6 * a)
     return None
-
 
 def main():
     print("=" * 68)
@@ -169,7 +148,6 @@ def main():
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"\nSaved → {OUT}")
     print("Done.")
-
 
 if __name__ == "__main__":
     main()

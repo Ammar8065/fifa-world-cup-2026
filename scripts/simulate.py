@@ -1,29 +1,5 @@
 #!/usr/bin/env python3
-"""
-2026 FIFA World Cup Monte Carlo Simulation
-==========================================
-Data sources used:
-  - Data/data/processed/poisson_goals_ours.pkl — fitted Poisson goals pipeline (train_model.py)
-  - Data/data/processed/team_ratings_2026.csv   — per-team elo / off / def / age (train_model.py)
-  - Data/data/raw/groups.csv                     — 2026 WC group assignments
-  - Data/data/raw/knockout_slots.csv             — Official 2026 bracket
-  - Data/data/raw/fw26_best_third_placed_combinations.csv — 3rd-place slot rules
-
-Model
------
-  A *trained* Poisson goals model (see train_model.py), not hand-tuned weights:
-      Pipeline( StandardScaler -> PoissonRegressor )
-      features = [elo_diff, off_rating_a, def_rating_b, is_home]
-  off_rating / def_rating are 7-game Elo-adjusted form ("Elo-adjusted goals"):
-      off = Σ_last7 goals_scored  × (opp_elo / 1500)
-      def = Σ_last7 goals_against × (1500 / opp_elo)
-
-  λ_A vs B = model.predict([elo_A-elo_B, off_A, def_B, is_home=0])
-           × optional small squad-age tilt
-  goals drawn from Poisson(λ)
-
-  Knockout ties → 30 min extra time (0.5× base goals) → penalties (ELO-weighted coin flip)
-"""
+"""2026 World Cup Monte Carlo simulation."""
 
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -42,21 +18,18 @@ import joblib
 import json
 import xgboost as xgb
 
-# ── Config ────────────────────────────────────────────────────────────────────
 N_SIMS       = 10_000
-ET_FACTOR    = 0.50     # extra-time reduces scoring rate to 50% of 90-min rate
+ET_FACTOR    = 0.50
 
-# Trained model artifacts (produced by train_model.py + train_advanced.py)
-MODEL_PATH   = "Data/data/processed/poisson_goals_ours.pkl"   # GLM-Poisson
+MODEL_PATH   = "Data/data/processed/poisson_goals_ours.pkl"
 RATINGS_PATH = "Data/data/processed/team_ratings_2026.csv"
-DC_PATH      = "Data/data/processed/dc_ratings_2026.csv"      # Dixon-Coles attack/defence
-XGB_PATH     = "Data/data/processed/xgb_goals.json"           # XGBoost (count:poisson)
-ENS_PATH     = "Data/data/processed/ensemble.json"            # tuned blend weights + ρ
+DC_PATH      = "Data/data/processed/dc_ratings_2026.csv"
+XGB_PATH     = "Data/data/processed/xgb_goals.json"
+ENS_PATH     = "Data/data/processed/ensemble.json"
 MODEL_FEATURES = ["elo_diff", "off_rating_a", "def_rating_b", "is_home"]
 XGB_FEATURES   = ["elo_home", "elo_away", "elo_diff", "off_rating_a", "def_rating_b", "is_home"]
 
-# Optional, small post-hoc squad-age tilt (peak ≈ 27). Set AGE_TILT=0 to disable.
-AGE_TILT     = 0.010    # per year away from peak; multiplies a team's scoring λ
+AGE_TILT     = 0.010
 AGE_PEAK     = 27.0
 
 OUTPUT_DIR   = Path("Data/simulated")
@@ -71,10 +44,7 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ── Name canonicalisation ─────────────────────────────────────────────────────
-# All names converge to the schedule.csv spellings
 CANON = {
-    # ELO / results.csv names
     "Bosnia and Herzegovina":        "Bosnia-Herzegovina",
     "DR Congo":                       "Congo DR",
     "Ivory Coast":                    "Côte d'Ivoire",
@@ -82,21 +52,16 @@ CANON = {
     "South Korea":                    "Korea Republic",
     "Turkey":                         "Türkiye",
     "Czech Republic":                 "Czechia",
-    # FIFA ranking names
     "USA":                            "United States",
     "Cabo Verde":                     "Cape Verde",
-    # groups.csv (uses same alternatives as results)
 }
 
 def canon(name: str) -> str:
     return CANON.get(str(name).strip(), str(name).strip())
 
-
-# ── Load data ─────────────────────────────────────────────────────────────────
 def load_all() -> dict:
     log.info("Loading data...")
 
-    # Groups
     grp_df = pd.read_csv("Data/data/raw/groups.csv")
     grp_df["team"] = grp_df["team"].apply(canon)
     groups = dict(zip(grp_df["team"], grp_df["group"]))
@@ -104,12 +69,9 @@ def load_all() -> dict:
     for team, grp in groups.items():
         group_teams[grp].append(team)
 
-    # Knockout slots
     slots_df = pd.read_csv("Data/data/raw/knockout_slots.csv")
 
-    # Completed group-stage results (filled by fetch_results.py from the live API).
-    # {frozenset(teamA, teamB): {teamA: goals, teamB: goals}} — order-agnostic.
-    # Lets the Monte Carlo CONDITION on matches that have actually been played.
+    # completed group-stage results, order-agnostic
     played: dict[frozenset, dict[str, int]] = {}
     sched_path = Path("Data/schedule_2026.csv")
     if sched_path.exists():
@@ -128,12 +90,11 @@ def load_all() -> dict:
         if played:
             log.info(f"  Conditioning on {len(played)} completed group match(es)")
 
-    # Best-3rd combinations
     b3_df = pd.read_csv("Data/data/raw/fw26_best_third_placed_combinations.csv")
     slot_cols = [c for c in b3_df.columns if c != "Option"]
     best3_lookup: dict[frozenset, dict[str, str]] = {}
     for _, row in b3_df.iterrows():
-        mapping = {col: row[col][1] for col in slot_cols}  # '3E' → 'E'
+        mapping = {col: row[col][1] for col in slot_cols}
         key = frozenset(mapping.values())
         best3_lookup[key] = mapping
 
@@ -143,16 +104,12 @@ def load_all() -> dict:
     return dict(groups=groups, group_teams=dict(group_teams),
                 slots_df=slots_df, best3_lookup=best3_lookup, played=played)
 
-
-# ── Build team strengths + λ lookup from the trained model ──────────────────────
 def build_strengths(data: dict) -> dict[str, dict]:
-    """Load the trained ENSEMBLE (GLM-Poisson + XGBoost + Dixon-Coles, with the
-    holdout-tuned weights from train_advanced.py) + 2026 team ratings, precompute
-    every pairwise expected-goals value, and store it on each team for fast lookup."""
+    """Build per-team ratings and pairwise expected-goals lookup from the ensemble."""
     teams = list(data["groups"].keys())
 
-    pipe = joblib.load(MODEL_PATH)                       # GLM-Poisson
-    booster = xgb.Booster(); booster.load_model(XGB_PATH)  # XGBoost (count:poisson)
+    pipe = joblib.load(MODEL_PATH)
+    booster = xgb.Booster(); booster.load_model(XGB_PATH)
     ens = json.loads(Path(ENS_PATH).read_text(encoding="utf-8"))
     w_glm = float(ens["weights"]["GLM-Poisson"])
     w_xgb = float(ens["weights"]["XGBoost"])
@@ -181,31 +138,26 @@ def build_strengths(data: dict) -> dict[str, dict]:
     dc_att = {t: float(dcr[t]["dc_attack"]) if t in dcr else dc_att_med for t in teams}
     dc_def = {t: float(dcr[t]["dc_defence"]) if t in dcr else dc_def_med for t in teams}
 
-    # squad-age tilt: teams further from the peak age score a touch less (small effect)
     age_factor = {t: float(np.exp(-AGE_TILT * abs(age[t] - AGE_PEAK))) for t in teams}
 
     def ens_lambda(rows_glm, rows_xgb, dc_lams):
-        """Blend the three models' λ predictions with the tuned weights."""
         out = np.zeros(len(dc_lams))
         if w_glm: out += w_glm * pipe.predict(pd.DataFrame(rows_glm, columns=MODEL_FEATURES))
         if w_xgb: out += w_xgb * booster.predict(xgb.DMatrix(pd.DataFrame(rows_xgb, columns=XGB_FEATURES)))
         if w_dc:  out += w_dc  * np.asarray(dc_lams)
         return out
 
-    # Vectorised prediction for all ordered team pairs (a scoring vs b, neutral venue)
     pairs = [(a, b) for a in teams for b in teams if a != b]
     glm_rows = [[elo[a] - elo[b], off[a], dfn[b], 0] for a, b in pairs]
     xgb_rows = [[elo[a], elo[b], elo[a] - elo[b], off[a], dfn[b], 0] for a, b in pairs]
-    dc_lams  = [float(np.exp(dc_att[a] - dc_def[b])) for a, b in pairs]   # neutral venue
+    dc_lams  = [float(np.exp(dc_att[a] - dc_def[b])) for a, b in pairs]
     preds = ens_lambda(glm_rows, xgb_rows, dc_lams)
 
     lam: dict[str, dict[str, float]] = {t: {} for t in teams}
     for (a, b), p in zip(pairs, preds):
         lam[a][b] = float(p) * age_factor[a]
 
-    # Interpretable ratings in REAL GOAL UNITS: expected goals for / against per
-    # match versus a benchmark "average WC opponent" — now through the full ENSEMBLE.
-    # xgf higher = better attack; xga LOWER = better defense.
+    # expected goals for/against vs an average opponent
     avg_elo = float(np.mean(list(elo.values())))
     avg_off = float(np.mean(list(off.values())))
     avg_def = float(np.mean(list(dfn.values())))
@@ -220,7 +172,6 @@ def build_strengths(data: dict) -> dict[str, dict]:
     xgf = {t: float(v) * age_factor[t] for t, v in zip(teams, ens_lambda(xgf_glm, xgf_xgb, xgf_dc))}
     xga = {t: float(v) for t, v in zip(teams, ens_lambda(xga_glm, xga_xgb, xga_dc))}
 
-    # Normalised 0–1 versions (higher = better for BOTH) for heat shading / radar.
     def norm01(d, invert=False):
         vals = list(d.values()); mn, mx = min(vals), max(vals)
         rng = (mx - mn) or 1.0
@@ -231,32 +182,26 @@ def build_strengths(data: dict) -> dict[str, dict]:
     strengths = {}
     for t in teams:
         strengths[t] = {
-            "att": off[t],          # raw offensive rating (7-game Elo-adj form + firepower)
-            "def": dfn[t],          # raw defensive rating (lower = better)
-            "xgf": xgf[t],          # expected goals FOR / match vs avg opponent
-            "xga": xga[t],          # expected goals AGAINST / match vs avg opponent (lower better)
-            "att_score": att_score[t],   # normalised 0–1, higher = better
-            "def_score": def_score[t],   # normalised 0–1, higher = better
+            "att": off[t],
+            "def": dfn[t],
+            "xgf": xgf[t],
+            "xga": xga[t],
+            "att_score": att_score[t],
+            "def_score": def_score[t],
             "elo": elo[t],
             "age": age[t],
-            "lam": lam[t],          # {opponent: expected goals vs that opponent}
+            "lam": lam[t],
         }
     return strengths
 
-
-# ── Match simulation ──────────────────────────────────────────────────────────
 def expected_goals(team_a: str, team_b: str, strengths: dict) -> tuple[float, float]:
-    # Precomputed by the trained Poisson model in build_strengths()
     lam_a = strengths[team_a]["lam"][team_b]
     lam_b = strengths[team_b]["lam"][team_a]
     return lam_a, lam_b
 
-
 def sim_match(team_a: str, team_b: str, strengths: dict,
               knockout: bool = False) -> tuple[int, int, bool]:
-    """Return (goals_a, goals_b, penalties_used).
-    If knockout and draw after 90 min, play 30-min ET then penalties.
-    """
+    """Return (goals_a, goals_b, penalties_used)."""
     lam_a, lam_b = expected_goals(team_a, team_b, strengths)
     ga = np.random.poisson(lam_a)
     gb = np.random.poisson(lam_b)
@@ -264,29 +209,25 @@ def sim_match(team_a: str, team_b: str, strengths: dict,
     if not knockout or ga != gb:
         return ga, gb, False
 
-    # Extra time (30 min ≈ ET_FACTOR × 90-min rate)
+    # extra time
     ga += np.random.poisson(lam_a * ET_FACTOR)
     gb += np.random.poisson(lam_b * ET_FACTOR)
 
     if ga != gb:
         return ga, gb, True
 
-    # Penalties — slight ELO-weighted advantage
+    # penalties
     elo_a = strengths[team_a]["elo"]
     elo_b = strengths[team_b]["elo"]
-    p_a = 1 / (1 + 10 ** ((elo_b - elo_a) / 800))  # muted for penalties
+    p_a = 1 / (1 + 10 ** ((elo_b - elo_a) / 800))
     if np.random.random() < p_a:
-        return ga + 1, gb, True     # A wins on pens
+        return ga + 1, gb, True
     else:
-        return ga, gb + 1, True     # B wins on pens
+        return ga, gb + 1, True
 
-
-# ── Group stage ───────────────────────────────────────────────────────────────
 def sim_group(teams: list[str], strengths: dict,
               played: dict | None = None) -> list[dict]:
-    """Simulate one group. Returns list of team-row dicts sorted by standing.
-    If `played` holds a real result for a fixture, that score is used as-is
-    (conditioning on matches already played) instead of being simulated."""
+    """Simulate one group, returning team rows sorted by standing."""
     played = played or {}
     records = {t: {"team": t, "pts": 0, "gf": 0, "ga": 0, "gd": 0,
                    "w": 0, "d": 0, "l": 0} for t in teams}
@@ -296,7 +237,7 @@ def sim_group(teams: list[str], strengths: dict,
     for a, b in combinations(teams, 2):
         real = played.get(frozenset((a, b)))
         if real is not None:
-            ga, gb = real[a], real[b]       # fixed: this match already happened
+            ga, gb = real[a], real[b]
         else:
             ga, gb, _ = sim_match(a, b, strengths, knockout=False)
         for t, gf, gag in [(a, ga, gb), (b, gb, ga)]:
@@ -314,7 +255,7 @@ def sim_group(teams: list[str], strengths: dict,
             records[b]["pts"] += 1; records[b]["d"] += 1
             h2h_pts[(a, b)] += 1; h2h_pts[(b, a)] += 1
 
-    # Sort: pts → gd → gf → h2h pts → h2h gd → ELO
+    # sort: pts, gd, gf, h2h pts, h2h gd, elo
     def sort_key(t):
         r = records[t]
         others = [o for o in teams if o != t]
@@ -325,48 +266,32 @@ def sim_group(teams: list[str], strengths: dict,
     sorted_teams = sorted(teams, key=sort_key, reverse=True)
     return [{"pos": i + 1, **records[t]} for i, t in enumerate(sorted_teams)]
 
-
-# ── Best 3rd-place ─────────────────────────────────────────────────────────────
 def pick_best_third(third_teams: dict[str, dict],
                     strengths: dict,
                     best3_lookup: dict) -> dict[str, str]:
-    """
-    third_teams: {group_letter: row_dict} (all 12 groups' 3rd-place teams)
-    Returns: {slot_col: team_name} for the 8 best 3rd teams placed in bracket.
-    """
-    # Rank 12 third teams: pts → gd → gf → ELO
+    """Return {slot_col: team_name} for the 8 best 3rd-place teams."""
     ranked = sorted(
         third_teams.items(),
         key=lambda kv: (kv[1]["pts"], kv[1]["gd"], kv[1]["gf"],
                         strengths[kv[1]["team"]]["elo"]),
         reverse=True
     )
-    # Top 8 advance
     advancing = ranked[:8]
-    adv_groups = frozenset(g for g, _ in advancing)  # 8 group letters
+    adv_groups = frozenset(g for g, _ in advancing)
 
-    # Look up slot assignment
     slot_map = best3_lookup.get(adv_groups)
     if slot_map is None:
-        # Fallback: pick the alphabetically closest key (shouldn't happen for valid combos)
         slot_map = next(iter(best3_lookup.values()))
 
-    # Map slot → team name
     group_to_team = {g: r["team"] for g, r in advancing}
     return {slot: group_to_team[slot_map[slot]] for slot in slot_map
             if slot_map[slot] in group_to_team}
 
-
-# ── Knockout stage ─────────────────────────────────────────────────────────────
 def sim_knockout(slots_df: pd.DataFrame,
-                 group_results: dict[str, list[dict]],  # {grp: sorted_rows}
-                 best3_slots: dict[str, str],           # {slot_col: team}
+                 group_results: dict[str, list[dict]],
+                 best3_slots: dict[str, str],
                  strengths: dict) -> dict[str, str]:
-    """
-    Returns: {match_id_str: winner_name} for all knockout matches.
-    Also returns 'champion' key.
-    """
-    # Build slot resolution
+    """Simulate the knockout bracket; return (match_winners, champion)."""
     def resolve(slot_str: str) -> str | None:
         s = slot_str.strip()
         if s.startswith("Winner Group "):
@@ -376,22 +301,15 @@ def sim_knockout(slots_df: pd.DataFrame,
             g = s[-1]
             return group_results[g][1]["team"]
         if s.startswith("Best 3rd"):
-            # e.g. "Best 3rd (Groups A/B/C/D/F)" → best3_slots lookup
-            # The right team is already placed via best3_slots
-            return None  # will be filled below
+            return None
         if s.startswith("Winner Match "):
-            return None  # depends on earlier match
+            return None
         if s.startswith("Loser Match "):
             return None
         return None
 
-    # Pre-build best-3rd slot mapping using column names (1A, 1B, etc.)
-    # Slot column → team already computed in best3_slots
-    # We need to reverse-map "Best 3rd (Groups X/Y/Z)" in knockout_slots to a team.
-    # Approach: the 8 best-3rd slots correspond to matches 75,78,79,80,81,82,85,88
-    # and their slot descriptions. We map via the slot_col → team from best3_slots.
     BEST3_MATCH_TO_SLOTCOL = {
-        79: "1A",  # Winner A vs Best 3rd
+        79: "1A",
         85: "1B",
         82: "1D",
         75: "1E",
@@ -443,8 +361,7 @@ def sim_knockout(slots_df: pd.DataFrame,
 
     return match_winners, champion
 
-
-# ── Full tournament simulation ────────────────────────────────────────────────
+# full tournament simulation
 def simulate_tournament(data: dict, strengths: dict) -> dict:
     group_teams  = data["group_teams"]
     slots_df     = data["slots_df"]
@@ -475,8 +392,7 @@ def simulate_tournament(data: dict, strengths: dict) -> dict:
         "champion":      champion,
     }
 
-
-# ── Monte Carlo ───────────────────────────────────────────────────────────────
+# monte carlo
 ROUND_ORDER = ["Round of 32", "Round of 16", "Quarter-final", "Semi-final", "Final"]
 
 def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
@@ -589,11 +505,9 @@ def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
 
     return summary_df, bracket_df
 
-
-# ── Deterministic "favourite advances" bracket ────────────────────────────────
+# deterministic "favourite advances" bracket
 def poisson_pmf(k: int, lam: float) -> float:
     return exp(-lam) * lam ** k / factorial(k)
-
 
 def match_win_prob(home: str, away: str, strengths: dict, max_goals: int = 12) -> tuple[float, float]:
     """Closed-form probability (home_wins, away_wins) for a single knockout match.
@@ -626,7 +540,6 @@ def match_win_prob(home: str, away: str, strengths: dict, max_goals: int = 12) -
     p_away = a_reg + d_reg * (a_et + d_et * (1 - p_h_pen))
     s = p_home + p_away
     return p_home / s, p_away / s
-
 
 def predict_bracket(data: dict, strengths: dict, summary_df: pd.DataFrame) -> pd.DataFrame:
     """Build ONE deterministic predicted bracket where the model's favourite always
@@ -692,8 +605,7 @@ def predict_bracket(data: dict, strengths: dict, summary_df: pd.DataFrame) -> pd
 
     return pd.DataFrame(rows)
 
-
-# ── Main ──────────────────────────────────────────────────────────────────────
+# main
 def main():
     np.random.seed(42)
     random.seed(42)
@@ -773,7 +685,6 @@ def main():
             log.info(f"    {r['team']:<25s} qualify={r['p_qualify']:.1%}  win={r['p_champion']:.1%}")
 
     log.info("\nDone.")
-
 
 if __name__ == "__main__":
     main()

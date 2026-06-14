@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""
-Squad scraper — The Guardian "World Cup 2026 Complete Player Guide".
-Source: Google-Sheets-backed JSON served at interactive.guim.co.uk/docsdata/.
-  - Master "Teams" sheet: coach, FIFA rank, group, bio, strengths, weaknesses,
-    star-player pick, byline, and each team's per-squad spreadsheet id.
-  - Per-team "Players" sheet: 26 players (name, position, number, caps, goals,
-    club, DOB, role tag, bio, photo URL).
-
-Outputs:
-  Data/scraped/squads_2026.json   — nested {canonical_team: {meta, players[]}}
-  Data/scraped/squad_players.csv  — flat per-player table
-Team names are canonicalised to match the rest of the project.
-"""
+"""Scrape 2026 squads from The Guardian player guide into JSON + CSV."""
 import sys, io, time, re, json, html
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 

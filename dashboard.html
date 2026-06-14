@@ -989,25 +989,37 @@ body::before {
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:16px; margin-bottom:28px;
 }
+/* ── SHARED: faint WC logo watermark on data panels ── */
+.wm-logo {
+  position:absolute; pointer-events:none; z-index:0;
+  right:2%; top:64px; width:340px; max-width:46vw;
+  opacity:.07; filter:brightness(0) saturate(100%) invert(11%) sepia(18%) saturate(2200%) hue-rotate(192deg);
+}
+.panel { position:relative; }
+.panel > .sec-header, .panel > .proj-wrap, .panel > .groups-grid,
+.panel > .bracket-scroll, .panel > .bracket-scroll-hint { position:relative; z-index:1; }
+
 /* ── TEAM OF THE TOURNAMENT (pitch) ── */
 .tott-pitch {
   position:relative; border-radius:var(--radius);
-  padding:26px 12px 30px;
-  background:
-    linear-gradient(180deg, rgba(16,185,129,.16) 0%, rgba(16,185,129,.10) 100%),
-    repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 46px, rgba(0,0,0,.025) 46px 92px),
-    var(--ink);
-  border:1px solid rgba(16,185,129,.25);
-  box-shadow:inset 0 0 60px rgba(0,0,0,.35);
-  overflow:hidden;
+  padding:26px 12px 30px; overflow:hidden;
+  border:1px solid rgba(16,185,129,.30);
+  box-shadow:inset 0 0 70px rgba(0,0,0,.45);
 }
-.tott-pitch::before {   /* centre circle + halfway line */
+.tott-pitch .pitch-bg {   /* landscape grass rotated to portrait (goals top/bottom) */
+  position:absolute; top:50%; left:50%;
+  width:140%; height:140%;            /* over-size so rotation fills corners */
+  transform:translate(-50%,-50%) rotate(90deg);
+  object-fit:cover; z-index:0;
+}
+.tott-pitch .pitch-tint {
+  position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(7,30,18,.5) 0%, rgba(7,30,18,.38) 100%);
+}
+.tott-pitch::before {   /* white WC logo watermark, centre pitch */
   content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-  width:120px; height:120px; border:1.5px solid rgba(255,255,255,.10); border-radius:50%;
-}
-.tott-pitch::after {
-  content:''; position:absolute; left:6%; right:6%; top:50%; height:1.5px;
-  background:rgba(255,255,255,.10);
+  width:160px; height:240px; opacity:.12; pointer-events:none;
+  background:url("Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg") center/contain no-repeat;
 }
 .tott-line {
   position:relative; z-index:1; display:flex; justify-content:center;
@@ -1820,6 +1832,7 @@ select:hover { border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58,
 
 <!-- ════════════════ PROJECTIONS ════════════════ -->
 <div id="panel-projections" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Tournament Projections</div>
     <div class="sec-title">Full Probability Table</div>
@@ -1832,6 +1845,7 @@ select:hover { border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58,
 
 <!-- ════════════════ GROUPS ════════════════ -->
 <div id="panel-groups" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Group Stage</div>
     <div class="sec-title">Group Stage Predictions</div>
@@ -1842,6 +1856,7 @@ select:hover { border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58,
 
 <!-- ════════════════ BRACKET ════════════════ -->
 <div id="panel-bracket" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Knockout Stage</div>
     <div class="sec-title">Predicted Knockout Bracket</div>
@@ -2892,6 +2907,8 @@ function renderPlayers() {
     const def = (T.DEF||[]).map(p => slot(p, 'DEF')).join('');
     const gk  = (T.GK ||[]).map(p => slot(p, 'GK')).join('');
     pitch.innerHTML =
+      `<img class="pitch-bg" src="Data/icons/soccer.jpg" alt="" aria-hidden="true">` +
+      `<div class="pitch-tint"></div>` +
       `<div class="tott-line">${fwd}</div>` +
       `<div class="tott-line">${mid}</div>` +
       `<div class="tott-line">${def}</div>` +

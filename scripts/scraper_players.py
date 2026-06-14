@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""
-StatsBomb Player Stats Scraper
-Extracts per-player xG, goals, shots from WC2022 / Euro2024 / Copa2024 / AFCON2023
-Outputs: Data/scraped/player_xg.csv
-"""
+"""Scrape per-player tournament xG/goals/shots from StatsBomb open data."""
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 

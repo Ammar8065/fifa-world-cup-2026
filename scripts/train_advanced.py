@@ -1,30 +1,5 @@
 #!/usr/bin/env python3
-"""
-Advanced model suite for the 2026 World Cup forecast
-====================================================
-Goes beyond the single 4-feature Poisson GLM (train_model.py) with three goal
-models, an ensemble, and a full calibration analysis on a 2022+ holdout.
-
-Models (each predicts a team's expected goals λ in a match):
-  1. GLM-Poisson    — StandardScaler → PoissonRegressor on 4 Elo/form features
-                       (the existing baseline, reloaded from poisson_goals_ours.pkl).
-  2. XGBoost        — gradient-boosted trees, Poisson objective, on a 6-feature
-                       set (home/away Elo split + form ratings). Captures non-linear
-                       interactions the GLM can't.
-  3. Dixon-Coles    — classic bivariate-Poisson with *separate per-team attack &
-                       defence strengths*, a home-advantage term, and the low-score
-                       ρ correction, fit by time-weighted maximum likelihood.
-  4. Ensemble       — λ-level blend of the three, weights tuned on the train split.
-
-Evaluation (2022+ holdout, never seen in fitting):
-  W/D/L accuracy · log-loss · multiclass Brier · ECE · home-win reliability curve.
-
-Outputs (Data/data/processed/):
-  dc_ratings_2026.csv   — per-team Dixon-Coles attack/defence (+ γ, ρ) for the sim
-  xgb_goals.json        — XGBoost booster (portable) for the sim
-  ensemble.json         — ensemble weights + ρ + feature order
-  model_eval.json       — calibration metrics + reliability bins for the dashboard
-"""
+"""Train XGBoost + Dixon-Coles, blend into an ensemble, and evaluate calibration."""
 import sys, io, json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -46,7 +21,6 @@ XGB_FEATURES = ["elo_home", "elo_away", "elo_diff", "off_rating_a", "def_rating_
 
 rng = np.random.default_rng(42)
 
-
 # ════════════════════════════════════════════════════════════════════════════
 #  Scoreline → W/D/L probabilities
 # ════════════════════════════════════════════════════════════════════════════
@@ -58,7 +32,6 @@ def _dc_tau(i, j, lh, la, rho):
     t = np.where((i == 1) & (j == 0), 1 + la * rho, t)
     t = np.where((i == 1) & (j == 1), 1 - rho, t)
     return t
-
 
 def wdl_from_lambda(lh, la, rho=0.0):
     """Vectorised W/D/L probabilities from home/away λ arrays (+ optional ρ)."""
@@ -79,7 +52,6 @@ def wdl_from_lambda(lh, la, rho=0.0):
         pa[n] = np.triu(joint, 1).sum()
         pd_[n] = np.trace(joint)
     return np.clip(np.c_[ph, pd_, pa], 1e-9, None)
-
 
 # ════════════════════════════════════════════════════════════════════════════
 #  Dixon-Coles maximum-likelihood fit
@@ -128,7 +100,6 @@ def fit_dixon_coles(matches, halflife=HALFLIFE_YEARS, l2=0.02):
             "home_adv": float(gamma), "rho": float(rho), "teams": teams,
             "converged": bool(res.success)}
 
-
 def dc_lambda(dc, home, away, neutral=True):
     """λ_home, λ_away for a single matchup from a fitted DC model."""
     a, d = dc["attack"], dc["defence"]
@@ -136,7 +107,6 @@ def dc_lambda(dc, home, away, neutral=True):
     ba, bd = a.get(away, 0.0), d.get(away, 0.0)
     g = 0.0 if neutral else dc["home_adv"]
     return np.exp(aa - bd + g), np.exp(ba - ad)
-
 
 # ════════════════════════════════════════════════════════════════════════════
 #  Calibration metrics
@@ -159,7 +129,6 @@ def metrics(probs, actual):
     return {"accuracy": round(acc, 4), "log_loss": round(logloss, 4),
             "brier": round(brier, 4), "ece": round(float(ece), 4), "n": int(n)}
 
-
 def reliability_homewin(p_home, actual, nbins=10):
     """Reliability bins for the home-win probability (predicted vs observed)."""
     y = (actual == 0).astype(float)
@@ -171,7 +140,6 @@ def reliability_homewin(p_home, actual, nbins=10):
             out.append({"p_pred": round(float(p_home[m].mean()), 4),
                         "p_obs": round(float(y[m].mean()), 4), "n": int(m.sum())})
     return out
-
 
 # ════════════════════════════════════════════════════════════════════════════
 #  Main
@@ -352,7 +320,6 @@ def main():
     print(f"  deploy DC: γ={dc_full['home_adv']:.3f} ρ={dc_full['rho']:.3f}")
     print(f"\nSaved → dc_ratings_2026.csv · xgb_goals.json · ensemble.json · model_eval.json")
     print("Done.")
-
 
 if __name__ == "__main__":
     main()

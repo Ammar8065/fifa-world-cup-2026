@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""
-Generates dashboard.html — a fully self-contained premium web app for the 2026 WC simulation.
-Open dashboard.html directly in any browser (no server required).
-"""
+"""Build the self-contained dashboard.html from the simulation outputs."""
 import sys, io, json, re, unicodedata
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -10,7 +7,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-# ── Load all data ──────────────────────────────────────────────────────────────
+# load all data
 summary   = pd.read_csv("Data/simulated/wc2026_champion_probabilities.csv")
 bracket   = pd.read_csv("Data/simulated/wc2026_bracket_predictions.csv")
 bracket_full = pd.read_csv("Data/simulated/wc2026_bracket_full.csv")
@@ -41,7 +38,7 @@ def canon(n): return CANON.get(str(n).strip(), str(n).strip())
 groups_df["team"] = groups_df["team"].apply(canon)
 players["team"]   = players["team"].apply(canon)
 
-# ── Flags ──────────────────────────────────────────────────────────────────────
+# flags
 FLAGS = {
     "Mexico":"🇲🇽","South Africa":"🇿🇦","Korea Republic":"🇰🇷","Czechia":"🇨🇿",
     "Canada":"🇨🇦","Bosnia-Herzegovina":"🇧🇦","Qatar":"🇶🇦","Switzerland":"🇨🇭",
@@ -57,7 +54,7 @@ FLAGS = {
     "England":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Croatia":"🇭🇷","Ghana":"🇬🇭","Panama":"🇵🇦",
 }
 
-# ISO 3166-1 alpha-2 codes for flagcdn.com (home nations use gb-eng / gb-sct).
+# ISO codes for flagcdn.com
 FLAG_ISO = {
     "Mexico":"mx","South Africa":"za","Korea Republic":"kr","Czechia":"cz",
     "Canada":"ca","Bosnia-Herzegovina":"ba","Qatar":"qa","Switzerland":"ch",
@@ -73,7 +70,7 @@ FLAG_ISO = {
     "England":"gb-eng","Croatia":"hr","Ghana":"gh","Panama":"pa",
 }
 
-# ── Young players curated list (born after Jun 2003 = under 23 at WC) ─────────
+# young players curated list (born after jun 2003 = under 23 at wc)
 YOUNG_PLAYERS = [
     {"player":"Lamine Yamal",       "team":"Spain",       "birth_year":2007,"pos":"RW"},
     {"player":"Warren Zaïre-Emery", "team":"France",      "birth_year":2006,"pos":"CM"},
@@ -96,13 +93,12 @@ YOUNG_PLAYERS = [
     {"player":"Takefusa Kubo",      "team":"Japan",       "birth_year":2001,"pos":"RW"},
 ]
 
-# ── Real 2026 squads (scraped from The Guardian player guide) ──────────────────
+# real 2026 squads (scraped from the guardian player guide)
 squads_raw = json.loads(Path("Data/scraped/squads_2026.json").read_text(encoding="utf-8"))
 team_win = dict(zip(summary["team"], summary["p_champion"]))
 wc_teams = set(summary["team"].tolist())
 
-# Per-team stage probabilities — drives Golden Ball exposure (how many matches a
-# player's team is projected to play) and the deep-run "spotlight" voters reward.
+# per-team stage probabilities
 _STAGE_COLS = ["p_qualify", "p_round_of_16", "p_quarter_final",
                "p_semi_final", "p_final", "p_champion"]
 team_stage = {r["team"]: {c: float(r.get(c, 0.0) or 0.0) for c in _STAGE_COLS}
@@ -162,15 +158,12 @@ def squad_lookup(team, sb_name):
             return squad_match[(team, t)]
     return None
 
-# ── Player awards — built from REAL 2026 squads, ranked by CURRENT-SEASON xG ────
-# Primary signal: 2025-26 club xG (Understat via soccerdata) → reflects live form.
-# Fallback: historical tournament xG (StatsBomb) for squad players outside Europe's
-# big-5 leagues (Understat's coverage). Players with neither are not award candidates.
+# player awards — built from real 2026 squads, ranked by current-season xg
 def _firstlast(n):
     t = n.split()
     return (t[0] + " " + t[-1]) if len(t) >= 2 else n
 
-# Current-season club xG, keyed by normalized player name (best xG row wins).
+# current-season club xG by name
 cur_path = Path("Data/scraped/player_xg_current.csv")
 USE_CURRENT = cur_path.exists()
 cur_lookup = {}
@@ -181,7 +174,7 @@ if USE_CURRENT:
         for key in (r["_n"], _firstlast(r["_n"])):
             cur_lookup.setdefault(key, r)
 
-# Historical tournament xG fallback (StatsBomb), keyed by normalized name.
+# tournament xG fallback by name
 players["_n"] = players["player"].map(_norm)
 tour_lookup = {}
 for _, r in players.sort_values("xg", ascending=False).iterrows():
@@ -220,12 +213,7 @@ players_real = pd.DataFrame(award_rows)
 n_current = int((players_real["xg_source"] == "current").sum())
 n_matched = len(players_real)
 
-# Player-of-the-Tournament impact = season xG weighted by a GENTLE deep-run factor.
-# The old metric (xG/match × P(champion)) let one team's title odds dominate — with
-# Spain ~27% it buried a 0.95-xG/match Harry Kane under Spanish role-players. We use
-# (0.6 + P(reach semi-final)) instead: a soft multiplier (~0.6–1.1×) that still rewards
-# deep runs but lets individual xG output drive the ranking. The list now SORTS BY and
-# DISPLAYS this same impact score, so the visible numbers are always in order.
+# POTY impact = season xG x (0.6 + P(semi-final))
 players_real["deep_run"]   = players_real["team"].map(
     lambda t: team_stage.get(t, {}).get("p_semi_final", 0.0))
 players_real["poty_score"] = (players_real["xg"] * (0.6 + players_real["deep_run"])).round(2)
@@ -234,21 +222,17 @@ ACOLS = ["player","team","matches","shots","xg","goals","xg_per_match","composit
          "poty_score","deep_run","flag","team_win_prob","photo","position","club",
          "age","xg_source"]
 
-# Top Scorer ranks by total xG (raw volume), so a low match floor is fine.
 top_scorers = players_real[players_real["matches"] >= 3].nlargest(20, "xg")[ACOLS].reset_index(drop=True)
-# POTY / Young Player require a full sample (≥10 matches) — excludes noisy small-sample
-# tournament fallbacks (a right-back with 0.8 xG/match over 3 games).
+# POTY / Young Player need >=10 matches
 poty_candidates = players_real[players_real["matches"] >= 10].nlargest(10, "poty_score")[ACOLS].reset_index(drop=True)
 
-# Young Player race: real U-23 squad players, same impact metric.
+# young player race (U-23)
 ypool = players_real[(players_real["age"].notna()) &
                      (players_real["age"] <= 23) & (players_real["matches"] >= 10)].copy()
 ypool["score"] = ypool["poty_score"]
 ypoty_df = ypool.nlargest(10, "score")[ACOLS + ["score"]].reset_index(drop=True)
 
-# Rank defenses by expected goals conceded per game vs an average opponent
-# (lower = better, real goal units) — far clearer than the abstract 0–1 score and
-# free of the "clean sheets vs minnows" artifact since it runs through the model.
+# rank defenses by xG conceded per game
 summary["goals_allowed_rank"] = summary["xga_per_game"].rank(ascending=True)
 best_def_teams = summary.nsmallest(5, "xga_per_game")[["team","xga_per_game","def_score","elo","p_champion"]].reset_index(drop=True)
 best_def_teams["flag"] = best_def_teams["team"].map(FLAGS).fillna("🏳️")
@@ -258,12 +242,10 @@ best_att_teams["flag"] = best_att_teams["team"].map(FLAGS).fillna("🏳️")
 print(f"  award pool: {n_matched} squad players with xG "
       f"({n_current} on current-season club xG, {n_matched - n_current} on tournament fallback)")
 
-# ── Golden Ball: predicted best player of the tournament ─────────────────────
-# Not a raw G+A sum — a forecast. Computed after players_db is built (needs the
-# per-90 form fields). Populated by the model block below the players_db loop.
+# golden ball: predicted best player of the tournament
 golden_ball_candidates = []  # populated after players_db loop
 
-# ── Confederation map (for Overview confederation title-odds viz) ──────────────
+# confederation map (for overview confederation title-odds viz)
 CONFED = {
     # UEFA
     "Czechia":"UEFA","Bosnia-Herzegovina":"UEFA","Switzerland":"UEFA","Scotland":"UEFA",
@@ -287,9 +269,7 @@ CONFED = {
 }
 summary["confederation"] = summary["team"].map(CONFED).fillna("—")
 
-# ── Player explorer dataset — every squad player + current-season club stats ───
-#    (G/A/xG/xA from Understat) and international tournament stats (StatsBomb),
-#    plus a club-form rating and the full Guardian bio for the popup.
+# player explorer dataset
 def _f(v, d=0.0):
     try:
         x = float(v)
@@ -353,24 +333,15 @@ summary["firepower"] = summary["team"].map(team_firepower).fillna(0.0).round(1)
 print(f"  player explorer: {len(players_db)} players "
       f"({sum(1 for r in players_db if r['has_club'])} with current club stats)")
 
-# ── Golden Ball model ─────────────────────────────────────────────────────────
-# The Golden Ball goes to the tournament's best player — in the modern era almost
-# always an attacker/attacking-mid whose team runs deep. We forecast it by blending
-# three form signals and weighting by how far the player's team is projected to go:
-#   1. Club form   — 2025-26 goal involvements per 90 (xG+xA blended with actual G+A)
-#   2. Recent intl — goal output per match in recent national-team tournaments
-#   3. Stage run   — expected tournament matches × a deep-run "spotlight" multiplier
-# Limitation: a goals/assists model can't rate deep-lying mids/keepers (Modrić '18,
-# Kahn '02); it captures the attacking output that has decided most modern winners.
-GB_INTL_W      = 0.6     # weight on recent-tournament form (smaller, noisier sample)
-GB_SPOT_W      = 1.0     # extra reward for reaching the final four / final (voter bias)
-GB_SHARPEN     = 2.2     # concentrates the win-probability share onto real favourites
-GB_USAGE_HALF  = 900.0   # minutes at which the "nailed-on starter" weight hits 0.5
-GB_MIN_MATCHES = 10      # club-match floor — kills small-sample per-90 flukes
+# golden ball model
+GB_INTL_W      = 0.6
+GB_SPOT_W      = 1.0
+GB_SHARPEN     = 2.2
+GB_USAGE_HALF  = 900.0
+GB_MIN_MATCHES = 10
 GB_MIN_MINUTES = 600
 
 def _intl_rate(rec):
-    """Recent national-team tournament output per match (0 when no data)."""
     m = _f(rec.get("intl_matches"))
     if m <= 0:
         return 0.0
@@ -385,16 +356,12 @@ for rec in players_db:
     nineties = minutes / 90.0
     g, a = _f(rec.get("g")), _f(rec.get("a"))
     club_form   = 0.5 * (_f(rec.get("xg90")) + _f(rec.get("xa90"))) \
-                + 0.5 * ((g + a) / nineties)          # goal involvements / 90
-    # Usage weight: a saturating function of club minutes. A nailed-on starter
-    # (~3000 min) reads ~0.77; a high-rate rotation player (~700 min) ~0.44 — so a
-    # fluky per-90 over few minutes can't out-rank an undroppable star.
+                + 0.5 * ((g + a) / nineties)
     usage       = minutes / (minutes + GB_USAGE_HALF)
-    intl_form   = _intl_rate(rec)                     # recent WC/continental form
+    intl_form   = _intl_rate(rec)
     form_rating = club_form * usage + GB_INTL_W * intl_form
 
     st = team_stage.get(rec["team"], {})
-    # Expected matches: 3 group games + one per knockout round the team reaches.
     exp_matches = 3.0 + st.get("p_qualify", 0) + st.get("p_round_of_16", 0) \
                 + st.get("p_quarter_final", 0) + st.get("p_semi_final", 0) \
                 + st.get("p_final", 0)
@@ -417,8 +384,7 @@ for rec in players_db:
     })
 
 golden_ball_candidates.sort(key=lambda x: x["gb_index"], reverse=True)
-# Convert the index to a win-probability share, sharpened so the favourite reads
-# like a favourite rather than being diluted across the whole candidate pool.
+# index -> sharpened win-probability share
 _gb_tot = sum(c["gb_index"] ** GB_SHARPEN for c in golden_ball_candidates) or 1.0
 for c in golden_ball_candidates:
     c["win_prob"] = round(c["gb_index"] ** GB_SHARPEN / _gb_tot, 4)
@@ -429,23 +395,11 @@ if golden_ball_candidates:
           f"[club_form {_gb['club_form']}, intl {_gb['intl_form']}, "
           f"exp_matches {_gb['exp_matches']}]")
 
-# ── Team of the Tournament (4-3-3) ─────────────────────────────────────────────
-# Best XI by position. We're early in the tournament, so this is a PREDICTION:
-#   - attackers / midfielders: club attacking form × usage × team deep-run
-#       (same engine as the Golden Ball — goal involvements per 90)
-#   - defenders / goalkeepers: can't be rated on xG, so we rate them on their
-#       TEAM's projected defensive solidity (conditioned-sim xG conceded / game,
-#       lower = better) × playing-time usage × deep-run. Best defenders come from
-#       the meanest, deepest-running defences.
-# Shape = 4-3-3: 1 GK, 4 DEF, 3 MID, 3 FWD (2 wide + 1 central, via the squad's
-# "Forward (winger)" label). When per-player FotMob match ratings accumulate
-# (match_details / future scrape), TOTT_USE_ACTUAL can switch this to real form.
+# team of the tournament (4-3-3)
 TOTT_DEF_USAGE_HALF = 900.0
 TOTT_MIN_MINUTES    = 600
-TOTT_ACTUAL_MIN_APPS = 3   # tournament apps before real FotMob form overrides the prediction
+TOTT_ACTUAL_MIN_APPS = 3   # apps before actual ratings override the prediction
 
-# Aggregate actual FotMob match ratings per player (the "actual later" upgrade).
-# {normalised name: {"sum":, "n":, "team":}} → avg rating once ≥ TOTT_ACTUAL_MIN_APPS.
 actual_ratings: dict[str, dict] = {}
 if match_details and match_details.get("matches"):
     for det in match_details["matches"].values():
@@ -457,7 +411,6 @@ if match_details and match_details.get("matches"):
             slot["sum"] += float(pr["rating"]); slot["n"] += 1
 
 def _actual_avg(name: str):
-    """Avg FotMob tournament rating for a player, or None if too few apps."""
     slot = actual_ratings.get(_norm(name)) or actual_ratings.get(_firstlast(_norm(name)))
     if slot and slot["n"] >= TOTT_ACTUAL_MIN_APPS:
         return slot["sum"] / slot["n"], slot["n"]
@@ -472,23 +425,17 @@ def _is_winger(pos: str) -> bool:
     return "winger" in (pos or "").lower()
 
 def _tott_score(rec: dict, grp: str) -> float | None:
-    """Position-appropriate Team-of-the-Tournament score (higher = better).
-    Once a player has played ≥ TOTT_ACTUAL_MIN_APPS, their real average FotMob
-    match rating takes over (the prediction was only a stand-in until then)."""
     minutes = _f(rec.get("minutes"))
     st = team_stage.get(rec["team"], {})
     exp_matches = 3.0 + sum(st.get(c, 0) for c in
                             ("p_qualify","p_round_of_16","p_quarter_final","p_semi_final","p_final"))
     deep = 1.0 + (st.get("p_semi_final", 0) + st.get("p_final", 0))
 
-    # ACTUAL tournament form (FotMob ratings) — dominates once we have enough apps.
     act = _actual_avg(rec["name"])
     if act is not None:
         avg_rating, n_apps = act
-        # rating ~6.0 baseline; scale so a 7.5 avg over a deep run tops the list
         return (avg_rating - 5.5) * (1 + 0.15 * n_apps) * deep
     if grp in ("FWD", "MID"):
-        # Attacking output (must have a club-form sample)
         if not rec.get("has_club") or minutes < TOTT_MIN_MINUTES:
             return None
         nineties = minutes / 90.0
@@ -497,7 +444,6 @@ def _tott_score(rec: dict, grp: str) -> float | None:
         usage = minutes / (minutes + GB_USAGE_HALF)
         return (club_form*usage + 0.6*_intl_rate(rec)) * exp_matches * deep
     else:
-        # GK / DEF — rate by team defensive solidity + minutes + deep run
         xga = team_def.get(rec["team"])
         if xga is None or pd.isna(xga):
             return None
@@ -505,7 +451,6 @@ def _tott_score(rec: dict, grp: str) -> float | None:
         usage = minutes / (minutes + TOTT_DEF_USAGE_HALF) if minutes else 0.15
         return (0.5 + def_solidity) * usage * exp_matches * deep
 
-# Score every squad player, then pick the best XI in the 4-3-3 shape.
 _pool = {"GK": [], "DEF": [], "MID": [], "FWD_W": [], "FWD_C": []}
 for rec in players_db:
     grp = rec.get("pos_group", "")
@@ -544,8 +489,6 @@ def _take(bucket, n, used):
     return out
 
 _used: set[str] = set()
-# 4-3-3: GK + 4 DEF + 3 MID + 2 wide FWD + 1 central FWD. If a winger/striker
-# bucket is short, backfill from the other forward bucket.
 tott = {
     "GK":  _take("GK",  1, _used),
     "DEF": _take("DEF", 4, _used),
@@ -553,7 +496,6 @@ tott = {
 }
 _fw_wide = _take("FWD_W", 2, _used)
 _fw_cent = _take("FWD_C", 1, _used)
-# backfill forwards if a bucket ran short
 while len(_fw_wide) + len(_fw_cent) < 3:
     extra = _take("FWD_C", 1, _used) or _take("FWD_W", 1, _used)
     if not extra:
@@ -565,7 +507,7 @@ if tott["FWD"] or tott["MID"]:
     _names = [p["name"] for grp in ("GK","DEF","MID","FWD") for p in tott[grp]]
     print(f"  Team of Tournament (4-3-3): {', '.join(_names)}")
 
-# ── Group data ────────────────────────────────────────────────────────────────
+# group data
 group_data = {}
 for g in sorted(summary["group"].unique()):
     teams_in_group = summary[summary["group"] == g].sort_values("p_qualify", ascending=False)
@@ -573,7 +515,7 @@ for g in sorted(summary["group"].unique()):
     for t in group_data[g]:
         t["flag"] = FLAGS.get(t["team"], "🏳️")
 
-# ── Bracket data ──────────────────────────────────────────────────────────────
+# bracket data
 bracket_dict = {int(r["match_id"]): {"winner": r["pred_winner"], "p": r["p_win"],
                                       "round": r["round"],
                                       "flag": FLAGS.get(r["pred_winner"], "🏳️")}
@@ -599,7 +541,7 @@ for _, r in bracket_full.iterrows():
         "p_winner":   _na(r["p_winner"]),
     }
 
-# ── JSON payloads ─────────────────────────────────────────────────────────────
+# json payloads
 def _clean(obj):
     if isinstance(obj, float) and (obj != obj or obj == float('inf') or obj == float('-inf')):
         return None
@@ -636,7 +578,7 @@ playersdb_js = to_js(players_db)
 
 print("Data prepared. Building HTML...")
 
-# ── HTML ──────────────────────────────────────────────────────────────────────
+# html
 HTML = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1628,25 +1570,37 @@ body::before {{
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:16px; margin-bottom:28px;
 }}
+/* ── SHARED: faint WC logo watermark on data panels ── */
+.wm-logo {{
+  position:absolute; pointer-events:none; z-index:0;
+  right:2%; top:64px; width:340px; max-width:46vw;
+  opacity:.07; filter:brightness(0) saturate(100%) invert(11%) sepia(18%) saturate(2200%) hue-rotate(192deg);
+}}
+.panel {{ position:relative; }}
+.panel > .sec-header, .panel > .proj-wrap, .panel > .groups-grid,
+.panel > .bracket-scroll, .panel > .bracket-scroll-hint {{ position:relative; z-index:1; }}
+
 /* ── TEAM OF THE TOURNAMENT (pitch) ── */
 .tott-pitch {{
   position:relative; border-radius:var(--radius);
-  padding:26px 12px 30px;
-  background:
-    linear-gradient(180deg, rgba(16,185,129,.16) 0%, rgba(16,185,129,.10) 100%),
-    repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 46px, rgba(0,0,0,.025) 46px 92px),
-    var(--ink);
-  border:1px solid rgba(16,185,129,.25);
-  box-shadow:inset 0 0 60px rgba(0,0,0,.35);
-  overflow:hidden;
+  padding:26px 12px 30px; overflow:hidden;
+  border:1px solid rgba(16,185,129,.30);
+  box-shadow:inset 0 0 70px rgba(0,0,0,.45);
 }}
-.tott-pitch::before {{   /* centre circle + halfway line */
+.tott-pitch .pitch-bg {{   /* landscape grass rotated to portrait (goals top/bottom) */
+  position:absolute; top:50%; left:50%;
+  width:140%; height:140%;            /* over-size so rotation fills corners */
+  transform:translate(-50%,-50%) rotate(90deg);
+  object-fit:cover; z-index:0;
+}}
+.tott-pitch .pitch-tint {{
+  position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(7,30,18,.5) 0%, rgba(7,30,18,.38) 100%);
+}}
+.tott-pitch::before {{   /* white WC logo watermark, centre pitch */
   content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-  width:120px; height:120px; border:1.5px solid rgba(255,255,255,.10); border-radius:50%;
-}}
-.tott-pitch::after {{
-  content:''; position:absolute; left:6%; right:6%; top:50%; height:1.5px;
-  background:rgba(255,255,255,.10);
+  width:160px; height:240px; opacity:.12; pointer-events:none;
+  background:url("Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg") center/contain no-repeat;
 }}
 .tott-line {{
   position:relative; z-index:1; display:flex; justify-content:center;
@@ -2459,6 +2413,7 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
 
 <!-- ════════════════ PROJECTIONS ════════════════ -->
 <div id="panel-projections" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Tournament Projections</div>
     <div class="sec-title">Full Probability Table</div>
@@ -2471,6 +2426,7 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
 
 <!-- ════════════════ GROUPS ════════════════ -->
 <div id="panel-groups" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Group Stage</div>
     <div class="sec-title">Group Stage Predictions</div>
@@ -2481,6 +2437,7 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
 
 <!-- ════════════════ BRACKET ════════════════ -->
 <div id="panel-bracket" class="panel">
+  <img class="wm-logo" src="Data/icons/tournaments_fifa-world-cup-2026--white.football-logos.cc.svg" alt="" aria-hidden="true">
   <div class="sec-header">
     <div class="sec-eyebrow">Knockout Stage</div>
     <div class="sec-title">Predicted Knockout Bracket</div>
@@ -3531,6 +3488,8 @@ function renderPlayers() {{
     const def = (T.DEF||[]).map(p => slot(p, 'DEF')).join('');
     const gk  = (T.GK ||[]).map(p => slot(p, 'GK')).join('');
     pitch.innerHTML =
+      `<img class="pitch-bg" src="Data/icons/soccer.jpg" alt="" aria-hidden="true">` +
+      `<div class="pitch-tint"></div>` +
       `<div class="tott-line">${{fwd}}</div>` +
       `<div class="tott-line">${{mid}}</div>` +
       `<div class="tott-line">${{def}}</div>` +

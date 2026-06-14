@@ -1,37 +1,5 @@
 #!/usr/bin/env python3
-"""
-FotMob match-detail scraper — xG, Player of the Match, shotmaps
-===============================================================
-football-data.org (fetch_results.py) gives scores but NO advanced stats.
-FotMob has per-match xG + player ratings + Player of the Match, but gates
-its API behind a client-generated `x-mas` token and blocks plain HTTP.
-
-This scraper drives a headless Chromium (Playwright) so FotMob's own JS
-generates the token and calls the API; we intercept the JSON responses.
-That's the robust way past the gate — no token reverse-engineering that
-breaks on rotation.
-
-For each FINISHED World Cup 2026 match it records:
-  - home/away xG (summed from the shotmap)
-  - Player of the Match (FotMob's official pick) + their rating
-  - shot counts / on-target
-
-Output → Data/simulated/match_details.json  (keyed by frozenset of canon
-team names, so build_dashboard / the Live tab can join it to fixtures).
-
-Usage
------
-    python scripts/scraper_fotmob.py            # all finished matches
-    python scripts/scraper_fotmob.py --limit 3  # first 3 (quick test)
-    python scripts/scraper_fotmob.py --match 4667751
-
-Requires: playwright (already installed). Run once if needed:
-    python -m playwright install chromium
-
-FotMob is unofficial — keep polling gentle (this waits between matches).
-Failures on a single match are skipped, not fatal, so a layout change on
-one page can't break the whole run.
-"""
+"""Scrape per-match xG, Player of the Match and player ratings via headless browser."""
 
 import sys, io, json, time, argparse
 from pathlib import Path
@@ -42,16 +10,16 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:
-    sys.exit("playwright not installed — run: pip install playwright && python -m playwright install chromium")
+    sys.exit("playwright not installed - run: pip install playwright && python -m playwright install chromium")
 
-WC_LEAGUE_ID = 77                                   # FotMob World Cup
+WC_LEAGUE_ID = 77
 LEAGUE_URL   = "https://www.fotmob.com/leagues/77/matches/world-cup"
-MATCH_URL    = "https://www.fotmob.com{page_url}"   # pageUrl already starts with /matches/...
+MATCH_URL    = "https://www.fotmob.com{page_url}"
 OUT_PATH     = Path("Data/simulated/match_details.json")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
-# FotMob → schedule_2026.csv canonical names (mirrors fetch_results.CANON)
+# canonical team names
 CANON = {
     "South Korea": "Korea Republic", "Turkey": "Türkiye", "Türkiye": "Türkiye",
     "Turkiye": "Türkiye",
@@ -101,7 +69,7 @@ def parse_match(md: dict) -> dict | None:
     h_name, a_name = canon(home.get("name", "")), canon(away.get("name", ""))
     h_id, a_id = home.get("id"), away.get("id")
 
-    # xG: sum expectedGoals from the shotmap, bucketed by teamId
+    # sum xG from shotmap per team
     xg = defaultdict(float); shots = defaultdict(int); ontgt = defaultdict(int)
     for s in (c.get("shotmap", {}) or {}).get("shots", []) or []:
         tid = s.get("teamId")
@@ -109,8 +77,7 @@ def parse_match(md: dict) -> dict | None:
         shots[tid] += 1
         ontgt[tid] += 1 if s.get("isOnTarget") else 0
 
-    # Player of the Match — FotMob's official pick (matchFacts), with rating.
-    # `name` is a dict {firstName,lastName,fullName}; rating under rating.num/value.
+    # player of the match
     pom = (c.get("matchFacts", {}) or {}).get("playerOfTheMatch") or {}
     nm = pom.get("name")
     if isinstance(nm, dict):
@@ -127,9 +94,7 @@ def parse_match(md: dict) -> dict | None:
         if tid == h_id: pom_team = h_name
         elif tid == a_id: pom_team = a_name
 
-    # Per-player FotMob ratings — for the "actual" Team of the Tournament once
-    # enough matches accumulate. Each player's rating lives at
-    #   playerStats[id].stats[].stats["FotMob rating"].stat.value
+    # per-player ratings
     players = []
     for pl in (c.get("playerStats", {}) or {}).values():
         rating = None
@@ -167,7 +132,7 @@ def main():
     ap.add_argument("--headed", action="store_true", help="show the browser")
     args = ap.parse_args()
 
-    results: dict[str, dict] = {}   # key "TeamA|TeamB" (sorted) → detail
+    results: dict[str, dict] = {}
     existing = {}
     if OUT_PATH.exists():
         existing = json.loads(OUT_PATH.read_text(encoding="utf-8")).get("matches", {})
@@ -208,7 +173,7 @@ def main():
                 print(f"  [{i}/{len(finished)}] {det['home']} v {det['away']}  {xgline}  {motm}")
             except Exception as e:
                 print(f"  [{i}/{len(finished)}] {mid}: ERROR {repr(e)[:90]}")
-            time.sleep(1.2)   # gentle polling
+            time.sleep(1.2)
 
         b.close()
 
@@ -218,7 +183,7 @@ def main():
         "matches": results,
     }
     OUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n✓ {scraped} match(es) scraped, {len(results)} total → {OUT_PATH}")
+    print(f"\n{scraped} match(es) scraped, {len(results)} total -> {OUT_PATH}")
 
 
 if __name__ == "__main__":

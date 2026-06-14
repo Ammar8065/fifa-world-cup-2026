@@ -1,29 +1,7 @@
 #!/usr/bin/env python3
-"""
-One-command live refresh: fetch results → re-simulate → rebuild dashboard.
-=========================================================================
-Runs the full live-update pipeline so every projection (champion %, group
-standings, knockout odds, awards) reflects the latest real results:
+"""Live refresh: fetch results, scrape match stats, re-simulate, rebuild dashboard."""
 
-    1. fetch_results.py   — pull finished scores from football-data.org
-    2. scraper_fotmob.py  — scrape FotMob xG + Player of the Match (headless)
-    3. simulate.py        — Monte Carlo CONDITIONED on those results
-    4. build_dashboard.py — regenerate dashboard.html (+ live strip/tab)
-
-Usage
------
-    export FOOTBALL_DATA_API_KEY=<key>      # PowerShell: $env:FOOTBALL_DATA_API_KEY="<key>"
-    python scripts/update.py                # full pipeline
-    python scripts/update.py --no-fetch     # skip API call, re-sim on existing scores
-    python scripts/update.py --no-fotmob    # skip the FotMob xG/MOTM scrape
-    python scripts/update.py --quiet        # only print the summary line
-
-Designed to be driven on an interval on match days (see the /loop note in
-the README), or run by hand. Skips the expensive re-sim+rebuild when the
-fetch finds no NEW finished results since the last run.
-"""
-
-import sys, io, os, json, argparse, subprocess, hashlib
+import sys, io, json, argparse, subprocess, hashlib
 from pathlib import Path
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
@@ -31,7 +9,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 ROOT       = Path(__file__).resolve().parent.parent
 SCRIPTS    = ROOT / "scripts"
 LIVE_JSON  = ROOT / "Data/simulated/live_scores.json"
-STATE_FILE = ROOT / "Data/simulated/.update_state.json"   # gitignored
+STATE_FILE = ROOT / "Data/simulated/.update_state.json"
 
 
 def run(script: str, args: list[str], quiet: bool) -> None:
@@ -42,11 +20,10 @@ def run(script: str, args: list[str], quiet: bool) -> None:
             print(res.stdout)
         if quiet and res.stderr:
             print(res.stderr)
-        sys.exit(f"✗ {script} failed (exit {res.returncode})")
+        sys.exit(f"{script} failed (exit {res.returncode})")
 
 
 def results_fingerprint() -> str:
-    """Hash of the finished-match scores so we can detect 'anything new?'."""
     if not LIVE_JSON.exists():
         return ""
     data = json.loads(LIVE_JSON.read_text(encoding="utf-8"))
@@ -71,39 +48,32 @@ def save_state(fp: str) -> None:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Live WC2026 refresh pipeline")
+    ap = argparse.ArgumentParser(description="Live refresh pipeline")
     ap.add_argument("--no-fetch",  action="store_true", help="skip the API fetch")
-    ap.add_argument("--no-fotmob", action="store_true", help="skip the FotMob xG/MOTM scrape")
-    ap.add_argument("--force",     action="store_true", help="re-sim even if no new results")
-    ap.add_argument("--quiet",    action="store_true", help="suppress sub-script output")
+    ap.add_argument("--no-fotmob", action="store_true", help="skip the match-stats scrape")
+    ap.add_argument("--force",     action="store_true", help="rebuild even with no new results")
+    ap.add_argument("--quiet",     action="store_true", help="suppress sub-script output")
     args = ap.parse_args()
 
     before = results_fingerprint()
 
-    # 1. Fetch live results (unless told not to)
     if not args.no_fetch:
         run("fetch_results.py", [], args.quiet)
 
     after = results_fingerprint()
     prev  = load_state().get("results_fingerprint", "")
 
-    # Skip the expensive steps when nothing changed since last successful run
     if not args.force and after == prev and after == before:
-        print(f"No new results since last update (fingerprint {after[:8] or '∅'}). "
-              f"Skipping re-sim. Use --force to rebuild anyway.")
+        print(f"No new results (fingerprint {after[:8] or '-'}). Use --force to rebuild anyway.")
         return
 
-    # 2. Scrape FotMob xG + Player of the Match (non-fatal — unofficial source)
     if not args.no_fotmob:
         try:
             run("scraper_fotmob.py", [], args.quiet)
         except SystemExit as e:
-            print(f"  ⚠ FotMob scrape failed ({e}); continuing without xG/MOTM.")
+            print(f"  match-stats scrape failed ({e}); continuing.")
 
-    # 3. Re-simulate (conditioned on the updated scores)
     run("simulate.py", [], args.quiet)
-
-    # 4. Rebuild the dashboard
     run("build_dashboard.py", [], args.quiet)
 
     save_state(after)
@@ -111,7 +81,7 @@ def main():
     n = 0
     if LIVE_JSON.exists():
         n = json.loads(LIVE_JSON.read_text(encoding="utf-8")).get("group_finished", 0)
-    print(f"✓ Updated — dashboard rebuilt, conditioned on {n}/72 group results.")
+    print(f"Updated - dashboard rebuilt, conditioned on {n}/72 group results.")
 
 
 if __name__ == "__main__":

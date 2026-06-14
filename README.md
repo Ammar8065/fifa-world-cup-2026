@@ -21,7 +21,10 @@ with no server.
 - **Player Explorer** — every one of the ~1,250 squad players, searchable/sortable,
   with current-season club output and a Guardian-style bio popup.
 - **Awards** — Top Scorer, Player of the Tournament, Young Player, Best Attack/Defense,
-  and a **predictive Golden Ball race** (see *Golden Ball model* below).
+  a **predictive Golden Ball race** (see *Golden Ball model* below), and a projected
+  **Team of the Tournament** (best XI in a 4-3-3).
+- **Match Centre** — every fixture with live scores, plus xG and Player of the Match
+  for completed games (during the tournament).
 - **Model & Validation** — head-to-head model accuracy & calibration, the ensemble
   blend, a reliability curve, and the Golden Ball backtest (see below).
 
@@ -132,20 +135,43 @@ hypothesis the model encodes. Result is shown in the dashboard's **Model** tab.
 ## Running it
 
 ```bash
-pip install pandas numpy scikit-learn xgboost scipy joblib soccerdata
+pip install -r requirements.txt
 
 # Rebuild only the dashboard from existing simulated data:
-python build_dashboard.py            # → dashboard.html
+python scripts/build_dashboard.py        # -> dashboard.html
 
 # Or re-run the full model + simulation pipeline:
-python train_model.py                # fit the GLM-Poisson baseline + 2026 ratings
-python train_advanced.py             # XGBoost + Dixon-Coles + ensemble + calibration
-python simulate.py                   # 10,000-iteration ensemble Monte Carlo
-python backtest_goldenball.py        # (optional) WC22 Golden Ball validation
-python build_dashboard.py            # assemble the dashboard
+python scripts/train_model.py            # fit the GLM-Poisson baseline + 2026 ratings
+python scripts/train_advanced.py         # XGBoost + Dixon-Coles + ensemble + calibration
+python scripts/simulate.py               # 10,000-iteration ensemble Monte Carlo
+python scripts/backtest_goldenball.py    # (optional) WC22 Golden Ball validation
+python scripts/build_dashboard.py        # assemble the dashboard
 ```
 
 Then open `dashboard.html` in any browser.
+
+---
+
+## Live updates (during the tournament)
+
+Once matches start, the forecast can be **conditioned on real results**: finished
+scores are locked into the simulation and every projection (champion %, group
+standings, knockout odds, awards, Team of the Tournament) updates around them.
+
+```bash
+cp .env.example .env                  # then add your free football-data.org key
+python scripts/update.py              # fetch -> scrape stats -> re-simulate -> rebuild
+```
+
+| Script | Role |
+|---|---|
+| `fetch_results.py` | Pulls finished scores from the [football-data.org](https://www.football-data.org) API into the schedule + `live_scores.json`. |
+| `scraper_fotmob.py` | Per-match **xG**, **Player of the Match** and player ratings (headless browser). |
+| `simulate.py` | Re-runs the Monte Carlo with completed matches held fixed. |
+| `update.py` | One command for the whole loop; skips the re-sim when nothing changed. |
+
+The dashboard's **Match Centre** tab shows every fixture with live scores, xG and
+Player of the Match. The API key is read from `.env` (gitignored) — never committed.
 
 ### Deploy (Netlify)
 
