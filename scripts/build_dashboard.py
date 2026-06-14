@@ -1582,8 +1582,10 @@ body::before {{
 
 /* ── TEAM OF THE TOURNAMENT (pitch) ── */
 .tott-pitch {{
-  position:relative; border-radius:var(--radius);
-  padding:26px 12px 30px; overflow:hidden;
+  position:relative; border-radius:var(--radius); overflow:hidden;
+  max-width:560px; margin:0 auto; aspect-ratio:5/8;
+  padding:34px 18px;
+  display:flex; flex-direction:column; justify-content:space-between;
   border:1px solid rgba(16,185,129,.30);
   box-shadow:inset 0 0 70px rgba(0,0,0,.45);
 }}
@@ -1603,7 +1605,7 @@ body::before {{
 }}
 .tott-line {{
   position:relative; z-index:1; display:flex; justify-content:center;
-  gap:clamp(10px,5vw,64px); margin:22px 0;
+  gap:clamp(8px,3vw,30px);
 }}
 .tott-slot {{
   display:flex; flex-direction:column; align-items:center; gap:7px;
@@ -3487,7 +3489,7 @@ function renderPlayers() {{
     const def = (T.DEF||[]).map(p => slot(p, 'DEF')).join('');
     const gk  = (T.GK ||[]).map(p => slot(p, 'GK')).join('');
     pitch.innerHTML =
-      `<img class="pitch-bg" src="Data/icons/soccer.jpg" alt="" aria-hidden="true">` +
+      `<img class="pitch-bg" src="Data/icons/soccer_portrait.jpg" alt="" aria-hidden="true">` +
       `<div class="pitch-tint"></div>` +
       `<div class="tott-line">${{fwd}}</div>` +
       `<div class="tott-line">${{mid}}</div>` +
