@@ -22,18 +22,21 @@ with no server.
   with current-season club output and a Guardian-style bio popup.
 - **Awards** — Top Scorer, Player of the Tournament, Young Player, Best Attack/Defense,
   and a **predictive Golden Ball race** (see *Golden Ball model* below).
+- **Model & Validation** — head-to-head model accuracy & calibration, the ensemble
+  blend, a reliability curve, and the Golden Ball backtest (see below).
 
-Current headline result (10,000 sims): **Spain 27%**, Argentina 17%, France 10%,
-England 9%.
+Current headline result (10,000 sims, **ensemble** model): **Spain 21%**, Argentina 14%,
+England 11%, France 9%, Brazil 7%.
 
 ---
 
 ## How it works (the pipeline)
 
 ```
- scrapers ─►  Data/scraped/*          ┐
- historical ─► Data/data/processed/   ├─►  train_model.py ─►  simulate.py ─►  build_dashboard.py ─►  dashboard.html
- raw inputs ─► Data/data/raw/*        ┘        (model)          (10k MC)         (renders page)
+ scrapers ─►  Data/scraped/*       ┐   train_model.py ─┐
+ historical ─► Data/data/processed ├─► train_advanced.py ├─► simulate.py ─► build_dashboard.py ─► dashboard.html
+ raw inputs ─► Data/data/raw/*     ┘   (GLM+XGB+DC+cal.)─┘     (10k MC)        (renders page)
+                                       backtest_goldenball.py ─► WC22 GB validation ─┘
 ```
 
 ### 1. Data collection — `scraper*.py`
@@ -44,35 +47,43 @@ England 9%.
 | `scraper_soccerdata.py` | `player_xg_current.csv` | **Understat** 2025-26 club xG (big-5 leagues) via the `soccerdata` package |
 | `scraper_squads.py` | `squads_2026.json`, `squad_players.csv` | The Guardian 2026 World Cup squad guide + FIFA rankings |
 
-### 2. The goals model — `train_model.py`
-A **Poisson regression** fit on ~49k historical international matches (1950–2026),
-predicting goals scored by a team in a match:
+### 2. The goals model — an ensemble (`train_model.py` + `train_advanced.py`)
+The match engine is an **ensemble of three goal models**, each predicting a team's
+expected goals λ in a match. Trained on ~49k historical internationals (1950–2026),
+recency-weighted with an 8-year half-life.
 
-```
-Pipeline( StandardScaler → PoissonRegressor(alpha=0.1) )
-features = [ elo_diff, off_rating_a, def_rating_b, is_home ]
-```
+| Model | What it is |
+|---|---|
+| **GLM-Poisson** | `StandardScaler → PoissonRegressor(α=0.1)` on 4 Elo/form features — the interpretable baseline (`train_model.py`). |
+| **XGBoost** | Gradient-boosted trees, `count:poisson` objective, on a 6-feature set (home/away Elo split + form ratings) — captures non-linear interactions. |
+| **Dixon-Coles** | Classic bivariate-Poisson with *separate per-team attack & defence strengths*, a home-advantage term γ, and the low-score ρ correction, fit by time-weighted maximum likelihood (`scipy`). |
 
-- **Elo-adjusted form ratings** (rolling 7-game window):
-  - `off_rating = Σ_last7 [ goals_for     × (opponent_elo / 1500) ]`
-  - `def_rating = Σ_last7 [ goals_against × (1500 / opponent_elo) ]`
-- **Recency weighting:** matches down-weighted with an 8-year half-life.
-- **2026 squad firepower blend:** because this is an *international* tournament, the
-  2026 offensive rating mixes whole-squad team form with individual player output —
-  `off_rating = 0.65·team_form + 0.35·firepower`, where firepower = club xG + 1.5·intl xG.
-  This stops stacked squads (e.g. France's attack) from being underrated for modest
-  recent team results.
-- **Holdout (2022+):** W/D/L accuracy ≈ 60%, log-loss ≈ 0.88, predicted goals/team
-  1.36 ≈ actual 1.355.
+The three λ predictions are blended with weights **tuned on the train split** (no
+holdout leakage) — the search settled on **0.70·XGBoost + 0.30·Dixon-Coles**.
 
-Outputs: `poisson_goals_ours.pkl` (fitted pipeline), `team_ratings_2026.csv`
-(per-team elo/off/def/age), `our_model.json` (readable coefficients).
-`poisson_goals.pkl` is a reference model used only for a coefficient sanity-check.
+**Elo-adjusted form ratings** (rolling 7-game window) feed the GLM/XGB:
+`off = Σ_last7 [ gf × (opp_elo/1500) ]`, `def = Σ_last7 [ ga × (1500/opp_elo) ]`.
+The 2026 offensive rating also blends whole-squad form with individual player
+firepower (`0.65·team_form + 0.35·(club xG + 1.5·intl xG)`).
+
+**Calibration & validation (2022+ holdout, 4,392 internationals, never seen in fitting):**
+
+| Model | Accuracy | Log-loss | Brier | ECE |
+|---|---|---|---|---|
+| GLM-Poisson | 59.7% | 0.880 | 0.518 | 0.017 |
+| XGBoost | 60.0% | 0.876 | 0.516 | 0.021 |
+| Dixon-Coles | 59.6% | 0.888 | 0.521 | 0.025 |
+| **Ensemble** | **60.4%** | **0.864** | **0.509** | 0.018 |
+
+The ensemble wins on every metric, and all models are well-calibrated (ECE < 0.03 —
+a 30%-predicted bucket occurs ~30% of the time; see the **Model** tab's reliability
+curve). `train_advanced.py` writes `dc_ratings_2026.csv`, `xgb_goals.json`,
+`ensemble.json`, and `model_eval.json` (the calibration data the dashboard renders).
 
 ### 3. The tournament simulation — `simulate.py`
 Monte Carlo over the **official 2026 bracket** (`knockout_slots.csv`, matches 73–104):
 
-- For each match, the fitted model gives each team's scoring rate **λ**; goals are
+- For each match, the **ensemble** gives each team's scoring rate **λ**; goals are
   drawn from Poisson(λ). A small squad-age tilt (peak 27) nudges λ.
 - **Group stage:** 12 groups of 4 → top 2 + 8 best third-placed teams advance
   (`fw26_best_third_placed_combinations.csv` handles the 495 best-third cases).
@@ -109,19 +120,28 @@ The index is converted to a sharpened win-probability share. *Limitation:* it's 
 attacking-output model, so it can't rate deep-lying midfielders or keepers
 (a Modrić '18 / Kahn '02 type winner).
 
+**Backtest — 2022 World Cup** (`backtest_goldenball.py`): replaying the scoring logic
+on WC22 StatsBomb data (output × actual deep run) ranks **Messi #1** (the real Golden
+Ball winner) and **Mbappé #2** (runner-up / Golden Boot) — and ranks Modrić only #78,
+which is exactly the documented limitation above. A *pre-tournament* backtest of 2014/2018
+would need that era's club-season xG, which isn't in this repo; this validates the core
+hypothesis the model encodes. Result is shown in the dashboard's **Model** tab.
+
 ---
 
 ## Running it
 
 ```bash
-pip install pandas numpy scikit-learn joblib soccerdata
+pip install pandas numpy scikit-learn xgboost scipy joblib soccerdata
 
 # Rebuild only the dashboard from existing simulated data:
 python build_dashboard.py            # → dashboard.html
 
 # Or re-run the full model + simulation pipeline:
-python train_model.py                # fit the Poisson goals model
-python simulate.py                   # 10,000-iteration Monte Carlo  (~13s)
+python train_model.py                # fit the GLM-Poisson baseline + 2026 ratings
+python train_advanced.py             # XGBoost + Dixon-Coles + ensemble + calibration
+python simulate.py                   # 10,000-iteration ensemble Monte Carlo
+python backtest_goldenball.py        # (optional) WC22 Golden Ball validation
 python build_dashboard.py            # assemble the dashboard
 ```
 
@@ -161,13 +181,15 @@ commit the regenerated `dashboard.html`, and push — Netlify redeploys on push.
 
 ```
 build_dashboard.py     Renders dashboard.html from simulated + scraped data
-simulate.py            10,000-iteration Monte Carlo of the 2026 bracket
-train_model.py         Fits the Poisson goals model
+simulate.py            10,000-iteration ensemble Monte Carlo of the 2026 bracket
+train_model.py         Fits the GLM-Poisson baseline + 2026 team ratings
+train_advanced.py      XGBoost + Dixon-Coles + ensemble + calibration analysis
+backtest_goldenball.py Golden Ball validation on the 2022 World Cup
 scraper*.py            Data collection (StatsBomb / Understat / Guardian)
 dashboard.html         ← the deliverable (open in a browser)
 Data/
   data/raw/            Group draw, bracket slots, best-third combinations
-  data/processed/      Trained model, team ratings, training data, Elo
+  data/processed/      Models (GLM/XGB/DC), ratings, ensemble, calibration, Elo
   scraped/             Player xG (club + tournament), 2026 squads
   simulated/           Champion probabilities + bracket predictions
   fifa_ranking_*.csv   FIFA ranking snapshots

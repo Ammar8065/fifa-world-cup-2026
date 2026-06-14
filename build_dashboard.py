@@ -18,6 +18,12 @@ slots_df  = pd.read_csv("Data/data/raw/knockout_slots.csv")
 players   = pd.read_csv("Data/scraped/player_xg.csv")
 groups_df = pd.read_csv("Data/data/raw/groups.csv")
 
+def _load_json(p):
+    fp = Path(p)
+    return json.loads(fp.read_text(encoding="utf-8")) if fp.exists() else None
+model_eval  = _load_json("Data/data/processed/model_eval.json")       # calibration
+gb_backtest = _load_json("Data/data/processed/gb_backtest_2022.json") # GB validation
+
 CANON = {
     "Bosnia and Herzegovina": "Bosnia-Herzegovina",
     "DR Congo": "Congo DR",
@@ -479,6 +485,8 @@ ypoty_js   = to_js(ypoty_df.to_dict("records"))
 bestdef_js = to_js(best_def_teams.to_dict("records"))
 bestatt_js = to_js(best_att_teams.to_dict("records"))
 goldenball_js = to_js(golden_ball_candidates[:12])
+modeleval_js  = to_js(model_eval)
+gbbacktest_js = to_js(gb_backtest)
 flags_js   = to_js(FLAGS)
 flagiso_js = to_js(FLAG_ISO)
 young_js   = to_js(YOUNG_PLAYERS)
@@ -1986,6 +1994,10 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
       Awards
     </button>
+    <button class="nav-tab" onclick="showTab('model',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+      Model
+    </button>
     <button class="nav-tab" onclick="showTab('team',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       My Team
@@ -2180,6 +2192,47 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
   </div>
 </div>
 
+<!-- ════════════════ MODEL & VALIDATION ════════════════ -->
+<div id="panel-model" class="panel">
+  <div class="sec-header">
+    <div class="sec-eyebrow">How the forecast is built &amp; how it's tested</div>
+    <div class="sec-title">Model &amp; Validation</div>
+    <div class="sec-sub">The match engine is an <b>ensemble</b> of three goal models, evaluated out-of-sample on every international since 2022. Below: head-to-head accuracy &amp; calibration, the ensemble blend, and a backtest of the Golden Ball model on the 2022 World Cup.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div class="card">
+      <div class="sec-eyebrow" style="margin-bottom:6px">Out-of-sample holdout</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px">Model Comparison</div>
+      <div style="font-size:11.5px;color:var(--txt2);margin-bottom:14px" id="model-sub"></div>
+      <div class="tbl-scroll"><table class="data-table" id="model-table"></table></div>
+      <div style="font-size:11px;color:var(--txt3);margin-top:10px;line-height:1.5">Lower log-loss / Brier / ECE = better. <b>Brier</b> = mean squared probability error; <b>ECE</b> = expected calibration error (gap between confidence and accuracy).</div>
+    </div>
+    <div class="card">
+      <div class="sec-eyebrow" style="margin-bottom:6px">Reliability &mdash; predicted vs actual</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Calibration Curve</div>
+      <div id="chart-reliability" style="height:340px"></div>
+      <div style="font-size:11px;color:var(--txt3);margin-top:6px;line-height:1.5">Home-win probability, binned. Points on the dashed diagonal = perfectly calibrated (a 30%-predicted bucket happens ~30% of the time).</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="card">
+      <div class="sec-eyebrow" style="margin-bottom:6px">The match engine</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:14px">Ensemble Composition</div>
+      <div id="ensemble-blend"></div>
+      <div style="font-size:11.5px;color:var(--txt2);margin-top:14px;line-height:1.6" id="ensemble-note"></div>
+    </div>
+    <div class="card">
+      <div class="sec-eyebrow" style="margin-bottom:6px">Does the Golden Ball model work?</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px">Backtest &mdash; 2022 World Cup</div>
+      <div style="font-size:11.5px;color:var(--txt2);margin-bottom:14px" id="backtest-sub"></div>
+      <div id="backtest-list"></div>
+      <div style="font-size:11px;color:var(--txt3);margin-top:10px;line-height:1.55" id="backtest-note"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ════════════════ TEAM DEEP DIVE ════════════════ -->
 <div id="panel-team" class="panel">
   <div class="sec-header">
@@ -2216,6 +2269,8 @@ const YPOTY    = {ypoty_js};
 const BEST_DEF = {bestdef_js};
 const BEST_ATT = {bestatt_js};
 const GOLDEN_BALL = {goldenball_js};
+const MODEL_EVAL  = {modeleval_js};
+const GB_BACKTEST = {gbbacktest_js};
 const FLAGS    = {flags_js};
 const FLAGCODE = {flagiso_js};
 const YOUNG    = {young_js};
@@ -2284,6 +2339,7 @@ function showTab(name, btn) {{
   if (name === 'bracket')     renderBracket();
   if (name === 'explorer')    renderExplorer();
   if (name === 'players')     renderPlayers();
+  if (name === 'model')       renderModel();
   if (name === 'team')        initTeam();
   // Resize Plotly charts if they exist in this panel (handles 0-width render bug)
   setTimeout(() => {{
@@ -3072,6 +3128,106 @@ function renderPlayers() {{
       <div class="player-xg gb-pct">${{pct(+p.win_prob)}}</div>
     </div>
   `).join('');
+}}
+
+// ── MODEL & VALIDATION ─────────────────────────────────────────────────────────
+let modelDone = false;
+function renderModel() {{
+  if (modelDone) return; modelDone = true;
+  if (!MODEL_EVAL) {{ document.getElementById('panel-model').innerHTML =
+    '<div class="card">Model evaluation data not available — run train_advanced.py.</div>'; return; }}
+
+  // ---- model comparison table ----
+  const order = ['GLM-Poisson', 'XGBoost', 'Dixon-Coles', 'Ensemble'];
+  const M = MODEL_EVAL.models;
+  document.getElementById('model-sub').innerHTML =
+    `W/D/L on <b>${{MODEL_EVAL.n_matches.toLocaleString()}}</b> internationals since ${{MODEL_EVAL.holdout_from.slice(0,4)}} (never seen in training).`;
+  // best value per metric → bolded
+  const bestAcc = Math.max(...order.map(k => M[k].accuracy));
+  const bestLL = Math.min(...order.map(k => M[k].log_loss));
+  const bestBr = Math.min(...order.map(k => M[k].brier));
+  const bestEce = Math.min(...order.map(k => M[k].ece));
+  const cell = (v, isBest, dec) => `<td class="${{isBest?'gold':''}}" style="text-align:center;font-variant-numeric:tabular-nums">${{(+v).toFixed(dec)}}</td>`;
+  document.getElementById('model-table').innerHTML =
+    `<thead><tr><th>Model</th><th style="text-align:center">Accuracy</th><th style="text-align:center">Log-loss</th><th style="text-align:center">Brier</th><th style="text-align:center">ECE</th></tr></thead><tbody>` +
+    order.map(k => {{
+      const m = M[k], ens = k === 'Ensemble';
+      return `<tr style="${{ens?'background:rgba(245,158,11,.07)':''}}">
+        <td class="${{ens?'highlight':''}}" style="font-weight:${{ens?700:600}}">${{k}}${{ens?' &#9733;':''}}</td>
+        ${{cell(m.accuracy*100, m.accuracy===bestAcc, 1).replace('</td>','%</td>')}}
+        ${{cell(m.log_loss, m.log_loss===bestLL, 4)}}
+        ${{cell(m.brier, m.brier===bestBr, 4)}}
+        ${{cell(m.ece, m.ece===bestEce, 4)}}
+      </tr>`;
+    }}).join('') + `</tbody>`;
+
+  // ---- reliability curve (ensemble) ----
+  const rel = M['Ensemble'].reliability;
+  Plotly.newPlot('chart-reliability', [
+    {{ x:[0,1], y:[0,1], mode:'lines', line:{{dash:'dash', color:'rgba(20,33,58,.35)', width:1.5}},
+       hoverinfo:'skip', showlegend:false }},
+    {{ x:rel.map(b=>b.p_pred), y:rel.map(b=>b.p_obs), mode:'markers+lines',
+       line:{{color:'#C2740B', width:2}},
+       marker:{{ size:rel.map(b=>Math.max(7, Math.min(22, Math.sqrt(b.n)*1.1))),
+                color:'rgba(194,116,11,.85)', line:{{color:'#fff', width:1.5}} }},
+       customdata:rel.map(b=>b.n),
+       hovertemplate:'predicted %{{x:.0%}}<br>actual %{{y:.0%}}<br>%{{customdata}} matches<extra></extra>',
+       showlegend:false }},
+  ], {{ ...PLOTLY_LAYOUT, height:340, margin:{{t:10,l:48,r:14,b:42}},
+    xaxis:{{ title:{{text:'PREDICTED HOME-WIN PROB', font:{{family:'Space Grotesk',size:9,color:'#4B5872'}}}},
+      range:[0,1], tickformat:'.0%', gridcolor:'rgba(20,33,58,.07)', zeroline:false, tickfont:{{size:9}} }},
+    yaxis:{{ title:{{text:'ACTUAL FREQUENCY', font:{{family:'Space Grotesk',size:9,color:'#4B5872'}}}},
+      range:[0,1], tickformat:'.0%', gridcolor:'rgba(20,33,58,.07)', zeroline:false, tickfont:{{size:9}} }},
+  }}, PLOTLY_CFG);
+
+  // ---- ensemble composition ----
+  const W = MODEL_EVAL.ensemble_weights;
+  const blendDefs = [
+    {{k:'XGBoost', d:'gradient-boosted trees · 6 features', c:'rgba(124,58,237,.85)'}},
+    {{k:'Dixon-Coles', d:'team attack/defence + ρ low-score', c:'rgba(16,185,129,.85)'}},
+    {{k:'GLM-Poisson', d:'4-feature Poisson baseline', c:'rgba(59,130,246,.85)'}},
+  ];
+  document.getElementById('ensemble-blend').innerHTML = blendDefs.map(b => {{
+    const w = (W[b.k]||0);
+    return `<div style="margin-bottom:13px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px">
+        <span style="font-size:12.5px;font-weight:600">${{b.k}}</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:${{b.c}}">${{(w*100).toFixed(0)}}%</span>
+      </div>
+      <div style="height:8px;border-radius:5px;background:rgba(20,33,58,.07);overflow:hidden">
+        <div style="height:100%;width:${{(w*100).toFixed(0)}}%;background:${{b.c}};border-radius:5px"></div>
+      </div>
+      <div style="font-size:10.5px;color:var(--txt3);margin-top:3px">${{b.d}}</div>
+    </div>`;
+  }}).join('');
+  document.getElementById('ensemble-note').innerHTML =
+    `Blend weights tuned on the train split (no holdout leakage). The simulation draws each scoreline from the ensemble&rsquo;s expected goals; Dixon-Coles contributes a home-advantage term (γ=${{(+MODEL_EVAL.dc.home_adv).toFixed(2)}}) and the low-score correction (ρ=${{(+MODEL_EVAL.dc.rho).toFixed(3)}}).`;
+
+  // ---- Golden Ball backtest ----
+  if (GB_BACKTEST) {{
+    const podium = GB_BACKTEST.podium_recovery;
+    const hit = GB_BACKTEST.hit_at_1;
+    document.getElementById('backtest-sub').innerHTML =
+      `Replayed the Golden Ball logic on WC22. <b style="color:${{hit?'var(--green)':'var(--red)'}}">${{hit?'✓ correctly ranks Messi #1':'missed #1'}}</b> &middot; actual winner: ${{GB_BACKTEST.actual_winner}}.`;
+    const actualRank = {{}}; podium.forEach(p => actualRank[p.player] = p);
+    document.getElementById('backtest-list').innerHTML = GB_BACKTEST.predicted_top.slice(0,6).map(r => {{
+      const tag = podium.find(p => p.player === r.player);
+      const lbl = tag ? `<span style="color:var(--green);font-weight:600;font-size:10.5px"> &nbsp;✓ ${{tag.actual}}</span>` : '';
+      const surname = r.player.split(' ').slice(-1)[0];
+      return `<div class="player-row">
+        <div class="player-rank ${{r.rank<=3?'top3':''}}">${{r.rank}}</div>
+        <div class="player-flag">${{flagImg(r.team, 18)}}</div>
+        <div class="player-info">
+          <div class="player-name">${{r.player.split(' ').slice(0,2).join(' ')}}${{lbl}}</div>
+          <div class="player-team">${{r.team}} &middot; ${{r.ga}} G+A &middot; ${{(+r.xg).toFixed(1)}} xG &middot; ${{r.stage}}</div>
+        </div>
+        <div class="player-xg" style="color:rgba(180,130,0,1)">${{(+r.score).toFixed(1)}}</div>
+      </div>`;
+    }}).join('');
+    const modr = podium.find(p => p.actual.indexOf('3rd') >= 0);
+    document.getElementById('backtest-note').innerHTML =
+      `The model nails the top two (Messi &amp; Mbappé). It ranks Modrić only #${{modr?modr.predicted_rank:'—'}} — by design: it scores <i>attacking output</i>, so a deep-lying playmaker is invisible to it (the same limitation noted on the Golden Ball card). ${{GB_BACKTEST.method}}`;
+  }}
 }}
 
 // ── TEAM DEEP DIVE ─────────────────────────────────────────────────────────────
