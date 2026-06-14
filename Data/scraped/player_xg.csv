@@ -1,0 +1,1149 @@
+player,team,competitions,matches,shots,xg,goals,xg_per_match,goals_per_match,shot_accuracy
+Lionel Andrés Messi Cuccittini,Argentina,FIFA World Cup 2022; Copa America 2024,12,48,10.4319,10,0.8693,0.8333,0.208
+Kylian Mbappé Lottin,France,FIFA World Cup 2022; UEFA Euro 2024,12,56,7.5236,10,0.627,0.8333,0.179
+Cristiano Ronaldo dos Santos Aveiro,Portugal,FIFA World Cup 2022; UEFA Euro 2024,10,36,6.4756,3,0.6476,0.3,0.083
+Lautaro Javier Martínez,Argentina,FIFA World Cup 2022; Copa America 2024,11,26,5.7935,6,0.5267,0.5455,0.231
+Harry Kane,England,FIFA World Cup 2022; UEFA Euro 2024,11,30,5.3848,5,0.4895,0.4545,0.167
+Kai Havertz,Germany,FIFA World Cup 2022; UEFA Euro 2024,6,24,4.9337,4,0.8223,0.6667,0.167
+Yoane Wissa,Congo DR,AFCON 2023,6,21,4.2417,3,0.707,0.5,0.143
+Julián Álvarez,Argentina,FIFA World Cup 2022; Copa America 2024,10,21,4.2341,7,0.4234,0.7,0.333
+Robert Lewandowski,Poland,FIFA World Cup 2022; UEFA Euro 2024,4,17,4.1152,3,1.0288,0.75,0.176
+Breel-Donald Embolo,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,6,14,3.9609,4,0.6601,0.6667,0.286
+Jonathan David,Canada,FIFA World Cup 2022; Copa America 2024,8,18,3.7161,4,0.4645,0.5,0.222
+Teboho Mokoena,South Africa,AFCON 2023,7,22,3.5112,3,0.5016,0.4286,0.136
+Romelu Lukaku Menama,Belgium,FIFA World Cup 2022; UEFA Euro 2024,5,16,3.4353,0,0.6871,0.0,0.0
+Mostafa Mohamed Ahmed Abdallah,Egypt,AFCON 2023,4,15,3.2903,4,0.8226,1.0,0.267
+Olivier Giroud,France,FIFA World Cup 2022; UEFA Euro 2024,6,19,3.1929,4,0.5321,0.6667,0.211
+Memphis Depay,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,8,28,3.133,2,0.3916,0.25,0.071
+Victor James Osimhen,Nigeria,AFCON 2023,6,24,3.1126,1,0.5188,0.1667,0.042
+José Salomón Rondón Giménez,Venezuela,Copa America 2024,4,19,3.1017,4,0.7754,1.0,0.211
+Bruno Miguel Borges Fernandes,Portugal,FIFA World Cup 2022; UEFA Euro 2024,6,19,3.0364,4,0.5061,0.6667,0.211
+Emilio Nsue López,Equatorial Guinea,AFCON 2023,4,9,2.9521,5,0.738,1.25,0.556
+Lucas Tolentino Coelho de Lima,Brazil,FIFA World Cup 2022; Copa America 2024,5,15,2.9175,2,0.5835,0.4,0.133
+Alphonso Davies,Canada,FIFA World Cup 2022; Copa America 2024,8,12,2.8961,2,0.362,0.25,0.167
+Ismaïla Sarr,Senegal,FIFA World Cup 2022; AFCON 2023,8,17,2.8672,2,0.3584,0.25,0.118
+Enner Remberto Valencia Lastra,Ecuador,FIFA World Cup 2022; Copa America 2024,5,13,2.8138,3,0.5628,0.6,0.231
+Giorgian Daniel De Arrascaeta Benedetti,Uruguay,FIFA World Cup 2022; Copa America 2024,5,7,2.8048,4,0.561,0.8,0.571
+Álvaro Borja Morata Martín,Spain,FIFA World Cup 2022; UEFA Euro 2024,10,22,2.6765,4,0.2676,0.4,0.182
+Aleksandar Mitrović,Serbia,FIFA World Cup 2022; UEFA Euro 2024,5,20,2.6555,2,0.5311,0.4,0.1
+Niclas Füllkrug,Germany,FIFA World Cup 2022; UEFA Euro 2024,7,17,2.6033,4,0.3719,0.5714,0.235
+Youssef En-Nesyri,Morocco,FIFA World Cup 2022; AFCON 2023,7,19,2.558,3,0.3654,0.4286,0.158
+William Troost-Ekong,Nigeria,AFCON 2023,3,6,2.5434,4,0.8478,1.3333,0.667
+Bertrand Isidore Traoré,Burkina Faso,AFCON 2023,4,11,2.5324,3,0.6331,0.75,0.273
+Randal Kolo Muani,France,FIFA World Cup 2022; UEFA Euro 2024,6,8,2.5013,3,0.4169,0.5,0.375
+Rodrigo Bentancur Colmán,Uruguay,FIFA World Cup 2022; Copa America 2024,5,7,2.4958,4,0.4992,0.8,0.571
+Luka Modrić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,8,12,2.4909,2,0.3114,0.25,0.167
+Daniel Olmo Carvajal,Spain,FIFA World Cup 2022; UEFA Euro 2024,10,29,2.4622,4,0.2462,0.4,0.138
+Bernardo Mota Veiga de Carvalho e Silva,Portugal,FIFA World Cup 2022; UEFA Euro 2024,5,10,2.4213,3,0.4843,0.6,0.3
+Leandro Daniel Paredes,Argentina,FIFA World Cup 2022; Copa America 2024,6,7,2.42,2,0.4033,0.3333,0.286
+Gonzalo Ariel Montiel,Argentina,FIFA World Cup 2022; Copa America 2024,3,4,2.3711,3,0.7904,1.0,0.75
+Percy Tau,South Africa,AFCON 2023,4,12,2.3318,1,0.5829,0.25,0.083
+Chancel Mbemba Mangulu,Congo DR,AFCON 2023,5,7,2.3082,2,0.4616,0.4,0.286
+Jude Bellingham,England,FIFA World Cup 2022; UEFA Euro 2024,7,12,2.2889,4,0.327,0.5714,0.333
+Samuel Moutoussamy,Congo DR,AFCON 2023,6,9,2.2764,2,0.3794,0.3333,0.222
+Federico Santiago Valverde Dipetta,Uruguay,FIFA World Cup 2022; Copa America 2024,9,24,2.2736,3,0.2526,0.3333,0.125
+Cédric Bakambu,Congo DR,AFCON 2023,6,10,2.2253,1,0.3709,0.1667,0.1
+Nikola Vlašić,Croatia,FIFA World Cup 2022,5,7,2.1956,2,0.4391,0.4,0.286
+Ricardo Daniel Pepi,United States,Copa America 2024,2,7,2.1585,0,1.0792,0.0,0.0
+Rodrygo Silva de Goes,Brazil,FIFA World Cup 2022; Copa America 2024,7,17,2.1487,0,0.307,0.0,0.0
+Franck Yannick Kessié,Côte d'Ivoire,AFCON 2023,5,11,2.1391,3,0.4278,0.6,0.273
+Neymar da Silva Santos Junior,Brazil,FIFA World Cup 2022,3,12,2.1293,2,0.7098,0.6667,0.167
+Luis Alberto Suárez Díaz,Uruguay,FIFA World Cup 2022; Copa America 2024,5,8,2.0942,2,0.4188,0.4,0.25
+Meschak Elia,Congo DR,AFCON 2023,4,7,2.079,1,0.5198,0.25,0.143
+Darwin Gabriel Núñez Ribeiro,Uruguay,FIFA World Cup 2022; Copa America 2024,9,24,2.0776,2,0.2308,0.2222,0.083
+Jamal Musiala,Germany,FIFA World Cup 2022; UEFA Euro 2024,8,21,2.0535,3,0.2567,0.375,0.143
+Evidence Makgopa,South Africa,AFCON 2023,7,13,2.0531,1,0.2933,0.1429,0.077
+Ismael Koné,Canada,Copa America 2024,3,7,2.029,2,0.6763,0.6667,0.286
+Georges Mikautadze,Georgia,UEFA Euro 2024,3,6,2.0251,3,0.675,1.0,0.5
+Antoine Griezmann,France,FIFA World Cup 2022; UEFA Euro 2024,9,18,2.0156,0,0.224,0.0,0.0
+Andrej Kramarić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,7,14,2.0148,3,0.2878,0.4286,0.214
+Achraf Hakimi Mouh,Morocco,FIFA World Cup 2022; AFCON 2023,8,11,1.979,2,0.2474,0.25,0.182
+Phil Foden,England,FIFA World Cup 2022; UEFA Euro 2024,7,18,1.9757,1,0.2822,0.1429,0.056
+Cristóvão Paciência Mabululo,Angola,AFCON 2023,5,14,1.9331,3,0.3866,0.6,0.214
+Alexis Mac Allister,Argentina,FIFA World Cup 2022; Copa America 2024,7,14,1.9104,2,0.2729,0.2857,0.143
+Baghdad Bounedjah,Algeria,AFCON 2023,3,9,1.8909,3,0.6303,1.0,0.333
+Sébastien Haller,Côte d'Ivoire,AFCON 2023,4,11,1.8837,3,0.4709,0.75,0.273
+Bukayo Saka,England,FIFA World Cup 2022; UEFA Euro 2024,8,16,1.88,5,0.235,0.625,0.312
+İlkay Gündoğan,Germany,FIFA World Cup 2022; UEFA Euro 2024,4,13,1.875,2,0.4687,0.5,0.154
+Silas Katompa Mvumpa,Congo DR,AFCON 2023,5,5,1.8459,2,0.3692,0.4,0.4
+Tanitoluwa Oluwaseyi,Canada,Copa America 2024,4,9,1.7761,0,0.444,0.0,0.0
+Marko Livaja,Croatia,FIFA World Cup 2022,4,7,1.774,1,0.4435,0.25,0.143
+Gonçalo Matias Ramos,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,8,1.7733,3,0.5911,1.0,0.375
+Mohamed Bayo,Guinea,AFCON 2023,4,9,1.7697,3,0.4424,0.75,0.333
+Raphael Dias Belloli,Brazil,FIFA World Cup 2022; Copa America 2024,7,16,1.7597,1,0.2514,0.1429,0.062
+Lovro Majer,Croatia,FIFA World Cup 2022; UEFA Euro 2024,6,7,1.7521,2,0.292,0.3333,0.286
+Moise Bombito,Canada,Copa America 2024,2,5,1.6968,2,0.8484,1.0,0.4
+Manuel Obafemi Akanji,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,5,5,1.6662,1,0.3332,0.2,0.2
+Ray Kendry Páez Andrade,Ecuador,Copa America 2024,4,11,1.6598,1,0.415,0.25,0.091
+Jordan Ayew,Ghana,FIFA World Cup 2022; AFCON 2023,3,4,1.658,2,0.5527,0.6667,0.5
+Habibou Mouhamadou Diallo,Senegal,AFCON 2023,3,5,1.6376,2,0.5459,0.6667,0.4
+Aubrey Maphosa Modiba,South Africa,AFCON 2023,5,6,1.6345,1,0.3269,0.2,0.167
+João Félix Sequeira,Portugal,FIFA World Cup 2022; UEFA Euro 2024,6,16,1.6339,1,0.2723,0.1667,0.062
+Richarlison de Andrade,Brazil,FIFA World Cup 2022,4,8,1.6177,3,0.4044,0.75,0.375
+Zakhele Lerato Lepasa,South Africa,AFCON 2023,3,3,1.617,1,0.539,0.3333,0.333
+Ousmane Dembélé,France,FIFA World Cup 2022; UEFA Euro 2024,9,17,1.6051,1,0.1783,0.1111,0.059
+Aurélien Djani Tchouaméni,France,FIFA World Cup 2022; UEFA Euro 2024,11,19,1.5878,1,0.1443,0.0909,0.053
+Lamine Yamal Nasraoui Ebana,Spain,UEFA Euro 2024,6,18,1.5872,1,0.2645,0.1667,0.056
+Marko Arnautović,Austria,UEFA Euro 2024,3,4,1.5737,1,0.5246,0.3333,0.25
+Mothobi Mvala,South Africa,AFCON 2023,2,2,1.567,2,0.7835,1.0,1.0
+Salem Mohammed Al Dawsari,Saudi Arabia,FIFA World Cup 2022,3,7,1.5641,2,0.5214,0.6667,0.286
+Nicolás Hernán Otamendi,Argentina,FIFA World Cup 2022; Copa America 2024,3,4,1.5552,1,0.5184,0.3333,0.25
+Christoph Baumgartner,Austria,UEFA Euro 2024,3,8,1.5509,1,0.517,0.3333,0.125
+Sadio Mané,Senegal,AFCON 2023,3,7,1.5441,2,0.5147,0.6667,0.286
+Vinícius José Paixão de Oliveira Júnior,Brazil,FIFA World Cup 2022; Copa America 2024,6,13,1.5435,3,0.2572,0.5,0.231
+Garry Mendes Rodrigues,Cape Verde Islands,AFCON 2023,4,9,1.5398,1,0.385,0.25,0.111
+Lassine Sinayoko,Mali,AFCON 2023,4,9,1.5256,3,0.3814,0.75,0.333
+Jacinto Muondo Dala,Angola,AFCON 2023,3,9,1.5217,4,0.5072,1.3333,0.444
+Christian Pulisic,United States,FIFA World Cup 2022; Copa America 2024,5,16,1.5126,2,0.3025,0.4,0.125
+Donyell Malen,Netherlands,UEFA Euro 2024,3,6,1.5092,2,0.5031,0.6667,0.333
+Ferrán Torres García,Spain,FIFA World Cup 2022; UEFA Euro 2024,5,9,1.4969,3,0.2994,0.6,0.333
+Marcelo Brozović,Croatia,FIFA World Cup 2022; UEFA Euro 2024,6,8,1.496,1,0.2493,0.1667,0.125
+Omar Marmoush,Egypt,AFCON 2023,4,9,1.4795,2,0.3699,0.5,0.222
+Cody Mathès Gakpo,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,9,18,1.4473,6,0.1608,0.6667,0.333
+Enzo Fernandez,Argentina,FIFA World Cup 2022; Copa America 2024,10,15,1.4404,1,0.144,0.1,0.067
+Wout Weghorst,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,5,7,1.4391,4,0.2878,0.8,0.571
+Luis Fernando Díaz Marulanda,Colombia,Copa America 2024,6,9,1.432,2,0.2387,0.3333,0.222
+Ryan Isaac Mendes da Graça,Cape Verde Islands,AFCON 2023,3,6,1.4279,2,0.476,0.6667,0.333
+Hakim Ziyech,Morocco,FIFA World Cup 2022; AFCON 2023,10,18,1.3904,3,0.139,0.3,0.167
+Mihlali Samson Mayambela,South Africa,AFCON 2023,3,8,1.387,1,0.4623,0.3333,0.125
+Christian Kouamé,Côte d'Ivoire,AFCON 2023,3,5,1.3846,1,0.4615,0.3333,0.2
+Marcus Rashford,England,FIFA World Cup 2022,5,11,1.3826,3,0.2765,0.6,0.273
+Mehdi Taremi,IR Iran,FIFA World Cup 2022,3,6,1.3781,2,0.4594,0.6667,0.333
+Peter Shalulile,Namibia,AFCON 2023,2,10,1.3733,0,0.6867,0.0,0.0
+Jhon Andrés Córdoba Copete,Colombia,Copa America 2024,5,11,1.3677,2,0.2735,0.4,0.182
+Xherdan Shaqiri,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,4,7,1.3645,3,0.3411,0.75,0.429
+Stephen Antunes Eustáquio,Canada,FIFA World Cup 2022; Copa America 2024,4,7,1.3518,0,0.3379,0.0,0.0
+Ayoub El Kaabi,Morocco,AFCON 2023,3,6,1.3322,0,0.4441,0.0,0.0
+Virgil van Dijk,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,8,9,1.3246,0,0.1656,0.0,0.0
+Ademola Lookman,Nigeria,AFCON 2023,5,8,1.3196,3,0.2639,0.6,0.375
+Orbelín Pineda Alvarado,Mexico,FIFA World Cup 2022; Copa America 2024,3,7,1.3171,0,0.439,0.0,0.0
+Youssef Msakni,Tunisia,FIFA World Cup 2022; AFCON 2023,4,15,1.3024,0,0.3256,0.0,0.0
+Marcus Thuram,France,FIFA World Cup 2022; UEFA Euro 2024,5,13,1.2943,0,0.2589,0.0,0.0
+Tiago Manuel Dias Correia,Cape Verde Islands,AFCON 2023,4,17,1.2917,1,0.3229,0.25,0.059
+Theo Bernard François Hernández,France,FIFA World Cup 2022; UEFA Euro 2024,7,10,1.2859,2,0.1837,0.2857,0.2
+Takuma Asano,Japan,FIFA World Cup 2022,4,9,1.2795,2,0.3199,0.5,0.222
+José María Giménez de Vargas,Uruguay,FIFA World Cup 2022; Copa America 2024,6,8,1.2794,0,0.2132,0.0,0.0
+Davinson Sánchez Mina,Colombia,Copa America 2024,3,7,1.2769,1,0.4256,0.3333,0.143
+Carlos Soler Barragán,Spain,FIFA World Cup 2022,2,5,1.2715,1,0.6357,0.5,0.2
+André Ayew Pelé,Ghana,FIFA World Cup 2022,2,2,1.2687,1,0.6344,0.5,0.5
+Alan Steve Minda García,Ecuador,Copa America 2024,2,2,1.2543,1,0.6272,0.5,0.5
+Andraž Šporar,Slovenia,UEFA Euro 2024,3,8,1.2493,0,0.4164,0.0,0.0
+Muhammed Kerem Aktürkoğlu,Türkiye,UEFA Euro 2024,3,6,1.2462,1,0.4154,0.3333,0.167
+Dan Ndoye,Switzerland,UEFA Euro 2024,5,14,1.2404,1,0.2481,0.2,0.071
+Bruno Petković,Croatia,FIFA World Cup 2022; UEFA Euro 2024,3,5,1.2374,1,0.4125,0.3333,0.2
+Mario Pašalić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,3,7,1.229,1,0.4097,0.3333,0.143
+Pedro Guilherme Abreu dos Santos,Brazil,FIFA World Cup 2022,2,5,1.2157,1,0.6078,0.5,0.2
+Kalidou Koulibaly,Senegal,FIFA World Cup 2022; AFCON 2023,3,5,1.2002,2,0.4001,0.6667,0.4
+Patrik Schick,Czechia,UEFA Euro 2024,1,7,1.1935,1,1.1935,1.0,0.143
+Gabriel Teodoro Martinelli Silva,Brazil,FIFA World Cup 2022; Copa America 2024,2,5,1.1893,1,0.5947,0.5,0.2
+Cheikh Ahmadou Bamba Mbacke Dieng,Senegal,FIFA World Cup 2022; AFCON 2023,4,5,1.1674,2,0.2918,0.5,0.4
+Ambrosini Antonio Cabaça Salvador,Angola,AFCON 2023,4,7,1.1476,1,0.2869,0.25,0.143
+Fabián Ruiz Peña,Spain,UEFA Euro 2024,6,17,1.145,2,0.1908,0.3333,0.118
+Carlos Henrique Casimiro,Brazil,FIFA World Cup 2022,4,10,1.1433,2,0.2858,0.5,0.2
+Morgan Guilavogui,Guinea,AFCON 2023,4,6,1.1419,0,0.2855,0.0,0.0
+Ahmed Elsayed Ali Elsayed Hegazy,Egypt,AFCON 2023,2,3,1.141,1,0.5705,0.5,0.333
+James David Rodríguez Rubio,Colombia,Copa America 2024,5,8,1.1124,1,0.2225,0.2,0.125
+Fabian Lukas Schär,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,5,8,1.1076,1,0.2215,0.2,0.125
+Éder Gabriel Militão,Brazil,FIFA World Cup 2022; Copa America 2024,5,7,1.1073,0,0.2215,0.0,0.0
+Facundo Pellistri Rebollo,Uruguay,FIFA World Cup 2022; Copa America 2024,3,4,1.1072,1,0.3691,0.3333,0.25
+Rasmus Winther Højlund,Denmark,UEFA Euro 2024,3,6,1.104,0,0.368,0.0,0.0
+Denis Mihai Drăguş,Romania,UEFA Euro 2024,3,5,1.1,1,0.3667,0.3333,0.2
+Temitayo Olufisayo Olaoluwa Aina,Nigeria,AFCON 2023,4,4,1.0986,0,0.2747,0.0,0.0
+Willy Afonso Semedo Johnson,Cape Verde Islands,AFCON 2023,3,5,1.0951,0,0.365,0.0,0.0
+Yangel Clemente Herrera Ravelo,Venezuela,Copa America 2024,4,8,1.0906,0,0.2726,0.0,0.0
+Ángel Fabián Di María Hernández,Argentina,FIFA World Cup 2022; Copa America 2024,7,13,1.0824,1,0.1546,0.1429,0.077
+Mohammed Kudus,Ghana,FIFA World Cup 2022; AFCON 2023,5,17,1.0684,4,0.2137,0.8,0.235
+Nicolas Pépé,Côte d'Ivoire,AFCON 2023,4,5,1.0634,1,0.2659,0.25,0.2
+Nicolás Alejandro Tagliafico,Argentina,FIFA World Cup 2022; Copa America 2024,5,6,1.0601,0,0.212,0.0,0.0
+Mislav Oršić,Croatia,FIFA World Cup 2022,5,10,1.0596,2,0.2119,0.4,0.2
+Kevin De Bruyne,Belgium,FIFA World Cup 2022; UEFA Euro 2024,7,18,1.0558,1,0.1508,0.1429,0.056
+Bryan Alberto Silva Teixeira Jr.,Cape Verde Islands,AFCON 2023,2,3,1.0549,2,0.5274,1.0,0.667
+Dušan Vlahović,Serbia,FIFA World Cup 2022; UEFA Euro 2024,4,9,1.0329,1,0.2582,0.25,0.111
+Jean-Charles Castelletto,Cameroon,FIFA World Cup 2022; AFCON 2023,3,3,1.0303,2,0.3434,0.6667,0.667
+Santiago Tomás Giménez,Mexico,Copa America 2024,3,8,1.0287,0,0.3429,0.0,0.0
+Marcos Aoás Corrêa,Brazil,FIFA World Cup 2022; Copa America 2024,3,3,1.0274,0,0.3425,0.0,0.0
+Jules Koundé,France,FIFA World Cup 2022; UEFA Euro 2024,5,6,1.0239,1,0.2048,0.2,0.167
+Tajon Buchanan,Canada,FIFA World Cup 2022; Copa America 2024,5,7,1.0059,0,0.2012,0.0,0.0
+Adrien Rabiot,France,FIFA World Cup 2022; UEFA Euro 2024,7,12,0.9902,1,0.1415,0.1429,0.083
+Christian Dannemann Eriksen,Denmark,FIFA World Cup 2022; UEFA Euro 2024,7,16,0.9891,1,0.1413,0.1429,0.062
+Ruben Vargas,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,6,8,0.9872,1,0.1645,0.1667,0.125
+Karl Brillant Toko Ekambi,Cameroon,FIFA World Cup 2022; AFCON 2023,4,8,0.9867,1,0.2467,0.25,0.125
+Bruno Guimarães Rodriguez Moura,Brazil,FIFA World Cup 2022; Copa America 2024,5,11,0.9856,0,0.1971,0.0,0.0
+Jordy Josué Caicedo Medina,Ecuador,Copa America 2024,1,3,0.9842,1,0.9842,1.0,0.333
+Adama Traoré,Mali,AFCON 2023,3,6,0.9773,0,0.3258,0.0,0.0
+Steven Berghuis,Netherlands,FIFA World Cup 2022,3,6,0.9755,0,0.3252,0.0,0.0
+Youssouf Fofana,France,FIFA World Cup 2022; UEFA Euro 2024,5,6,0.9721,1,0.1944,0.2,0.167
+Romain Saïss,Morocco,FIFA World Cup 2022; AFCON 2023,2,2,0.9711,2,0.4856,1.0,1.0
+Nuno Mendes,Portugal,UEFA Euro 2024,2,4,0.9682,1,0.4841,0.5,0.25
+Manuel Ugarte Ribeiro,Uruguay,Copa America 2024,4,5,0.9628,1,0.2407,0.25,0.2
+Liam Millar,Canada,Copa America 2024,4,6,0.9623,0,0.2406,0.0,0.0
+Sardar Azmoun,IR Iran,FIFA World Cup 2022,2,5,0.9606,0,0.4803,0.0,0.0
+Piotr Zieliński,Poland,FIFA World Cup 2022; UEFA Euro 2024,5,11,0.9604,1,0.1921,0.2,0.091
+Kelechi Promise Iheanacho,Nigeria,AFCON 2023,2,4,0.9581,1,0.4791,0.5,0.25
+Nicholas Williams Arthuer,Spain,UEFA Euro 2024,4,12,0.9486,2,0.2371,0.5,0.167
+Mohamed Abdelmonem,Egypt,AFCON 2023,4,6,0.9475,1,0.2369,0.25,0.167
+Barnabás Varga,Hungary,UEFA Euro 2024,2,4,0.9389,1,0.4694,0.5,0.25
+Mohamed Salah,Egypt,AFCON 2023,1,4,0.9348,1,0.9348,1.0,0.25
+Arthur Masuaku,Congo DR,AFCON 2023,4,7,0.9332,1,0.2333,0.25,0.143
+Mohamed Zeki Amdouni,Switzerland,UEFA Euro 2024,2,3,0.9329,1,0.4665,0.5,0.333
+Jhonder Leonel Cádiz Fernández,Venezuela,Copa America 2024,2,4,0.932,2,0.466,1.0,0.5
+Hamari Traoré,Mali,AFCON 2023,3,3,0.9214,1,0.3071,0.3333,0.333
+Cole Palmer,England,UEFA Euro 2024,4,4,0.9202,2,0.2301,0.5,0.5
+Geny Cipriano Catamo,Mozambique,AFCON 2023,2,4,0.9177,1,0.4589,0.5,0.25
+Lisandro Martínez,Argentina,FIFA World Cup 2022; Copa America 2024,4,6,0.909,1,0.2273,0.25,0.167
+Trent Alexander-Arnold,England,UEFA Euro 2024,3,5,0.9083,1,0.3028,0.3333,0.2
+Abdelhamid Sabiri,Morocco,FIFA World Cup 2022,2,4,0.9069,1,0.4534,0.5,0.25
+Ivan Toney,England,UEFA Euro 2024,2,2,0.9069,1,0.4534,0.5,0.5
+Maximiliano Javier Araújo Vilches,Uruguay,Copa America 2024,5,11,0.8957,2,0.1791,0.4,0.182
+Pape Ibnou Bâ,Mauritania,AFCON 2023,2,3,0.8938,0,0.4469,0.0,0.0
+Grady Diangana,Congo DR,AFCON 2023,2,3,0.8917,1,0.4458,0.5,0.333
+Andreas Christensen,Denmark,FIFA World Cup 2022; UEFA Euro 2024,5,6,0.8911,1,0.1782,0.2,0.167
+John Yeboah Zamora,Ecuador,Copa America 2024,3,4,0.8906,1,0.2969,0.3333,0.25
+Răzvan Gabriel Marin,Romania,UEFA Euro 2024,3,6,0.8903,2,0.2968,0.6667,0.333
+Pape Matar Sarr,Senegal,FIFA World Cup 2022; AFCON 2023,2,6,0.8881,1,0.4441,0.5,0.167
+Pablo Sarabia García,Spain,FIFA World Cup 2022,1,2,0.8876,0,0.8876,0.0,0.0
+Sergio Busquets i Burgos,Spain,FIFA World Cup 2022,2,3,0.8871,0,0.4436,0.0,0.0
+Cyle Larin,Canada,FIFA World Cup 2022; Copa America 2024,5,10,0.8818,0,0.1764,0.0,0.0
+Ivan Schranz,Slovakia,UEFA Euro 2024,3,5,0.8769,3,0.2923,1.0,0.6
+Teun Koopmeiners,Netherlands,FIFA World Cup 2022,3,3,0.8734,1,0.2911,0.3333,0.333
+Ao Tanaka,Japan,FIFA World Cup 2022,1,1,0.8726,1,0.8726,1.0,1.0
+Kingsley Coman,France,FIFA World Cup 2022,2,2,0.8714,0,0.4357,0.0,0.0
+Bradley Barcola,France,UEFA Euro 2024,2,3,0.8626,1,0.4313,0.5,0.333
+Siyanda Xulu,South Africa,AFCON 2023,2,2,0.8615,1,0.4308,0.5,0.5
+Mathías Olivera Miramontes,Uruguay,FIFA World Cup 2022; Copa America 2024,5,6,0.8522,1,0.1704,0.2,0.167
+Pedro González López,Spain,UEFA Euro 2024,3,6,0.8513,0,0.2838,0.0,0.0
+Gedeon Kalulu Kyatengwa,Congo DR,AFCON 2023,2,2,0.8453,1,0.4227,0.5,0.5
+Benjamin Šeško,Slovenia,UEFA Euro 2024,4,8,0.8443,0,0.2111,0.0,0.0
+Miguel Ángel Borja Hernández,Colombia,Copa America 2024,2,2,0.8428,1,0.4214,0.5,0.5
+Kaoru Mitoma,Japan,FIFA World Cup 2022,1,2,0.8376,0,0.8376,0.0,0.0
+Luuk de Jong,Netherlands,FIFA World Cup 2022,1,2,0.8364,1,0.8364,1.0,0.5
+Ivan Perišić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,8,20,0.8361,1,0.1045,0.125,0.05
+Ángel Israel Mena Delgado,Ecuador,Copa America 2024,1,2,0.8356,0,0.8356,0.0,0.0
+Takumi Minamino,Japan,FIFA World Cup 2022,2,3,0.834,0,0.417,0.0,0.0
+Tomás Eduardo Rincón Hernández,Venezuela,Copa America 2024,2,2,0.8325,1,0.4162,0.5,0.5
+Henoc Inonga Baka,Congo DR,AFCON 2023,1,2,0.8323,1,0.8323,1.0,0.5
+Josip Iličić,Slovenia,UEFA Euro 2024,1,2,0.8288,0,0.8288,0.0,0.0
+Benjamin Verbič,Slovenia,UEFA Euro 2024,1,2,0.8285,0,0.8285,0.0,0.0
+Roland Sallai,Hungary,UEFA Euro 2024,3,8,0.825,0,0.275,0.0,0.0
+Andreas Hoelgebaum Pereira,Brazil,Copa America 2024,2,2,0.8245,1,0.4123,0.5,0.5
+Antonio Rüdiger,Germany,FIFA World Cup 2022; UEFA Euro 2024,6,10,0.823,0,0.1372,0.0,0.0
+Michael Gregoritsch,Austria,UEFA Euro 2024,1,4,0.8204,1,0.8204,1.0,0.25
+Giorgi Kochorashvili,Georgia,UEFA Euro 2024,2,5,0.8157,0,0.4079,0.0,0.0
+Serge Aurier,Côte d'Ivoire,AFCON 2023,1,2,0.8064,1,0.8064,1.0,0.5
+Gareth Frank Bale,Wales,FIFA World Cup 2022,2,2,0.8052,1,0.4026,0.5,0.5
+José Fajardo Nelson,Panama,Copa America 2024,4,8,0.8034,2,0.2008,0.5,0.25
+Mohamed Hany Gamal Eldemerdash,Egypt,AFCON 2023,2,2,0.8031,1,0.4016,0.5,0.5
+Andreas Evald Cornelius,Denmark,FIFA World Cup 2022,3,5,0.8015,0,0.2672,0.0,0.0
+Orkun Kökçü,Türkiye,UEFA Euro 2024,2,6,0.7996,0,0.3998,0.0,0.0
+Mostafa Fathi,Egypt,AFCON 2023,2,2,0.7961,1,0.398,0.5,0.5
+Jefferson David Savarino Quintero,Venezuela,Copa America 2024,1,1,0.7835,0,0.7835,0.0,0.0
+Mathieu Choiniere,Canada,Copa America 2024,1,1,0.7835,1,0.7835,1.0,1.0
+Terem Igobor Moffi,Nigeria,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Moussa Niakhate,Senegal,AFCON 2023,1,1,0.7835,0,0.7835,0.0,0.0
+Kenneth Josiah Omeruo,Nigeria,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Omenuke Mfulu,Congo DR,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Nkosinathi Sibisi,South Africa,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Thabang Amod Monare,South Africa,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Joris Kayembe Ditu,Congo DR,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Douglas Luiz Soares de Paulo,Brazil,Copa America 2024,1,1,0.7835,0,0.7835,0.0,0.0
+Wilker José Ángel Romero,Venezuela,Copa America 2024,1,1,0.7835,0,0.7835,0.0,0.0
+Mahmoud Hamada,Egypt,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Omar Kamal Abdel Wahed,Egypt,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Aaron Tshibola,Congo DR,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Mohamed Abougabal,Egypt,AFCON 2023,1,1,0.7835,0,0.7835,0.0,0.0
+Lionel Mpasi-Nzau,Congo DR,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Paulo Bruno Exequiel Dybala,Argentina,FIFA World Cup 2022,1,1,0.7835,1,0.7835,1.0,1.0
+Oswin Reagan Appollis,South Africa,AFCON 2023,1,1,0.7835,1,0.7835,1.0,1.0
+Jure Balkovec,Slovenia,UEFA Euro 2024,1,1,0.7835,0,0.7835,0.0,0.0
+Laros Duarte,Cape Verde Islands,AFCON 2023,1,1,0.7835,0,0.7835,0.0,0.0
+Maya Yoshida,Japan,FIFA World Cup 2022,1,1,0.7835,0,0.7835,0.0,0.0
+Badr Banoun,Morocco,FIFA World Cup 2022,1,1,0.7835,0,0.7835,0.0,0.0
+Erickson Patrick Correia Andrade,Cape Verde Islands,AFCON 2023,1,1,0.7835,0,0.7835,0.0,0.0
+Diogo José Teixeira da Silva,Portugal,UEFA Euro 2024,2,2,0.7784,0,0.3892,0.0,0.0
+Ransford Königsdörffer,Ghana,AFCON 2023,1,3,0.7753,0,0.7753,0.0,0.0
+Sávio Moreira de Oliveira,Brazil,Copa America 2024,2,4,0.7731,1,0.3866,0.5,0.25
+Andrés Mateus Uribe Villa,Colombia,Copa America 2024,2,3,0.7587,0,0.3793,0.0,0.0
+Remo Freuler,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,3,6,0.7561,2,0.252,0.6667,0.333
+Moisés Isaac Caicedo Corozo,Ecuador,FIFA World Cup 2022; Copa America 2024,4,6,0.7518,1,0.1879,0.25,0.167
+Haji Wright,United States,FIFA World Cup 2022; Copa America 2024,5,8,0.75,1,0.15,0.2,0.125
+Francisco Fernandes Conceição,Portugal,UEFA Euro 2024,3,5,0.7497,1,0.2499,0.3333,0.2
+Azzedine Ounahi,Morocco,FIFA World Cup 2022; AFCON 2023,7,13,0.7414,1,0.1059,0.1429,0.077
+Serge Gnabry,Germany,FIFA World Cup 2022,3,12,0.728,1,0.2427,0.3333,0.083
+Tarik Tissoudali,Morocco,AFCON 2023,1,3,0.7243,0,0.7243,0.0,0.0
+Jovane Eduardo Borges Cabral,Cape Verde Islands,AFCON 2023,4,9,0.7241,0,0.181,0.0,0.0
+Frenkie de Jong,Netherlands,FIFA World Cup 2022,1,2,0.721,1,0.721,1.0,0.5
+Merih Demiral,Türkiye,UEFA Euro 2024,1,3,0.7169,2,0.7169,2.0,0.667
+Amine Adli,Morocco,AFCON 2023,3,5,0.7144,0,0.2381,0.0,0.0
+Jonathan Osorio,Canada,FIFA World Cup 2022; Copa America 2024,2,3,0.7138,0,0.3569,0.0,0.0
+Gue-Sung Cho,Korea Republic,FIFA World Cup 2022,3,8,0.7126,2,0.2375,0.6667,0.25
+Fiston Kalala Mayele,Congo DR,AFCON 2023,3,5,0.7125,0,0.2375,0.0,0.0
+Mohamed Konaté,Burkina Faso,AFCON 2023,3,8,0.7067,1,0.2356,0.3333,0.125
+Ali Sowe,Gambia,AFCON 2023,2,4,0.6982,0,0.3491,0.0,0.0
+Yordan Hernando Osorio Paredes,Venezuela,Copa America 2024,2,3,0.6982,0,0.3491,0.0,0.0
+Vitor Machado Ferreira,Portugal,FIFA World Cup 2022; UEFA Euro 2024,4,10,0.6949,0,0.1737,0.0,0.0
+Ernesto Alexis Vega Rojas,Mexico,FIFA World Cup 2022,3,9,0.692,0,0.2307,0.0,0.0
+Young-Gwon Kim,Korea Republic,FIFA World Cup 2022,2,2,0.6892,1,0.3446,0.5,0.5
+Alistair Johnston,Canada,FIFA World Cup 2022; Copa America 2024,3,3,0.6836,0,0.2279,0.0,0.0
+Rodrigo Javier De Paul,Argentina,FIFA World Cup 2022; Copa America 2024,6,11,0.6742,0,0.1124,0.0,0.0
+Mateo Kovačić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,5,9,0.6702,0,0.134,0.0,0.0
+Jean-Philippe Krasso,Côte d'Ivoire,AFCON 2023,3,7,0.6699,1,0.2233,0.3333,0.143
+Henry Josué Martín Mex,Mexico,FIFA World Cup 2022,2,4,0.6687,1,0.3343,0.5,0.25
+Amadou Haïdara,Mali,AFCON 2023,3,9,0.6687,0,0.2229,0.0,0.0
+Marcel Sabitzer,Austria,UEFA Euro 2024,3,11,0.6661,1,0.222,0.3333,0.091
+Boulaye Dia,Senegal,FIFA World Cup 2022,4,8,0.6622,1,0.1656,0.25,0.125
+Nicolás Iván González,Argentina,Copa America 2024,2,5,0.662,0,0.331,0.0,0.0
+Julio César Enciso Espínola,Paraguay,Copa America 2024,3,14,0.6619,1,0.2206,0.3333,0.071
+Roman Yaremchuk,Ukraine,UEFA Euro 2024,3,6,0.6616,1,0.2205,0.3333,0.167
+Deivi Miguel Vieira,Angola,AFCON 2023,3,6,0.6594,1,0.2198,0.3333,0.167
+John Stones,England,FIFA World Cup 2022; UEFA Euro 2024,4,5,0.659,0,0.1647,0.0,0.0
+Yannick Ferreira Carrasco,Belgium,FIFA World Cup 2022; UEFA Euro 2024,4,10,0.6582,0,0.1645,0.0,0.0
+Timothy Weah,United States,FIFA World Cup 2022; Copa America 2024,4,8,0.6566,1,0.1641,0.25,0.125
+Joshua Kimmich,Germany,FIFA World Cup 2022; UEFA Euro 2024,8,14,0.6443,0,0.0805,0.0,0.0
+Alexis Alejandro Sánchez Sánchez,Chile,Copa America 2024,2,4,0.6422,0,0.3211,0.0,0.0
+Kieffer Roberto Francisco Moore,Wales,FIFA World Cup 2022,3,6,0.6403,0,0.2134,0.0,0.0
+Tijjani Reijnders,Netherlands,UEFA Euro 2024,4,10,0.6331,0,0.1583,0.0,0.0
+Nahuel Molina Lucero,Argentina,FIFA World Cup 2022; Copa America 2024,3,3,0.6324,1,0.2108,0.3333,0.333
+Haythem Jouini,Tunisia,AFCON 2023,2,3,0.6321,0,0.3161,0.0,0.0
+David Strelec,Slovakia,UEFA Euro 2024,3,7,0.6292,0,0.2097,0.0,0.0
+Ángel Rodrigo Romero Villamayor,Paraguay,Copa America 2024,1,3,0.629,0,0.629,0.0,0.0
+Sofiane Boufal,Morocco,FIFA World Cup 2022; AFCON 2023,8,11,0.6287,0,0.0786,0.0,0.0
+Kristjan Asllani,Albania,UEFA Euro 2024,3,8,0.6286,0,0.2095,0.0,0.0
+Jack Grealish,England,FIFA World Cup 2022,1,1,0.6263,1,0.6263,1.0,1.0
+Giovani Lo Celso,Argentina,Copa America 2024,3,3,0.6252,0,0.2084,0.0,0.0
+Michy Batshuayi Tunga,Belgium,FIFA World Cup 2022,2,6,0.6207,1,0.3103,0.5,0.167
+Seko Fofana,Côte d'Ivoire,AFCON 2023,6,17,0.6193,1,0.1032,0.1667,0.059
+Ante Budimir,Croatia,FIFA World Cup 2022; UEFA Euro 2024,4,5,0.6188,0,0.1547,0.0,0.0
+Felix Eduardo Torres Caicedo,Ecuador,FIFA World Cup 2022; Copa America 2024,4,6,0.6164,0,0.1541,0.0,0.0
+Weston McKennie,United States,FIFA World Cup 2022; Copa America 2024,4,7,0.6131,0,0.1533,0.0,0.0
+Calvin Bassey Ughelumba,Nigeria,AFCON 2023,2,2,0.6112,0,0.3056,0.0,0.0
+Marco Asensio Willemsen,Spain,FIFA World Cup 2022,4,10,0.6082,1,0.152,0.25,0.1
+Daniel Muñoz Mejía,Colombia,Copa America 2024,3,4,0.6057,2,0.2019,0.6667,0.5
+Mikel Oyarzabal Ugarte,Spain,UEFA Euro 2024,3,6,0.5994,1,0.1998,0.3333,0.167
+Zakaria Aboukhlal,Morocco,FIFA World Cup 2022,3,3,0.5971,1,0.199,0.3333,0.333
+Jamiro Gregory Monteiro Alvarenga,Cape Verde Islands,AFCON 2023,2,3,0.5952,1,0.2976,0.5,0.333
+Issam Jebali,Tunisia,FIFA World Cup 2022,1,3,0.5931,0,0.5931,0.0,0.0
+Kenan Yildiz,Türkiye,UEFA Euro 2024,4,11,0.5905,0,0.1476,0.0,0.0
+Souleymane Anne,Mauritania,AFCON 2023,2,4,0.5828,0,0.2914,0.0,0.0
+Kwadwo Duah,Switzerland,UEFA Euro 2024,2,4,0.5825,1,0.2912,0.5,0.25
+Ritsu Doan,Japan,FIFA World Cup 2022,4,4,0.5772,2,0.1443,0.5,0.5
+Florian Wirtz,Germany,UEFA Euro 2024,4,8,0.5754,2,0.1439,0.5,0.25
+Jonathan Buatu Mananga,Angola,AFCON 2023,3,3,0.568,0,0.1893,0.0,0.0
+Willi Orban,Hungary,UEFA Euro 2024,3,3,0.5679,0,0.1893,0.0,0.0
+Hee-Chan Hwang,Korea Republic,FIFA World Cup 2022,2,6,0.5679,1,0.284,0.5,0.167
+Themba Zwane,South Africa,AFCON 2023,2,3,0.5633,2,0.2817,1.0,0.667
+Václav Černý,Czechia,UEFA Euro 2024,1,2,0.5616,0,0.5616,0.0,0.0
+Zaidu Sanusi,Nigeria,AFCON 2023,4,6,0.5603,0,0.1401,0.0,0.0
+Frank Magri,Cameroon,AFCON 2023,3,6,0.5564,1,0.1855,0.3333,0.167
+Eric Kleybel Ramírez Matheus,Venezuela,Copa America 2024,2,3,0.5538,1,0.2769,0.5,0.333
+Khvicha Kvaratskhelia,Georgia,UEFA Euro 2024,4,6,0.5521,1,0.138,0.25,0.167
+Simon Bokote Banza,Congo DR,AFCON 2023,3,5,0.552,0,0.184,0.0,0.0
+Denzel Dumfries,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,4,6,0.5519,1,0.138,0.25,0.167
+Tomáš Chorý,Czechia,UEFA Euro 2024,1,1,0.5512,0,0.5512,0.0,0.0
+Peter Pekarík,Slovakia,UEFA Euro 2024,3,3,0.5502,0,0.1834,0.0,0.0
+Dennis Man,Romania,UEFA Euro 2024,3,6,0.5469,0,0.1823,0.0,0.0
+Xavi Simons,Netherlands,UEFA Euro 2024,6,11,0.5453,1,0.0909,0.1667,0.091
+Artem Dovbyk,Ukraine,UEFA Euro 2024,3,6,0.545,0,0.1817,0.0,0.0
+Abderrazak Hamdallah,Morocco,FIFA World Cup 2022,2,2,0.543,0,0.2715,0.0,0.0
+Kamory Doumbia,Mali,AFCON 2023,3,9,0.5369,0,0.179,0.0,0.0
+Renaldo Showayne Cephas,Jamaica,Copa America 2024,2,3,0.5367,0,0.2684,0.0,0.0
+Daizen Maeda,Japan,FIFA World Cup 2022,2,2,0.5359,1,0.2679,0.5,0.5
+Gianluca Scamacca,Italy,UEFA Euro 2024,3,6,0.5331,0,0.1777,0.0,0.0
+Eduard Alexander Bello Gil,Venezuela,Copa America 2024,4,4,0.5329,2,0.1332,0.5,0.5
+Vincent Paté Aboubakar,Cameroon,FIFA World Cup 2022,2,6,0.529,2,0.2645,1.0,0.333
+Luis Gerardo Chávez Magallón,Mexico,FIFA World Cup 2022; Copa America 2024,5,17,0.5245,1,0.1049,0.2,0.059
+Jean-Eric Maxim Choupo-Moting,Cameroon,FIFA World Cup 2022,2,3,0.5235,1,0.2618,0.5,0.333
+Yeltsin Ignacio Tejeda Valverde,Costa Rica,FIFA World Cup 2022,1,2,0.5221,1,0.5221,1.0,0.5
+Daley Blind,Netherlands,FIFA World Cup 2022,3,5,0.5217,1,0.1739,0.3333,0.2
+Andriy Yarmolenko,Ukraine,UEFA Euro 2024,3,4,0.5193,0,0.1731,0.0,0.0
+Krzysztof Piątek,Poland,FIFA World Cup 2022; UEFA Euro 2024,2,3,0.5182,1,0.2591,0.5,0.333
+Aboubakary Koita,Mauritania,AFCON 2023,4,12,0.5169,1,0.1292,0.25,0.083
+Gilson Benchimol Tavares,Cape Verde Islands,AFCON 2023,2,6,0.5151,1,0.2575,0.5,0.167
+Abdoulaye Seck,Senegal,AFCON 2023,2,5,0.5128,1,0.2564,0.5,0.2
+Kasper Dolberg,Denmark,FIFA World Cup 2022,2,4,0.512,0,0.256,0.0,0.0
+Thomas Müller,Germany,FIFA World Cup 2022; UEFA Euro 2024,2,4,0.5074,0,0.2537,0.0,0.0
+Jakub Moder,Poland,UEFA Euro 2024,2,4,0.5046,0,0.2523,0.0,0.0
+Patson Daka,Zambia,AFCON 2023,3,5,0.504,1,0.168,0.3333,0.2
+Shamar Nicholson,Jamaica,Copa America 2024,2,6,0.5038,0,0.2519,0.0,0.0
+Lorenzo Pellegrini,Italy,UEFA Euro 2024,4,7,0.5026,0,0.1257,0.0,0.0
+Gianluca Lapadula Vargas,Peru,Copa America 2024,3,8,0.5001,0,0.1667,0.0,0.0
+Aguibou Camara,Guinea,AFCON 2023,3,5,0.4931,1,0.1644,0.3333,0.2
+Harry Maguire,England,FIFA World Cup 2022,4,6,0.49,0,0.1225,0.0,0.0
+Adam Hložek,Czechia,UEFA Euro 2024,2,4,0.4897,0,0.2448,0.0,0.0
+Almoez Ali Zainalabiddin Abdulla,Qatar,FIFA World Cup 2022,2,3,0.4838,0,0.2419,0.0,0.0
+Michail Antonio,Jamaica,Copa America 2024,3,3,0.4814,1,0.1605,0.3333,0.333
+Théo Bongonda Mbul'Ofeko Batombo,Congo DR,AFCON 2023,4,9,0.4727,0,0.1182,0.0,0.0
+Mert Müldür,Türkiye,UEFA Euro 2024,1,3,0.4675,1,0.4675,1.0,0.333
+Frederico Rodrigues Santos,Brazil,FIFA World Cup 2022,2,3,0.4672,0,0.2336,0.0,0.0
+Aïssa Mandi,Algeria,AFCON 2023,1,3,0.4665,0,0.4665,0.0,0.0
+Leroy Sané,Germany,FIFA World Cup 2022; UEFA Euro 2024,4,10,0.4656,0,0.1164,0.0,0.0
+Georges-Kévin Nkoudou Mbida,Cameroon,FIFA World Cup 2022; AFCON 2023,4,7,0.4625,0,0.1156,0.0,0.0
+Leon Goretzka,Germany,FIFA World Cup 2022,3,4,0.4607,0,0.1536,0.0,0.0
+Amadou Onana,Belgium,FIFA World Cup 2022; UEFA Euro 2024,3,5,0.4594,0,0.1531,0.0,0.0
+Moses Daddy-Ajala Simon,Nigeria,AFCON 2023,4,5,0.4594,0,0.1149,0.0,0.0
+Absalom Iimbondi,Namibia,AFCON 2023,1,1,0.4592,0,0.4592,0.0,0.0
+Ricardo Jorge Luz Horta,Portugal,FIFA World Cup 2022,1,3,0.4588,1,0.4588,1.0,0.333
+Heung-Min Son,Korea Republic,FIFA World Cup 2022,4,9,0.4538,0,0.1135,0.0,0.0
+Alessandro Bastoni,Italy,UEFA Euro 2024,2,3,0.4502,1,0.2251,0.5,0.333
+Granit Xhaka,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,7,10,0.4479,0,0.064,0.0,0.0
+Kevin Csoboth,Hungary,UEFA Euro 2024,1,2,0.4477,1,0.4477,1.0,0.5
+Ahmed Sayed,Egypt,AFCON 2023,3,10,0.4466,0,0.1489,0.0,0.0
+Kahiser Lenis Navarro,Panama,Copa America 2024,1,3,0.4418,0,0.4418,0.0,0.0
+Juraj Kucka,Slovakia,UEFA Euro 2024,3,8,0.4388,0,0.1463,0.0,0.0
+Alex Adrián Arce Barrios,Paraguay,Copa America 2024,2,5,0.4381,0,0.2191,0.0,0.0
+Ondřej Lingr,Czechia,UEFA Euro 2024,2,5,0.4378,0,0.2189,0.0,0.0
+Mahmoud Ibrahim Hassan,Egypt,AFCON 2023,3,6,0.4361,1,0.1454,0.3333,0.167
+Prins Menelik Tjiueza,Namibia,AFCON 2023,2,2,0.4354,0,0.2177,0.0,0.0
+Davy Klaassen,Netherlands,FIFA World Cup 2022,2,2,0.4318,1,0.2159,0.5,0.5
+Rafael Alexandre Conceição Leão,Portugal,FIFA World Cup 2022; UEFA Euro 2024,7,8,0.4305,2,0.0615,0.2857,0.25
+Georgiy Sudakov,Ukraine,UEFA Euro 2024,3,9,0.4295,0,0.1432,0.0,0.0
+Mohamed Salisu,Ghana,FIFA World Cup 2022,2,2,0.4284,1,0.2142,0.5,0.5
+Obite Evan Ndicka,Côte d'Ivoire,AFCON 2023,4,7,0.4278,0,0.107,0.0,0.0
+Lukáš Haraslín,Slovakia,UEFA Euro 2024,4,8,0.4274,0,0.1068,0.0,0.0
+Marciano Sanca Tchami,Guinea-Bissau,AFCON 2023,2,2,0.4251,0,0.2125,0.0,0.0
+Bruno Miranda Villagomez,Bolivia,Copa America 2024,1,1,0.4246,1,0.4246,1.0,1.0
+Daichi Kamada,Japan,FIFA World Cup 2022,4,6,0.4213,0,0.1053,0.0,0.0
+Facinet Conte,Guinea,AFCON 2023,2,2,0.4204,0,0.2102,0.0,0.0
+Achraf Dari,Morocco,FIFA World Cup 2022,1,1,0.4178,1,0.4178,1.0,1.0
+Max-Alain Gradel,Côte d'Ivoire,AFCON 2023,3,6,0.4168,0,0.1389,0.0,0.0
+Ablie Jallow,Gambia,AFCON 2023,2,5,0.4164,1,0.2082,0.5,0.2
+Thapelo James Morena,South Africa,AFCON 2023,3,5,0.4161,0,0.1387,0.0,0.0
+Sergej Milinković-Savić,Serbia,FIFA World Cup 2022; UEFA Euro 2024,4,6,0.4153,1,0.1038,0.25,0.167
+Jeremy Leonel Sarmiento Morante,Ecuador,FIFA World Cup 2022; Copa America 2024,5,7,0.4152,1,0.083,0.2,0.143
+Karim Konaté,Côte d'Ivoire,AFCON 2023,1,3,0.4143,0,0.4143,0.0,0.0
+Mathías Adalberto Villasanti Rolón,Paraguay,Copa America 2024,3,3,0.4108,0,0.1369,0.0,0.0
+Abdessamad Ezzalzouli,Morocco,FIFA World Cup 2022; AFCON 2023,5,5,0.4089,0,0.0818,0.0,0.0
+Simon Adingra,Côte d'Ivoire,AFCON 2023,5,6,0.4053,1,0.0811,0.2,0.167
+Joshua Sargent,United States,FIFA World Cup 2022; Copa America 2024,3,5,0.4025,0,0.1342,0.0,0.0
+Raphaël Adelino José Guerreiro,Portugal,FIFA World Cup 2022,2,3,0.3995,1,0.1998,0.5,0.333
+Alfredo Kulembe Ribeiro,Angola,AFCON 2023,2,4,0.3973,0,0.1986,0.0,0.0
+Sidi Bouna Sidi Amar,Mauritania,AFCON 2023,3,7,0.396,1,0.132,0.3333,0.143
+Carlos Uriel Antuna Romero,Mexico,FIFA World Cup 2022; Copa America 2024,3,4,0.3957,0,0.1319,0.0,0.0
+Declan Rice,England,UEFA Euro 2024,5,9,0.3927,0,0.0785,0.0,0.0
+Saman Ghoddos,IR Iran,FIFA World Cup 2022,1,1,0.3913,0,0.3913,0.0,0.0
+Julián Andrés Quiñones Quiñones,Mexico,Copa America 2024,3,8,0.391,0,0.1303,0.0,0.0
+Kléper Laveran Lima Ferreira,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,4,0.3857,1,0.1286,0.3333,0.25
+Ben Davies,Wales,FIFA World Cup 2022,2,3,0.3842,0,0.1921,0.0,0.0
+Jonas Older Wind,Denmark,UEFA Euro 2024,3,5,0.383,0,0.1277,0.0,0.0
+Clésio Bauque,Mozambique,AFCON 2023,1,1,0.3828,1,0.3828,1.0,1.0
+Nicolas Alexis Julio N'Koulou Ndoubena,Cameroon,FIFA World Cup 2022,2,3,0.3825,0,0.1912,0.0,0.0
+Muzeu Bethuel,Namibia,AFCON 2023,2,3,0.3823,0,0.1911,0.0,0.0
+Dejan Lovren,Croatia,FIFA World Cup 2022,2,4,0.3815,0,0.1908,0.0,0.0
+Edgar Yoel Bárcenas Herrera,Panama,Copa America 2024,3,6,0.3809,0,0.127,0.0,0.0
+Kennedy Amutenya,Namibia,AFCON 2023,4,6,0.3746,0,0.0937,0.0,0.0
+Deon Hotto Kavendji,Namibia,AFCON 2023,3,4,0.3725,1,0.1242,0.3333,0.25
+Mohammed Al Burayk,Saudi Arabia,FIFA World Cup 2022,1,2,0.3697,0,0.3697,0.0,0.0
+Sekou Oumar Sylla,Guinea,AFCON 2023,2,4,0.3673,0,0.1836,0.0,0.0
+Dries Mertens,Belgium,FIFA World Cup 2022,2,3,0.3672,0,0.1836,0.0,0.0
+Steven Bergwijn,Netherlands,FIFA World Cup 2022; UEFA Euro 2024,3,3,0.3654,0,0.1218,0.0,0.0
+Khuliso Johnson Mudau,South Africa,AFCON 2023,2,2,0.3631,0,0.1815,0.0,0.0
+Denis Alibec,Romania,UEFA Euro 2024,1,1,0.3628,0,0.3628,0.0,0.0
+Alex Iwobi,Nigeria,AFCON 2023,5,7,0.3589,0,0.0718,0.0,0.0
+Guillermo Martínez Ayala,Mexico,Copa America 2024,2,3,0.3588,0,0.1794,0.0,0.0
+Frank Onyeka,Nigeria,AFCON 2023,4,6,0.3587,0,0.0897,0.0,0.0
+Hamza Rafia,Tunisia,AFCON 2023,1,1,0.3587,1,0.3587,1.0,1.0
+Ismaeel Mohammad Mohammad,Qatar,FIFA World Cup 2022,2,2,0.3579,0,0.179,0.0,0.0
+Žan Karničnik,Slovenia,UEFA Euro 2024,2,3,0.356,1,0.178,0.5,0.333
+José Correia,Guinea-Bissau,AFCON 2023,2,4,0.3528,1,0.1764,0.5,0.25
+Andreas Skov Olsen,Denmark,FIFA World Cup 2022; UEFA Euro 2024,2,5,0.3515,0,0.1758,0.0,0.0
+Barış Alper Yılmaz,Türkiye,UEFA Euro 2024,3,4,0.3494,0,0.1165,0.0,0.0
+Daniel Carvajal Ramos,Spain,UEFA Euro 2024,2,2,0.3487,1,0.1743,0.5,0.5
+Dango Aboubacar Faissal Ouattara,Burkina Faso,AFCON 2023,1,4,0.3457,0,0.3457,0.0,0.0
+Oumar Diakité,Côte d'Ivoire,AFCON 2023,2,3,0.3457,1,0.1729,0.5,0.333
+Serhou Guirassy,Guinea,AFCON 2023,2,4,0.3453,0,0.1726,0.0,0.0
+Gleison Bremer Silva Nascimento,Brazil,FIFA World Cup 2022,1,1,0.3444,0,0.3444,0.0,0.0
+Gaël Kakuta,Congo DR,AFCON 2023,4,8,0.3401,0,0.085,0.0,0.0
+Yassine Meriah,Tunisia,FIFA World Cup 2022; AFCON 2023,2,3,0.3398,0,0.1699,0.0,0.0
+Stefan Posch,Austria,UEFA Euro 2024,3,7,0.339,0,0.113,0.0,0.0
+Robin Hranáč,Czechia,UEFA Euro 2024,1,2,0.3371,0,0.3371,0.0,0.0
+Jesper Lindstrøm,Denmark,FIFA World Cup 2022,2,3,0.3342,0,0.1671,0.0,0.0
+Arda Güler,Türkiye,UEFA Euro 2024,5,9,0.3341,1,0.0668,0.2,0.111
+Jacob Shaffelburg,Canada,Copa America 2024,3,5,0.3332,1,0.1111,0.3333,0.2
+Jackson Irvine,Australia,FIFA World Cup 2022,3,3,0.3324,0,0.1108,0.0,0.0
+Idrissa Gana Gueye,Senegal,FIFA World Cup 2022,3,4,0.3324,0,0.1108,0.0,0.0
+Yahia Attiyat allah,Morocco,FIFA World Cup 2022,2,2,0.3316,0,0.1658,0.0,0.0
+Luis Miguel Nlavo Asue,Equatorial Guinea,AFCON 2023,1,3,0.3297,0,0.3297,0.0,0.0
+Jefferson Andrés Lerma Solís,Colombia,Copa America 2024,5,8,0.3292,2,0.0658,0.4,0.25
+Jonas Hofmann,Germany,FIFA World Cup 2022,1,1,0.3266,0,0.3266,0.0,0.0
+Mikel Merino Zazón,Spain,UEFA Euro 2024,2,3,0.326,1,0.163,0.5,0.333
+Gabriel Fernando de Jesus,Brazil,FIFA World Cup 2022,1,2,0.324,0,0.324,0.0,0.0
+Ayoze Pérez Gutiérrez,Spain,UEFA Euro 2024,1,3,0.324,0,0.324,0.0,0.0
+Ui-Jo Hwang,Korea Republic,FIFA World Cup 2022,1,1,0.3231,0,0.3231,0.0,0.0
+Samet Akaydin,Türkiye,UEFA Euro 2024,2,2,0.3209,1,0.1605,0.5,0.5
+Carlos Eccehomo Cuesta Figueroa,Colombia,Copa America 2024,1,3,0.32,0,0.32,0.0,0.0
+Mohammed Kanoo,Saudi Arabia,FIFA World Cup 2022,2,6,0.3194,0,0.1597,0.0,0.0
+Luka Sučić,Croatia,UEFA Euro 2024,2,3,0.3184,0,0.1592,0.0,0.0
+Miguel Ángel Terceros,Bolivia,Copa America 2024,3,7,0.3177,0,0.1059,0.0,0.0
+Christian Fassnacht,Switzerland,FIFA World Cup 2022,1,1,0.3168,0,0.3168,0.0,0.0
+Nayef Aguerd,Morocco,FIFA World Cup 2022; AFCON 2023,2,2,0.3154,0,0.1577,0.0,0.0
+Mohamed Youcef Belaïli,Algeria,AFCON 2023,3,10,0.314,0,0.1047,0.0,0.0
+Keysher Fuller Spence,Costa Rica,FIFA World Cup 2022,2,3,0.3116,1,0.1558,0.5,0.333
+Sphephelo S''Miso Sithole,South Africa,AFCON 2023,4,5,0.3114,0,0.0778,0.0,0.0
+Aymeric Laporte,Spain,FIFA World Cup 2022; UEFA Euro 2024,5,6,0.3094,0,0.0619,0.0,0.0
+Riccardo Calafiori,Italy,UEFA Euro 2024,2,3,0.3093,0,0.1547,0.0,0.0
+Bilal El Khannous,Morocco,AFCON 2023,2,2,0.3072,0,0.1536,0.0,0.0
+Saba Lobzhanidze,Georgia,UEFA Euro 2024,1,1,0.3065,0,0.3065,0.0,0.0
+Rafael Santos Borré Amaury,Colombia,Copa America 2024,1,1,0.3054,0,0.3054,0.0,0.0
+Rodrigo Eduardo Echeverría Sáez,Chile,Copa America 2024,2,4,0.3046,0,0.1523,0.0,0.0
+Mohamed Dräger,Tunisia,FIFA World Cup 2022,2,4,0.3036,0,0.1518,0.0,0.0
+Fabián Cornelio Balbuena González,Paraguay,Copa America 2024,3,4,0.3026,0,0.1009,0.0,0.0
+Sekou Koita,Mali,AFCON 2023,3,6,0.3023,0,0.1008,0.0,0.0
+Mohamed El Amine Amoura,Algeria,AFCON 2023,1,2,0.3005,0,0.3005,0.0,0.0
+Wahbi Khazri,Tunisia,FIFA World Cup 2022,2,5,0.2978,1,0.1489,0.5,0.2
+Mykhailo Mudryk,Ukraine,UEFA Euro 2024,2,6,0.2977,0,0.1488,0.0,0.0
+Alexander Hartmann Bah,Denmark,FIFA World Cup 2022; UEFA Euro 2024,3,4,0.2975,0,0.0992,0.0,0.0
+César Saúl Huerta Valera,Mexico,Copa America 2024,2,4,0.2971,0,0.1486,0.0,0.0
+Robin Aime Robert Le Normand,Spain,UEFA Euro 2024,3,3,0.2959,0,0.0986,0.0,0.0
+Joseph Paintsil,Ghana,AFCON 2023,1,1,0.2925,0,0.2925,0.0,0.0
+Angelo Smit Preciado Quiñónez,Ecuador,FIFA World Cup 2022; Copa America 2024,5,9,0.2899,0,0.058,0.0,0.0
+Franculino Gluda Djú,Guinea-Bissau,AFCON 2023,2,2,0.2898,0,0.1449,0.0,0.0
+Johan Bakayoko,Belgium,UEFA Euro 2024,2,3,0.2893,0,0.1447,0.0,0.0
+Joachim Andersen,Denmark,FIFA World Cup 2022; UEFA Euro 2024,6,7,0.2892,0,0.0482,0.0,0.0
+Hiroki Sakai,Japan,FIFA World Cup 2022,1,1,0.2877,0,0.2877,0.0,0.0
+Adam Gnezda Čerin,Slovenia,UEFA Euro 2024,4,4,0.286,0,0.0715,0.0,0.0
+Christopher Wooh,Cameroon,FIFA World Cup 2022; AFCON 2023,2,3,0.2856,1,0.1428,0.5,0.333
+Jin-Su Kim,Korea Republic,FIFA World Cup 2022,1,3,0.2853,0,0.2853,0.0,0.0
+Issoufou Dayo,Burkina Faso,AFCON 2023,2,2,0.2813,0,0.1407,0.0,0.0
+Josip Šutalo,Croatia,UEFA Euro 2024,1,1,0.2778,0,0.2778,0.0,0.0
+Robert Andrich,Germany,UEFA Euro 2024,4,7,0.2757,0,0.0689,0.0,0.0
+Stefan de Vrij,Netherlands,UEFA Euro 2024,3,4,0.2754,1,0.0918,0.3333,0.25
+Abdelkarim Hassan Al Haj Fadlalla,Qatar,FIFA World Cup 2022,3,6,0.2749,0,0.0916,0.0,0.0
+Davide Frattesi,Italy,UEFA Euro 2024,2,2,0.273,0,0.1365,0.0,0.0
+Hakan Çalhanoğlu,Türkiye,UEFA Euro 2024,4,10,0.2705,1,0.0676,0.25,0.1
+Haris Seferović,Switzerland,FIFA World Cup 2022,1,1,0.2703,0,0.2703,0.0,0.0
+Pervis Josué Estupiñán Tenorio,Ecuador,FIFA World Cup 2022,1,2,0.2701,0,0.2701,0.0,0.0
+Konrad Laimer,Austria,UEFA Euro 2024,2,2,0.2693,0,0.1347,0.0,0.0
+José Paolo Guerrero Gonzáles,Peru,Copa America 2024,2,2,0.2692,0,0.1346,0.0,0.0
+Morteza Pouraliganji,IR Iran,FIFA World Cup 2022,2,2,0.2688,0,0.1344,0.0,0.0
+Víctor Alejandro Dávila Zavala,Chile,Copa America 2024,2,5,0.2681,0,0.134,0.0,0.0
+Pape Gueye,Senegal,FIFA World Cup 2022; AFCON 2023,4,6,0.268,1,0.067,0.25,0.167
+Alieu Fadera,Gambia,AFCON 2023,2,3,0.2679,0,0.134,0.0,0.0
+Luis Francisco Romo Barrón,Mexico,Copa America 2024,3,6,0.2672,0,0.0891,0.0,0.0
+Musa Barrow,Gambia,AFCON 2023,3,8,0.267,0,0.089,0.0,0.0
+Witiness Chimoio João Quembo,Mozambique,AFCON 2023,3,4,0.2649,1,0.0883,0.3333,0.25
+Raphaël Varane,France,FIFA World Cup 2022,3,3,0.2644,0,0.0881,0.0,0.0
+Michael Amir Murillo Bermudez,Panama,Copa America 2024,3,4,0.264,1,0.088,0.3333,0.25
+Josip Stanišić,Croatia,FIFA World Cup 2022; UEFA Euro 2024,2,2,0.2635,0,0.1317,0.0,0.0
+Jakub Kamiński,Poland,FIFA World Cup 2022,2,4,0.2625,0,0.1312,0.0,0.0
+Hamdi Fathi,Egypt,AFCON 2023,4,7,0.2615,0,0.0654,0.0,0.0
+Edmond Fayçal Tapsoba,Burkina Faso,AFCON 2023,2,4,0.2608,0,0.1304,0.0,0.0
+Boubakar Kouyate,Mali,AFCON 2023,1,2,0.2594,0,0.2594,0.0,0.0
+Kevin José Rodríguez Cortez,Ecuador,FIFA World Cup 2022; Copa America 2024,4,6,0.2591,1,0.0648,0.25,0.167
+Tim Ream,United States,FIFA World Cup 2022,1,1,0.2582,0,0.2582,0.0,0.0
+Eduardo Camavinga,France,UEFA Euro 2024,1,2,0.258,0,0.258,0.0,0.0
+Mateo Retegui,Italy,UEFA Euro 2024,2,4,0.2576,0,0.1288,0.0,0.0
+Iddrisu Baba Mohammed,Ghana,AFCON 2023,2,2,0.2569,0,0.1284,0.0,0.0
+Eduardo Antonio Guerrero Lozcano,Panama,Copa America 2024,3,3,0.2567,1,0.0856,0.3333,0.333
+Ibrahim Sangaré,Côte d'Ivoire,AFCON 2023,2,5,0.2563,0,0.1281,0.0,0.0
+Jeremy Doku,Belgium,UEFA Euro 2024,3,5,0.2554,0,0.0851,0.0,0.0
+Joško Gvardiol,Croatia,FIFA World Cup 2022; UEFA Euro 2024,3,4,0.255,1,0.085,0.3333,0.25
+Mitchell Thomas Duke,Australia,FIFA World Cup 2022,3,7,0.2547,1,0.0849,0.3333,0.143
+Hemeya Tanjy,Mauritania,AFCON 2023,2,4,0.2543,0,0.1272,0.0,0.0
+Dávid Hancko,Slovakia,UEFA Euro 2024,3,4,0.2534,0,0.0845,0.0,0.0
+Julian Jeanvier,Guinea,AFCON 2023,2,4,0.253,0,0.1265,0.0,0.0
+Pierre-Emile Højbjerg,Denmark,FIFA World Cup 2022; UEFA Euro 2024,5,9,0.2528,0,0.0506,0.0,0.0
+Johan Felipe Vásquez Ibarra,Mexico,Copa America 2024,2,5,0.252,0,0.126,0.0,0.0
+Sergino Dest,United States,FIFA World Cup 2022,4,6,0.2519,0,0.063,0.0,0.0
+Jannick Buyla Sam,Equatorial Guinea,AFCON 2023,1,1,0.2517,1,0.2517,1.0,1.0
+Emam Ashour Metwally Abdelghany,Egypt,AFCON 2023,3,7,0.2512,0,0.0837,0.0,0.0
+Kobbie Mainoo,England,UEFA Euro 2024,3,5,0.2504,0,0.0835,0.0,0.0
+Walid Cheddira,Morocco,FIFA World Cup 2022,1,2,0.2494,0,0.2494,0.0,0.0
+Deroy Duarte,Cape Verde Islands,AFCON 2023,2,5,0.2489,0,0.1244,0.0,0.0
+André-Frank Zambo Anguissa,Cameroon,FIFA World Cup 2022; AFCON 2023,2,2,0.2483,0,0.1242,0.0,0.0
+Federico Chiesa,Italy,UEFA Euro 2024,3,8,0.2481,0,0.0827,0.0,0.0
+Michael Steveen Estrada Martínez,Ecuador,FIFA World Cup 2022,2,3,0.2464,0,0.1232,0.0,0.0
+Osman Bukari,Ghana,FIFA World Cup 2022,2,3,0.2463,1,0.1231,0.5,0.333
+Folarin Balogun,United States,Copa America 2024,2,5,0.246,2,0.123,1.0,0.4
+Scott McTominay,Scotland,UEFA Euro 2024,1,4,0.2456,1,0.2456,1.0,0.25
+Francisco Javier Calvo Quesada,Costa Rica,FIFA World Cup 2022; Copa America 2024,2,2,0.245,1,0.1225,0.5,0.5
+Sultan Abdullah Salim Al Ghannam,Saudi Arabia,FIFA World Cup 2022,1,2,0.2448,0,0.2448,0.0,0.0
+Roderick Alonso Miller Molina,Panama,Copa America 2024,2,3,0.2436,0,0.1218,0.0,0.0
+Mehmet Zeki Çelik,Türkiye,UEFA Euro 2024,1,1,0.2424,0,0.2424,0.0,0.0
+César Jasib Montes Castro,Mexico,FIFA World Cup 2022; Copa America 2024,2,4,0.2417,0,0.1209,0.0,0.0
+Hirving Rodrigo Lozano Bahena,Mexico,FIFA World Cup 2022,3,6,0.2404,0,0.0801,0.0,0.0
+N'Golo Kanté,France,UEFA Euro 2024,3,5,0.2402,0,0.0801,0.0,0.0
+Mykola Shaparenko,Ukraine,UEFA Euro 2024,1,1,0.2398,1,0.2398,1.0,1.0
+Guessouma Fofana,Mauritania,AFCON 2023,1,1,0.2394,0,0.2394,0.0,0.0
+Famara Diedhiou,Senegal,FIFA World Cup 2022,1,3,0.2381,1,0.2381,1.0,0.333
+Martin Braithwaite Christensen,Denmark,FIFA World Cup 2022,1,1,0.2379,0,0.2379,0.0,0.0
+Ebrima Colley,Gambia,AFCON 2023,1,1,0.2359,1,0.2359,1.0,1.0
+Thomas Teye Partey,Ghana,FIFA World Cup 2022,2,2,0.2357,0,0.1179,0.0,0.0
+Nélson Cabral Semedo,Portugal,UEFA Euro 2024,1,2,0.2345,0,0.2345,0.0,0.0
+Garang Kuol,Australia,FIFA World Cup 2022,1,1,0.2339,0,0.2339,0.0,0.0
+Kaan Ayhan,Türkiye,UEFA Euro 2024,1,3,0.2332,0,0.2332,0.0,0.0
+Richard Rios Montoya,Colombia,Copa America 2024,6,8,0.233,1,0.0388,0.1667,0.125
+João Maria Lobo Alves Palhinha Gonçalves,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,6,0.2315,0,0.0772,0.0,0.0
+Wilfried Stephane Singo,Côte d'Ivoire,AFCON 2023,3,5,0.2315,0,0.0772,0.0,0.0
+Ramin Rezaeian,IR Iran,FIFA World Cup 2022,1,2,0.2304,1,0.2304,1.0,0.5
+Danilo Luís Hélio Pereira,Portugal,UEFA Euro 2024,1,1,0.2295,0,0.2295,0.0,0.0
+Armando Broja,Albania,UEFA Euro 2024,1,2,0.2289,0,0.2289,0.0,0.0
+Mama Samba Baldé,Guinea-Bissau,AFCON 2023,2,3,0.2286,0,0.1143,0.0,0.0
+Dayotchanculle Upamecano,France,UEFA Euro 2024,3,3,0.2276,0,0.0759,0.0,0.0
+Iliman Ndiaye,Senegal,FIFA World Cup 2022; AFCON 2023,2,3,0.2272,1,0.1136,0.5,0.333
+Bruno Alberto Langa,Mozambique,AFCON 2023,3,4,0.2268,0,0.0756,0.0,0.0
+Ollie Watkins,England,UEFA Euro 2024,3,3,0.2245,1,0.0748,0.3333,0.333
+Valentin Mihai Mihăilă,Romania,UEFA Euro 2024,1,4,0.2244,0,0.2244,0.0,0.0
+Jannik Vestergaard,Denmark,UEFA Euro 2024,3,4,0.2236,0,0.0745,0.0,0.0
+Iñaki Williams Arthuer,Ghana,FIFA World Cup 2022; AFCON 2023,3,3,0.2234,0,0.0745,0.0,0.0
+Mattia Zaccagni,Italy,UEFA Euro 2024,2,2,0.2222,1,0.1111,0.5,0.5
+Abdülkerim Bardakcı,Türkiye,UEFA Euro 2024,2,2,0.221,0,0.1105,0.0,0.0
+Diego Nicolás De La Cruz Arcosa,Uruguay,FIFA World Cup 2022; Copa America 2024,5,6,0.2204,0,0.0441,0.0,0.0
+Dominik Szoboszlai,Hungary,UEFA Euro 2024,2,6,0.2196,0,0.1098,0.0,0.0
+Milan Škriniar,Slovakia,UEFA Euro 2024,3,3,0.2195,0,0.0732,0.0,0.0
+Yaser Esneider Asprilla Martínez,Colombia,Copa America 2024,1,2,0.2182,0,0.2182,0.0,0.0
+Yves Bissouma,Mali,AFCON 2023,3,6,0.2177,0,0.0726,0.0,0.0
+Moriba Kourouma Kourouma,Guinea,AFCON 2023,2,3,0.2174,0,0.1087,0.0,0.0
+Krépin Diatta,Senegal,FIFA World Cup 2022; AFCON 2023,4,5,0.2172,0,0.0543,0.0,0.0
+Rey Manaj,Albania,UEFA Euro 2024,2,2,0.2157,0,0.1079,0.0,0.0
+Timi Elšnik,Slovenia,UEFA Euro 2024,2,3,0.2154,0,0.1077,0.0,0.0
+Jan Vertonghen,Belgium,FIFA World Cup 2022; UEFA Euro 2024,3,3,0.2126,0,0.0709,0.0,0.0
+Silvan Widmer,Switzerland,FIFA World Cup 2022; UEFA Euro 2024,3,3,0.2111,0,0.0704,0.0,0.0
+Jhon Adolfo Arias Andrade,Colombia,Copa America 2024,5,7,0.2087,0,0.0417,0.0,0.0
+Piero Aldair Quispe Córdova,Peru,Copa America 2024,1,1,0.2083,0,0.2083,0.0,0.0
+Thiago Emiliano da Silva,Brazil,FIFA World Cup 2022,2,2,0.2082,0,0.1041,0.0,0.0
+Stephane Aziz Ki,Burkina Faso,AFCON 2023,2,8,0.2074,0,0.1037,0.0,0.0
+Cenk Tosun,Türkiye,UEFA Euro 2024,2,3,0.2059,1,0.1029,0.5,0.333
+Craig Goodwin,Australia,FIFA World Cup 2022,2,2,0.2051,1,0.1025,0.5,0.5
+Karol Świderski,Poland,UEFA Euro 2024,2,2,0.2044,0,0.1022,0.0,0.0
+Jan Bednarek,Poland,UEFA Euro 2024,1,1,0.2037,0,0.2037,0.0,0.0
+Jakub Piotr Kiwior,Poland,FIFA World Cup 2022; UEFA Euro 2024,2,3,0.2036,0,0.1018,0.0,0.0
+Fashion Sakala,Zambia,AFCON 2023,1,2,0.202,0,0.202,0.0,0.0
+Matheus Luiz Nunes,Portugal,FIFA World Cup 2022; UEFA Euro 2024,2,2,0.2019,0,0.101,0.0,0.0
+Leandro Trossard,Belgium,UEFA Euro 2024,2,4,0.2011,0,0.1006,0.0,0.0
+Lameck Banda,Zambia,AFCON 2023,2,5,0.2004,0,0.1002,0.0,0.0
+Luka Jović,Serbia,FIFA World Cup 2022; UEFA Euro 2024,2,3,0.1999,1,0.0999,0.5,0.333
+Issa Kabore,Burkina Faso,AFCON 2023,1,1,0.1996,0,0.1996,0.0,0.0
+Antoine Semenyo,Ghana,FIFA World Cup 2022; AFCON 2023,3,3,0.1993,0,0.0664,0.0,0.0
+Abdou Diallo,Senegal,FIFA World Cup 2022; AFCON 2023,3,3,0.199,0,0.0663,0.0,0.0
+Idrissa Thiam,Mauritania,AFCON 2023,2,4,0.1989,0,0.0995,0.0,0.0
+Grant Campbell Hanley,Scotland,UEFA Euro 2024,1,1,0.1987,0,0.1987,0.0,0.0
+Richie Laryea,Canada,FIFA World Cup 2022; Copa America 2024,4,6,0.1985,0,0.0496,0.0,0.0
+In-Beom Hwang,Korea Republic,FIFA World Cup 2022,4,6,0.1977,0,0.0494,0.0,0.0
+Yunus Dimoara Musah,United States,FIFA World Cup 2022,3,4,0.1975,0,0.0658,0.0,0.0
+José Antonio Miranda Boacho,Equatorial Guinea,AFCON 2023,1,3,0.1974,1,0.1974,1.0,0.333
+Ladislav Krejčí,Czechia,UEFA Euro 2024,2,5,0.1974,0,0.0987,0.0,0.0
+Rodrigo Hernández Cascante,Spain,FIFA World Cup 2022; UEFA Euro 2024,3,6,0.1967,1,0.0656,0.3333,0.167
+Florian Grillitsch,Austria,UEFA Euro 2024,2,5,0.1964,0,0.0982,0.0,0.0
+Nedim Bajrami,Albania,UEFA Euro 2024,2,3,0.1963,1,0.0982,0.5,0.333
+Kenny Rocha Santos,Cape Verde Islands,AFCON 2023,2,4,0.1952,0,0.0976,0.0,0.0
+José Andrés Martínez Torres,Venezuela,Copa America 2024,3,4,0.195,0,0.065,0.0,0.0
+Yeferson Julio Soteldo Martínez,Venezuela,Copa America 2024,2,4,0.195,0,0.0975,0.0,0.0
+Oluwasemilogo Adesewo Ibidapo Ajayi,Nigeria,AFCON 2023,1,1,0.1936,0,0.1936,0.0,0.0
+Carlos Alberto Rodríguez Gómez,Mexico,Copa America 2024,1,2,0.1935,0,0.1935,0.0,0.0
+Giovanni Di Lorenzo,Italy,UEFA Euro 2024,2,2,0.1911,0,0.0956,0.0,0.0
+Hidemasa Morita,Japan,FIFA World Cup 2022,2,3,0.1906,0,0.0953,0.0,0.0
+Nico Elvedi,Switzerland,FIFA World Cup 2022,1,1,0.19,0,0.19,0.0,0.0
+Nampalys Mendy,Senegal,FIFA World Cup 2022; AFCON 2023,3,5,0.1893,0,0.0631,0.0,0.0
+Raheem Sterling,England,FIFA World Cup 2022,1,1,0.1885,1,0.1885,1.0,1.0
+Thapelo Maseko,South Africa,AFCON 2023,2,2,0.1878,1,0.0939,0.5,0.5
+António João Pereira Albuquerque Tavares Silva,Portugal,UEFA Euro 2024,1,1,0.1873,0,0.1873,0.0,0.0
+Selim Amallah,Morocco,FIFA World Cup 2022; AFCON 2023,3,3,0.1871,0,0.0624,0.0,0.0
+Pierre Kunde Malong,Cameroon,FIFA World Cup 2022,2,5,0.1871,0,0.0936,0.0,0.0
+Igor Lichnovsky Osorio,Chile,Copa America 2024,2,2,0.1869,0,0.0934,0.0,0.0
+Yusuf Yazıcı,Türkiye,UEFA Euro 2024,2,3,0.1853,0,0.0927,0.0,0.0
+Tomáš Souček,Czechia,UEFA Euro 2024,2,2,0.1853,1,0.0927,0.5,0.5
+Mohammed Muntari,Qatar,FIFA World Cup 2022,2,3,0.185,1,0.0925,0.5,0.333
+Simon Happygod Msuva,Tanzania,AFCON 2023,2,4,0.1844,1,0.0922,0.5,0.25
+Juan Pablo Vargas Campos,Costa Rica,FIFA World Cup 2022,1,1,0.1843,0,0.1843,0.0,0.0
+Willy Boly,Côte d'Ivoire,AFCON 2023,1,1,0.1838,0,0.1838,0.0,0.0
+Mason Mount,England,FIFA World Cup 2022,3,4,0.1818,0,0.0606,0.0,0.0
+Wataru Endo,Japan,FIFA World Cup 2022,2,6,0.1814,0,0.0907,0.0,0.0
+Philipp Lienhart,Austria,UEFA Euro 2024,1,2,0.1812,0,0.1812,0.0,0.0
+Kings Kangwa,Zambia,AFCON 2023,2,3,0.1808,1,0.0904,0.5,0.333
+César Rodolfo Blackman Camarena,Panama,Copa America 2024,2,4,0.1805,1,0.0902,0.5,0.25
+Romano Schmid,Austria,UEFA Euro 2024,1,1,0.1798,1,0.1798,1.0,1.0
+Chris Richards,United States,Copa America 2024,1,2,0.1794,0,0.1794,0.0,0.0
+Edinson Roberto Cavani Gómez,Uruguay,FIFA World Cup 2022,2,3,0.179,0,0.0895,0.0,0.0
+Strahinja Pavlović,Serbia,FIFA World Cup 2022,2,2,0.1779,1,0.0889,0.5,0.5
+Kevin Duvan Castaño Gil,Colombia,Copa America 2024,2,2,0.1773,0,0.0886,0.0,0.0
+Ellyes Joris Skhiri,Tunisia,FIFA World Cup 2022; AFCON 2023,2,4,0.1772,0,0.0886,0.0,0.0
+Klaus Gjasula,Albania,UEFA Euro 2024,1,2,0.177,1,0.177,1.0,0.5
+Héctor Alfredo Moreno Herrera,Mexico,FIFA World Cup 2022,1,1,0.1767,0,0.1767,0.0,0.0
+João Paulo Moreira Fernandes,Cape Verde Islands,AFCON 2023,2,4,0.1767,0,0.0884,0.0,0.0
+Omar Colley,Gambia,AFCON 2023,1,2,0.1765,0,0.1765,0.0,0.0
+Ibrahima Konaté,France,FIFA World Cup 2022,1,2,0.176,0,0.176,0.0,0.0
+Damián Josué Bobadilla Benítez,Paraguay,Copa America 2024,2,4,0.1746,0,0.0873,0.0,0.0
+Shogo Taniguchi,Japan,FIFA World Cup 2022,1,2,0.1745,0,0.1745,0.0,0.0
+Alfons Amade,Mozambique,AFCON 2023,1,2,0.1717,0,0.1717,0.0,0.0
+Nahitan Michel Nández Acosta,Uruguay,Copa America 2024,1,1,0.1699,0,0.1699,0.0,0.0
+Jeremie Frimpong,Netherlands,UEFA Euro 2024,1,2,0.1698,0,0.1698,0.0,0.0
+Lamine Camara,Senegal,AFCON 2023,2,3,0.1679,2,0.0839,1.0,0.667
+Zuriko Davitashvili,Georgia,UEFA Euro 2024,2,2,0.1655,0,0.0827,0.0,0.0
+Jan Mlakar,Slovenia,UEFA Euro 2024,1,2,0.1648,0,0.1648,0.0,0.0
+Ko Itakura,Japan,FIFA World Cup 2022,3,3,0.1622,0,0.0541,0.0,0.0
+Gerardo Daniel Arteaga Zamora,Mexico,Copa America 2024,2,3,0.1616,1,0.0808,0.5,0.333
+Nouh Mohamed El Abd,Mauritania,AFCON 2023,2,2,0.161,0,0.0805,0.0,0.0
+Giovanni Reyna,United States,FIFA World Cup 2022; Copa America 2024,2,3,0.1593,0,0.0796,0.0,0.0
+Muhammed Badamosi,Gambia,AFCON 2023,1,3,0.1586,0,0.1586,0.0,0.0
+Sebastián Enzo Cáceres Ramos,Uruguay,Copa America 2024,2,2,0.1559,0,0.0779,0.0,0.0
+Vincent Janssen,Netherlands,FIFA World Cup 2022,1,2,0.1555,0,0.1555,0.0,0.0
+Toni Kroos,Germany,UEFA Euro 2024,3,3,0.1549,0,0.0516,0.0,0.0
+Alireza Jahanbakhsh,IR Iran,FIFA World Cup 2022,2,3,0.1549,0,0.0775,0.0,0.0
+Jules Olivier Ntcham,Cameroon,FIFA World Cup 2022; AFCON 2023,4,6,0.1547,0,0.0387,0.0,0.0
+Antony Matheus dos Santos,Brazil,FIFA World Cup 2022,4,6,0.1545,0,0.0386,0.0,0.0
+Youri Tielemans,Belgium,UEFA Euro 2024,2,4,0.1533,1,0.0767,0.5,0.25
+Qazim Laçi,Albania,UEFA Euro 2024,1,1,0.1527,1,0.1527,1.0,1.0
+Gabriel Alejandro Villamíl Cortéz,Bolivia,Copa America 2024,2,3,0.1526,0,0.0763,0.0,0.0
+Naïm Sliti,Tunisia,FIFA World Cup 2022; AFCON 2023,2,2,0.1514,0,0.0757,0.0,0.0
+Noussair Mazraoui,Morocco,FIFA World Cup 2022,3,4,0.1513,0,0.0504,0.0,0.0
+Kamil Glik,Poland,FIFA World Cup 2022,2,3,0.1506,0,0.0753,0.0,0.0
+Djibril Sow,Switzerland,FIFA World Cup 2022,1,2,0.1504,0,0.1504,0.0,0.0
+Jorge Eduardo Sánchez Ramos,Mexico,FIFA World Cup 2022; Copa America 2024,4,4,0.1501,0,0.0375,0.0,0.0
+Jordan Brian Henderson,England,FIFA World Cup 2022,2,2,0.149,1,0.0745,0.5,0.5
+Gildo Lourenço Vilanculos,Mozambique,AFCON 2023,2,3,0.1488,0,0.0744,0.0,0.0
+Kevin Lenini Gonçalves Pereira de Pina,Cape Verde Islands,AFCON 2023,3,5,0.1486,1,0.0495,0.3333,0.2
+Adam Buksa,Poland,UEFA Euro 2024,2,3,0.1483,1,0.0742,0.5,0.333
+Saleh Khalid Al Shehri,Saudi Arabia,FIFA World Cup 2022,3,3,0.147,1,0.049,0.3333,0.333
+Maximilian Mittelstädt,Germany,UEFA Euro 2024,3,5,0.1454,0,0.0485,0.0,0.0
+Darwin Daniel Machís Marcano,Venezuela,Copa America 2024,2,4,0.1453,0,0.0726,0.0,0.0
+Paul Onuachu,Nigeria,AFCON 2023,1,1,0.1446,0,0.1446,0.0,0.0
+Radu Drăgușin,Romania,UEFA Euro 2024,1,3,0.1441,0,0.1441,0.0,0.0
+Morten Hjulmand,Denmark,UEFA Euro 2024,3,5,0.1438,1,0.0479,0.3333,0.2
+Zito André Sebastião Luvumbo,Angola,AFCON 2023,2,3,0.143,0,0.0715,0.0,0.0
+José Luis Sanmartín Mato,Spain,UEFA Euro 2024,1,3,0.1427,0,0.1427,0.0,0.0
+David Jurásek,Czechia,UEFA Euro 2024,2,4,0.1421,0,0.0711,0.0,0.0
+Joey Veerman,Netherlands,UEFA Euro 2024,2,2,0.1413,0,0.0707,0.0,0.0
+Patrick Wimmer,Austria,UEFA Euro 2024,3,3,0.1408,0,0.0469,0.0,0.0
+Ismail Jakobs,Senegal,FIFA World Cup 2022; AFCON 2023,3,3,0.1408,0,0.0469,0.0,0.0
+Callum McGregor,Scotland,UEFA Euro 2024,2,3,0.1399,0,0.0699,0.0,0.0
+Abdulelah Saad Hameed Al-Malki,Saudi Arabia,FIFA World Cup 2022,1,2,0.1394,0,0.1394,0.0,0.0
+Bright Osayi-Samuel,Nigeria,AFCON 2023,2,2,0.1391,0,0.0696,0.0,0.0
+Marc Guehi,England,UEFA Euro 2024,2,2,0.1389,0,0.0694,0.0,0.0
+Nouhou Tolo,Cameroon,AFCON 2023,3,3,0.1372,0,0.0457,0.0,0.0
+Domingos João Macandza,Mozambique,AFCON 2023,2,2,0.137,0,0.0685,0.0,0.0
+Krystian Bielik,Poland,FIFA World Cup 2022,2,2,0.1368,0,0.0684,0.0,0.0
+Romario Andrés Ibarra Mina,Ecuador,FIFA World Cup 2022,1,2,0.1366,0,0.1366,0.0,0.0
+João Pedro Cavaco Cancelo,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,4,0.1358,0,0.0453,0.0,0.0
+Ramón Sosa Acosta,Paraguay,Copa America 2024,1,3,0.1352,1,0.1352,1.0,0.333
+Arkadiusz Milik,Poland,FIFA World Cup 2022,1,1,0.1352,0,0.1352,0.0,0.0
+Yuki Soma,Japan,FIFA World Cup 2022,1,3,0.1349,0,0.1349,0.0,0.0
+Ondrej Duda,Slovakia,UEFA Euro 2024,2,2,0.1348,1,0.0674,0.5,0.5
+Joakim Mæhle,Denmark,FIFA World Cup 2022; UEFA Euro 2024,3,3,0.1348,0,0.0449,0.0,0.0
+Nicolae Claudiu Stanciu,Romania,UEFA Euro 2024,2,5,0.1348,1,0.0674,0.5,0.2
+Andrei Florin Ratiu,Romania,UEFA Euro 2024,2,3,0.1346,0,0.0673,0.0,0.0
+Paul Brian Rodríguez Bravo,Uruguay,Copa America 2024,1,1,0.1344,0,0.1344,0.0,0.0
+Bryan Mbeumo,Cameroon,FIFA World Cup 2022,2,2,0.1343,0,0.0672,0.0,0.0
+Atiba Hutchinson,Canada,FIFA World Cup 2022,2,2,0.1332,0,0.0666,0.0,0.0
+Mirlind Daku,Albania,UEFA Euro 2024,1,1,0.1327,0,0.1327,0.0,0.0
+Kieran Trippier,England,FIFA World Cup 2022; UEFA Euro 2024,2,2,0.1319,0,0.0659,0.0,0.0
+Théo Bongonda Mbul''Ofeko Batombo,Congo DR,AFCON 2023,1,1,0.1311,0,0.1311,0.0,0.0
+Hichem Boudaoui,Algeria,AFCON 2023,1,3,0.1297,0,0.1297,0.0,0.0
+Saša Lukić,Serbia,FIFA World Cup 2022; UEFA Euro 2024,2,2,0.1277,0,0.0639,0.0,0.0
+Bodda Mouhsine,Mauritania,AFCON 2023,3,4,0.1276,0,0.0425,0.0,0.0
+Assan Ceesay,Gambia,AFCON 2023,1,1,0.1269,0,0.1269,0.0,0.0
+Aziz Eraltay Behich,Australia,FIFA World Cup 2022,2,2,0.1269,0,0.0634,0.0,0.0
+Gernot Trauner,Austria,UEFA Euro 2024,1,1,0.1261,1,0.1261,1.0,1.0
+Ethan Pinnock,Jamaica,Copa America 2024,1,1,0.1257,0,0.1257,0.0,0.0
+Che Adams,Scotland,UEFA Euro 2024,2,2,0.1243,0,0.0622,0.0,0.0
+Brennan Johnson,Wales,FIFA World Cup 2022,3,3,0.1243,0,0.0414,0.0,0.0
+Anis Ben Slimane,Tunisia,FIFA World Cup 2022; AFCON 2023,4,4,0.1242,0,0.0311,0.0,0.0
+Firas Tariq Nasser Al Albirakan,Saudi Arabia,FIFA World Cup 2022,2,2,0.124,0,0.062,0.0,0.0
+Rúben Diogo Da Silva Neves,Portugal,FIFA World Cup 2022; UEFA Euro 2024,4,4,0.1233,0,0.0308,0.0,0.0
+Nikola Milenković,Serbia,FIFA World Cup 2022,3,3,0.1232,0,0.0411,0.0,0.0
+Ibrahim Sissoko,Mali,AFCON 2023,1,1,0.123,0,0.123,0.0,0.0
+Dodi Lukebakio,Belgium,UEFA Euro 2024,1,3,0.1229,0,0.1229,0.0,0.0
+Alejandro Garnacho Ferreyra,Argentina,Copa America 2024,1,2,0.1227,0,0.1227,0.0,0.0
+Alan Steven Franco Palma,Ecuador,Copa America 2024,3,3,0.1223,0,0.0408,0.0,0.0
+Endrick Felipe Moreira de Sousa,Brazil,Copa America 2024,2,2,0.1217,0,0.0609,0.0,0.0
+Kamil Grosicki,Poland,UEFA Euro 2024,1,1,0.1203,0,0.1203,0.0,0.0
+Róbert Boženík,Slovakia,UEFA Euro 2024,2,3,0.12,0,0.06,0.0,0.0
+Daniel Alves da Silva,Brazil,FIFA World Cup 2022,2,3,0.12,0,0.06,0.0,0.0
+Thomas Meunier,Belgium,FIFA World Cup 2022,3,3,0.1192,0,0.0397,0.0,0.0
+David Junior Hoilett,Canada,FIFA World Cup 2022,2,4,0.1191,0,0.0596,0.0,0.0
+Kang-In Lee,Korea Republic,FIFA World Cup 2022,3,5,0.118,0,0.0393,0.0,0.0
+Rúben Santos Gato Alves Dias,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,3,0.118,0,0.0393,0.0,0.0
+Nicola Zalewski,Poland,UEFA Euro 2024,2,2,0.1178,0,0.0589,0.0,0.0
+Samuel Chimerenka Chukwueze,Nigeria,AFCON 2023,4,4,0.1173,0,0.0293,0.0,0.0
+Pablo Ganet Cómitre,Equatorial Guinea,AFCON 2023,3,4,0.1172,1,0.0391,0.3333,0.25
+Mouctar Diakhaby,Guinea,AFCON 2023,2,2,0.1171,0,0.0585,0.0,0.0
+Cristian Jesús Martínez,Panama,Copa America 2024,3,3,0.1154,0,0.0385,0.0,0.0
+William Saliba,France,UEFA Euro 2024,2,2,0.1141,0,0.0571,0.0,0.0
+Semih Kılıçsoy,Türkiye,UEFA Euro 2024,1,1,0.114,0,0.114,0.0,0.0
+Aprocious Petrus,Namibia,AFCON 2023,2,2,0.1136,0,0.0568,0.0,0.0
+Mathew Leckie,Australia,FIFA World Cup 2022,1,1,0.1135,1,0.1135,1.0,1.0
+Taha Yassine Khenissi,Tunisia,FIFA World Cup 2022; AFCON 2023,2,2,0.1128,0,0.0564,0.0,0.0
+Petr Ševčík,Czechia,UEFA Euro 2024,1,1,0.1126,0,0.1126,0.0,0.0
+Andrei Burcă Andonie,Romania,UEFA Euro 2024,1,1,0.1115,0,0.1115,0.0,0.0
+César Augusto Yanis Velasco,Panama,Copa America 2024,1,1,0.1109,1,0.1109,1.0,1.0
+Junya Ito,Japan,FIFA World Cup 2022,2,2,0.1106,0,0.0553,0.0,0.0
+Viktor Tsygankov,Ukraine,UEFA Euro 2024,1,2,0.1102,0,0.1102,0.0,0.0
+Fares Chaïbi,Algeria,AFCON 2023,2,3,0.1092,0,0.0546,0.0,0.0
+Danilo Luiz da Silva,Brazil,FIFA World Cup 2022; Copa America 2024,3,3,0.109,0,0.0363,0.0,0.0
+José Diogo Dalot Teixeira,Portugal,FIFA World Cup 2022; UEFA Euro 2024,3,4,0.1085,0,0.0362,0.0,0.0
+Naby Deco Keïta,Guinea,AFCON 2023,1,1,0.1078,0,0.1078,0.0,0.0
+Nabil Bentaleb,Algeria,AFCON 2023,1,1,0.1077,0,0.1077,0.0,0.0
+Abdiel Armando Ayarza Cocanegra,Panama,Copa America 2024,2,3,0.1071,0,0.0535,0.0,0.0
+Nathan Aké,Netherlands,UEFA Euro 2024,1,2,0.1069,0,0.1069,0.0,0.0
+Aïssa Bilal Laïdouni,Tunisia,FIFA World Cup 2022; AFCON 2023,3,3,0.1067,0,0.0356,0.0,0.0
+Mojmír Chytil,Czechia,UEFA Euro 2024,2,2,0.1066,0,0.0533,0.0,0.0
+Islam Slimani,Algeria,AFCON 2023,2,2,0.1062,0,0.0531,0.0,0.0
+Nawaf Shaker Al Abid,Saudi Arabia,FIFA World Cup 2022,2,2,0.1061,0,0.0531,0.0,0.0
+Min Jae Kim,Korea Republic,FIFA World Cup 2022,2,2,0.1059,0,0.053,0.0,0.0
+Gonzalo Jordy Plata Jiménez,Ecuador,FIFA World Cup 2022,2,2,0.1053,0,0.0527,0.0,0.0
+Mohamed Dellahi Yali,Mauritania,AFCON 2023,1,2,0.1043,1,0.1043,1.0,0.5
+Berat Djimsiti,Albania,UEFA Euro 2024,2,2,0.1043,0,0.0522,0.0,0.0
+Ismael Saibari,Morocco,AFCON 2023,1,1,0.1041,0,0.1041,0.0,0.0
+Christian Alberto Cueva Bravo,Peru,Copa America 2024,1,1,0.1036,0,0.1036,0.0,0.0
+Otávio Edmilson da Silva Monteiro,Portugal,FIFA World Cup 2022,2,3,0.1035,0,0.0518,0.0,0.0
+Sebastián Coates Nión,Uruguay,FIFA World Cup 2022,1,1,0.1033,0,0.1033,0.0,0.0
+Pachoio Lau Há King,Mozambique,AFCON 2023,2,2,0.1028,0,0.0514,0.0,0.0
+Euciodálcio Gomes,Guinea-Bissau,AFCON 2023,2,3,0.1026,0,0.0513,0.0,0.0
+Charles Pickel,Congo DR,AFCON 2023,2,3,0.1018,0,0.0509,0.0,0.0
+Ali Al Hassan,Saudi Arabia,FIFA World Cup 2022,1,1,0.1015,0,0.1015,0.0,0.0
+Marcos Javier Acuña,Argentina,FIFA World Cup 2022; Copa America 2024,2,3,0.1001,0,0.0501,0.0,0.0
+Kendall Jamaal Waston Manley,Costa Rica,FIFA World Cup 2022,1,1,0.0993,0,0.0993,0.0,0.0
+Matías Nicolás Viña Susperreguy,Uruguay,Copa America 2024,2,2,0.0992,1,0.0496,0.5,0.5
+Roberto Lopes,Cape Verde Islands,AFCON 2023,1,1,0.099,0,0.099,0.0,0.0
+Demarai Gray,Jamaica,Copa America 2024,2,2,0.0988,0,0.0494,0.0,0.0
+Matěj Jurásek,Czechia,UEFA Euro 2024,2,4,0.0988,0,0.0494,0.0,0.0
+Elseid Hysaj,Albania,UEFA Euro 2024,1,2,0.0978,0,0.0978,0.0,0.0
+Alexander Djiku,Ghana,AFCON 2023,1,1,0.0974,1,0.0974,1.0,1.0
+Kacper Urbanski,Poland,UEFA Euro 2024,1,2,0.0973,0,0.0973,0.0,0.0
+Antonee Robinson,United States,Copa America 2024,2,3,0.0972,0,0.0486,0.0,0.0
+Lukáš Provod,Czechia,UEFA Euro 2024,3,3,0.097,1,0.0323,0.3333,0.333
+Edgardo Isaac Fariña Wynter,Panama,Copa America 2024,2,3,0.0969,0,0.0485,0.0,0.0
+Mehdi Torabi,IR Iran,FIFA World Cup 2022,2,2,0.0968,0,0.0484,0.0,0.0
+Ibán Salvador Edu,Equatorial Guinea,AFCON 2023,1,2,0.0962,1,0.0962,1.0,0.5
+Attila Szalai,Hungary,UEFA Euro 2024,1,1,0.096,0,0.096,0.0,0.0
+Kennedy Musonda,Zambia,AFCON 2023,2,2,0.0953,0,0.0477,0.0,0.0
+Brenden Aaronson,United States,FIFA World Cup 2022,1,1,0.0943,0,0.0943,0.0,0.0
+Steven Zuber,Switzerland,UEFA Euro 2024,2,2,0.0938,0,0.0469,0.0,0.0
+Arbër Hoxha,Albania,UEFA Euro 2024,2,2,0.0927,0,0.0463,0.0,0.0
+Ahmed Mohamed Abo El Fotouh Mohamed,Egypt,AFCON 2023,1,3,0.0923,0,0.0923,0.0,0.0
+El-Hadji Ba,Mauritania,AFCON 2023,1,1,0.0909,0,0.0909,0.0,0.0
+Kialonda Gaspar,Angola,AFCON 2023,2,2,0.0905,0,0.0453,0.0,0.0
+Michel Aebischer,Switzerland,UEFA Euro 2024,2,2,0.0904,1,0.0452,0.5,0.5
+Miguel Gianpierre Araujo Blanco,Peru,Copa America 2024,1,1,0.0902,0,0.0902,0.0,0.0
+Ngero Kaanjuka Katua,Namibia,AFCON 2023,2,3,0.0894,0,0.0447,0.0,0.0
+Leander Dendoncker,Belgium,FIFA World Cup 2022,1,1,0.0889,0,0.0889,0.0,0.0
+Emmanuel Justine Rabby Banda,Zambia,AFCON 2023,2,4,0.0883,0,0.0442,0.0,0.0
+Aboubakar Kamara,Mauritania,AFCON 2023,2,2,0.0882,0,0.0441,0.0,0.0
+Billy Gilmour,Scotland,UEFA Euro 2024,1,2,0.0878,0,0.0878,0.0,0.0
+Ronald Federico Araújo da Silva,Uruguay,Copa America 2024,3,3,0.0871,0,0.029,0.0,0.0
+Reinildo Isnard Mandava,Mozambique,AFCON 2023,1,2,0.0865,1,0.0865,1.0,0.5
+Scott McKenna,Scotland,UEFA Euro 2024,2,2,0.0864,0,0.0432,0.0,0.0
+Feliciano João Jone,Mozambique,AFCON 2023,1,1,0.086,0,0.086,0.0,0.0
+Cristian Gabriel Romero,Argentina,Copa America 2024,1,1,0.0848,0,0.0848,0.0,0.0
+Bendegúz Bolla,Hungary,UEFA Euro 2024,2,3,0.0847,0,0.0423,0.0,0.0
+Nicolò Barella,Italy,UEFA Euro 2024,1,1,0.0846,1,0.0846,1.0,1.0
+Luke Shaw,England,FIFA World Cup 2022,2,3,0.0844,0,0.0422,0.0,0.0
+Petrus Shitembi,Namibia,AFCON 2023,1,1,0.0843,0,0.0843,0.0,0.0
+Amir Richardson,Morocco,AFCON 2023,1,1,0.0826,0,0.0826,0.0,0.0
+Martin Hongla Yma II,Cameroon,FIFA World Cup 2022,1,1,0.0824,0,0.0824,0.0,0.0
+Houssem Aouar,Algeria,AFCON 2023,1,1,0.0822,0,0.0822,0.0,0.0
+Kamaldeen Sulemana,Ghana,FIFA World Cup 2022,1,1,0.0812,0,0.0812,0.0,0.0
+Anzor Mekvabishvili,Georgia,UEFA Euro 2024,2,2,0.081,0,0.0405,0.0,0.0
+László Bénes,Slovakia,UEFA Euro 2024,1,1,0.0805,0,0.0805,0.0,0.0
+Ahmad Nourollahi,IR Iran,FIFA World Cup 2022,2,5,0.0804,0,0.0402,0.0,0.0
+Riley McGree,Australia,FIFA World Cup 2022,2,3,0.0801,0,0.0401,0.0,0.0
+Kasey Palmer,Jamaica,Copa America 2024,1,2,0.0801,0,0.0801,0.0,0.0
+Fali Candé,Guinea-Bissau,AFCON 2023,3,4,0.0798,0,0.0266,0.0,0.0
+Miguel Ángel Navarro Zárate,Venezuela,Copa America 2024,1,1,0.0798,0,0.0798,0.0,0.0
+Ibrahim Diakité,Guinea,AFCON 2023,1,1,0.0795,0,0.0795,0.0,0.0
+Ben Brereton Díaz,Chile,Copa America 2024,1,2,0.079,0,0.079,0.0,0.0
+Jeremie Boga,Côte d'Ivoire,AFCON 2023,1,1,0.0788,0,0.0788,0.0,0.0
+Marcelino Ignacio Nuñez Espinoza,Chile,Copa America 2024,3,3,0.0785,0,0.0262,0.0,0.0
+Giorgi Chakvetadze,Georgia,UEFA Euro 2024,1,2,0.078,0,0.078,0.0,0.0
+Maximiliano Gómez González,Uruguay,FIFA World Cup 2022,2,2,0.0778,0,0.0389,0.0,0.0
+Alejandro Balde Martínez,Spain,FIFA World Cup 2022,1,1,0.0777,0,0.0777,0.0,0.0
+Alasana Manneh,Gambia,AFCON 2023,2,2,0.0776,0,0.0388,0.0,0.0
+Bobby Armani De Cordova-Reid,Jamaica,Copa America 2024,2,2,0.0773,0,0.0387,0.0,0.0
+Ernest Appiah Nuamah,Ghana,AFCON 2023,1,2,0.0772,0,0.0772,0.0,0.0
+Mohamed Elias Achouri,Tunisia,AFCON 2023,1,1,0.0769,0,0.0769,0.0,0.0
+Niklas Süle,Germany,FIFA World Cup 2022,1,1,0.0761,0,0.0761,0.0,0.0
+Neco Williams,Wales,FIFA World Cup 2022,1,3,0.0756,0,0.0756,0.0,0.0
+Cristian Sleiker Cásseres Yepes,Venezuela,Copa America 2024,1,2,0.0752,0,0.0752,0.0,0.0
+Fernando de Lacerda Gomes,Guinea-Bissau,AFCON 2023,1,2,0.075,0,0.075,0.0,0.0
+Alhassan Yusuf,Nigeria,AFCON 2023,2,3,0.0747,0,0.0373,0.0,0.0
+Tariq Lamptey,Ghana,FIFA World Cup 2022,1,1,0.0745,0,0.0745,0.0,0.0
+Nicolas Jackson,Senegal,AFCON 2023,1,1,0.0744,0,0.0744,0.0,0.0
+Sayfallah Ltaief,Tunisia,AFCON 2023,1,1,0.0737,0,0.0737,0.0,0.0
+Ricardo Iván Rodríguez Araya,Switzerland,UEFA Euro 2024,2,3,0.0735,0,0.0368,0.0,0.0
+Ibrahim Abdallah Hamad,Tanzania,AFCON 2023,1,1,0.0732,0,0.0732,0.0,0.0
+Omar Federico Alderete Fernández,Paraguay,Copa America 2024,2,3,0.0729,1,0.0364,0.5,0.333
+Jayden Adams,South Africa,AFCON 2023,1,1,0.0728,0,0.0728,0.0,0.0
+Heorhii Tsitaishvili,Georgia,UEFA Euro 2024,2,3,0.0721,0,0.0361,0.0,0.0
+Jerdy Schouten,Netherlands,UEFA Euro 2024,1,1,0.072,0,0.072,0.0,0.0
+Mohamed Camara,Mali,AFCON 2023,2,2,0.071,0,0.0355,0.0,0.0
+Olivier Michel Kemen,Cameroon,AFCON 2023,2,3,0.0707,0,0.0354,0.0,0.0
+Youcef Atal,Algeria,AFCON 2023,2,3,0.0705,0,0.0353,0.0,0.0
+Rayan Aït Nouri,Algeria,AFCON 2023,2,3,0.0697,0,0.0349,0.0,0.0
+Nico Schlotterbeck,Germany,UEFA Euro 2024,1,2,0.0696,0,0.0696,0.0,0.0
+Yankuba Minteh,Gambia,AFCON 2023,2,2,0.0695,0,0.0347,0.0,0.0
+Jakub Piotrowski,Poland,UEFA Euro 2024,2,2,0.0691,0,0.0345,0.0,0.0
+Kévin Daniel Van Den Kerkhof,Algeria,AFCON 2023,1,2,0.0686,0,0.0686,0.0,0.0
+Paweł Dawidowicz,Poland,UEFA Euro 2024,1,1,0.0684,0,0.0684,0.0,0.0
+Ehsan Hajsafi,IR Iran,FIFA World Cup 2022,1,1,0.0682,0,0.0682,0.0,0.0
+Harry Souttar,Australia,FIFA World Cup 2022,1,1,0.0681,0,0.0681,0.0,0.0
+Bryan Cristante,Italy,UEFA Euro 2024,2,2,0.0671,0,0.0336,0.0,0.0
+Taras Stepanenko,Ukraine,UEFA Euro 2024,1,1,0.067,0,0.067,0.0,0.0
+Germán Alejandro Pezzella,Argentina,FIFA World Cup 2022; Copa America 2024,2,2,0.0668,0,0.0334,0.0,0.0
+Nene Dorgeles,Mali,AFCON 2023,2,3,0.0667,1,0.0333,0.5,0.333
+Rogelio Gabriel Funes Mori,Mexico,FIFA World Cup 2022,1,1,0.0666,0,0.0666,0.0,0.0
+Mario Götze,Germany,FIFA World Cup 2022,1,1,0.0665,0,0.0665,0.0,0.0
+Jack Hendry,Scotland,UEFA Euro 2024,1,1,0.0662,0,0.0662,0.0,0.0
+András Schäfer,Hungary,UEFA Euro 2024,1,2,0.066,0,0.066,0.0,0.0
+Giacomo Raspadori,Italy,UEFA Euro 2024,1,1,0.066,0,0.066,0.0,0.0
+Ali Ahmed,Canada,Copa America 2024,1,1,0.0659,0,0.0659,0.0,0.0
+Adalberto Eliécer Carrasquilla Alcázar,Panama,Copa America 2024,1,2,0.0652,0,0.0652,0.0,0.0
+Ibrahim Blati Touré,Burkina Faso,AFCON 2023,1,1,0.0647,0,0.0647,0.0,0.0
+Morice Michael Abraham,Tanzania,AFCON 2023,1,1,0.0644,0,0.0644,0.0,0.0
+Warren Steven Madrigal Molina,Costa Rica,Copa America 2024,1,1,0.0644,0,0.0644,0.0,0.0
+Jesús Daniel Gallardo Vasconcelos,Mexico,FIFA World Cup 2022,1,1,0.0643,0,0.0643,0.0,0.0
+Famana Quizera,Guinea-Bissau,AFCON 2023,1,4,0.0641,0,0.0641,0.0,0.0
+Jawad El Yamiq,Morocco,FIFA World Cup 2022,1,1,0.0641,0,0.0641,0.0,0.0
+Karim Ansarifard,IR Iran,FIFA World Cup 2022,1,1,0.064,0,0.064,0.0,0.0
+Joe Allen,Wales,FIFA World Cup 2022,1,2,0.0637,0,0.0637,0.0,0.0
+Adama Guira,Burkina Faso,AFCON 2023,1,1,0.0633,0,0.0633,0.0,0.0
+Denis Kibu,Tanzania,AFCON 2023,1,1,0.0628,0,0.0628,0.0,0.0
+Ruslan Malinovskiy,Ukraine,UEFA Euro 2024,1,2,0.0627,0,0.0627,0.0,0.0
+Dušan Tadić,Serbia,FIFA World Cup 2022,1,1,0.0617,0,0.0617,0.0,0.0
+Johan Andrés Mojica Palacio,Colombia,Copa America 2024,1,1,0.0616,0,0.0616,0.0,0.0
+Harry Wilson,Wales,FIFA World Cup 2022,2,2,0.0615,0,0.0307,0.0,0.0
+Saeid Ezatolahi Afagh,IR Iran,FIFA World Cup 2022,3,3,0.0613,0,0.0204,0.0,0.0
+Luc Rollet De Fougerolles,Canada,Copa America 2024,1,1,0.0612,0,0.0612,0.0,0.0
+Mauro Daniel Rodrigues Teixeira,Guinea-Bissau,AFCON 2023,1,2,0.061,0,0.061,0.0,0.0
+Axel Disasi,France,FIFA World Cup 2022,1,1,0.061,0,0.061,0.0,0.0
+Pavel Šulc,Czechia,UEFA Euro 2024,1,1,0.0605,0,0.0605,0.0,0.0
+Jasir Asani,Albania,UEFA Euro 2024,3,4,0.0601,0,0.02,0.0,0.0
+Valdomiro Tualungo Paulo Lameiras,Angola,AFCON 2023,1,1,0.06,0,0.06,0.0,0.0
+Zinho Gano,Guinea-Bissau,AFCON 2023,1,1,0.06,0,0.06,0.0,0.0
+Sang-Ho Na,Korea Republic,FIFA World Cup 2022,1,1,0.06,0,0.06,0.0,0.0
+Gustavo Fabrice Sangaré,Burkina Faso,AFCON 2023,1,1,0.0596,0,0.0596,0.0,0.0
+José Nabil Onva Adjugu,Equatorial Guinea,AFCON 2023,1,1,0.0596,0,0.0596,0.0,0.0
+Fousseni Diabaté,Mali,AFCON 2023,2,2,0.0592,0,0.0296,0.0,0.0
+Dylan Daniel Mahmoud Bronn,Tunisia,FIFA World Cup 2022,1,1,0.0591,0,0.0591,0.0,0.0
+Édison Michael Flores Peralta,Peru,Copa America 2024,2,2,0.0589,0,0.0294,0.0,0.0
+Florinel Teodor Coman,Romania,UEFA Euro 2024,1,2,0.0581,0,0.0581,0.0,0.0
+Jorge Andrés Carrascal Guardo,Colombia,Copa America 2024,1,1,0.0579,0,0.0579,0.0,0.0
+Franco Zanelatto Téllez,Peru,Copa America 2024,1,1,0.0579,0,0.0579,0.0,0.0
+Budu Zivzivadze,Georgia,UEFA Euro 2024,1,1,0.0572,0,0.0572,0.0,0.0
+Márton Dárdai,Hungary,UEFA Euro 2024,1,1,0.0571,0,0.0571,0.0,0.0
+Víctor Gustavo Velázquez Ramos,Paraguay,Copa America 2024,1,1,0.0569,0,0.0569,0.0,0.0
+Mbwana Ally Samatta,Tanzania,AFCON 2023,2,2,0.0568,0,0.0284,0.0,0.0
+Walker Zimmerman,United States,FIFA World Cup 2022,1,1,0.0567,0,0.0567,0.0,0.0
+José Luis Rodríguez Francis,Panama,Copa America 2024,1,2,0.0567,0,0.0567,0.0,0.0
+Pablo Martín Páez Gavira,Spain,FIFA World Cup 2022,1,1,0.0562,1,0.0562,1.0,1.0
+Malik Tillman,United States,Copa America 2024,1,1,0.056,0,0.056,0.0,0.0
+Lewis Morgan,Scotland,UEFA Euro 2024,1,1,0.0558,0,0.0558,0.0,0.0
+Erik Janža,Slovenia,UEFA Euro 2024,1,3,0.0557,1,0.0557,1.0,0.333
+Orlando Moisés Galo Calderón,Costa Rica,Copa America 2024,1,2,0.0556,0,0.0556,0.0,0.0
+Fran Karačić,Australia,FIFA World Cup 2022,1,3,0.0555,0,0.0555,0.0,0.0
+Di'Shon Bernard,Jamaica,Copa America 2024,1,1,0.0555,0,0.0555,0.0,0.0
+Ferdi Erenay Kadıoğlu,Türkiye,UEFA Euro 2024,2,2,0.0552,0,0.0276,0.0,0.0
+Matteo Darmian,Italy,UEFA Euro 2024,1,1,0.0552,0,0.0552,0.0,0.0
+Joe Aribo,Nigeria,AFCON 2023,1,1,0.0549,0,0.0549,0.0,0.0
+Diego Roberto Godín Leal,Uruguay,FIFA World Cup 2022,1,1,0.0547,0,0.0547,0.0,0.0
+Denis Vavro,Slovakia,UEFA Euro 2024,3,3,0.0546,0,0.0182,0.0,0.0
+Sebastian Szymański,Poland,UEFA Euro 2024,1,1,0.0542,0,0.0542,0.0,0.0
+Alfa Semedo Esteves,Guinea-Bissau,AFCON 2023,2,3,0.0538,0,0.0269,0.0,0.0
+José Ndong Machín Dicombo,Equatorial Guinea,AFCON 2023,2,2,0.053,0,0.0265,0.0,0.0
+Guilherme Antonio Arana Lopes,Brazil,Copa America 2024,1,1,0.053,0,0.053,0.0,0.0
+Jackson Gabriel Porozo Vernaza,Ecuador,FIFA World Cup 2022,1,1,0.0525,0,0.0525,0.0,0.0
+Ghislain Konan,Côte d'Ivoire,AFCON 2023,1,1,0.0523,0,0.0523,0.0,0.0
+Matías Vecino Falero,Uruguay,FIFA World Cup 2022,1,1,0.0522,0,0.0522,0.0,0.0
+Nicolas Moumi Ngamaleu,Cameroon,AFCON 2023,2,2,0.0521,0,0.026,0.0,0.0
+Dexter Lembikisa,Jamaica,Copa America 2024,1,3,0.0521,0,0.0521,0.0,0.0
+Nemanja Radonjić,Serbia,FIFA World Cup 2022,2,2,0.0515,0,0.0258,0.0,0.0
+Joel Nathaniel Campbell Samuels,Costa Rica,FIFA World Cup 2022,1,1,0.0513,0,0.0513,0.0,0.0
+Luka Lochoshvili,Georgia,UEFA Euro 2024,1,1,0.051,0,0.051,0.0,0.0
+Ivan Ilić,Serbia,UEFA Euro 2024,2,2,0.0508,0,0.0254,0.0,0.0
+Odilon Kossonou,Côte d'Ivoire,AFCON 2023,1,2,0.0505,0,0.0505,0.0,0.0
+Opa Sangante,Guinea-Bissau,AFCON 2023,1,1,0.0503,0,0.0503,0.0,0.0
+Victor Bernth Kristansen,Denmark,UEFA Euro 2024,1,1,0.0502,0,0.0502,0.0,0.0
+Emre Can,Germany,UEFA Euro 2024,1,1,0.05,1,0.05,1.0,1.0
+Jérémy Bela,Angola,AFCON 2023,1,1,0.0494,0,0.0494,0.0,0.0
+Ianis Hagi,Romania,UEFA Euro 2024,2,2,0.0493,0,0.0246,0.0,0.0
+Mohamed Naser Elsayed Elneny,Egypt,AFCON 2023,1,1,0.0492,0,0.0492,0.0,0.0
+Lazar Samardžić,Serbia,UEFA Euro 2024,1,1,0.0492,0,0.0492,0.0,0.0
+Gonçalo Bernardo Inácio,Portugal,UEFA Euro 2024,1,1,0.0491,0,0.0491,0.0,0.0
+Djibril Cheick Ouattara,Burkina Faso,AFCON 2023,1,1,0.0489,0,0.0489,0.0,0.0
+William Silva de Carvalho,Portugal,FIFA World Cup 2022,1,1,0.0487,0,0.0487,0.0,0.0
+Ricardo Martins Guimarães,Mozambique,AFCON 2023,1,1,0.0485,0,0.0485,0.0,0.0
+Borna Sosa,Croatia,FIFA World Cup 2022,1,2,0.0484,0,0.0484,0.0,0.0
+Mathias Jensen,Denmark,FIFA World Cup 2022,2,2,0.0483,0,0.0242,0.0,0.0
+Abdoul Fessal Tapsoba,Burkina Faso,AFCON 2023,1,1,0.0477,0,0.0477,0.0,0.0
+Exequiel Alejandro Palacios,Argentina,FIFA World Cup 2022,1,1,0.0467,0,0.0467,0.0,0.0
+Kaheim Dixon,Jamaica,Copa America 2024,2,2,0.0466,0,0.0233,0.0,0.0
+Daniel Vivian Moreno,Spain,UEFA Euro 2024,1,1,0.0466,0,0.0466,0.0,0.0
+Steven Moreira,Cape Verde Islands,AFCON 2023,1,1,0.0462,0,0.0462,0.0,0.0
+İsmail Yüksek,Türkiye,UEFA Euro 2024,1,1,0.0459,0,0.0459,0.0,0.0
+Jordi Alba Ramos,Spain,FIFA World Cup 2022,2,2,0.0459,0,0.0229,0.0,0.0
+Carlos Augusto Zambrano Ochandarte,Peru,Copa America 2024,1,2,0.0459,0,0.0459,0.0,0.0
+Riyad Mahrez,Algeria,AFCON 2023,1,1,0.0454,0,0.0454,0.0,0.0
+Sofiane Feghouli,Algeria,AFCON 2023,1,1,0.0446,0,0.0446,0.0,0.0
+François Kamano,Guinea,AFCON 2023,1,1,0.0445,0,0.0445,0.0,0.0
+João Neves,Portugal,UEFA Euro 2024,1,1,0.0442,0,0.0442,0.0,0.0
+Volodymyr Brazhko,Ukraine,UEFA Euro 2024,2,2,0.0438,0,0.0219,0.0,0.0
+Przemysław Frankowski,Poland,FIFA World Cup 2022,1,1,0.0436,0,0.0436,0.0,0.0
+Ali Gholizadeh,IR Iran,FIFA World Cup 2022,1,1,0.0428,0,0.0428,0.0,0.0
+Derek Cornelius,Canada,Copa America 2024,1,1,0.0424,0,0.0424,0.0,0.0
+Edward Chilufya,Zambia,AFCON 2023,1,1,0.0422,0,0.0422,0.0,0.0
+Marcelo Amado Djaló Taritolay,Guinea-Bissau,AFCON 2023,1,1,0.042,0,0.042,0.0,0.0
+Marwan Attia Fahim Ghallab,Egypt,AFCON 2023,2,2,0.0419,0,0.0209,0.0,0.0
+Denis Lemi Zakaria Lako Lado,Switzerland,FIFA World Cup 2022,1,1,0.0419,0,0.0419,0.0,0.0
+Abdulrahman Al-Obood,Saudi Arabia,FIFA World Cup 2022,1,1,0.0417,0,0.0417,0.0,0.0
+Josimar Alcócer,Costa Rica,Copa America 2024,1,1,0.0413,1,0.0413,1.0,1.0
+Josip Juranović,Croatia,FIFA World Cup 2022,1,1,0.0413,0,0.0413,0.0,0.0
+Okay Yokuşlu,Türkiye,UEFA Euro 2024,1,1,0.0405,0,0.0405,0.0,0.0
+Eberechi Eze,England,UEFA Euro 2024,2,2,0.0405,0,0.0202,0.0,0.0
+Erick Javier Davis Grajales,Panama,Copa America 2024,1,1,0.0403,0,0.0403,0.0,0.0
+Loide António Augusto,Angola,AFCON 2023,1,1,0.0398,0,0.0398,0.0,0.0
+Ismael Bennacer,Algeria,AFCON 2023,1,1,0.0393,0,0.0393,0.0,0.0
+Yacoub Aly Abeid,Mauritania,AFCON 2023,1,1,0.0393,0,0.0393,0.0,0.0
+Aaron Mooy,Australia,FIFA World Cup 2022,1,1,0.0392,0,0.0392,0.0,0.0
+Jon Gorenc Stankovič,Slovenia,UEFA Euro 2024,1,1,0.0391,0,0.0391,0.0,0.0
+Žan Celar,Slovenia,UEFA Euro 2024,1,1,0.039,0,0.039,0.0,0.0
+Mark Anthony Kaye,Canada,FIFA World Cup 2022,1,1,0.0389,0,0.0389,0.0,0.0
+Idrissa Gueye,Senegal,AFCON 2023,1,1,0.0386,0,0.0386,0.0,0.0
+Jean Thierry Lazare Amani,Côte d'Ivoire,AFCON 2023,1,1,0.0384,0,0.0384,0.0,0.0
+Fermin Lopez Marin,Spain,UEFA Euro 2024,1,2,0.0381,0,0.0381,0.0,0.0
+Lassana Coulibaly,Mali,AFCON 2023,1,1,0.0379,0,0.0379,0.0,0.0
+Abdulelah Al Amri,Saudi Arabia,FIFA World Cup 2022,1,1,0.0378,0,0.0378,0.0,0.0
+Jewison Bennette,Costa Rica,FIFA World Cup 2022,1,1,0.0378,0,0.0378,0.0,0.0
+Issiaga Sylla,Guinea,AFCON 2023,1,1,0.0375,0,0.0375,0.0,0.0
+Kevin Danso,Austria,UEFA Euro 2024,1,1,0.0374,0,0.0374,0.0,0.0
+Manuel Luís da Silva Cafumana,Angola,AFCON 2023,2,2,0.0372,0,0.0186,0.0,0.0
+Pedro Miguel Correia,Qatar,FIFA World Cup 2022,2,2,0.0371,0,0.0185,0.0,0.0
+Montassar Omar Talbi,Tunisia,FIFA World Cup 2022; AFCON 2023,2,2,0.037,0,0.0185,0.0,0.0
+Jovani Francisco Welch Lopez,Panama,Copa America 2024,2,3,0.037,0,0.0185,0.0,0.0
+Telasco José Segovia Pérez,Venezuela,Copa America 2024,1,1,0.0364,0,0.0364,0.0,0.0
+Adam Ounas,Algeria,AFCON 2023,1,2,0.0364,0,0.0364,0.0,0.0
+Jaka Bijol,Slovenia,UEFA Euro 2024,1,1,0.036,0,0.036,0.0,0.0
+Keanu Baccus,Australia,FIFA World Cup 2022,1,1,0.0355,0,0.0355,0.0,0.0
+James Gomez,Gambia,AFCON 2023,1,1,0.0355,0,0.0355,0.0,0.0
+Majeed Ashimeru,Ghana,AFCON 2023,1,1,0.035,0,0.035,0.0,0.0
+Amine Harit,Morocco,AFCON 2023,1,1,0.035,0,0.035,0.0,0.0
+Aliou Dieng,Mali,AFCON 2023,1,2,0.0345,0,0.0345,0.0,0.0
+Taulant Sulejmanov,Albania,UEFA Euro 2024,1,1,0.0342,0,0.0342,0.0,0.0
+Nicolas Seiwald,Austria,UEFA Euro 2024,1,1,0.0339,0,0.0339,0.0,0.0
+Jean Michaël Seri,Côte d'Ivoire,AFCON 2023,2,2,0.0335,0,0.0168,0.0,0.0
+Saúl Basilio Coco-Bassey Oubiña,Equatorial Guinea,AFCON 2023,2,3,0.0334,0,0.0167,0.0,0.0
+Wajdi Kechrida,Tunisia,AFCON 2023,1,1,0.0333,0,0.0333,0.0,0.0
+Ajdin Hrustic,Australia,FIFA World Cup 2022,1,1,0.0332,0,0.0332,0.0,0.0
+Veljko Birmančević,Serbia,UEFA Euro 2024,1,1,0.0332,0,0.0332,0.0,0.0
+Mijat Gaćinović,Serbia,UEFA Euro 2024,1,1,0.0329,0,0.0329,0.0,0.0
+Roozbeh Cheshmi,IR Iran,FIFA World Cup 2022,1,1,0.0327,1,0.0327,1.0,1.0
+Miguel Ángel Almirón Rejala,Paraguay,Copa America 2024,1,1,0.0327,0,0.0327,0.0,0.0
+Federico Bikoro Akieme Nchama,Equatorial Guinea,AFCON 2023,1,1,0.0323,0,0.0323,0.0,0.0
+Noah Okafor,Switzerland,FIFA World Cup 2022,1,1,0.0321,0,0.0321,0.0,0.0
+Medon Berisha,Albania,UEFA Euro 2024,1,1,0.0318,0,0.0318,0.0,0.0
+João Victor Gomes da Silva,Brazil,Copa America 2024,1,1,0.0313,0,0.0313,0.0,0.0
+Mario Mitaj,Albania,UEFA Euro 2024,1,1,0.0307,0,0.0307,0.0,0.0
+Pathé Ismaël Ciss,Senegal,FIFA World Cup 2022,1,1,0.0306,0,0.0306,0.0,0.0
+Jefferson Anilson Silva Encada,Guinea-Bissau,AFCON 2023,2,2,0.0306,0,0.0153,0.0,0.0
+Pascal Groß,Germany,UEFA Euro 2024,1,1,0.0305,0,0.0305,0.0,0.0
+Jesús Abdallah Castillo Molina,Peru,Copa America 2024,1,1,0.0305,0,0.0305,0.0,0.0
+Woo-Yeong Jeong,Korea Republic,FIFA World Cup 2022,1,1,0.0301,0,0.0301,0.0,0.0
+Andrija Živković,Serbia,FIFA World Cup 2022,1,1,0.03,0,0.03,0.0,0.0
+Darlin Zidane Yongwa Ngameni,Cameroon,AFCON 2023,1,1,0.0294,0,0.0294,0.0,0.0
+Amadou Dante,Mali,AFCON 2023,1,1,0.0292,0,0.0292,0.0,0.0
+Edimilson Fernandes,Switzerland,FIFA World Cup 2022,1,1,0.0292,0,0.0292,0.0,0.0
+Akram Hassan Afif,Qatar,FIFA World Cup 2022,2,2,0.0291,0,0.0146,0.0,0.0
+Ádám Nagy,Hungary,UEFA Euro 2024,1,1,0.0289,0,0.0289,0.0,0.0
+Ali Abdi,Tunisia,AFCON 2023,1,1,0.0289,0,0.0289,0.0,0.0
+Ľubomír Tupta,Slovakia,UEFA Euro 2024,1,1,0.0286,0,0.0286,0.0,0.0
+Jefferson Brenes Rojas,Costa Rica,Copa America 2024,1,1,0.0282,0,0.0282,0.0,0.0
+Marko Grujić,Serbia,FIFA World Cup 2022,1,1,0.0274,0,0.0274,0.0,0.0
+César Ignacio Pérez Maldonado,Chile,Copa America 2024,1,1,0.0272,0,0.0272,0.0,0.0
+Chris Führich,Germany,UEFA Euro 2024,1,1,0.027,0,0.027,0.0,0.0
+Omaré Gassama,Mauritania,AFCON 2023,2,2,0.0268,0,0.0134,0.0,0.0
+Michał Skóraś,Poland,FIFA World Cup 2022,1,1,0.0267,0,0.0267,0.0,0.0
+Luis Fernando Haquín Lopez,Bolivia,Copa America 2024,1,1,0.0267,0,0.0267,0.0,0.0
+Salis Abdul Samed,Ghana,FIFA World Cup 2022,1,1,0.0267,0,0.0267,0.0,0.0
+Roberto Carlos Fernández Toro,Bolivia,Copa America 2024,1,1,0.0267,0,0.0267,0.0,0.0
+Ramiro Vaca Ponce,Bolivia,Copa America 2024,1,1,0.0265,0,0.0265,0.0,0.0
+Filip Mladenović,Serbia,FIFA World Cup 2022,1,1,0.0263,0,0.0263,0.0,0.0
+Salih Özcan,Türkiye,UEFA Euro 2024,1,1,0.0259,0,0.0259,0.0,0.0
+Jon Mikel Aramburu Mejías,Venezuela,Copa America 2024,1,1,0.0258,0,0.0258,0.0,0.0
+Federico Dimarco,Italy,UEFA Euro 2024,1,2,0.0256,0,0.0256,0.0,0.0
+Michael Hector,Jamaica,Copa America 2024,1,1,0.0254,0,0.0254,0.0,0.0
+Aaron Ramsey,Wales,FIFA World Cup 2022,1,1,0.0254,0,0.0254,0.0,0.0
+Axel Witsel,Belgium,FIFA World Cup 2022,1,1,0.0253,0,0.0253,0.0,0.0
+Abdoul Razack Guiebre,Burkina Faso,AFCON 2023,1,2,0.0253,0,0.0253,0.0,0.0
+José Adoni Cifuentes Charcopa,Ecuador,FIFA World Cup 2022,1,1,0.0253,0,0.0253,0.0,0.0
+Rubin Colwill,Wales,FIFA World Cup 2022,1,1,0.0251,0,0.0251,0.0,0.0
+Marcos Llorente Moreno,Spain,FIFA World Cup 2022,1,1,0.0246,0,0.0246,0.0,0.0
+Abdulaziz Hatem Mohammed Abdullah,Qatar,FIFA World Cup 2022,1,1,0.0245,0,0.0245,0.0,0.0
+David Raum,Germany,UEFA Euro 2024,1,1,0.0244,0,0.0244,0.0,0.0
+Matías David Espinoza Acosta,Paraguay,Copa America 2024,1,1,0.0244,0,0.0244,0.0,0.0
+Basilio Ndong Owono Nchamaaa,Equatorial Guinea,AFCON 2023,1,1,0.0241,0,0.0241,0.0,0.0
+Matty Cash,Poland,FIFA World Cup 2022,1,1,0.0235,0,0.0235,0.0,0.0
+Darío Esteban Osorio Osorio,Chile,Copa America 2024,1,1,0.0233,0,0.0233,0.0,0.0
+Petar Stojanović,Slovenia,UEFA Euro 2024,1,1,0.0232,0,0.0232,0.0,0.0
+Alejandro Darío Gómez,Argentina,FIFA World Cup 2022,2,2,0.0231,0,0.0115,0.0,0.0
+Seung-Ho Paik,Korea Republic,FIFA World Cup 2022,1,1,0.0231,1,0.0231,1.0,1.0
+Philip Foden,England,FIFA World Cup 2022,1,1,0.0227,0,0.0227,0.0,0.0
+Juan Fernando Quintero Paniagua,Colombia,Copa America 2024,1,1,0.0224,0,0.0224,0.0,0.0
+Santiago Arias Naranjo,Colombia,Copa America 2024,1,1,0.022,0,0.022,0.0,0.0
+Stanislav Lobotka,Slovakia,UEFA Euro 2024,1,1,0.0219,0,0.0219,0.0,0.0
+José Ángel Córdoba Chambers,Panama,Copa America 2024,1,1,0.0219,0,0.0219,0.0,0.0
+Alex Sandro Lobo Silva,Brazil,FIFA World Cup 2022,1,1,0.0218,0,0.0218,0.0,0.0
+Grzegorz Krychowiak,Poland,FIFA World Cup 2022,1,1,0.0217,0,0.0217,0.0,0.0
+André Martín Carrillo Díaz,Peru,Copa America 2024,1,1,0.0216,0,0.0216,0.0,0.0
+Jonathan Tah,Germany,UEFA Euro 2024,1,1,0.0215,0,0.0215,0.0,0.0
+Jae-Sung Lee,Korea Republic,FIFA World Cup 2022,1,1,0.0214,0,0.0214,0.0,0.0
+Ousmane Diomande,Côte d'Ivoire,AFCON 2023,1,1,0.0212,0,0.0212,0.0,0.0
+Riaan Hanamub,Namibia,AFCON 2023,1,2,0.0208,0,0.0208,0.0,0.0
+Marcos Johan López Lanfranco,Peru,Copa America 2024,1,1,0.0208,0,0.0208,0.0,0.0
+Sofyan Amrabat,Morocco,FIFA World Cup 2022,1,1,0.0207,0,0.0207,0.0,0.0
+Ebrima Darboe,Gambia,AFCON 2023,1,1,0.0207,0,0.0207,0.0,0.0
+Vincent Sierro,Switzerland,UEFA Euro 2024,1,1,0.0205,0,0.0205,0.0,0.0
+Matías Nicolás Rojas Romero,Paraguay,Copa America 2024,1,1,0.0203,0,0.0203,0.0,0.0
+Álvaro José Zamora Mata,Costa Rica,Copa America 2024,1,1,0.0202,0,0.0202,0.0,0.0
+Ferjani Sassi,Tunisia,FIFA World Cup 2022,1,1,0.0202,0,0.0202,0.0,0.0
+Tyler Adams,United States,FIFA World Cup 2022,1,1,0.0198,0,0.0198,0.0,0.0
+Infren David da Conceição Matola,Mozambique,AFCON 2023,1,1,0.0196,0,0.0196,0.0,0.0
+Tomáš Holeš,Czechia,UEFA Euro 2024,1,1,0.0193,0,0.0193,0.0,0.0
+Núrio Domingos Matias Fortuna,Angola,AFCON 2023,1,1,0.0192,0,0.0192,0.0,0.0
+Joseph Scally,United States,Copa America 2024,1,1,0.0188,0,0.0188,0.0,0.0
+Benjamin Henrichs,Germany,UEFA Euro 2024,1,1,0.0186,0,0.0186,0.0,0.0
+Nicolò Fagioli,Italy,UEFA Euro 2024,1,1,0.0185,0,0.0185,0.0,0.0
+Darko Lazović,Serbia,FIFA World Cup 2022,1,1,0.0183,0,0.0183,0.0,0.0
+Martin Baturina,Croatia,UEFA Euro 2024,1,1,0.0182,0,0.0182,0.0,0.0
+Youssouf Sabaly,Senegal,FIFA World Cup 2022,1,2,0.0179,0,0.0179,0.0,0.0
+Damion Lowe,Jamaica,Copa America 2024,1,1,0.0176,0,0.0176,0.0,0.0
+Mikkel Damsgaard,Denmark,UEFA Euro 2024,1,1,0.0175,0,0.0175,0.0,0.0
+Ariel Lassiter,Costa Rica,Copa America 2024,1,1,0.017,0,0.017,0.0,0.0
+Alejandro Jesús Bran Flores,Costa Rica,Copa America 2024,1,1,0.0165,0,0.0165,0.0,0.0
+Hassan Khalid Al Heidos,Qatar,FIFA World Cup 2022,1,1,0.0157,0,0.0157,0.0,0.0
+Marc Cucurella Saseta,Spain,UEFA Euro 2024,1,1,0.0156,0,0.0156,0.0,0.0
+Alidu Seidu,Ghana,FIFA World Cup 2022,1,1,0.0154,0,0.0154,0.0,0.0
+Borna Barišić,Croatia,FIFA World Cup 2022,1,1,0.0152,0,0.0152,0.0,0.0
+Boubacar Traore,Mali,AFCON 2023,1,1,0.0146,0,0.0146,0.0,0.0
+Erick Daniel Sánchez Ocegueda,Mexico,Copa America 2024,1,1,0.0142,0,0.0142,0.0,0.0
+Matúš Bero,Slovakia,UEFA Euro 2024,1,1,0.0142,0,0.0142,0.0,0.0
+Arthur Theate,Belgium,UEFA Euro 2024,2,2,0.0139,0,0.0069,0.0,0.0
+Ethan Ampadu,Wales,FIFA World Cup 2022,1,1,0.0138,0,0.0138,0.0,0.0
+Edson Omar Álvarez Velázquez,Mexico,FIFA World Cup 2022,1,1,0.0137,0,0.0137,0.0,0.0
+Gerson Torres Barrantes,Costa Rica,FIFA World Cup 2022,1,1,0.0135,0,0.0135,0.0,0.0
+Otar Kakabadze,Georgia,UEFA Euro 2024,1,1,0.013,0,0.013,0.0,0.0
+Nyiko Mobbie,South Africa,AFCON 2023,2,2,0.0123,0,0.0061,0.0,0.0
+Filip Kostić,Serbia,FIFA World Cup 2022,1,1,0.012,0,0.012,0.0,0.0
+Carmelo Algarañaz Añez,Bolivia,Copa America 2024,1,2,0.0117,0,0.0117,0.0,0.0
+Juan José Óscar Siafá Etoha,Equatorial Guinea,AFCON 2023,1,1,0.0117,0,0.0117,0.0,0.0
+Kenneth McLean,Scotland,UEFA Euro 2024,1,1,0.0114,0,0.0114,0.0,0.0
+Woo-Young Jung,Korea Republic,FIFA World Cup 2022,1,1,0.0109,0,0.0109,0.0,0.0
+Ngoran Suiru Fai Collins,Cameroon,FIFA World Cup 2022,1,1,0.0095,0,0.0095,0.0,0.0
+Eden Hazard,Belgium,FIFA World Cup 2022,1,1,0.0092,0,0.0092,0.0,0.0
+Jacob Mendy,Gambia,AFCON 2023,1,1,0.0086,0,0.0086,0.0,0.0
+Fabian Rieder,Switzerland,UEFA Euro 2024,1,1,0.0081,0,0.0081,0.0,0.0
+Oleksandr Zinchenko,Ukraine,UEFA Euro 2024,1,1,0.0077,0,0.0077,0.0,0.0
+Wilder José Cartagena Mendoza,Peru,Copa America 2024,1,1,0.0076,0,0.0076,0.0,0.0
+Alexander Andre Marshsall,Jamaica,Copa America 2024,1,1,0.0075,0,0.0075,0.0,0.0
+Miguel Changa Chaiwa,Zambia,AFCON 2023,1,1,0.0075,0,0.0075,0.0,0.0
+Piero Martín Hincapié Reyna,Ecuador,Copa America 2024,1,1,0.0074,0,0.0074,0.0,0.0
+Cédric Badolo,Burkina Faso,AFCON 2023,1,1,0.0074,0,0.0074,0.0,0.0
+Fernando Javier Saucedo Pereyra,Bolivia,Copa America 2024,1,1,0.0074,0,0.0074,0.0,0.0
+Faisal Salum Abdalla,Tanzania,AFCON 2023,1,1,0.0073,0,0.0073,0.0,0.0
+Cletous Chama,Zambia,AFCON 2023,1,1,0.007,0,0.007,0.0,0.0
+Khadim Diaw,Mauritania,AFCON 2023,1,1,0.0068,0,0.0068,0.0,0.0
+Mohamed Hussein Mohamed,Tanzania,AFCON 2023,1,1,0.0065,0,0.0065,0.0,0.0
+Aboubacar Traoré,Mali,AFCON 2023,1,1,0.0065,0,0.0065,0.0,0.0
+Lubambo Musonda,Zambia,AFCON 2023,1,1,0.006,0,0.006,0.0,0.0
+Saud Abdullah Abdul Hamid,Saudi Arabia,FIFA World Cup 2022,1,1,0.0059,0,0.0059,0.0,0.0
+Edson André Sitoe,Mozambique,AFCON 2023,1,1,0.0058,0,0.0058,0.0,0.0
+Sergio Fernando Peña Flores,Peru,Copa America 2024,1,1,0.0057,0,0.0057,0.0,0.0
+Kyung-Won Kwon,Korea Republic,FIFA World Cup 2022,1,1,0.0055,0,0.0055,0.0,0.0
+Novatus Dismas Miroshi,Tanzania,AFCON 2023,1,1,0.0054,0,0.0054,0.0,0.0
+Bakari Camara,Mauritania,AFCON 2023,1,1,0.0054,0,0.0054,0.0,0.0
+Bartosz Salamon,Poland,UEFA Euro 2024,1,1,0.0034,0,0.0034,0.0,0.0

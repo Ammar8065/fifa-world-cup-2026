@@ -1,0 +1,36 @@
+{
+  "features": [
+    "elo_diff",
+    "avg_age_diff",
+    "avg_caps_diff",
+    "europe_top5_diff",
+    "off_rating_a",
+    "def_rating_b"
+  ],
+  "scaler_mean": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    12.92634,
+    5.65726
+  ],
+  "scaler_scale": [
+    196.7532,
+    1.64609,
+    12.64756,
+    10.65974,
+    5.41179,
+    2.68935
+  ],
+  "coef_standardized": [
+    0.19476,
+    -0.05125,
+    -0.07797,
+    0.12187,
+    0.07043,
+    0.06252
+  ],
+  "intercept": 0.17983,
+  "alpha": 0.1
+}

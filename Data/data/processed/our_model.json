@@ -1,0 +1,31 @@
+{
+  "features": [
+    "elo_diff",
+    "off_rating_a",
+    "def_rating_b",
+    "is_home"
+  ],
+  "scaler_mean": [
+    -0.0,
+    6.91838,
+    13.27831,
+    0.36601
+  ],
+  "scaler_scale": [
+    227.50204,
+    3.59711,
+    8.81497,
+    0.48171
+  ],
+  "coef_standardized": [
+    0.32573,
+    0.07694,
+    0.14893,
+    0.12441
+  ],
+  "intercept": 0.19829,
+  "alpha": 0.1,
+  "form_window": 7,
+  "elo_avg": 1500.0,
+  "n_train": 89252
+}
