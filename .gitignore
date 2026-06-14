@@ -7,6 +7,9 @@ venv/
 
 # ── Unrelated vendored content (a separate plugin marketplace) ─────────────
 Claude-Subagents/
+.claude
+# ── Secrets (API keys) — keep .env local, commit .env.example only ─────────
+.env
 
 # ── Scratch / scraper working dirs ─────────────────────────────────────────
 downloaded_files/
@@ -16,6 +19,9 @@ verify_dash.py
 
 # ── Logs ───────────────────────────────────────────────────────────────────
 Data/**/*log*.txt
+
+# ── Live-update pipeline state (update.py change-detection) ─────────────────
+Data/simulated/.update_state.json
 
 # ── Raw upstream data NOT consumed by the train→simulate→build pipeline ─────
 #    (kept locally; training_df.csv / final_elo.csv are the processed derivatives

@@ -107,6 +107,27 @@ def load_all() -> dict:
     # Knockout slots
     slots_df = pd.read_csv("Data/data/raw/knockout_slots.csv")
 
+    # Completed group-stage results (filled by fetch_results.py from the live API).
+    # {frozenset(teamA, teamB): {teamA: goals, teamB: goals}} — order-agnostic.
+    # Lets the Monte Carlo CONDITION on matches that have actually been played.
+    played: dict[frozenset, dict[str, int]] = {}
+    sched_path = Path("Data/schedule_2026.csv")
+    if sched_path.exists():
+        sch = pd.read_csv(sched_path)
+        gs = sch[sch["Round"] == "Group stage"]
+        for _, row in gs.iterrows():
+            score = str(row.get("Score", "")).strip()
+            if not score or score.lower() in ("nan", ""):
+                continue
+            try:
+                gh, ga = (int(x) for x in score.replace("–", "-").split("-"))
+            except (ValueError, AttributeError):
+                continue
+            h, a = canon(row["home_team"]), canon(row["away_team"])
+            played[frozenset((h, a))] = {h: gh, a: ga}
+        if played:
+            log.info(f"  Conditioning on {len(played)} completed group match(es)")
+
     # Best-3rd combinations
     b3_df = pd.read_csv("Data/data/raw/fw26_best_third_placed_combinations.csv")
     slot_cols = [c for c in b3_df.columns if c != "Option"]
@@ -120,7 +141,7 @@ def load_all() -> dict:
     log.info(f"  Best-3rd lookup: {len(best3_lookup)} combinations")
 
     return dict(groups=groups, group_teams=dict(group_teams),
-                slots_df=slots_df, best3_lookup=best3_lookup)
+                slots_df=slots_df, best3_lookup=best3_lookup, played=played)
 
 
 # ── Build team strengths + λ lookup from the trained model ──────────────────────
@@ -261,15 +282,23 @@ def sim_match(team_a: str, team_b: str, strengths: dict,
 
 
 # ── Group stage ───────────────────────────────────────────────────────────────
-def sim_group(teams: list[str], strengths: dict) -> list[dict]:
-    """Simulate one group. Returns list of team-row dicts sorted by standing."""
+def sim_group(teams: list[str], strengths: dict,
+              played: dict | None = None) -> list[dict]:
+    """Simulate one group. Returns list of team-row dicts sorted by standing.
+    If `played` holds a real result for a fixture, that score is used as-is
+    (conditioning on matches already played) instead of being simulated."""
+    played = played or {}
     records = {t: {"team": t, "pts": 0, "gf": 0, "ga": 0, "gd": 0,
                    "w": 0, "d": 0, "l": 0} for t in teams}
     h2h_pts: dict[tuple[str, str], int] = {(a, b): 0 for a in teams for b in teams if a != b}
     h2h_gd:  dict[tuple[str, str], int] = {(a, b): 0 for a in teams for b in teams if a != b}
 
     for a, b in combinations(teams, 2):
-        ga, gb, _ = sim_match(a, b, strengths, knockout=False)
+        real = played.get(frozenset((a, b)))
+        if real is not None:
+            ga, gb = real[a], real[b]       # fixed: this match already happened
+        else:
+            ga, gb, _ = sim_match(a, b, strengths, knockout=False)
         for t, gf, gag in [(a, ga, gb), (b, gb, ga)]:
             records[t]["gf"] += gf
             records[t]["ga"] += gag
@@ -420,13 +449,14 @@ def simulate_tournament(data: dict, strengths: dict) -> dict:
     group_teams  = data["group_teams"]
     slots_df     = data["slots_df"]
     best3_lookup = data["best3_lookup"]
+    played       = data.get("played", {})
 
     # --- Group stage ---
     group_results: dict[str, list[dict]] = {}
     third_teams:   dict[str, dict] = {}
 
     for grp, teams in group_teams.items():
-        standing = sim_group(teams, strengths)
+        standing = sim_group(teams, strengths, played)
         group_results[grp] = standing
         third_teams[grp]   = standing[2]  # 3rd place
 

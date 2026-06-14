@@ -1,0 +1,1756 @@
+{
+  "updated_utc": "2026-06-14T07:17:53Z",
+  "matches": {
+    "Mexico|South Africa": {
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_xg": 1.46,
+      "away_xg": 0.07,
+      "home_shots": 16,
+      "away_shots": 3,
+      "home_sot": 9,
+      "away_sot": 2,
+      "motm": "Julián Quiñones",
+      "motm_team": "Mexico",
+      "motm_rating": "8.8",
+      "player_ratings": [
+        {
+          "name": "Ronwen Williams",
+          "team": "South Africa",
+          "rating": 6.24,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Raul Jiménez",
+          "team": "Mexico",
+          "rating": 8.03,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Themba Zwane",
+          "team": "South Africa",
+          "rating": 4.9,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Luis Chávez",
+          "team": "Mexico",
+          "rating": 6.53,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jesús Gallardo",
+          "team": "Mexico",
+          "rating": 7.21,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Aubrey Maphosa Modiba",
+          "team": "South Africa",
+          "rating": 5.89,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "César Montes",
+          "team": "Mexico",
+          "rating": 6.05,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Nkosinathi Sibisi",
+          "team": "South Africa",
+          "rating": 5.81,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Julián Quiñones",
+          "team": "Mexico",
+          "rating": 8.83,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Roberto Alvarado",
+          "team": "Mexico",
+          "rating": 8.2,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Alexis Vega",
+          "team": "Mexico",
+          "rating": 5.99,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Edson Álvarez",
+          "team": "Mexico",
+          "rating": 6.61,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Teboho Mokoena",
+          "team": "South Africa",
+          "rating": 6.51,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Lyle Foster",
+          "team": "South Africa",
+          "rating": 5.55,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Álvaro Fidalgo",
+          "team": "Mexico",
+          "rating": 7.24,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Johan Vásquez",
+          "team": "Mexico",
+          "rating": 7.16,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Khuliso Mudau",
+          "team": "South Africa",
+          "rating": 6.53,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Érik Lira",
+          "team": "Mexico",
+          "rating": 7.92,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Oswin Appollis",
+          "team": "South Africa",
+          "rating": 6.25,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Israel Reyes",
+          "team": "Mexico",
+          "rating": 7.42,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Iqraam Rayners",
+          "team": "South Africa",
+          "rating": 5.54,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Sphephelo Sithole",
+          "team": "South Africa",
+          "rating": 3.54,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Thalente Mbatha",
+          "team": "South Africa",
+          "rating": 6.24,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Evidence Makgopa",
+          "team": "South Africa",
+          "rating": 6.25,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Brian Gutiérrez",
+          "team": "Mexico",
+          "rating": 6.71,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jayden Adams",
+          "team": "South Africa",
+          "rating": 6.15,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Raúl Rangel",
+          "team": "Mexico",
+          "rating": 7.5,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Armando González",
+          "team": "Mexico",
+          "rating": 5.94,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ime Okon",
+          "team": "South Africa",
+          "rating": 6.03,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gilberto Mora",
+          "team": "Mexico",
+          "rating": 6.25,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mbekezeli Mbokazi",
+          "team": "South Africa",
+          "rating": 6.05,
+          "pos": 1,
+          "min": null
+        }
+      ]
+    },
+    "Czechia|Korea Republic": {
+      "home": "Korea Republic",
+      "away": "Czechia",
+      "home_xg": 2.31,
+      "away_xg": 0.83,
+      "home_shots": 15,
+      "away_shots": 7,
+      "home_sot": 10,
+      "away_sot": 4,
+      "motm": "In-Beom Hwang",
+      "motm_team": "Korea Republic",
+      "motm_rating": "8.9",
+      "player_ratings": [
+        {
+          "name": "Seung-Gyu Kim",
+          "team": "Korea Republic",
+          "rating": 7.71,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Heung-Min Son",
+          "team": "Korea Republic",
+          "rating": 6.88,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jaroslav Zeleny",
+          "team": "Czechia",
+          "rating": 6.77,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Vladimír Coufal",
+          "team": "Czechia",
+          "rating": 6.93,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Tomás Chory",
+          "team": "Czechia",
+          "rating": 5.88,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jae-Sung Lee",
+          "team": "Korea Republic",
+          "rating": 7.42,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tomás Soucek",
+          "team": "Czechia",
+          "rating": 6.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Patrik Schick",
+          "team": "Czechia",
+          "rating": 5.89,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Hee-Chan Hwang",
+          "team": "Korea Republic",
+          "rating": 6.45,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "In-Beom Hwang",
+          "team": "Korea Republic",
+          "rating": 8.89,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Lukás Provod",
+          "team": "Czechia",
+          "rating": 6.81,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ladislav Krejcí",
+          "team": "Czechia",
+          "rating": 7.38,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Michal Sadílek",
+          "team": "Czechia",
+          "rating": 6.02,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Min-Jae Kim",
+          "team": "Korea Republic",
+          "rating": 7.38,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Seung-Ho Paik",
+          "team": "Korea Republic",
+          "rating": 7.29,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kang-In Lee",
+          "team": "Korea Republic",
+          "rating": 8.39,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Adam Hlozek",
+          "team": "Czechia",
+          "rating": 6.07,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Pavel Sulc",
+          "team": "Czechia",
+          "rating": 7.17,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Hyun-Gyu Oh",
+          "team": "Korea Republic",
+          "rating": 7.48,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Matej Kovár",
+          "team": "Czechia",
+          "rating": 6.78,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Tae-Seok Lee",
+          "team": "Korea Republic",
+          "rating": 6.9,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ji-Sung Eom",
+          "team": "Korea Republic",
+          "rating": 6.61,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Young-Woo Seol",
+          "team": "Korea Republic",
+          "rating": 6.86,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Robin Hranác",
+          "team": "Czechia",
+          "rating": 5.68,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Han-Beom Lee",
+          "team": "Korea Republic",
+          "rating": 7.08,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gi-Hyuk Lee",
+          "team": "Korea Republic",
+          "rating": 7.57,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Stepán Chaloupek",
+          "team": "Czechia",
+          "rating": 5.66,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alexandr Sojka",
+          "team": "Czechia",
+          "rating": 6.55,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Bosnia-Herzegovina|Canada": {
+      "home": "Canada",
+      "away": "Bosnia-Herzegovina",
+      "home_xg": 1.23,
+      "away_xg": 0.96,
+      "home_shots": 13,
+      "away_shots": 8,
+      "home_sot": 8,
+      "away_sot": 4,
+      "motm": "Nikola Katic",
+      "motm_team": "Bosnia-Herzegovina",
+      "motm_rating": "8.4",
+      "player_ratings": [
+        {
+          "name": "Sead Kolasinac",
+          "team": "Bosnia-Herzegovina",
+          "rating": 7.99,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Maxime Crépeau",
+          "team": "Canada",
+          "rating": 7.46,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Nikola Vasilj",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.79,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Ivan Sunjic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.15,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Cyle Larin",
+          "team": "Canada",
+          "rating": 7.47,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nikola Katic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 8.4,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Richie Laryea",
+          "team": "Canada",
+          "rating": 8.16,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Stephen Eustaquio",
+          "team": "Canada",
+          "rating": 7.51,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ermedin Demirovic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.56,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Derek Cornelius",
+          "team": "Canada",
+          "rating": 7.41,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Liam Millar",
+          "team": "Canada",
+          "rating": 6.76,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jonathan David",
+          "team": "Canada",
+          "rating": 6.61,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Amar Dedic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 7.0,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jacob Shaffelburg",
+          "team": "Canada",
+          "rating": 6.09,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Tajon Buchanan",
+          "team": "Canada",
+          "rating": 5.73,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Alistair Johnston",
+          "team": "Canada",
+          "rating": 7.15,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Armin Gigovic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.85,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jovo Lukic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 8.01,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ivan Basic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 7.24,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tarik Muharemovic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 8.3,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Promise David",
+          "team": "Canada",
+          "rating": 6.62,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Samed Bazdar",
+          "team": "Bosnia-Herzegovina",
+          "rating": 5.98,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ismaël Koné",
+          "team": "Canada",
+          "rating": 6.01,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Amar Memic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.13,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tani Oluwaseyi",
+          "team": "Canada",
+          "rating": 6.64,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Esmir Bajraktarevic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.28,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ali Ahmed",
+          "team": "Canada",
+          "rating": 6.18,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Luc De Fougerolles",
+          "team": "Canada",
+          "rating": 7.09,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Benjamin Tahirovic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.62,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kerim Alajbegovic",
+          "team": "Bosnia-Herzegovina",
+          "rating": 6.27,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Paraguay|United States": {
+      "home": "United States",
+      "away": "Paraguay",
+      "home_xg": 1.42,
+      "away_xg": 0.53,
+      "home_shots": 16,
+      "away_shots": 10,
+      "home_sot": 10,
+      "away_sot": 7,
+      "motm": "Folarin Balogun",
+      "motm_team": "United States",
+      "motm_rating": "8.8",
+      "player_ratings": [
+        {
+          "name": "Tim Ream",
+          "team": "United States",
+          "rating": 7.48,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gustavo Gómez",
+          "team": "Paraguay",
+          "rating": 5.24,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Miguel Almirón",
+          "team": "Paraguay",
+          "rating": 6.97,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Júnior Alonso",
+          "team": "Paraguay",
+          "rating": 5.33,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Antonio Sanabria",
+          "team": "Paraguay",
+          "rating": 5.74,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Gustavo Velázquez",
+          "team": "Paraguay",
+          "rating": 6.02,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Andrés Cubas",
+          "team": "Paraguay",
+          "rating": 6.27,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Alejandro Romero",
+          "team": "Paraguay",
+          "rating": 6.14,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Antonee Robinson",
+          "team": "United States",
+          "rating": 7.62,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Christian Pulisic",
+          "team": "United States",
+          "rating": 7.85,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Tyler Adams",
+          "team": "United States",
+          "rating": 7.7,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Omar Alderete",
+          "team": "Paraguay",
+          "rating": 5.77,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Weston McKennie",
+          "team": "United States",
+          "rating": 7.4,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Timothy Weah",
+          "team": "United States",
+          "rating": 6.17,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Sergiño Dest",
+          "team": "United States",
+          "rating": 6.99,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Chris Richards",
+          "team": "United States",
+          "rating": 7.23,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Folarin Balogun",
+          "team": "United States",
+          "rating": 8.84,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Matt Freese",
+          "team": "United States",
+          "rating": 6.2,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Ricardo Pepi",
+          "team": "United States",
+          "rating": 6.02,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Mauricio",
+          "team": "Paraguay",
+          "rating": 7.42,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Julio Enciso",
+          "team": "Paraguay",
+          "rating": 7.76,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Malik Tillman",
+          "team": "United States",
+          "rating": 7.93,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ramón Sosa",
+          "team": "Paraguay",
+          "rating": 6.28,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Juan Cáceres",
+          "team": "Paraguay",
+          "rating": 6.45,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Sebastian Berhalter",
+          "team": "United States",
+          "rating": 6.62,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Damián Bobadilla",
+          "team": "Paraguay",
+          "rating": 5.01,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Álex Arce",
+          "team": "Paraguay",
+          "rating": 6.0,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Alex Freeman",
+          "team": "United States",
+          "rating": 8.11,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Diego Gómez",
+          "team": "Paraguay",
+          "rating": 6.35,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Orlando Gill",
+          "team": "Paraguay",
+          "rating": 5.59,
+          "pos": "GK",
+          "min": null
+        }
+      ]
+    },
+    "Qatar|Switzerland": {
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_xg": 0.6,
+      "away_xg": 3.2,
+      "home_shots": 6,
+      "away_shots": 27,
+      "home_sot": 3,
+      "away_sot": 17,
+      "motm": "Rubén Vargas",
+      "motm_team": "Switzerland",
+      "motm_rating": "8.1",
+      "player_ratings": [
+        {
+          "name": "Ricardo Rodríguez",
+          "team": "Switzerland",
+          "rating": 7.79,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Remo Freuler",
+          "team": "Switzerland",
+          "rating": 7.11,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Granit Xhaka",
+          "team": "Switzerland",
+          "rating": 7.26,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ahmed Alaaeldin",
+          "team": "Qatar",
+          "rating": 6.41,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Boualem Khoukhi",
+          "team": "Qatar",
+          "rating": 6.85,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Karim Boudiaf",
+          "team": "Qatar",
+          "rating": 6.33,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Edmílson Junior",
+          "team": "Qatar",
+          "rating": 6.26,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nico Elvedi",
+          "team": "Switzerland",
+          "rating": 7.3,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Manuel Akanji",
+          "team": "Switzerland",
+          "rating": 7.35,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Breel Embolo",
+          "team": "Switzerland",
+          "rating": 7.96,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Denis Zakaria",
+          "team": "Switzerland",
+          "rating": 7.45,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Akram Afif",
+          "team": "Qatar",
+          "rating": 6.92,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Assim Madibo",
+          "team": "Qatar",
+          "rating": 6.44,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Pedro Miguel",
+          "team": "Qatar",
+          "rating": 7.32,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gregor Kobel",
+          "team": "Switzerland",
+          "rating": 7.48,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Michel Aebischer",
+          "team": "Switzerland",
+          "rating": 7.18,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Rubén Vargas",
+          "team": "Switzerland",
+          "rating": 8.05,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ahmed Fathi",
+          "team": "Qatar",
+          "rating": 6.89,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Homam Elamin",
+          "team": "Qatar",
+          "rating": 7.21,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Dan Ndoye",
+          "team": "Switzerland",
+          "rating": 7.23,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Yusuf Abdurisag",
+          "team": "Qatar",
+          "rating": 6.77,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Zeki Amdouni",
+          "team": "Switzerland",
+          "rating": 6.6,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Fabian Rieder",
+          "team": "Switzerland",
+          "rating": 6.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jassem Gaber",
+          "team": "Qatar",
+          "rating": 6.13,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mahmud Abunada",
+          "team": "Qatar",
+          "rating": 7.72,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Ayoub Al Oui",
+          "team": "Qatar",
+          "rating": 6.43,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Johan Manzambi",
+          "team": "Switzerland",
+          "rating": 5.9,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mohamed Al Mannai",
+          "team": "Qatar",
+          "rating": 5.9,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Issa Laye",
+          "team": "Qatar",
+          "rating": 6.8,
+          "pos": 1,
+          "min": null
+        }
+      ]
+    },
+    "Brazil|Morocco": {
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_xg": 1.26,
+      "away_xg": 1.37,
+      "home_shots": 12,
+      "away_shots": 14,
+      "home_sot": 8,
+      "away_sot": 9,
+      "motm": "Ismael Saibari",
+      "motm_team": "Morocco",
+      "motm_rating": "7.7",
+      "player_ratings": [
+        {
+          "name": "Danilo",
+          "team": "Brazil",
+          "rating": 6.39,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Casemiro",
+          "team": "Brazil",
+          "rating": 6.47,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Marquinhos",
+          "team": "Brazil",
+          "rating": 6.87,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alisson Becker",
+          "team": "Brazil",
+          "rating": 6.48,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Yassine Bounou",
+          "team": "Morocco",
+          "rating": 7.43,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Douglas Santos",
+          "team": "Brazil",
+          "rating": 7.67,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Fabinho",
+          "team": "Brazil",
+          "rating": 6.31,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Issa Diop",
+          "team": "Morocco",
+          "rating": 6.64,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Raphinha",
+          "team": "Brazil",
+          "rating": 6.79,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Brahim Díaz",
+          "team": "Morocco",
+          "rating": 7.1,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lucas Paquetá",
+          "team": "Brazil",
+          "rating": 7.12,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Achraf Hakimi",
+          "team": "Morocco",
+          "rating": 7.52,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Noussair Mazraoui",
+          "team": "Morocco",
+          "rating": 7.41,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gabriel",
+          "team": "Brazil",
+          "rating": 6.87,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Vinícius Júnior",
+          "team": "Brazil",
+          "rating": 7.3,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Bruno Guimarães",
+          "team": "Brazil",
+          "rating": 7.01,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Roger Ibañez",
+          "team": "Brazil",
+          "rating": 6.66,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Matheus Cunha",
+          "team": "Brazil",
+          "rating": 6.3,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Anass Salah-Eddine",
+          "team": "Morocco",
+          "rating": 5.93,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Azzedine Ounahi",
+          "team": "Morocco",
+          "rating": 7.34,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Luiz Henrique",
+          "team": "Brazil",
+          "rating": 6.51,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ismael Saibari",
+          "team": "Morocco",
+          "rating": 7.71,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Danilo",
+          "team": "Brazil",
+          "rating": 6.12,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Chadi Riad",
+          "team": "Morocco",
+          "rating": 7.16,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Neil El Aynaoui",
+          "team": "Morocco",
+          "rating": 7.43,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Igor Thiago",
+          "team": "Brazil",
+          "rating": 6.5,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Bilal El Khannouss",
+          "team": "Morocco",
+          "rating": 7.57,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Chemsdine Talbi",
+          "team": "Morocco",
+          "rating": 6.05,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ayyoub Bouaddi",
+          "team": "Morocco",
+          "rating": 7.11,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Samir El Mourabet",
+          "team": "Morocco",
+          "rating": 6.24,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ayoube Amaimouni-Echghouyab",
+          "team": "Morocco",
+          "rating": 6.24,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Haiti|Scotland": {
+      "home": "Haiti",
+      "away": "Scotland",
+      "home_xg": 1.06,
+      "away_xg": 1.13,
+      "home_shots": 15,
+      "away_shots": 9,
+      "home_sot": 6,
+      "away_sot": 4,
+      "motm": "John McGinn",
+      "motm_team": "Scotland",
+      "motm_rating": "7.8",
+      "player_ratings": [
+        {
+          "name": "Johny Placide",
+          "team": "Haiti",
+          "rating": 6.41,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Grant Hanley",
+          "team": "Scotland",
+          "rating": 6.75,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Lawrence Shankland",
+          "team": "Scotland",
+          "rating": 6.84,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "John McGinn",
+          "team": "Scotland",
+          "rating": 7.79,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Andrew Robertson",
+          "team": "Scotland",
+          "rating": 7.26,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ryan Christie",
+          "team": "Scotland",
+          "rating": 6.41,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ricardo Adé",
+          "team": "Haiti",
+          "rating": 6.7,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ché Adams",
+          "team": "Scotland",
+          "rating": 6.36,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Carlens Arcus",
+          "team": "Haiti",
+          "rating": 6.35,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jack Hendry",
+          "team": "Scotland",
+          "rating": 6.83,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Angus Gunn",
+          "team": "Scotland",
+          "rating": 7.65,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Lyndon Dykes",
+          "team": "Scotland",
+          "rating": 6.12,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jean-Ricner Bellegarde",
+          "team": "Haiti",
+          "rating": 7.26,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Hannes Delcroix",
+          "team": "Haiti",
+          "rating": 6.9,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Frantzdy Pierrot",
+          "team": "Haiti",
+          "rating": 6.04,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Scott McTominay",
+          "team": "Scotland",
+          "rating": 6.81,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Wilson Isidor",
+          "team": "Haiti",
+          "rating": 5.85,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lewis Ferguson",
+          "team": "Scotland",
+          "rating": 7.3,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Aaron Hickey",
+          "team": "Scotland",
+          "rating": 7.28,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Don Deedson Louicius",
+          "team": "Haiti",
+          "rating": 6.5,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nathan Patterson",
+          "team": "Scotland",
+          "rating": 6.2,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Martin Expérience",
+          "team": "Haiti",
+          "rating": 7.12,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Josué Casimir",
+          "team": "Haiti",
+          "rating": 6.17,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ruben Providence",
+          "team": "Haiti",
+          "rating": 6.45,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lenny Joseph",
+          "team": "Haiti",
+          "rating": 6.02,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ben Gannon-Doak",
+          "team": "Scotland",
+          "rating": 6.98,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Danley Jean Jacques",
+          "team": "Haiti",
+          "rating": 7.3,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Australia|Türkiye": {
+      "home": "Australia",
+      "away": "Türkiye",
+      "home_xg": 0.77,
+      "away_xg": 1.33,
+      "home_shots": 9,
+      "away_shots": 30,
+      "home_sot": 5,
+      "away_sot": 20,
+      "motm": "Patrick Beach",
+      "motm_team": "Australia",
+      "motm_rating": "8.8",
+      "player_ratings": [
+        {
+          "name": "Abdülkerim Bardakci",
+          "team": "Türkiye",
+          "rating": 6.64,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Hakan Çalhanoglu",
+          "team": "Türkiye",
+          "rating": 7.39,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jason Geria",
+          "team": "Australia",
+          "rating": 6.41,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Cameron Burgess",
+          "team": "Australia",
+          "rating": 7.1,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ugurcan Çakir",
+          "team": "Türkiye",
+          "rating": 5.98,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Harry Souttar",
+          "team": "Australia",
+          "rating": 7.7,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ferdi Kadioglu",
+          "team": "Türkiye",
+          "rating": 7.56,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Aiden O'Neill",
+          "team": "Australia",
+          "rating": 7.21,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Merih Demiral",
+          "team": "Türkiye",
+          "rating": 6.52,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yunus Akgün",
+          "team": "Türkiye",
+          "rating": 6.58,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Zeki Çelik",
+          "team": "Türkiye",
+          "rating": 6.42,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Connor Metcalfe",
+          "team": "Australia",
+          "rating": 7.99,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jacob Italiano",
+          "team": "Australia",
+          "rating": 7.07,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Baris Alper Yilmaz",
+          "team": "Türkiye",
+          "rating": 5.56,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Orkun Kökcü",
+          "team": "Türkiye",
+          "rating": 6.84,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kerem Aktürkoglu",
+          "team": "Türkiye",
+          "rating": 6.2,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Mohamed Touré",
+          "team": "Australia",
+          "rating": 6.56,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ismail Yüksek",
+          "team": "Türkiye",
+          "rating": 7.01,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tete Yengi",
+          "team": "Australia",
+          "rating": 6.44,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nishan Velupillay",
+          "team": "Australia",
+          "rating": 6.16,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Arda Güler",
+          "team": "Türkiye",
+          "rating": 7.4,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jordan Bos",
+          "team": "Australia",
+          "rating": 6.83,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alessandro Circati",
+          "team": "Australia",
+          "rating": 7.06,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Nestory Irankunda",
+          "team": "Australia",
+          "rating": 7.56,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Patrick Beach",
+          "team": "Australia",
+          "rating": 8.82,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Kenan Yildiz",
+          "team": "Türkiye",
+          "rating": 7.2,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Paul Okon-Engstler",
+          "team": "Australia",
+          "rating": 8.06,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    }
+  }
+}

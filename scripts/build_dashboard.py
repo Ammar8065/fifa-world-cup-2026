@@ -23,6 +23,8 @@ def _load_json(p):
     return json.loads(fp.read_text(encoding="utf-8")) if fp.exists() else None
 model_eval  = _load_json("Data/data/processed/model_eval.json")       # calibration
 gb_backtest = _load_json("Data/data/processed/gb_backtest_2022.json") # GB validation
+live_scores = _load_json("Data/simulated/live_scores.json")          # live results feed (fetch_results.py)
+match_details = _load_json("Data/simulated/match_details.json")      # FotMob xG + MOTM (scraper_fotmob.py)
 
 CANON = {
     "Bosnia and Herzegovina": "Bosnia-Herzegovina",
@@ -427,6 +429,142 @@ if golden_ball_candidates:
           f"[club_form {_gb['club_form']}, intl {_gb['intl_form']}, "
           f"exp_matches {_gb['exp_matches']}]")
 
+# ── Team of the Tournament (4-3-3) ─────────────────────────────────────────────
+# Best XI by position. We're early in the tournament, so this is a PREDICTION:
+#   - attackers / midfielders: club attacking form × usage × team deep-run
+#       (same engine as the Golden Ball — goal involvements per 90)
+#   - defenders / goalkeepers: can't be rated on xG, so we rate them on their
+#       TEAM's projected defensive solidity (conditioned-sim xG conceded / game,
+#       lower = better) × playing-time usage × deep-run. Best defenders come from
+#       the meanest, deepest-running defences.
+# Shape = 4-3-3: 1 GK, 4 DEF, 3 MID, 3 FWD (2 wide + 1 central, via the squad's
+# "Forward (winger)" label). When per-player FotMob match ratings accumulate
+# (match_details / future scrape), TOTT_USE_ACTUAL can switch this to real form.
+TOTT_DEF_USAGE_HALF = 900.0
+TOTT_MIN_MINUTES    = 600
+TOTT_ACTUAL_MIN_APPS = 3   # tournament apps before real FotMob form overrides the prediction
+
+# Aggregate actual FotMob match ratings per player (the "actual later" upgrade).
+# {normalised name: {"sum":, "n":, "team":}} → avg rating once ≥ TOTT_ACTUAL_MIN_APPS.
+actual_ratings: dict[str, dict] = {}
+if match_details and match_details.get("matches"):
+    for det in match_details["matches"].values():
+        for pr in det.get("player_ratings", []) or []:
+            if pr.get("rating") is None or not pr.get("name"):
+                continue
+            key = _norm(pr["name"])
+            slot = actual_ratings.setdefault(key, {"sum": 0.0, "n": 0, "team": pr.get("team")})
+            slot["sum"] += float(pr["rating"]); slot["n"] += 1
+
+def _actual_avg(name: str):
+    """Avg FotMob tournament rating for a player, or None if too few apps."""
+    slot = actual_ratings.get(_norm(name)) or actual_ratings.get(_firstlast(_norm(name)))
+    if slot and slot["n"] >= TOTT_ACTUAL_MIN_APPS:
+        return slot["sum"] / slot["n"], slot["n"]
+    return None
+
+team_def = dict(zip(summary["team"], summary["xga_per_game"]))
+_xga_vals = [v for v in team_def.values() if pd.notna(v)]
+_xga_min, _xga_max = (min(_xga_vals), max(_xga_vals)) if _xga_vals else (0.0, 1.0)
+_xga_rng = (_xga_max - _xga_min) or 1.0
+
+def _is_winger(pos: str) -> bool:
+    return "winger" in (pos or "").lower()
+
+def _tott_score(rec: dict, grp: str) -> float | None:
+    """Position-appropriate Team-of-the-Tournament score (higher = better).
+    Once a player has played ≥ TOTT_ACTUAL_MIN_APPS, their real average FotMob
+    match rating takes over (the prediction was only a stand-in until then)."""
+    minutes = _f(rec.get("minutes"))
+    st = team_stage.get(rec["team"], {})
+    exp_matches = 3.0 + sum(st.get(c, 0) for c in
+                            ("p_qualify","p_round_of_16","p_quarter_final","p_semi_final","p_final"))
+    deep = 1.0 + (st.get("p_semi_final", 0) + st.get("p_final", 0))
+
+    # ACTUAL tournament form (FotMob ratings) — dominates once we have enough apps.
+    act = _actual_avg(rec["name"])
+    if act is not None:
+        avg_rating, n_apps = act
+        # rating ~6.0 baseline; scale so a 7.5 avg over a deep run tops the list
+        return (avg_rating - 5.5) * (1 + 0.15 * n_apps) * deep
+    if grp in ("FWD", "MID"):
+        # Attacking output (must have a club-form sample)
+        if not rec.get("has_club") or minutes < TOTT_MIN_MINUTES:
+            return None
+        nineties = minutes / 90.0
+        g, a = _f(rec.get("g")), _f(rec.get("a"))
+        club_form = 0.5*(_f(rec.get("xg90"))+_f(rec.get("xa90"))) + 0.5*((g+a)/nineties)
+        usage = minutes / (minutes + GB_USAGE_HALF)
+        return (club_form*usage + 0.6*_intl_rate(rec)) * exp_matches * deep
+    else:
+        # GK / DEF — rate by team defensive solidity + minutes + deep run
+        xga = team_def.get(rec["team"])
+        if xga is None or pd.isna(xga):
+            return None
+        def_solidity = 1.0 - (xga - _xga_min) / _xga_rng        # 0..1, higher = meaner D
+        usage = minutes / (minutes + TOTT_DEF_USAGE_HALF) if minutes else 0.15
+        return (0.5 + def_solidity) * usage * exp_matches * deep
+
+# Score every squad player, then pick the best XI in the 4-3-3 shape.
+_pool = {"GK": [], "DEF": [], "MID": [], "FWD_W": [], "FWD_C": []}
+for rec in players_db:
+    grp = rec.get("pos_group", "")
+    if grp not in ("GK", "DEF", "MID", "FWD"):
+        continue
+    s = _tott_score(rec, grp)
+    if s is None:
+        continue
+    entry = {
+        "name": rec["name"], "team": rec["team"], "flag": FLAGS.get(rec["team"], "🏳️"),
+        "club": rec.get("club", ""), "position": rec.get("position", ""),
+        "photo": rec.get("photo", ""), "age": rec.get("age"),
+        "g": rec.get("g"), "a": rec.get("a"), "xg": rec.get("xg"), "xa": rec.get("xa"),
+        "minutes": rec.get("minutes"),
+        "deep_run": round(team_stage.get(rec["team"], {}).get("p_semi_final", 0), 4),
+        "title_odds": round(team_stage.get(rec["team"], {}).get("p_champion", 0), 4),
+        "xga_team": round(_f(team_def.get(rec["team"])), 2),
+        "score": round(s, 4),
+    }
+    if grp == "FWD":
+        (_pool["FWD_W"] if _is_winger(rec.get("position")) else _pool["FWD_C"]).append(entry)
+    else:
+        _pool[grp].append(entry)
+
+for k in _pool:
+    _pool[k].sort(key=lambda x: x["score"], reverse=True)
+
+def _take(bucket, n, used):
+    out = []
+    for p in _pool[bucket]:
+        if p["name"] in used:
+            continue
+        out.append(p); used.add(p["name"])
+        if len(out) == n:
+            break
+    return out
+
+_used: set[str] = set()
+# 4-3-3: GK + 4 DEF + 3 MID + 2 wide FWD + 1 central FWD. If a winger/striker
+# bucket is short, backfill from the other forward bucket.
+tott = {
+    "GK":  _take("GK",  1, _used),
+    "DEF": _take("DEF", 4, _used),
+    "MID": _take("MID", 3, _used),
+}
+_fw_wide = _take("FWD_W", 2, _used)
+_fw_cent = _take("FWD_C", 1, _used)
+# backfill forwards if a bucket ran short
+while len(_fw_wide) + len(_fw_cent) < 3:
+    extra = _take("FWD_C", 1, _used) or _take("FWD_W", 1, _used)
+    if not extra:
+        break
+    _fw_cent += extra
+tott["FWD"] = _fw_wide + _fw_cent
+team_of_tournament = tott
+if tott["FWD"] or tott["MID"]:
+    _names = [p["name"] for grp in ("GK","DEF","MID","FWD") for p in tott[grp]]
+    print(f"  Team of Tournament (4-3-3): {', '.join(_names)}")
+
 # ── Group data ────────────────────────────────────────────────────────────────
 group_data = {}
 for g in sorted(summary["group"].unique()):
@@ -485,8 +623,11 @@ ypoty_js   = to_js(ypoty_df.to_dict("records"))
 bestdef_js = to_js(best_def_teams.to_dict("records"))
 bestatt_js = to_js(best_att_teams.to_dict("records"))
 goldenball_js = to_js(golden_ball_candidates[:12])
+tott_js       = to_js(team_of_tournament)
 modeleval_js  = to_js(model_eval)
 gbbacktest_js = to_js(gb_backtest)
+livescores_js = to_js(live_scores)
+matchdetails_js = to_js(match_details)
 flags_js   = to_js(FLAGS)
 flagiso_js = to_js(FLAG_ISO)
 young_js   = to_js(YOUNG_PLAYERS)
@@ -697,6 +838,146 @@ body::before {{
   text-transform:uppercase; letter-spacing:.1em;
   margin-top:3px;
 }}
+
+/* ── LIVE SCORES STRIP ── */
+.live-strip {{
+  background:var(--ink); color:#e7eefb;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}}
+.live-strip-head {{
+  display:flex; align-items:center; gap:10px;
+  max-width:1280px; margin:0 auto; padding:9px 20px 0;
+  font-size:11px; letter-spacing:.12em; font-weight:700;
+}}
+.live-dot {{
+  width:8px; height:8px; border-radius:50%; background:#ef4444;
+  box-shadow:0 0 0 0 rgba(239,68,68,.7); animation:livePulse 1.8s infinite;
+}}
+@keyframes livePulse {{
+  0%   {{ box-shadow:0 0 0 0 rgba(239,68,68,.6); }}
+  70%  {{ box-shadow:0 0 0 7px rgba(239,68,68,0); }}
+  100% {{ box-shadow:0 0 0 0 rgba(239,68,68,0); }}
+}}
+.live-label {{ color:#fff; }}
+.live-cond {{
+  color:var(--gold); letter-spacing:.04em; font-weight:600;
+  text-transform:none; font-size:11px;
+}}
+.live-updated {{
+  margin-left:auto; color:rgba(231,238,251,.55);
+  letter-spacing:.02em; font-weight:500; text-transform:none; font-size:10.5px;
+}}
+.live-track {{
+  display:flex; gap:8px; overflow-x:auto;
+  max-width:1280px; margin:0 auto; padding:9px 20px 11px;
+  scrollbar-width:none;
+}}
+.live-track::-webkit-scrollbar {{ display:none; }}
+.live-card {{
+  flex-shrink:0; display:flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+  border-radius:9px; padding:7px 11px; font-size:12.5px; white-space:nowrap;
+}}
+.live-card.is-live {{ border-color:rgba(239,68,68,.55); background:rgba(239,68,68,.08); }}
+.live-card .lc-side {{ display:flex; align-items:center; gap:5px; }}
+.live-card .lc-team {{ font-weight:600; }}
+.live-card .lc-score {{ font-weight:800; font-variant-numeric:tabular-nums; color:#fff; }}
+.live-card .lc-x {{ color:rgba(231,238,251,.4); font-size:11px; }}
+.live-card .lc-status {{
+  font-size:9.5px; letter-spacing:.06em; font-weight:700;
+  color:rgba(231,238,251,.5); padding-left:4px; text-transform:uppercase;
+}}
+.live-card.is-live .lc-status {{ color:#fca5a5; }}
+.live-card.is-fin  .lc-status {{ color:#86efac; }}
+@media (max-width:560px) {{ .live-card {{ font-size:11.5px; padding:6px 9px; }} }}
+
+/* ── LIVE TAB (Match Centre) ── */
+.live-summary {{
+  display:flex; flex-wrap:wrap; gap:14px; margin:0 0 26px;
+}}
+.live-summary .ls-stat {{
+  flex:1 1 160px; background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px 22px; position:relative; overflow:hidden;
+  box-shadow:0 4px 22px rgba(10,23,48,.07), 0 1px 3px rgba(10,23,48,.05);
+}}
+.live-summary .ls-stat::before {{
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(135deg, rgba(20,33,58,.022) 0%, transparent 60%);
+}}
+.live-summary .ls-val {{ font-size:30px; font-weight:800; color:var(--ink); line-height:1; position:relative; }}
+.live-summary .ls-lbl {{ font-size:12px; color:var(--muted); margin-top:6px; letter-spacing:.02em; }}
+.live-summary .ls-bar {{ height:6px; border-radius:3px; background:var(--border); margin-top:12px; overflow:hidden; }}
+.live-summary .ls-bar > span {{ display:block; height:100%; background:var(--gold); border-radius:3px; }}
+.live-day {{ margin-bottom:26px; }}
+.live-day-head {{
+  font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink); padding:0 2px 11px; border-bottom:1px solid var(--border); margin-bottom:16px;
+  display:flex; align-items:center; gap:9px; font-family:'Space Grotesk', sans-serif;
+}}
+.live-day-head::before {{
+  content:''; width:18px; height:2px; border-radius:2px; flex-shrink:0;
+  background:linear-gradient(90deg, var(--gold), var(--pitch));
+}}
+.live-day-head .ld-live {{
+  color:#ef4444; font-size:10.5px; display:inline-flex; align-items:center; gap:5px;
+}}
+.live-day-head .ld-live::before {{
+  content:""; width:7px; height:7px; border-radius:50%; background:#ef4444;
+  animation:livePulse 1.8s infinite;
+}}
+.live-grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:12px; }}
+.match-row {{
+  display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center; gap:8px;
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 16px 16px; position:relative; overflow:hidden;
+  box-shadow:0 4px 22px rgba(10,23,48,.07), 0 1px 3px rgba(10,23,48,.05);
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}}
+.match-row::before {{
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(135deg, rgba(20,33,58,.022) 0%, transparent 60%);
+}}
+.match-row:hover {{
+  transform:translateY(-2px);
+  box-shadow:var(--lift); border-color:rgba(217,119,6,.28);
+}}
+.match-row.has-extra {{ padding-bottom:0; }}
+.match-row.is-live {{ border-color:rgba(239,68,68,.45); box-shadow:0 0 0 1px rgba(239,68,68,.16), 0 4px 22px rgba(10,23,48,.07); }}
+.match-row .mr-grp {{
+  position:absolute; top:9px; left:14px; font-size:9.5px; font-weight:700;
+  letter-spacing:.08em; color:var(--muted); text-transform:uppercase;
+}}
+.match-row .mr-state {{ position:absolute; top:9px; right:14px; font-size:9.5px; font-weight:700; letter-spacing:.06em; }}
+.match-row.is-live .mr-state {{ color:#ef4444; }}
+.match-row.is-fin  .mr-state {{ color:#16a34a; }}
+.match-row.is-sched .mr-state {{ color:var(--muted); }}
+.match-row .mr-team {{ display:flex; align-items:center; gap:7px; min-width:0; font-weight:600; font-size:13.5px; }}
+.match-row .mr-team.away {{ flex-direction:row-reverse; text-align:right; }}
+.match-row .mr-team .mr-name {{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; flex:1; }}
+.match-row .mr-team.away .mr-name {{ text-align:right; }}
+.match-row .mr-team .mr-tla {{ display:none; font-weight:700; letter-spacing:.02em; flex-shrink:0; }}
+/* On real mobile, swap full name → TLA so long names never clip */
+@media (max-width:560px) {{
+  .match-row .mr-name {{ display:none; }}
+  .match-row .mr-tla  {{ display:inline; }}
+}}
+.match-row .mr-team.win .mr-name, .match-row .mr-team.win .mr-tla {{ font-weight:800; }}
+.match-row .mr-team.lose {{ opacity:.55; }}
+.match-row .mr-score {{
+  font-size:21px; font-weight:800; font-variant-numeric:tabular-nums;
+  color:var(--ink); white-space:nowrap; padding:0 10px;
+}}
+.match-row.is-sched .mr-score {{ font-size:12px; font-weight:600; color:var(--muted); }}
+.match-row .mr-extra {{
+  grid-column:1 / -1; display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center;
+  margin-top:12px; padding:9px 0 0; border-top:1px solid var(--border);
+  font-size:11.5px; color:var(--muted);
+}}
+.match-row .mr-extra .mx-xg b {{ color:var(--ink); font-weight:700; }}
+.match-row .mr-extra .mx-motm {{ color:#b45309; }}
+.match-row .mr-extra .mx-motm b {{ color:#92400e; }}
+.live-empty {{ text-align:center; color:var(--muted); padding:60px 20px; font-size:15px; }}
 
 /* ── NAV TABS ── */
 .nav-wrap {{
@@ -1347,6 +1628,63 @@ body::before {{
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:16px; margin-bottom:28px;
 }}
+/* ── TEAM OF THE TOURNAMENT (pitch) ── */
+.tott-pitch {{
+  position:relative; border-radius:var(--radius);
+  padding:26px 12px 30px;
+  background:
+    linear-gradient(180deg, rgba(16,185,129,.16) 0%, rgba(16,185,129,.10) 100%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 46px, rgba(0,0,0,.025) 46px 92px),
+    var(--ink);
+  border:1px solid rgba(16,185,129,.25);
+  box-shadow:inset 0 0 60px rgba(0,0,0,.35);
+  overflow:hidden;
+}}
+.tott-pitch::before {{   /* centre circle + halfway line */
+  content:''; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:120px; height:120px; border:1.5px solid rgba(255,255,255,.10); border-radius:50%;
+}}
+.tott-pitch::after {{
+  content:''; position:absolute; left:6%; right:6%; top:50%; height:1.5px;
+  background:rgba(255,255,255,.10);
+}}
+.tott-line {{
+  position:relative; z-index:1; display:flex; justify-content:center;
+  gap:clamp(10px,5vw,64px); margin:22px 0;
+}}
+.tott-slot {{
+  display:flex; flex-direction:column; align-items:center; gap:7px;
+  width:96px; text-align:center; cursor:pointer;
+  transition:transform .25s var(--ease);
+}}
+.tott-slot:hover {{ transform:translateY(-4px); }}
+.tott-shirt {{
+  width:54px; height:54px; border-radius:50%;
+  background:linear-gradient(150deg, var(--card) 0%, #f1f5f9 100%);
+  border:2px solid var(--gold);
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.35), 0 0 0 4px rgba(255,255,255,.06);
+  position:relative;
+}}
+.tott-shirt .pphoto {{ width:100%; height:100%; object-fit:cover; }}
+.tott-shirt .tott-flag {{ width:30px; height:20px; border-radius:3px; }}
+.tott-name {{
+  font-size:12px; font-weight:700; color:#fff; line-height:1.15;
+  max-width:96px; overflow:hidden; text-overflow:ellipsis;
+  font-family:'Space Grotesk', sans-serif;
+}}
+.tott-meta {{ font-size:9.5px; color:rgba(231,238,251,.62); letter-spacing:.02em; line-height:1.2; }}
+.tott-pos {{
+  font-size:8.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--gold); background:rgba(194,116,11,.14);
+  padding:1px 6px; border-radius:6px; margin-top:1px;
+}}
+@media (max-width:560px) {{
+  .tott-slot {{ width:64px; }}
+  .tott-shirt {{ width:42px; height:42px; }}
+  .tott-name {{ font-size:10.5px; }}
+}}
+
 .award-card {{
   background:var(--card);
   border:1px solid var(--border);
@@ -1967,12 +2305,27 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
   </div>
 </div>
 
+<!-- ── LIVE SCORES STRIP (populated from LIVE_SCORES by renderLiveStrip) ── -->
+<div id="live-strip" class="live-strip" hidden>
+  <div class="live-strip-head">
+    <span class="live-dot"></span>
+    <span class="live-label">LIVE&nbsp;RESULTS</span>
+    <span id="live-cond" class="live-cond"></span>
+    <span id="live-updated" class="live-updated"></span>
+  </div>
+  <div id="live-track" class="live-track"></div>
+</div>
+
 <!-- ── NAV ── -->
 <div class="nav-wrap">
   <nav class="nav" role="tablist">
     <button class="nav-tab active" onclick="showTab('overview',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
       Overview
+    </button>
+    <button class="nav-tab" id="nav-live" onclick="showTab('live',this)" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M16.24 7.76a6 6 0 010 8.49M7.76 16.24a6 6 0 010-8.49M19.07 4.93a10 10 0 010 14.14M4.93 19.07a10 10 0 010-14.14"/></svg>
+      Live
     </button>
     <button class="nav-tab" onclick="showTab('projections',this)" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="3" x2="3" y2="21"/><line x1="3" y1="21" x2="21" y2="21"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="4" width="3" height="14"/></svg>
@@ -2093,6 +2446,17 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
   </div>
 </div>
 
+<!-- ════════════════ LIVE ════════════════ -->
+<div id="panel-live" class="panel">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Live &amp; Results</div>
+    <div class="sec-title">Match Centre</div>
+    <div class="sec-sub">Real results from the <b>football-data.org</b> API. Finished matches are <b>locked into the simulation</b> &mdash; every projection, group standing, knockout odd and award on this site is conditioned on them.</div>
+  </div>
+  <div id="live-summary" class="live-summary"></div>
+  <div id="live-days"></div>
+</div>
+
 <!-- ════════════════ PROJECTIONS ════════════════ -->
 <div id="panel-projections" class="panel">
   <div class="sec-header">
@@ -2163,6 +2527,17 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
       follows a deep run. <span style="color:rgba(180,130,0,1);font-weight:600">Win share</span> shown on the right.
     </div>
     <div id="goldenball-list"></div>
+  </div>
+
+  <div class="card mb-6">
+    <div class="sec-eyebrow" style="margin-bottom:6px">Best XI &middot; 4-3-3</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px">Team of the Tournament</div>
+    <div style="font-size:11.5px;color:var(--txt2);margin-bottom:18px;line-height:1.5">
+      A projected best XI in a <b>4-3-3</b>. Attackers &amp; midfielders are ranked on <b>club goal involvements per 90</b> &times; minutes &times; projected run;
+      goalkeepers &amp; defenders on their team&rsquo;s <b>projected defensive solidity</b> (xG conceded/game) &times; minutes &times; run &mdash;
+      since the best defenders come from the meanest, deepest-running sides. Updates as results condition the simulation.
+    </div>
+    <div id="tott-pitch" class="tott-pitch"></div>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
@@ -2269,8 +2644,11 @@ const YPOTY    = {ypoty_js};
 const BEST_DEF = {bestdef_js};
 const BEST_ATT = {bestatt_js};
 const GOLDEN_BALL = {goldenball_js};
+const TEAM_OF_TOURNAMENT = {tott_js};
 const MODEL_EVAL  = {modeleval_js};
 const GB_BACKTEST = {gbbacktest_js};
+const LIVE_SCORES = {livescores_js};
+const MATCH_DETAILS = {matchdetails_js};
 const FLAGS    = {flags_js};
 const FLAGCODE = {flagiso_js};
 const YOUNG    = {young_js};
@@ -2334,6 +2712,7 @@ function showTab(name, btn) {{
   document.getElementById('panel-' + name).classList.add('active');
   btn.classList.add('active');
   if (name === 'overview')    renderOverview();
+  if (name === 'live')        renderLive();
   if (name === 'projections') renderProjections();
   if (name === 'groups')      renderGroups();
   if (name === 'bracket')     renderBracket();
@@ -3128,6 +3507,35 @@ function renderPlayers() {{
       <div class="player-xg gb-pct">${{pct(+p.win_prob)}}</div>
     </div>
   `).join('');
+
+  // ── Team of the Tournament (4-3-3 pitch) ──
+  const pitch = document.getElementById('tott-pitch');
+  if (pitch && TEAM_OF_TOURNAMENT) {{
+    const slot = (p, posLabel) => {{
+      const face = p.photo
+        ? `<img class="pphoto" src="${{p.photo}}" loading="lazy" alt="">`
+        : `<span class="tott-flag">${{flagImg(p.team, 30)}}</span>`;
+      const last = (p.name || '').split(' ').slice(-1)[0] || p.name;
+      const stat = (p.g!=null && p.a!=null) ? `${{p.g}}G ${{p.a}}A` : `${{p.xga_team}} xGA/g`;
+      return `<div class="tott-slot" onclick="openBioByKey('${{p.team.replace(/'/g,"\\\\'")}}','${{p.name.replace(/'/g,"\\\\'")}}')" title="${{p.name}} — ${{p.team}}">
+        <div class="tott-shirt">${{face}}</div>
+        <div class="tott-name">${{last}}</div>
+        <div class="tott-pos">${{posLabel}}</div>
+        <div class="tott-meta">${{p.team}} &middot; ${{stat}}</div>
+      </div>`;
+    }};
+    const T = TEAM_OF_TOURNAMENT;
+    // Forwards line (top), then MID, DEF, GK (bottom) — attacking 4-3-3 from above
+    const fwd = (T.FWD||[]).map(p => slot(p, p.position && /winger/i.test(p.position) ? 'W' : 'ST')).join('');
+    const mid = (T.MID||[]).map(p => slot(p, 'MID')).join('');
+    const def = (T.DEF||[]).map(p => slot(p, 'DEF')).join('');
+    const gk  = (T.GK ||[]).map(p => slot(p, 'GK')).join('');
+    pitch.innerHTML =
+      `<div class="tott-line">${{fwd}}</div>` +
+      `<div class="tott-line">${{mid}}</div>` +
+      `<div class="tott-line">${{def}}</div>` +
+      `<div class="tott-line">${{gk}}</div>`;
+  }}
 }}
 
 // ── MODEL & VALIDATION ─────────────────────────────────────────────────────────
@@ -3456,7 +3864,133 @@ function renderGroupTable(groupLetter, currentTeam) {{
   </table></div>`;
 }}
 
+// ── LIVE SCORES STRIP ──────────────────────────────────────────────────────
+function renderLiveStrip() {{
+  const strip = document.getElementById('live-strip');
+  if (!LIVE_SCORES || !LIVE_SCORES.matches) return;
+  // Show finished + currently-live + the next few upcoming, finished/live first
+  const live = LIVE_SCORES.matches.filter(m => m.status==='IN_PLAY' || m.status==='PAUSED');
+  const fin  = LIVE_SCORES.matches.filter(m => m.status==='FINISHED');
+  const next = LIVE_SCORES.matches.filter(m => m.status==='SCHEDULED' || m.status==='TIMED').slice(0,4);
+  const show = [...live, ...fin.slice(-12), ...next];
+  if (!show.length) return;
+
+  const card = m => {{
+    const liveNow = m.status==='IN_PLAY' || m.status==='PAUSED';
+    const done    = m.status==='FINISHED';
+    const cls     = liveNow ? 'is-live' : (done ? 'is-fin' : '');
+    const score   = (m.home_g!=null && m.away_g!=null) ? `${{m.home_g}}<span class="lc-x">–</span>${{m.away_g}}` : '<span class="lc-x">vs</span>';
+    let status;
+    if (liveNow) status = m.minute ? m.minute+"'" : 'LIVE';
+    else if (done) status = 'FT';
+    else status = new Date(m.utc).toLocaleDateString(undefined,{{month:'short',day:'numeric'}});
+    return `<div class="live-card ${{cls}}" title="Group ${{m.group}}">
+      <span class="lc-side">${{flagImg(m.home,16)}}<span class="lc-team">${{m.home}}</span></span>
+      <span class="lc-score">${{score}}</span>
+      <span class="lc-side"><span class="lc-team">${{m.away}}</span>${{flagImg(m.away,16)}}</span>
+      <span class="lc-status">${{status}}</span>
+    </div>`;
+  }};
+
+  document.getElementById('live-track').innerHTML = show.map(card).join('');
+  const n = LIVE_SCORES.group_finished, tot = LIVE_SCORES.group_total || 72;
+  document.getElementById('live-cond').textContent =
+    n ? `· forecast conditioned on ${{n}}/${{tot}} group results` : '';
+  if (LIVE_SCORES.updated_utc) {{
+    document.getElementById('live-updated').textContent =
+      'updated ' + new Date(LIVE_SCORES.updated_utc).toLocaleString(undefined,
+        {{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}});
+  }}
+  strip.hidden = false;
+}}
+
+// ── LIVE TAB (Match Centre) ─────────────────────────────────────────────────
+let _liveRendered = false;
+function renderLive() {{
+  if (_liveRendered) return;
+  _liveRendered = true;
+  const days = document.getElementById('live-days');
+  const summ = document.getElementById('live-summary');
+  if (!LIVE_SCORES || !LIVE_SCORES.matches || !LIVE_SCORES.matches.length) {{
+    summ.innerHTML = '';
+    days.innerHTML = '<div class="live-empty">No live data yet. Run <b>python scripts/update.py</b> once matches kick off.</div>';
+    return;
+  }}
+  const ms = LIVE_SCORES.matches;
+  const fin  = ms.filter(m => m.status==='FINISHED').length;
+  const live = ms.filter(m => m.status==='IN_PLAY' || m.status==='PAUSED').length;
+  const tot  = LIVE_SCORES.group_total || 72;
+  const pct  = Math.round(fin/tot*100);
+
+  summ.innerHTML = `
+    <div class="ls-stat"><div class="ls-val">${{fin}}<span style="font-size:16px;color:var(--muted)">/${{tot}}</span></div>
+      <div class="ls-lbl">Group matches played</div>
+      <div class="ls-bar"><span style="width:${{pct}}%"></span></div></div>
+    <div class="ls-stat"><div class="ls-val" style="color:${{live?'#ef4444':'var(--ink)'}}">${{live}}</div>
+      <div class="ls-lbl">Live right now</div></div>
+    <div class="ls-stat"><div class="ls-val">${{pct}}%</div>
+      <div class="ls-lbl">Group stage complete</div></div>`;
+
+  // Group matches by calendar day
+  const byDay = {{}};
+  ms.forEach(m => {{
+    const d = new Date(m.utc).toLocaleDateString(undefined,{{weekday:'long',month:'long',day:'numeric'}});
+    (byDay[d] = byDay[d] || []).push(m);
+  }});
+  const order = (s)=>({{IN_PLAY:0,PAUSED:0,FINISHED:1,TIMED:2,SCHEDULED:2}}[s]??3);
+
+  const detailKey = m => [m.home, m.away].sort().join('|');
+  const row = m => {{
+    const liveNow = m.status==='IN_PLAY' || m.status==='PAUSED';
+    const done = m.status==='FINISHED';
+    const sched = !liveNow && !done;
+    const cls = liveNow?'is-live':(done?'is-fin':'is-sched');
+    const hg=m.home_g, ag=m.away_g, has=(hg!=null&&ag!=null);
+    const hw = has && hg>ag, aw = has && ag>hg;
+    let state;
+    if (liveNow) state = m.minute ? m.minute+"'" : 'LIVE';
+    else if (done) state = 'FULL TIME';
+    else state = new Date(m.utc).toLocaleTimeString(undefined,{{hour:'2-digit',minute:'2-digit'}});
+    const score = sched ? new Date(m.utc).toLocaleDateString(undefined,{{month:'short',day:'numeric'}})
+                        : `${{hg}} <span style="color:var(--border)">–</span> ${{ag}}`;
+    const teamCls = (win,lose)=> done ? (win?' win':(lose?' lose':'')) : '';
+    // Responsive: full name on wide cards, TLA on narrow (CSS toggles via .mr-name/.mr-tla)
+    const nm = (name,tla)=>`<span class="mr-name" title="${{name}}">${{name}}</span>`+
+                           (tla?`<span class="mr-tla" title="${{name}}">${{tla}}</span>`:'');
+    // FotMob enrichment (xG / MOTM) for finished matches
+    const d = (done && MATCH_DETAILS && MATCH_DETAILS.matches) ? MATCH_DETAILS.matches[detailKey(m)] : null;
+    let extra = '';
+    if (d) {{
+      const hx = d.home===m.home ? d.home_xg : d.away_xg;
+      const ax = d.home===m.home ? d.away_xg : d.home_xg;
+      const xgPart = (hx!=null && ax!=null)
+        ? `<span class="mx-xg"><b>xG</b> ${{(+hx).toFixed(2)}} – ${{(+ax).toFixed(2)}}</span>` : '';
+      const motmPart = d.motm
+        ? `<span class="mx-motm" title="Player of the Match">★ ${{d.motm}}${{d.motm_rating?` <b>${{d.motm_rating}}</b>`:''}}</span>` : '';
+      if (xgPart || motmPart) extra = `<div class="mr-extra">${{xgPart}}${{motmPart}}</div>`;
+    }}
+    return `<div class="match-row ${{cls}}${{extra?' has-extra':''}}">
+      <span class="mr-grp">Grp ${{m.group}}</span>
+      <span class="mr-state">${{state}}</span>
+      <div class="mr-team home${{teamCls(hw,aw)}}">${{flagImg(m.home,20)}}${{nm(m.home,m.home_tla)}}</div>
+      <div class="mr-score">${{score}}</div>
+      <div class="mr-team away${{teamCls(aw,hw)}}">${{nm(m.away,m.away_tla)}}${{flagImg(m.away,20)}}</div>
+      ${{extra}}
+    </div>`;
+  }};
+
+  days.innerHTML = Object.entries(byDay).map(([day, list]) => {{
+    list.sort((a,b)=> order(a.status)-order(b.status) || a.utc.localeCompare(b.utc));
+    const anyLive = list.some(m=>m.status==='IN_PLAY'||m.status==='PAUSED');
+    return `<div class="live-day">
+      <div class="live-day-head">${{day}}${{anyLive?'<span class="ld-live">LIVE</span>':''}}</div>
+      <div class="live-grid">${{list.map(row).join('')}}</div>
+    </div>`;
+  }}).join('');
+}}
+
 // Boot — render overview immediately
+renderLiveStrip();
 renderOverview();
 </script>
 </body>
