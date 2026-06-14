@@ -1,0 +1,116 @@
+{
+  "tournament": "FIFA World Cup 2022",
+  "method": "Golden Ball scoring logic (attacking output per match × team's actual deep run × stage spotlight) replayed on WC22 StatsBomb data.",
+  "actual_winner": "Lionel Messi (Argentina)",
+  "predicted_top": [
+    {
+      "rank": 1,
+      "player": "Lionel Andrés Messi Cuccittini",
+      "team": "Argentina",
+      "ga": 12,
+      "xg": 7.6,
+      "stage": "Final",
+      "score": 16.031
+    },
+    {
+      "rank": 2,
+      "player": "Kylian Mbappé Lottin",
+      "team": "France",
+      "ga": 11,
+      "xg": 5.02,
+      "stage": "Final",
+      "score": 13.292
+    },
+    {
+      "rank": 3,
+      "player": "Gonzalo Ariel Montiel",
+      "team": "Argentina",
+      "ga": 2,
+      "xg": 1.59,
+      "stage": "Final",
+      "score": 10.161
+    },
+    {
+      "rank": 4,
+      "player": "Gonçalo Matias Ramos",
+      "team": "Portugal",
+      "ga": 4,
+      "xg": 1.67,
+      "stage": "Quarter-finals",
+      "score": 8.118
+    },
+    {
+      "rank": 5,
+      "player": "Olivier Giroud",
+      "team": "France",
+      "ga": 4,
+      "xg": 3.04,
+      "stage": "Final",
+      "score": 7.988
+    },
+    {
+      "rank": 6,
+      "player": "Randal Kolo Muani",
+      "team": "France",
+      "ga": 2,
+      "xg": 2.05,
+      "stage": "Final",
+      "score": 7.551
+    },
+    {
+      "rank": 7,
+      "player": "Julián Álvarez",
+      "team": "Argentina",
+      "ga": 4,
+      "xg": 1.91,
+      "stage": "Final",
+      "score": 6.852
+    },
+    {
+      "rank": 8,
+      "player": "Leandro Daniel Paredes",
+      "team": "Argentina",
+      "ga": 2,
+      "xg": 1.58,
+      "stage": "Final",
+      "score": 6.763
+    },
+    {
+      "rank": 9,
+      "player": "Mislav Oršić",
+      "team": "Croatia",
+      "ga": 4,
+      "xg": 1.06,
+      "stage": "3rd Place Final",
+      "score": 5.247
+    },
+    {
+      "rank": 10,
+      "player": "Antoine Griezmann",
+      "team": "France",
+      "ga": 3,
+      "xg": 0.5,
+      "stage": "Final",
+      "score": 5.245
+    }
+  ],
+  "podium_recovery": [
+    {
+      "actual": "Golden Ball (1st)",
+      "player": "Lionel Andrés Messi Cuccittini",
+      "predicted_rank": 1
+    },
+    {
+      "actual": "Golden Boot / Ball 2nd",
+      "player": "Kylian Mbappé Lottin",
+      "predicted_rank": 2
+    },
+    {
+      "actual": "Golden Ball 3rd",
+      "player": "Luka Modrić",
+      "predicted_rank": 78
+    }
+  ],
+  "hit_at_1": true,
+  "n_players": 248
+}

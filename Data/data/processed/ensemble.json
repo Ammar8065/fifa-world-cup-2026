@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "GLM-Poisson": 0.0,
+    "XGBoost": 0.7,
+    "Dixon-Coles": 0.3
+  },
+  "rho": -0.0543,
+  "home_adv": 0.2423,
+  "xgb_features": [
+    "elo_home",
+    "elo_away",
+    "elo_diff",
+    "off_rating_a",
+    "def_rating_b",
+    "is_home"
+  ]
+}
