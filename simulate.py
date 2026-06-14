@@ -39,15 +39,21 @@ from itertools import combinations
 import numpy as np
 import pandas as pd
 import joblib
+import json
+import xgboost as xgb
 
 # ── Config ────────────────────────────────────────────────────────────────────
 N_SIMS       = 10_000
 ET_FACTOR    = 0.50     # extra-time reduces scoring rate to 50% of 90-min rate
 
-# Trained model artifacts (produced by train_model.py)
-MODEL_PATH   = "Data/data/processed/poisson_goals_ours.pkl"
+# Trained model artifacts (produced by train_model.py + train_advanced.py)
+MODEL_PATH   = "Data/data/processed/poisson_goals_ours.pkl"   # GLM-Poisson
 RATINGS_PATH = "Data/data/processed/team_ratings_2026.csv"
+DC_PATH      = "Data/data/processed/dc_ratings_2026.csv"      # Dixon-Coles attack/defence
+XGB_PATH     = "Data/data/processed/xgb_goals.json"           # XGBoost (count:poisson)
+ENS_PATH     = "Data/data/processed/ensemble.json"            # tuned blend weights + ρ
 MODEL_FEATURES = ["elo_diff", "off_rating_a", "def_rating_b", "is_home"]
+XGB_FEATURES   = ["elo_home", "elo_away", "elo_diff", "off_rating_a", "def_rating_b", "is_home"]
 
 # Optional, small post-hoc squad-age tilt (peak ≈ 27). Set AGE_TILT=0 to disable.
 AGE_TILT     = 0.010    # per year away from peak; multiplies a team's scoring λ
@@ -119,14 +125,25 @@ def load_all() -> dict:
 
 # ── Build team strengths + λ lookup from the trained model ──────────────────────
 def build_strengths(data: dict) -> dict[str, dict]:
-    """Load the fitted Poisson pipeline + 2026 team ratings, precompute every
-    pairwise expected-goals value, and store it on each team for fast lookup."""
+    """Load the trained ENSEMBLE (GLM-Poisson + XGBoost + Dixon-Coles, with the
+    holdout-tuned weights from train_advanced.py) + 2026 team ratings, precompute
+    every pairwise expected-goals value, and store it on each team for fast lookup."""
     teams = list(data["groups"].keys())
 
-    pipe = joblib.load(MODEL_PATH)
+    pipe = joblib.load(MODEL_PATH)                       # GLM-Poisson
+    booster = xgb.Booster(); booster.load_model(XGB_PATH)  # XGBoost (count:poisson)
+    ens = json.loads(Path(ENS_PATH).read_text(encoding="utf-8"))
+    w_glm = float(ens["weights"]["GLM-Poisson"])
+    w_xgb = float(ens["weights"]["XGBoost"])
+    w_dc  = float(ens["weights"]["Dixon-Coles"])
+
     ratings = pd.read_csv(RATINGS_PATH)
     ratings["team"] = ratings["team"].apply(canon)
     rat = {r["team"]: r for _, r in ratings.iterrows()}
+
+    dc_df = pd.read_csv(DC_PATH); dc_df["team"] = dc_df["team"].apply(canon)
+    dcr = {r["team"]: r for _, r in dc_df.iterrows()}
+    dc_att_med = dc_df["dc_attack"].median(); dc_def_med = dc_df["dc_defence"].median()
 
     med_elo = ratings["elo"].median()
     med_off = ratings["off_rating"].median()
@@ -140,34 +157,47 @@ def build_strengths(data: dict) -> dict[str, dict]:
     off = {t: get(t, "off_rating", med_off) for t in teams}
     dfn = {t: get(t, "def_rating", med_def) for t in teams}
     age = {t: get(t, "avg_age", med_age) for t in teams}
+    dc_att = {t: float(dcr[t]["dc_attack"]) if t in dcr else dc_att_med for t in teams}
+    dc_def = {t: float(dcr[t]["dc_defence"]) if t in dcr else dc_def_med for t in teams}
 
     # squad-age tilt: teams further from the peak age score a touch less (small effect)
     age_factor = {t: float(np.exp(-AGE_TILT * abs(age[t] - AGE_PEAK))) for t in teams}
 
+    def ens_lambda(rows_glm, rows_xgb, dc_lams):
+        """Blend the three models' λ predictions with the tuned weights."""
+        out = np.zeros(len(dc_lams))
+        if w_glm: out += w_glm * pipe.predict(pd.DataFrame(rows_glm, columns=MODEL_FEATURES))
+        if w_xgb: out += w_xgb * booster.predict(xgb.DMatrix(pd.DataFrame(rows_xgb, columns=XGB_FEATURES)))
+        if w_dc:  out += w_dc  * np.asarray(dc_lams)
+        return out
+
     # Vectorised prediction for all ordered team pairs (a scoring vs b, neutral venue)
     pairs = [(a, b) for a in teams for b in teams if a != b]
-    X = pd.DataFrame(
-        [[elo[a] - elo[b], off[a], dfn[b], 0] for a, b in pairs],
-        columns=MODEL_FEATURES,
-    )
-    preds = pipe.predict(X)
+    glm_rows = [[elo[a] - elo[b], off[a], dfn[b], 0] for a, b in pairs]
+    xgb_rows = [[elo[a], elo[b], elo[a] - elo[b], off[a], dfn[b], 0] for a, b in pairs]
+    dc_lams  = [float(np.exp(dc_att[a] - dc_def[b])) for a, b in pairs]   # neutral venue
+    preds = ens_lambda(glm_rows, xgb_rows, dc_lams)
 
     lam: dict[str, dict[str, float]] = {t: {} for t in teams}
     for (a, b), p in zip(pairs, preds):
         lam[a][b] = float(p) * age_factor[a]
 
     # Interpretable ratings in REAL GOAL UNITS: expected goals for / against per
-    # match versus a benchmark "average WC opponent" (mean elo / off / def). This
-    # is far clearer than an abstract 0–1 score and, because it runs through the
-    # fitted model against a FIXED opponent, it strips out who a team happened to
-    # play recently.  xgf higher = better attack; xga LOWER = better defense.
+    # match versus a benchmark "average WC opponent" — now through the full ENSEMBLE.
+    # xgf higher = better attack; xga LOWER = better defense.
     avg_elo = float(np.mean(list(elo.values())))
     avg_off = float(np.mean(list(off.values())))
     avg_def = float(np.mean(list(dfn.values())))
-    Xf = pd.DataFrame([[elo[t] - avg_elo, off[t], avg_def, 0] for t in teams], columns=MODEL_FEATURES)
-    Xa = pd.DataFrame([[avg_elo - elo[t], avg_off, dfn[t], 0] for t in teams], columns=MODEL_FEATURES)
-    xgf = {t: float(v) * age_factor[t] for t, v in zip(teams, pipe.predict(Xf))}
-    xga = {t: float(v) for t, v in zip(teams, pipe.predict(Xa))}
+    avg_dca = float(np.mean(list(dc_att.values())))
+    avg_dcd = float(np.mean(list(dc_def.values())))
+    xgf_glm = [[elo[t] - avg_elo, off[t], avg_def, 0] for t in teams]
+    xgf_xgb = [[elo[t], avg_elo, elo[t] - avg_elo, off[t], avg_def, 0] for t in teams]
+    xgf_dc  = [float(np.exp(dc_att[t] - avg_dcd)) for t in teams]
+    xga_glm = [[avg_elo - elo[t], avg_off, dfn[t], 0] for t in teams]
+    xga_xgb = [[avg_elo, elo[t], avg_elo - elo[t], avg_off, dfn[t], 0] for t in teams]
+    xga_dc  = [float(np.exp(avg_dca - dc_def[t])) for t in teams]
+    xgf = {t: float(v) * age_factor[t] for t, v in zip(teams, ens_lambda(xgf_glm, xgf_xgb, xgf_dc))}
+    xga = {t: float(v) for t, v in zip(teams, ens_lambda(xga_glm, xga_xgb, xga_dc))}
 
     # Normalised 0–1 versions (higher = better for BOTH) for heat shading / radar.
     def norm01(d, invert=False):

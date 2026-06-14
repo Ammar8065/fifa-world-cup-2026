@@ -1,32 +1,32 @@
 match_id,round,pred_winner,p_win
-73,Round of 32,Canada,0.2319
-74,Round of 32,Brazil,0.3235
-75,Round of 32,Germany,0.3238
-76,Round of 32,Netherlands,0.2741
-77,Round of 32,Norway,0.2077
-78,Round of 32,France,0.4586
-79,Round of 32,Mexico,0.3115
-80,Round of 32,England,0.4449
-81,Round of 32,Belgium,0.2709
-82,Round of 32,Türkiye,0.2414
-83,Round of 32,Croatia,0.2137
-84,Round of 32,Spain,0.6925
-85,Round of 32,Switzerland,0.3144
-86,Round of 32,Türkiye,0.1669
-87,Round of 32,Argentina,0.5564
-88,Round of 32,Colombia,0.2784
-89,Round of 16,Germany,0.2232
-90,Round of 16,Brazil,0.1825
-91,Round of 16,France,0.3143
-92,Round of 16,England,0.3334
-93,Round of 16,Spain,0.5343
-94,Round of 16,Belgium,0.1491
-95,Round of 16,Portugal,0.1879
-96,Round of 16,Argentina,0.4699
-97,Quarter-final,Germany,0.1646
-98,Quarter-final,Spain,0.453
-99,Quarter-final,France,0.2142
-100,Quarter-final,Argentina,0.3526
-101,Semi-final,Spain,0.3489
-102,Semi-final,Argentina,0.235
-104,Final,Spain,0.2719
+73,Round of 32,Canada,0.2079
+74,Round of 32,Brazil,0.4039
+75,Round of 32,Germany,0.3621
+76,Round of 32,Netherlands,0.2803
+77,Round of 32,Ecuador,0.2004
+78,Round of 32,France,0.4086
+79,Round of 32,Mexico,0.2728
+80,Round of 32,England,0.4551
+81,Round of 32,Belgium,0.3175
+82,Round of 32,Türkiye,0.2322
+83,Round of 32,Croatia,0.2301
+84,Round of 32,Spain,0.6263
+85,Round of 32,Switzerland,0.332
+86,Round of 32,Türkiye,0.1608
+87,Round of 32,Argentina,0.5197
+88,Round of 32,Portugal,0.3121
+89,Round of 16,Germany,0.2546
+90,Round of 16,Brazil,0.2491
+91,Round of 16,France,0.2648
+92,Round of 16,England,0.3427
+93,Round of 16,Spain,0.4378
+94,Round of 16,Belgium,0.1906
+95,Round of 16,Portugal,0.2224
+96,Round of 16,Argentina,0.4369
+97,Quarter-final,Germany,0.1919
+98,Quarter-final,Spain,0.3683
+99,Quarter-final,England,0.2074
+100,Quarter-final,Argentina,0.3129
+101,Semi-final,Spain,0.264
+102,Semi-final,Argentina,0.2007
+104,Final,Spain,0.2089
