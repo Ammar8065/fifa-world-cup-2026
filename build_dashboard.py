@@ -1797,6 +1797,9 @@ table.exp-table {{ width:100%; border-collapse:collapse; font-size:12.5px; }}
 .exp-foot {{ padding:11px 15px; font-size:11px; color:var(--txt3); background:var(--card); border-top:1px solid var(--border); }}
 
 /* ── RESPONSIVE ── */
+/* Horizontal-scroll wrapper for wide tables (used by the standings/group-comparison) */
+.tbl-scroll {{ overflow-x:auto; -webkit-overflow-scrolling:touch; }}
+
 @media (max-width:768px) {{
   .hero {{ padding:40px 16px 32px; }}
   .main {{ padding:24px 12px 48px; }}
@@ -1807,6 +1810,20 @@ table.exp-table {{ width:100%; border-collapse:collapse; font-size:12.5px; }}
   .final-champ-name {{ font-size:22px; }}
   .award-grid {{ grid-template-columns:1fr 1fr; }}
   .bracket-matches-grid.sf-grid {{ grid-template-columns:1fr; max-width:100%; }}
+
+  /* Wide data tables scroll inside their card instead of being clipped by
+     body{{overflow-x:hidden}} (which would otherwise hide their right-hand columns) */
+  .proj-wrap, .gh-wrap {{ overflow-x:auto; -webkit-overflow-scrolling:touch; }}
+  .exp-wrap {{ overflow-x:auto; overflow-y:visible; -webkit-overflow-scrolling:touch; }}
+  /* Sticky column headers can't stick inside a horizontal-scroll container — make
+     them static on mobile so the table scrolls cleanly */
+  .proj-table thead th, .exp-table thead th {{ position:static; top:auto; }}
+
+  /* Collapse inline two-column content grids (awards rows, team detail) to one column */
+  [style*="grid-template-columns:1fr 1fr"] {{ grid-template-columns:1fr !important; }}
+
+  /* 16px form fields stop iOS Safari from auto-zooming when they get focus */
+  .exp-search, select {{ font-size:16px; }}
 }}
 @media (max-width:480px) {{
   .hero h1 {{ font-size:28px; }}
@@ -3264,7 +3281,7 @@ function renderGroupTable(groupLetter, currentTeam) {{
     const v = t[k] || 0, x = hmax[k] > 0 ? v / hmax[k] : 0;
     return `background:${{heatBg(x, 'green')}};color:${{x > 0.62 ? '#fff' : 'var(--txt)'}}`;
   }};
-  return `<table class="data-table">
+  return `<div class="tbl-scroll"><table class="data-table">
     <thead><tr>
       <th>Flag</th><th>Team</th><th>ELO</th><th>Attack</th><th>Defense</th>
       <th>Qualify %</th><th>Win %</th>
@@ -3280,7 +3297,7 @@ function renderGroupTable(groupLetter, currentTeam) {{
         <td class="heat" style="${{heat(t,'p_champion')}}">${{pct(t.p_champion)}}</td>
       </tr>`).join('')}}
     </tbody>
-  </table>`;
+  </table></div>`;
 }}
 
 // Boot — render overview immediately
