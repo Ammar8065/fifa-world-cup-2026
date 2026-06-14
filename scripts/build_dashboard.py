@@ -1587,10 +1587,9 @@ body::before {{
   border:1px solid rgba(16,185,129,.30);
   box-shadow:inset 0 0 70px rgba(0,0,0,.45);
 }}
-.tott-pitch .pitch-bg {{   /* landscape grass rotated to portrait (goals top/bottom) */
-  position:absolute; top:50%; left:50%;
-  width:140%; height:140%;            /* over-size so rotation fills corners */
-  transform:translate(-50%,-50%) rotate(90deg);
+.tott-pitch .pitch-bg {{
+  position:absolute; inset:0;
+  width:100%; height:100%;
   object-fit:cover; z-index:0;
 }}
 .tott-pitch .pitch-tint {{
