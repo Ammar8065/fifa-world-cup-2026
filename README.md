@@ -127,6 +127,18 @@ python build_dashboard.py            # assemble the dashboard
 
 Then open `dashboard.html` in any browser.
 
+### Deploy (Netlify)
+
+The site is a single static file — no build step. `netlify.toml` publishes the repo
+root and rewrites `/` → `/dashboard.html`, so the dashboard loads at the site root.
+
+- **Git deploy:** connect the repo in Netlify → it picks up `netlify.toml` automatically
+  (build command: none, publish directory: `.`).
+- **CLI deploy:** `npm i -g netlify-cli && netlify deploy --prod`.
+
+To refresh the live site after a data/model update, re-run `python build_dashboard.py`,
+commit the regenerated `dashboard.html`, and push — Netlify redeploys on push.
+
 > The scrapers (`scraper*.py`) require network access and are only needed to refresh
 > the underlying data; the committed `Data/` snapshot already contains everything the
 > train → simulate → build chain needs.

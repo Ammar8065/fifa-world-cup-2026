@@ -1,0 +1,18 @@
+# Netlify deploy — this is a static site (no build step). The whole project is a
+# single self-contained file, dashboard.html, served at the site root.
+
+[build]
+  publish = "."          # serve from the repo root
+  # no build command — dashboard.html is committed pre-built
+
+# Serve the dashboard at "/" without renaming the file (200 = rewrite, URL stays clean)
+[[redirects]]
+  from = "/"
+  to = "/dashboard.html"
+  status = 200
+
+# Long-cache the static assets; the HTML itself is revalidated each visit
+[[headers]]
+  for = "/dashboard.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
