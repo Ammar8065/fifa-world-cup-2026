@@ -105,6 +105,17 @@ body::before {
   background-size:60px 60px;
 }
 .hero-content { position:relative; z-index:1; }
+.hero-logo { display:flex; justify-content:center; margin-bottom:20px; }
+.hero-logo img {
+  height:118px; width:auto; display:block;
+  filter:drop-shadow(0 10px 24px rgba(20,33,58,.16));
+  transition:transform .4s var(--ease), filter .4s var(--ease);
+}
+.hero-logo img:hover {
+  transform:translateY(-4px) scale(1.03);
+  filter:drop-shadow(0 16px 34px rgba(217,119,6,.30));
+}
+@media (max-width:560px) { .hero-logo img { height:92px; } }
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(245,158,11,.1);
@@ -1384,6 +1395,10 @@ select:hover { border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58,
   <div class="hero-mesh"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
+    <div class="hero-logo">
+      <img src="Data/icons/tournaments_fifa-world-cup-2026.football-logos.cc.svg"
+           alt="FIFA World Cup 2026 official emblem" width="227" height="351" loading="eager">
+    </div>
     <h1>FIFA World Cup 2026</h1>
     <p class="hero-sub">Prediction using ELO ratings, StatsBomb xG data, FIFA rankings &amp; historical tournament form</p>
     <div class="hero-stats">
