@@ -532,6 +532,8 @@ HTML = f"""<!DOCTYPE html>
   --shadow:    0 12px 44px rgba(20,33,58,.10);
   --shadow2:   0 2px 14px rgba(20,33,58,.06);
   --glow-gold: 0 0 0 1px rgba(217,119,6,.14), 0 8px 28px rgba(217,119,6,.12);
+  --ease:      cubic-bezier(.22,1,.36,1);
+  --lift:      0 14px 38px rgba(20,33,58,.14), 0 0 0 1px rgba(217,119,6,.10);
 }}
 
 /* ── RESET ── */
@@ -1301,7 +1303,7 @@ body::before {{
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:22px;
-  transition:border-color .2s, box-shadow .2s;
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
   position:relative;
   overflow:hidden;
 }}
@@ -1311,7 +1313,9 @@ body::before {{
   pointer-events:none; border-radius:inherit;
 }}
 .award-card:hover {{
-  box-shadow:0 8px 32px rgba(20,33,58,.10);
+  transform:translateY(-5px);
+  border-color:rgba(217,119,6,.34);
+  box-shadow:0 16px 42px rgba(20,33,58,.15), 0 0 0 1px rgba(217,119,6,.10);
 }}
 .award-title {{
   font-size:10px; font-weight:700; color:var(--txt3);
@@ -1783,6 +1787,78 @@ table.exp-table {{ width:100%; border-collapse:collapse; font-size:12.5px; }}
 .anim-fade-up {{
   animation:fadeUp .4s cubic-bezier(.22,1,.36,1) both;
 }}
+
+/* ════════════════ PREMIUM HOVER LAYER ════════════════ */
+/* Generic content cards — elevate + faint gold border. No transform, so sticky
+   table headers living inside cards never break. */
+.card {{ transition:border-color .3s var(--ease), box-shadow .3s var(--ease); }}
+.card:hover {{
+  border-color:rgba(217,119,6,.22);
+  box-shadow:0 14px 40px rgba(20,33,58,.11), 0 0 0 1px rgba(217,119,6,.06);
+}}
+
+/* Hero stat tiles — lift + glowing value */
+.hstat {{ transition:transform .3s var(--ease); border-radius:10px; }}
+.hstat:hover {{ transform:translateY(-3px); }}
+.hstat:hover .hstat-val {{ text-shadow:0 0 18px var(--gold-glow); }}
+
+/* Nav tabs — subtle rise */
+.nav-tab {{ transition:color .2s, border-color .2s, transform .2s var(--ease); }}
+.nav-tab:hover {{ transform:translateY(-1px); }}
+
+/* Photos — gentle zoom when their card / row is hovered */
+.pphoto {{ transition:transform .35s var(--ease), box-shadow .35s var(--ease); }}
+.award-card:hover .pphoto,
+.player-row:hover .pphoto,
+.exp-table tbody tr:hover .pphoto {{ transform:scale(1.09); }}
+.award-card:hover .award-avatar .pphoto {{ box-shadow:0 6px 18px rgba(217,119,6,.30); }}
+
+/* Flags — micro-scale inside hovered rows / cards */
+.flag-img {{ transition:transform .3s var(--ease); }}
+.player-row:hover .flag-img,
+.award-card:hover .flag-img,
+.champ-card:hover .flag-img,
+.bm-card:hover .flag-img,
+.group-team-row:hover .flag-img {{ transform:scale(1.08); }}
+
+/* List rows — a gold left-accent grows in */
+.player-row {{ position:relative; }}
+.player-row::before {{
+  content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:3px; height:0; border-radius:2px; background:var(--gold); opacity:.9;
+  transition:height .25s var(--ease);
+}}
+.player-row:hover::before {{ height:60%; }}
+
+/* Explorer + data-table rows — gold inset accent on the first cell */
+.exp-table tbody tr td:first-child,
+table.data-table tbody tr td:first-child {{ transition:box-shadow .2s var(--ease); }}
+.exp-table tbody tr:hover td:first-child,
+table.data-table tbody tr:hover td:first-child {{ box-shadow:inset 3px 0 0 var(--gold); }}
+
+/* Filter chips — lift + shadow */
+.exp-chip {{ transition:all .18s var(--ease); }}
+.exp-chip:hover {{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(20,33,58,.12); }}
+
+/* Select dropdown — hover affordance (previously focus-only) */
+select {{ transition:border-color .2s var(--ease), box-shadow .2s var(--ease); }}
+select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58,.08); }}
+
+/* Squad player + highlight cards — lift */
+.pg-player {{ transition:transform .25s var(--ease); }}
+.pg-player:hover {{ transform:translateY(-3px); }}
+.pg-highlight {{ transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease); }}
+.pg-highlight:hover {{ transform:translateY(-3px); box-shadow:var(--lift); }}
+
+/* Sheen sweep across the award cards on hover (overflow:hidden clips it) */
+.award-card::after {{
+  content:''; position:absolute; top:0; left:-65%; width:45%; height:100%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent);
+  transform:skewX(-18deg); pointer-events:none; opacity:0;
+  transition:left .65s var(--ease), opacity .2s var(--ease);
+}}
+.award-card:hover::after {{ left:135%; opacity:1; }}
+
 @media (prefers-reduced-motion: reduce) {{
   *, *::before, *::after {{
     animation-duration:.01ms !important;
