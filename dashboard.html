@@ -556,7 +556,7 @@ body::before {
 
 /* ── GROUP HEAT TABLE (almonadavid-style colour grading) ── */
 .gh-table { width:100%; border-collapse:collapse; font-family:'Space Grotesk', sans-serif; font-size:12px; }
-.gh-table th, .gh-table td { padding:7px 7px; text-align:center; white-space:nowrap; }
+.gh-table th, .gh-table td { padding:7px 9px; text-align:center; white-space:nowrap; }
 .gh-table thead th { font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
   color:var(--txt3); border-bottom:1px solid var(--border); }
 .gh-table thead th.gh-team { text-align:left; padding-left:8px; }
@@ -564,15 +564,20 @@ body::before {
 .gh-table td.gh-team { display:flex; align-items:center; gap:8px; font-weight:600; color:var(--txt); min-width:120px; }
 .gh-table td.gh-team .flag-img { width:18px; height:12px; flex-shrink:0; }
 .gh-pos { width:18px; color:var(--txt4); font-size:10px; font-weight:700; }
-.gh-cell { font-variant-numeric:tabular-nums; font-weight:600; border-radius:5px; min-width:42px; }
+.gh-cell { font-variant-numeric:tabular-nums; font-weight:600; min-width:42px; }
 .gh-table tbody tr { border-bottom:1px solid var(--border); }
 .gh-table tbody tr:last-child { border-bottom:none; }
 .gh-table tbody tr:hover td.gh-team { color:var(--gold); }
 .gh-sep { border-left:2px solid var(--border2); }
 .gh-wrap { padding:6px 14px 12px; }
 
-/* heat shading reused on the standings data-table */
-.data-table td.heat { font-weight:700; font-variant-numeric:tabular-nums; border-radius:5px; }
+/* heat shading reused on the standings data-table — matched to .proj-cell:
+   flat full-bleed fill (no border-radius → no "diamond" notches between cells),
+   Space Grotesk, weight 600 */
+.data-table td.heat {
+  font-family:'Space Grotesk', sans-serif;
+  font-weight:600; font-variant-numeric:tabular-nums;
+}
 
 /* ── BRACKET ── */
 .bracket-flow {
