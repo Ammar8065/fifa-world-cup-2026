@@ -4,9 +4,11 @@
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
+import re
 import time
 import random
 import logging
+import unicodedata
 from math import exp, factorial
 from pathlib import Path
 from collections import defaultdict
@@ -31,6 +33,19 @@ XGB_FEATURES   = ["elo_home", "elo_away", "elo_diff", "off_rating_a", "def_ratin
 
 AGE_TILT     = 0.010
 AGE_PEAK     = 27.0
+
+# per-player goal attribution (Golden Boot projection)
+SQUADS_PATH        = "Data/scraped/squads_2026.json"
+PXG_CUR_PATH       = "Data/scraped/player_xg_current.csv"   # 2025-26 club xG (Understat)
+PXG_TOUR_PATH      = "Data/scraped/player_xg.csv"           # tournament xG (fallback)
+MIN_SCORER_MATCHES = 10   # full club season — drops fringe/injury small samples
+# Bayesian shrinkage of a player's per-match scoring rate toward a league prior,
+# so 3-match samples don't masquerade as elite finishers.
+SHRINK_PRIOR_RATE  = 0.12   # league-average attacker goals+xG per match
+SHRINK_PRIOR_N     = 6.0    # prior strength, in "phantom matches"
+# Each unmatched outfield squad player adds discard weight so a lone covered
+# striker on a poorly-scraped squad can't inherit 100% of the team's goals.
+DEPTH_WEIGHT       = 0.07    # per-match scoring weight of an unknown depth player
 
 OUTPUT_DIR   = Path("Data/simulated")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -194,6 +209,100 @@ def build_strengths(data: dict) -> dict[str, dict]:
         }
     return strengths
 
+def _pnorm(s: str) -> str:
+    s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode()
+    # split hyphens / dots / apostrophes into separate tokens (Mbappe-Lottin → mbappe lottin)
+    return re.sub(r"[^a-z]+", " ", s.lower()).strip()
+
+def _firstlast(n: str) -> str:
+    t = n.split()
+    return (t[0] + " " + t[-1]) if len(t) >= 2 else n
+
+def build_player_shares(teams: list[str]) -> tuple[list[dict], dict]:
+    """For every WC squad player, derive their share of the team's scoring from
+    2025-26 club xG/goals (Understat), with tournament xG as fallback. The share
+    becomes the per-goal attribution probability in the Monte Carlo.
+
+    Returns (players_meta, team_share):
+      players_meta : list of per-player dicts, indexed by global id
+      team_share   : {team: (idx_array, prob_array)}  probs sum to 1 per team
+    """
+    squads_raw = json.loads(Path(SQUADS_PATH).read_text(encoding="utf-8"))
+
+    def build_lookup(path: str) -> dict:
+        lk: dict = {}
+        if not Path(path).exists():
+            return lk
+        df = pd.read_csv(path).sort_values("xg", ascending=False)
+        df["_n"] = df["player"].map(_pnorm)
+        for _, r in df.iterrows():
+            toks = r["_n"].split()
+            keys = [r["_n"], _firstlast(r["_n"])]
+            # also index "first + each other token" so compound surnames in the
+            # data (Messi Cuccitini, Ronaldo dos Santos) reconcile to clean squad names
+            keys += [toks[0] + " " + t for t in toks[1:]]
+            for key in keys:
+                lk.setdefault(key, r)   # higher-xG row wins (df sorted desc)
+        return lk
+
+    cur_lk  = build_lookup(PXG_CUR_PATH)
+    tour_lk = build_lookup(PXG_TOUR_PATH)
+
+    players_meta: list[dict] = []
+    team_share: dict[str, tuple] = {}
+    teamset = set(teams)
+
+    for raw_team, blk in squads_raw.items():
+        team = canon(raw_team)
+        if team not in teamset:
+            continue
+        n_outfield = sum(1 for p in blk["players"] if p.get("pos_group") != "GK")
+        idxs, rates = [], []
+        for p in blk["players"]:
+            n  = _pnorm(p["name"])
+            toks = n.split()
+            cand_keys = [n, _firstlast(n)]
+            if len(toks) > 2:
+                cand_keys.append(toks[0] + " " + toks[1])   # first + second token
+            rec = None
+            for lk in (cur_lk, tour_lk):       # prefer current-club xG over tournament
+                for key in cand_keys:
+                    if key in lk:
+                        rec = lk[key]; break
+                if rec is not None:
+                    break
+            if rec is None:
+                continue
+            matches = int(rec["matches"])
+            if matches < MIN_SCORER_MATCHES:
+                continue
+            xg, goals = float(rec["xg"]), int(rec["goals"])
+            # half xG (chance quality), half actual finishing
+            raw_output = 0.5 * xg + 0.5 * goals
+            # shrink toward the league prior so small samples regress to the mean
+            rate = ((raw_output + SHRINK_PRIOR_RATE * SHRINK_PRIOR_N)
+                    / (matches + SHRINK_PRIOR_N))
+            if rate <= 0:
+                continue
+            players_meta.append({
+                "player": p["name"], "team": team,
+                "club": rec.get("club", p.get("club", "")),
+                "position": p.get("position", ""),
+                "club_rate": round(rate, 4), "club_matches": matches,
+            })
+            idxs.append(len(players_meta) - 1)
+            rates.append(rate)
+        if rates:
+            # add a discard bucket for the squad's unmatched outfield depth, so
+            # goals aren't fully absorbed by the few scraped players
+            depth = max(n_outfield - len(rates), 0) * DEPTH_WEIGHT
+            weights = np.asarray(rates + [depth], float)
+            team_share[team] = (np.asarray(idxs, int), weights / weights.sum())
+
+    log.info(f"  Player scorers:  {len(players_meta)} squad players across "
+             f"{len(team_share)} teams")
+    return players_meta, team_share
+
 def expected_goals(team_a: str, team_b: str, strengths: dict) -> tuple[float, float]:
     lam_a = strengths[team_a]["lam"][team_b]
     lam_b = strengths[team_b]["lam"][team_a]
@@ -321,6 +430,7 @@ def sim_knockout(slots_df: pd.DataFrame,
 
     match_winners: dict[int, str] = {}
     match_losers:  dict[int, str] = {}
+    ko_goals:      dict[str, int] = defaultdict(int)
 
     def get_team(slot_str: str, match_id: int) -> str | None:
         s = slot_str.strip()
@@ -349,17 +459,24 @@ def sim_knockout(slots_df: pd.DataFrame,
         if rnd == "Third-place playoff":
             continue   # skip 3rd-place match for simulation purposes
 
-        gh, ga, _ = sim_match(home, away, strengths, knockout=True)
+        gh, ga, pen = sim_match(home, away, strengths, knockout=True)
         winner = home if gh > ga else away
         loser  = away if gh > ga else home
         match_winners[mid] = winner
         match_losers[mid]  = loser
+        # on-pitch goals only — drop the shootout goal so it isn't attributed to a scorer
+        rgh, rga = gh, ga
+        if pen:
+            if gh > ga: rgh -= 1
+            elif ga > gh: rga -= 1
+        ko_goals[home] += rgh
+        ko_goals[away] += rga
 
     # Final is the last match in the bracket (max match_id, round='Final')
     finals = slots_df[slots_df["round"] == "Final"]
     champion = match_winners.get(int(finals["match_id"].iloc[0])) if len(finals) > 0 else None
 
-    return match_winners, champion
+    return match_winners, champion, ko_goals
 
 # full tournament simulation
 def simulate_tournament(data: dict, strengths: dict) -> dict:
@@ -381,21 +498,32 @@ def simulate_tournament(data: dict, strengths: dict) -> dict:
     best3_slots = pick_best_third(third_teams, strengths, best3_lookup)
 
     # --- Knockout ---
-    match_winners, champion = sim_knockout(
+    match_winners, champion, ko_goals = sim_knockout(
         slots_df, group_results, best3_slots, strengths
     )
+
+    # --- Goals scored per team this tournament (group + knockout) ---
+    team_goals: dict[str, int] = defaultdict(int)
+    for standing in group_results.values():
+        for row in standing:
+            team_goals[row["team"]] += row["gf"]
+    for t, g in ko_goals.items():
+        team_goals[t] += g
 
     return {
         "group_results": group_results,
         "best3_slots":   best3_slots,
         "match_winners": match_winners,
         "champion":      champion,
+        "team_goals":    team_goals,
     }
 
 # monte carlo
 ROUND_ORDER = ["Round of 32", "Round of 16", "Quarter-final", "Semi-final", "Final"]
 
-def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
+def run_monte_carlo(data: dict, strengths: dict,
+                    players_meta: list[dict], team_share: dict,
+                    n_sims: int = N_SIMS) -> tuple:
     all_teams = list(data["groups"].keys())
     slots_df  = data["slots_df"]
 
@@ -405,6 +533,12 @@ def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
     pos_dist = {t: defaultdict(int) for t in all_teams}
     # Track per-match winner counts {match_id: {team: n}}
     match_win_counts: dict[int, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+
+    # Per-player goal attribution accumulators (Golden Boot projection)
+    n_players = len(players_meta)
+    g_total   = np.zeros(n_players)   # Σ goals over sims  → mean
+    g_sumsq   = np.zeros(n_players)   # Σ goals²          → variance
+    gb_wins   = np.zeros(n_players)   # fractional Golden Boot wins (ties split)
 
     # Build match-id → round mapping
     match_round = dict(zip(slots_df["match_id"].astype(int), slots_df["round"]))
@@ -444,6 +578,27 @@ def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
         # Champion
         if champion:
             counts[champion]["champion"] += 1
+
+        # Attribute each team's goals to individual scorers (multinomial by share)
+        team_goals = result["team_goals"]
+        sim_best, sim_winners = 0, []
+        for team, (idx, probs) in team_share.items():
+            g = team_goals.get(team, 0)
+            if g <= 0:
+                continue
+            # probs has a trailing discard bucket (unscraped depth) — drop it
+            draw = np.random.multinomial(g, probs)[:-1]
+            g_total[idx] += draw
+            g_sumsq[idx] += draw * draw
+            m = int(draw.max())
+            if m > sim_best:
+                sim_best, sim_winners = m, list(idx[draw == m])
+            elif m == sim_best and m > 0:
+                sim_winners.extend(idx[draw == m])
+        if sim_winners:
+            w = 1.0 / len(sim_winners)
+            for gi in sim_winners:
+                gb_wins[gi] += w
 
         if (i + 1) % 1000 == 0:
             elapsed = time.time() - t0
@@ -503,7 +658,22 @@ def run_monte_carlo(data: dict, strengths: dict, n_sims: int = N_SIMS) -> tuple:
         })
     bracket_df = pd.DataFrame(bracket_rows).sort_values("match_id")
 
-    return summary_df, bracket_df
+    # --- Build per-player scoring projection ---
+    prows = []
+    for gi, meta in enumerate(players_meta):
+        exp = g_total[gi] / n_sims
+        var = g_sumsq[gi] / n_sims - exp * exp
+        prows.append({
+            **meta,
+            "exp_goals":     round(float(exp), 3),
+            "sd_goals":      round(float(np.sqrt(max(var, 0.0))), 3),
+            "p_golden_boot": round(float(gb_wins[gi] / n_sims), 4),
+        })
+    player_df = (pd.DataFrame(prows)
+                 .sort_values("exp_goals", ascending=False)
+                 .reset_index(drop=True)) if prows else pd.DataFrame()
+
+    return summary_df, bracket_df, player_df
 
 # deterministic "favourite advances" bracket
 def poisson_pmf(k: int, lam: float) -> float:
@@ -617,6 +787,7 @@ def main():
 
     data      = load_all()
     strengths = build_strengths(data)
+    players_meta, team_share = build_player_shares(list(data["groups"].keys()))
 
     # Show top / bottom strength rankings
     log.info("\nTop 10 teams by composite attack score:")
@@ -629,12 +800,23 @@ def main():
         log.info(f"  {i:2d}. {t:<25s}  att={s['att']:.3f}  def={s['def']:.3f}  elo={s['elo']:.0f}")
 
     # Run Monte Carlo
-    summary, bracket = run_monte_carlo(data, strengths, N_SIMS)
+    summary, bracket, player_scoring = run_monte_carlo(
+        data, strengths, players_meta, team_share, N_SIMS)
 
     # Save
     out_path = OUTPUT_DIR / "wc2026_champion_probabilities.csv"
     summary.to_csv(out_path, index=False, encoding="utf-8")
     log.info(f"\nResults saved → {out_path}")
+
+    player_path = OUTPUT_DIR / "wc2026_player_scoring.csv"
+    player_scoring.to_csv(player_path, index=False, encoding="utf-8")
+    log.info(f"Player scoring → {player_path}")
+    if len(player_scoring):
+        log.info("\nGolden Boot projection (top 12 by expected goals):")
+        log.info(f"  {'Player':<24} {'Team':<16} {'xGoals':>6} {'±sd':>5} {'Boot%':>6}")
+        for _, r in player_scoring.head(12).iterrows():
+            log.info(f"  {r['player']:<24} {r['team']:<16} {r['exp_goals']:>6.2f} "
+                     f"{r['sd_goals']:>5.2f} {r['p_golden_boot']:>6.1%}")
 
     bracket_path = OUTPUT_DIR / "wc2026_bracket_predictions.csv"
     # Exclude win_counts dict column for clean CSV

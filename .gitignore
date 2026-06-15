@@ -21,7 +21,9 @@ verify_dash.py
 Data/**/*log*.txt
 
 # ── Live-update pipeline state (update.py change-detection) ─────────────────
-Data/simulated/.update_state.json
+#    Tracked so the daily GitHub Action's change-detection survives between runs
+#    (no rebuild + no commit on days with no new results).
+# Data/simulated/.update_state.json
 
 # ── Raw upstream data NOT consumed by the train→simulate→build pipeline ─────
 #    (kept locally; training_df.csv / final_elo.csv are the processed derivatives
@@ -39,4 +41,8 @@ Data/scraped/_wc22_events_cache/
 Data/scraped/raw_matches.csv
 Data/scraped/team_overall_agg.csv
 Data/scraped/team_tournament_agg.csv
-Data/schedule_2026.csv
+
+# ── Fixture list (NOW TRACKED) ─────────────────────────────────────────────
+#    The 2026 schedule is the input the daily Action conditions on; its Score
+#    column is re-filled from the API on every run. CI needs it checked in.
+# Data/schedule_2026.csv

@@ -1,11 +1,11 @@
 match_id,round,date_utc,venue,slot_home,slot_away,home_team,away_team,pred_winner,p_home_win,p_winner
 73,Round of 32,2026-06-28T19:00:00Z,"SoFi Stadium, Los Angeles",Runner-up Group A,Runner-up Group B,Korea Republic,Canada,Canada,0.4625,0.5375
 74,Round of 32,2026-06-29T17:00:00Z,"NRG Stadium, Houston",Winner Group C,Runner-up Group F,Brazil,Japan,Brazil,0.6418,0.6418
-75,Round of 32,2026-06-29T20:30:00Z,"Gillette Stadium, Boston",Winner Group E,Best 3rd (Groups A/B/C/D/F),Germany,Scotland,Germany,0.7725,0.7725
+75,Round of 32,2026-06-29T20:30:00Z,"Gillette Stadium, Boston",Winner Group E,Best 3rd (Groups A/B/C/D/F),Germany,Türkiye,Germany,0.6321,0.6321
 76,Round of 32,2026-06-30T01:00:00Z,"Estadio BBVA, Monterrey",Winner Group F,Runner-up Group C,Netherlands,Morocco,Netherlands,0.5506,0.5506
-77,Round of 32,2026-06-30T17:00:00Z,"AT&T Stadium, Dallas",Runner-up Group E,Runner-up Group I,Ecuador,Norway,Norway,0.4941,0.5059
-78,Round of 32,2026-06-30T21:00:00Z,"MetLife Stadium, East Rutherford",Winner Group I,Best 3rd (Groups C/D/F/G/H),France,Türkiye,France,0.7054,0.7054
-79,Round of 32,2026-07-01T01:00:00Z,"Estadio Azteca, Mexico City",Winner Group A,Best 3rd (Groups C/E/F/H/I),Mexico,Côte d'Ivoire,Mexico,0.6573,0.6573
+77,Round of 32,2026-06-30T17:00:00Z,"AT&T Stadium, Dallas",Runner-up Group E,Runner-up Group I,Côte d'Ivoire,Norway,Norway,0.285,0.715
+78,Round of 32,2026-06-30T21:00:00Z,"MetLife Stadium, East Rutherford",Winner Group I,Best 3rd (Groups C/D/F/G/H),France,Sweden,France,0.8226,0.8226
+79,Round of 32,2026-07-01T01:00:00Z,"Estadio Azteca, Mexico City",Winner Group A,Best 3rd (Groups C/E/F/H/I),Mexico,Scotland,Mexico,0.6453,0.6453
 80,Round of 32,2026-07-01T16:00:00Z,"Mercedes-Benz Stadium, Atlanta",Winner Group L,Best 3rd (Groups E/H/I/J/K),England,Senegal,England,0.7127,0.7127
 81,Round of 32,2026-07-01T20:00:00Z,"Lumen Field, Seattle",Winner Group G,Best 3rd (Groups A/E/H/I/J),Belgium,Czechia,Belgium,0.7023,0.7023
 82,Round of 32,2026-07-02T00:00:00Z,"Levi's Stadium, Santa Clara",Winner Group D,Best 3rd (Groups B/E/F/I/J),Australia,Algeria,Australia,0.5292,0.5292
@@ -14,7 +14,7 @@ match_id,round,date_utc,venue,slot_home,slot_away,home_team,away_team,pred_winne
 85,Round of 32,2026-07-03T03:00:00Z,"BC Place, Vancouver",Winner Group B,Best 3rd (Groups E/F/G/I/J),Switzerland,Egypt,Switzerland,0.6536,0.6536
 86,Round of 32,2026-07-03T18:00:00Z,"AT&T Stadium, Dallas",Runner-up Group D,Runner-up Group G,United States,IR Iran,IR Iran,0.4265,0.5735
 87,Round of 32,2026-07-03T22:00:00Z,"Hard Rock Stadium, Miami",Winner Group J,Runner-up Group H,Argentina,Uruguay,Argentina,0.7273,0.7273
-88,Round of 32,2026-07-04T01:30:00Z,"GEHA Field at Arrowhead Stadium, Kansas City",Winner Group K,Best 3rd (Groups D/E/I/J/L),Portugal,Panama,Portugal,0.8005,0.8005
+88,Round of 32,2026-07-04T01:30:00Z,"GEHA Field at Arrowhead Stadium, Kansas City",Winner Group K,Best 3rd (Groups D/E/I/J/L),Portugal,Ecuador,Portugal,0.591,0.591
 89,Round of 16,2026-07-04T17:00:00Z,"NRG Stadium, Houston",Winner Match 73,Winner Match 75,Canada,Germany,Germany,0.2957,0.7043
 90,Round of 16,2026-07-04T21:00:00Z,"Lincoln Financial Field, Philadelphia",Winner Match 74,Winner Match 77,Brazil,Norway,Brazil,0.6256,0.6256
 91,Round of 16,2026-07-05T20:00:00Z,"MetLife Stadium, East Rutherford",Winner Match 76,Winner Match 78,Netherlands,France,France,0.3758,0.6242

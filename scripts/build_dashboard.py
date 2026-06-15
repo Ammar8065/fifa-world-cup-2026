@@ -14,6 +14,8 @@ bracket_full = pd.read_csv("Data/simulated/wc2026_bracket_full.csv")
 slots_df  = pd.read_csv("Data/data/raw/knockout_slots.csv")
 players   = pd.read_csv("Data/scraped/player_xg.csv")
 groups_df = pd.read_csv("Data/data/raw/groups.csv")
+_ps_path  = Path("Data/simulated/wc2026_player_scoring.csv")
+player_scoring = pd.read_csv(_ps_path) if _ps_path.exists() else None   # per-player Golden Boot projection
 
 def _load_json(p):
     fp = Path(p)
@@ -181,6 +183,21 @@ for _, r in players.sort_values("xg", ascending=False).iterrows():
     for key in (r["_n"], _firstlast(r["_n"])):
         tour_lookup.setdefault(key, r)
 
+# projected WC goals + Golden Boot odds (per-player Monte Carlo, simulate.py)
+ps_lookup = {}
+if player_scoring is not None:
+    for _, r in player_scoring.iterrows():
+        t = canon(r["team"]); pn = _norm(r["player"])
+        for key in ((t, pn), (t, _firstlast(pn))):
+            ps_lookup.setdefault(key, r)
+
+def _proj(team, name, field):
+    nn = _norm(name)
+    rec = ps_lookup.get((team, nn))
+    if rec is None:
+        rec = ps_lookup.get((team, _firstlast(nn)))
+    return float(rec[field]) if rec is not None else 0.0
+
 award_rows = []
 for team, blk in squads.items():
     if team not in wc_teams:
@@ -218,11 +235,19 @@ players_real["deep_run"]   = players_real["team"].map(
     lambda t: team_stage.get(t, {}).get("p_semi_final", 0.0))
 players_real["poty_score"] = (players_real["xg"] * (0.6 + players_real["deep_run"])).round(2)
 
+# projected WC goals + Golden Boot win probability (from the per-player Monte Carlo)
+players_real["proj_goals"]    = players_real.apply(lambda r: round(_proj(r["team"], r["player"], "exp_goals"), 2), axis=1)
+players_real["p_golden_boot"] = players_real.apply(lambda r: _proj(r["team"], r["player"], "p_golden_boot"), axis=1)
+players_real["sd_goals"]      = players_real.apply(lambda r: round(_proj(r["team"], r["player"], "sd_goals"), 2), axis=1)
+
 ACOLS = ["player","team","matches","shots","xg","goals","xg_per_match","composite",
          "poty_score","deep_run","flag","team_win_prob","photo","position","club",
-         "age","xg_source"]
+         "age","xg_source","proj_goals","p_golden_boot","sd_goals"]
 
-top_scorers = players_real[players_real["matches"] >= 3].nlargest(20, "xg")[ACOLS].reset_index(drop=True)
+# Golden Boot projection — rank by expected WC goals from the per-player sim
+top_scorers = players_real[players_real["proj_goals"] > 0].nlargest(20, "proj_goals")[ACOLS].reset_index(drop=True)
+if top_scorers.empty:   # fallback before the player sim has run
+    top_scorers = players_real[players_real["matches"] >= 3].nlargest(20, "xg")[ACOLS].reset_index(drop=True)
 # POTY / Young Player need >=10 matches
 poty_candidates = players_real[players_real["matches"] >= 10].nlargest(10, "poty_score")[ACOLS].reset_index(drop=True)
 
@@ -2498,9 +2523,21 @@ select:hover {{ border-color:var(--border2); box-shadow:0 4px 14px rgba(20,33,58
     <div id="tott-pitch" class="tott-pitch"></div>
   </div>
 
+  <div class="card mb-6">
+    <div class="sec-eyebrow" style="margin-bottom:6px">Per-player Monte Carlo &middot; club scoring rate &times; simulated team goals</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px">Golden Boot Projection</div>
+    <div style="font-size:11.5px;color:var(--txt2);margin-bottom:14px;line-height:1.5">
+      Each of the 10,000 simulated tournaments attributes every team&rsquo;s goals to its players by their
+      <b>2025-26 club scoring rate</b> (xG &amp; finishing, regressed to the mean). <b>Expected goals</b> = average across all sims;
+      <span style="color:var(--red);font-weight:600">Boot%</span> = share of sims a player finishes as the tournament&rsquo;s top scorer.
+      Rates condition on real results as they come in.
+    </div>
+    <div id="goldenboot-list"></div>
+  </div>
+
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div class="card">
-      <div class="sec-eyebrow" style="margin-bottom:6px">Expected Goals</div>
+      <div class="sec-eyebrow" style="margin-bottom:6px">Projected WC goals</div>
       <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-bottom:16px">Top Predicted Scorers</div>
       <div id="chart-scorers" style="height:420px"></div>
     </div>
@@ -3319,11 +3356,11 @@ function renderPlayers() {{
       footer: (ypoty.club || '') + (ypoty.goals != null ? ' &middot; ' + ypoty.goals + 'g in ' + ypoty.matches + ' matches' : ''),
     }},
     {{
-      t:'Top Goal Scorer (xG)', accent:'rgba(239,68,68,.3)', bg:'rgba(239,68,68,.04)',
+      t:'Golden Boot &mdash; Projected', accent:'rgba(239,68,68,.3)', bg:'rgba(239,68,68,.04)',
       team: topS.team, name: topS.player, photo: topS.photo,
       sub: topS.position ? topS.team + ' &middot; ' + topS.position : topS.team,
-      stat: (+topS.xg).toFixed(2) + ' xG', statColor:'var(--red)',
-      footer: (+topS.goals) + ' goals &middot; ' + (+topS.matches) + ' tournament matches',
+      stat: (+topS.proj_goals).toFixed(1) + ' goals', statColor:'var(--red)',
+      footer: pct(+topS.p_golden_boot) + ' to win it &middot; ' + (+topS.goals) + 'G / ' + (+topS.xg).toFixed(0) + ' xG club season',
     }},
     {{
       t:'Best Defensive Team', accent:'rgba(59,130,246,.3)', bg:'rgba(59,130,246,.04)',
@@ -3367,27 +3404,27 @@ function renderPlayers() {{
     </div>
   `).join('');
 
-  // Scorer chart
+  // Scorer chart — projected WC goals
   const sc = SCORERS.slice(0, 14);
-  const scSorted = [...sc].sort((a,b) => +a.xg - +b.xg);
-  const maxXG = Math.max(...scSorted.map(p => +p.xg));
+  const scSorted = [...sc].sort((a,b) => +a.proj_goals - +b.proj_goals);
+  const maxXG = Math.max(...scSorted.map(p => +p.proj_goals));
 
   Plotly.newPlot('chart-scorers', [{{
     type:'bar', orientation:'h',
-    x: scSorted.map(p => +(+p.xg).toFixed(2)),
+    x: scSorted.map(p => +(+p.proj_goals).toFixed(2)),
     y: scSorted.map(p => p.player.split(' ').slice(-2).join(' ')),
-    text: scSorted.map(p => (+(+p.xg).toFixed(1)) + ' xG'),
+    text: scSorted.map(p => (+(+p.proj_goals).toFixed(1)) + ' goals'),
     textposition:'outside',
     textfont:{{ family:'Space Grotesk, Inter', size:10, color:'#475569' }},
     marker:{{
       color: scSorted.map(p => {{
-        const ratio = +p.xg / maxXG;
+        const ratio = +p.proj_goals / maxXG;
         return `rgba(201,124,10,${{(0.5 + ratio*0.45).toFixed(2)}})`;
       }}),
       line:{{ width:0 }},
     }},
-    hovertemplate:'<b>%{{y}}</b><br>xG: %{{x}}<br>Goals: %{{customdata[0]}}<br>Matches: %{{customdata[1]}}<extra></extra>',
-    customdata: scSorted.map(p => [p.goals, p.matches]),
+    hovertemplate:'<b>%{{y}}</b><br>Projected goals: %{{x}}<br>Golden Boot: %{{customdata[0]}}<br>Club season: %{{customdata[1]}}G / %{{customdata[2]}} xG<extra></extra>',
+    customdata: scSorted.map(p => [pct(+p.p_golden_boot), p.goals, (+p.xg).toFixed(0)]),
     cliponaxis:false,
   }}], {{
     ...PLOTLY_LAYOUT,
@@ -3395,7 +3432,7 @@ function renderPlayers() {{
     margin:{{ t:10, l:140, r:70, b:30 }},
     xaxis:{{
       gridcolor:'rgba(20,33,58,.07)', color:'#4B5872',
-      title:{{ text:'TOTAL xG', font:{{ family:'Space Grotesk', size:9, color:'#4B5872' }} }},
+      title:{{ text:'PROJECTED WC GOALS', font:{{ family:'Space Grotesk', size:9, color:'#4B5872' }} }},
       zeroline:false, showline:false,
       tickfont:{{ size:9 }},
       range:[0, maxXG * 1.3],
@@ -3409,6 +3446,24 @@ function renderPlayers() {{
 
   // Player POTY list
   const pAvatar = (p, sz) => `<div class="player-av">${{p.photo ? `<img class="pphoto sm" src="${{p.photo}}" loading="lazy" alt="">` : ''}}<span class="player-av-flag">${{flagImg(p.team, 14)}}</span></div>`;
+
+  // Golden Boot projection — top 10 by expected WC goals
+  const gbootTop = SCORERS.slice(0, 10);
+  const gbootMax = Math.max(...gbootTop.map(p => +p.proj_goals), 0.1);
+  document.getElementById('goldenboot-list').innerHTML = gbootTop.map((p, i) => `
+    <div class="player-row gb-row" onclick="openBioByKey('${{p.team.replace(/'/g,"\\\\'")}}','${{p.player.replace(/'/g,"\\\\'")}}')" style="cursor:pointer">
+      <div class="player-rank ${{i<3?'top3':''}}">${{i+1}}</div>
+      ${{pAvatar(p)}}
+      <div class="player-info">
+        <div class="player-name">${{p.player}}</div>
+        <div class="player-team">${{p.team}}${{p.position ? ' &middot; ' + p.position : ''}} &middot; ${{pct(+p.p_golden_boot)}} to win the Boot</div>
+      </div>
+      <div class="gb-meter" title="Expected ${{(+p.proj_goals).toFixed(2)}} ± ${{(+p.sd_goals).toFixed(1)}} goals &middot; ${{p.goals}}G / ${{(+p.xg).toFixed(0)}} xG club season">
+        <div class="gb-meter-fill" style="width:${{(100*+p.proj_goals/gbootMax).toFixed(1)}}%"></div>
+      </div>
+      <div class="player-xg gb-pct" title="Expected WC goals">${{(+p.proj_goals).toFixed(1)}}</div>
+    </div>
+  `).join('');
   document.getElementById('player-list').innerHTML = POTY.slice(0, 10).map((p, i) => `
     <div class="player-row">
       <div class="player-rank ${{i<3?'top3':''}}">${{i+1}}</div>
