@@ -38,27 +38,15 @@ with no server.
 Current headline result (10,000 sims, **ensemble** model): **Spain 21%**, Argentina 14%,
 England 11%, France 9%, Brazil 7%.
 
-### Projection — top 12
+### Projection
 
-Stage-reach probabilities from the latest run, **conditioned on results so far**
-(12 / 72 group matches played). Refreshed daily by the
-[live-update workflow](.github/workflows/daily-update.yml); the full 48-team table
-lives in the dashboard's **Projections** tab.
+The dashboard's **Projections** table — every team's probability at each stage across
+10,000 simulations, **conditioned on results so far** (12 / 72 group matches played) and
+ranked by title odds. Cells are colour-graded by probability.
 
-| # | Team | Group | Title | Semifinal | Last 16 | Qualify |
-|:-:|------|:-----:|:-----:|:---------:|:-------:|:-------:|
-| 1 | Spain | H | 20.1% | 31.3% | 55% | 99% |
-| 2 | Argentina | J | 14.6% | 24.0% | 52% | 97% |
-| 3 | England | L | 10.3% | 17.6% | 45% | 96% |
-| 4 | France | I | 8.9% | 15.8% | 44% | 92% |
-| 5 | Brazil | C | 6.9% | 13.4% | 40% | 95% |
-| 6 | Portugal | K | 5.7% | 11.1% | 37% | 90% |
-| 7 | Germany | E | 5.1% | 10.7% | 43% | 100% |
-| 8 | Colombia | K | 4.9% | 10.1% | 34% | 88% |
-| 9 | Netherlands | F | 3.1% | 6.6% | 26% | 88% |
-| 10 | Ecuador | E | 2.1% | 5.0% | 22% | 76% |
-| 11 | Norway | I | 2.0% | 5.1% | 24% | 80% |
-| 12 | Morocco | C | 2.0% | 5.0% | 25% | 88% |
+<p align="center">
+  <img src="docs/projection-table.png" alt="2026 World Cup projection table — title and stage-reach probabilities for all 48 teams" width="900">
+</p>
 
 ---
 
