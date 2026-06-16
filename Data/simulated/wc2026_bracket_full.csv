@@ -11,8 +11,8 @@ match_id,round,date_utc,venue,slot_home,slot_away,home_team,away_team,pred_winne
 82,Round of 32,2026-07-02T00:00:00Z,"Levi's Stadium, Santa Clara",Winner Group D,Best 3rd (Groups B/E/F/I/J),Australia,Algeria,Australia,0.5292,0.5292
 83,Round of 32,2026-07-02T19:00:00Z,"BMO Field, Toronto",Runner-up Group K,Runner-up Group L,Colombia,Croatia,Colombia,0.5846,0.5846
 84,Round of 32,2026-07-02T23:00:00Z,"SoFi Stadium, Los Angeles",Winner Group H,Runner-up Group J,Spain,Austria,Spain,0.8387,0.8387
-85,Round of 32,2026-07-03T03:00:00Z,"BC Place, Vancouver",Winner Group B,Best 3rd (Groups E/F/G/I/J),Switzerland,Egypt,Switzerland,0.6536,0.6536
-86,Round of 32,2026-07-03T18:00:00Z,"AT&T Stadium, Dallas",Runner-up Group D,Runner-up Group G,United States,IR Iran,IR Iran,0.4265,0.5735
+85,Round of 32,2026-07-03T03:00:00Z,"BC Place, Vancouver",Winner Group B,Best 3rd (Groups E/F/G/I/J),Switzerland,IR Iran,Switzerland,0.5807,0.5807
+86,Round of 32,2026-07-03T18:00:00Z,"AT&T Stadium, Dallas",Runner-up Group D,Runner-up Group G,United States,Egypt,United States,0.5285,0.5285
 87,Round of 32,2026-07-03T22:00:00Z,"Hard Rock Stadium, Miami",Winner Group J,Runner-up Group H,Argentina,Uruguay,Argentina,0.7273,0.7273
 88,Round of 32,2026-07-04T01:30:00Z,"GEHA Field at Arrowhead Stadium, Kansas City",Winner Group K,Best 3rd (Groups D/E/I/J/L),Portugal,Ecuador,Portugal,0.591,0.591
 89,Round of 16,2026-07-04T17:00:00Z,"NRG Stadium, Houston",Winner Match 73,Winner Match 75,Canada,Germany,Germany,0.2957,0.7043
@@ -21,7 +21,7 @@ match_id,round,date_utc,venue,slot_home,slot_away,home_team,away_team,pred_winne
 92,Round of 16,2026-07-06T00:00:00Z,"Estadio Azteca, Mexico City",Winner Match 79,Winner Match 80,Mexico,England,England,0.292,0.708
 93,Round of 16,2026-07-06T19:00:00Z,"AT&T Stadium, Dallas",Winner Match 83,Winner Match 84,Colombia,Spain,Spain,0.3514,0.6486
 94,Round of 16,2026-07-07T00:00:00Z,"Lumen Field, Seattle",Winner Match 81,Winner Match 82,Belgium,Australia,Belgium,0.5848,0.5848
-95,Round of 16,2026-07-07T16:00:00Z,"Mercedes-Benz Stadium, Atlanta",Winner Match 86,Winner Match 88,IR Iran,Portugal,Portugal,0.2821,0.7179
+95,Round of 16,2026-07-07T16:00:00Z,"Mercedes-Benz Stadium, Atlanta",Winner Match 86,Winner Match 88,United States,Portugal,Portugal,0.2226,0.7774
 96,Round of 16,2026-07-07T20:00:00Z,"BC Place, Vancouver",Winner Match 85,Winner Match 87,Switzerland,Argentina,Argentina,0.2672,0.7328
 97,Quarter-final,2026-07-09T20:00:00Z,"Gillette Stadium, Boston",Winner Match 89,Winner Match 90,Germany,Brazil,Brazil,0.4208,0.5792
 98,Quarter-final,2026-07-10T19:00:00Z,"SoFi Stadium, Los Angeles",Winner Match 93,Winner Match 94,Spain,Belgium,Spain,0.806,0.806
