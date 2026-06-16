@@ -29,6 +29,7 @@ CANON = {
     "Bosnia and Herzegovina": "Bosnia-Herzegovina",
     "DR Congo":               "Congo DR",
     "Cabo Verde":             "Cape Verde",
+    "Cape Verde Islands":     "Cape Verde",
     "USA":                    "United States",
     "Curacao":                "Curaçao",
 }

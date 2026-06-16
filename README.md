@@ -41,7 +41,7 @@ England 11%, France 9%, Brazil 7%.
 ### Projection
 
 The dashboard's **Projections** table — every team's probability at each stage across
-10,000 simulations, **conditioned on results so far** (12 / 72 group matches played) and
+10,000 simulations, **conditioned on results so far** (16 / 72 group matches played) and
 ranked by title odds. Cells are colour-graded by probability.
 
 <p align="center">

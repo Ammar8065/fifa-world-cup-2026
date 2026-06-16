@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-16T18:40:48Z",
+  "updated_utc": "2026-06-16T18:57:24Z",
   "group_finished": 16,
   "group_total": 72,
   "matches": [
@@ -175,7 +175,7 @@
       "utc": "2026-06-15T16:00:00Z",
       "group": "H",
       "home": "Spain",
-      "away": "Cape Verde Islands",
+      "away": "Cape Verde",
       "home_tla": "ESP",
       "away_tla": "CPV",
       "home_g": 0,
@@ -539,7 +539,7 @@
       "utc": "2026-06-21T22:00:00Z",
       "group": "H",
       "home": "Uruguay",
-      "away": "Cape Verde Islands",
+      "away": "Cape Verde",
       "home_tla": "URY",
       "away_tla": "CPV",
       "home_g": null,
@@ -888,7 +888,7 @@
     {
       "utc": "2026-06-27T00:00:00Z",
       "group": "H",
-      "home": "Cape Verde Islands",
+      "home": "Cape Verde",
       "away": "Saudi Arabia",
       "home_tla": "CPV",
       "away_tla": "KSA",
