@@ -1,0 +1,19 @@
+# Dependencies for the daily-update GitHub Action (scripts/update.py chain only).
+#
+# Versions are PINNED to match the local environment that created the model
+# artifacts. simulate.py unpickles Data/data/processed/poisson_goals_ours.pkl,
+# and scikit-learn pickles are version-sensitive — an unpinned install produced
+# `ModuleNotFoundError: No module named '_loss'` in CI. Keep these in sync with
+# whatever version retrains the model.
+#
+# soccerdata is intentionally excluded: it's used only by the offline scrapers
+# and needs a hand-installed TLS DLL that won't work on a CI runner.
+
+pandas==3.0.3
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.7.2
+joblib==1.5.3
+xgboost==3.2.0
+requests
+playwright
