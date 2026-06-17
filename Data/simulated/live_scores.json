@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-06-16T18:57:24Z",
-  "group_finished": 16,
+  "updated_utc": "2026-06-17T11:44:12Z",
+  "group_finished": 20,
   "group_total": 72,
   "matches": [
     {
@@ -234,11 +234,11 @@
       "away": "Senegal",
       "home_tla": "FRA",
       "away_tla": "SEN",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 3,
+      "away_g": 1,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -248,11 +248,11 @@
       "away": "Norway",
       "home_tla": "IRQ",
       "away_tla": "NOR",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 4,
+      "ht_home": 1,
+      "ht_away": 2,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -262,11 +262,11 @@
       "away": "Algeria",
       "home_tla": "ARG",
       "away_tla": "ALG",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 3,
+      "away_g": 0,
+      "ht_home": 1,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -276,11 +276,11 @@
       "away": "Jordan",
       "home_tla": "AUT",
       "away_tla": "JOR",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 3,
+      "away_g": 1,
+      "ht_home": 1,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {

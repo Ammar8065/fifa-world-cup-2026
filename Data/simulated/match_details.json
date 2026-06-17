@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-16T18:58:00Z",
+  "updated_utc": "2026-06-17T11:45:01Z",
   "matches": {
     "Mexico|South Africa": {
       "home": "Mexico",
@@ -3450,6 +3450,857 @@
           "team": "IR Iran",
           "rating": 6.49,
           "pos": 1,
+          "min": null
+        }
+      ]
+    },
+    "France|Senegal": {
+      "home": "France",
+      "away": "Senegal",
+      "home_xg": 1.79,
+      "away_xg": 0.56,
+      "home_shots": 11,
+      "away_shots": 6,
+      "home_sot": 10,
+      "away_sot": 3,
+      "motm": "Kylian Mbappé",
+      "motm_team": "France",
+      "motm_rating": "9.0",
+      "player_ratings": [
+        {
+          "name": "Idrissa Gana Gueye",
+          "team": "Senegal",
+          "rating": 6.31,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kalidou Koulibaly",
+          "team": "Senegal",
+          "rating": 5.97,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Sadio Mané",
+          "team": "Senegal",
+          "rating": 6.36,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Adrien Rabiot",
+          "team": "France",
+          "rating": 7.69,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mike Maignan",
+          "team": "France",
+          "rating": 6.21,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Moussa Niakhaté",
+          "team": "Senegal",
+          "rating": 5.6,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Dayot Upamecano",
+          "team": "France",
+          "rating": 8.22,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ousmane Dembélé",
+          "team": "France",
+          "rating": 7.06,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Kylian Mbappé",
+          "team": "France",
+          "rating": 9.02,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jules Koundé",
+          "team": "France",
+          "rating": 7.42,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Theo Hernández",
+          "team": "France",
+          "rating": 6.94,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ismaïla Sarr",
+          "team": "Senegal",
+          "rating": 6.16,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Édouard Mendy",
+          "team": "Senegal",
+          "rating": 5.54,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Krépin Diatta",
+          "team": "Senegal",
+          "rating": 6.89,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Pape Gueye",
+          "team": "Senegal",
+          "rating": 6.21,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Aurélien Tchouaméni",
+          "team": "France",
+          "rating": 7.52,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "William Saliba",
+          "team": "France",
+          "rating": 7.01,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Michael Olise",
+          "team": "France",
+          "rating": 8.33,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nicolas Jackson",
+          "team": "Senegal",
+          "rating": 6.23,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Habib Diarra",
+          "team": "Senegal",
+          "rating": 6.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Bradley Barcola",
+          "team": "France",
+          "rating": 7.37,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Désiré Doué",
+          "team": "France",
+          "rating": 7.39,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lamine Camara",
+          "team": "Senegal",
+          "rating": 6.02,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Malick Diouf",
+          "team": "Senegal",
+          "rating": 6.04,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ibrahim Mbaye",
+          "team": "Senegal",
+          "rating": 7.08,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Iraq|Norway": {
+      "home": "Iraq",
+      "away": "Norway",
+      "home_xg": 0.8,
+      "away_xg": 2.63,
+      "home_shots": 12,
+      "away_shots": 12,
+      "home_sot": 4,
+      "away_sot": 8,
+      "motm": "Erling Haaland",
+      "motm_team": "Norway",
+      "motm_rating": "9.2",
+      "player_ratings": [
+        {
+          "name": "Ørjan Håskjold Nyland",
+          "team": "Norway",
+          "rating": 6.49,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Fredrik Aursnes",
+          "team": "Norway",
+          "rating": 6.77,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Alexander Sørloth",
+          "team": "Norway",
+          "rating": 6.35,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Martin Ødegaard",
+          "team": "Norway",
+          "rating": 7.45,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Sander Berge",
+          "team": "Norway",
+          "rating": 7.65,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kristoffer Ajer",
+          "team": "Norway",
+          "rating": 7.21,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jalal Hassan",
+          "team": "Iraq",
+          "rating": 5.15,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Julian Ryerson",
+          "team": "Norway",
+          "rating": 7.5,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ayman Hussein",
+          "team": "Iraq",
+          "rating": 6.18,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Erling Haaland",
+          "team": "Norway",
+          "rating": 9.17,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Leo Østigard",
+          "team": "Norway",
+          "rating": 7.34,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Amir Al-Ammari",
+          "team": "Iraq",
+          "rating": 6.9,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kristian Thorstvedt",
+          "team": "Norway",
+          "rating": 6.19,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mohanad Ali",
+          "team": "Iraq",
+          "rating": 5.98,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Torbjørn Heggem",
+          "team": "Norway",
+          "rating": 7.22,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ibrahim Bayesh",
+          "team": "Iraq",
+          "rating": 6.65,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "David Møller Wolfe",
+          "team": "Norway",
+          "rating": 7.3,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Hussein Ali",
+          "team": "Iraq",
+          "rating": 5.72,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ali Al Hamadi",
+          "team": "Iraq",
+          "rating": 6.88,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Oscar Bobb",
+          "team": "Norway",
+          "rating": 6.31,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Zidane Iqbal",
+          "team": "Iraq",
+          "rating": 6.41,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Marko Lawk Farji",
+          "team": "Iraq",
+          "rating": 6.37,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Merchas Doski",
+          "team": "Iraq",
+          "rating": 6.44,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ahmed Qasem",
+          "team": "Iraq",
+          "rating": 6.07,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Andreas Schjelderup",
+          "team": "Norway",
+          "rating": 6.11,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Antonio Nusa",
+          "team": "Norway",
+          "rating": 6.67,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Zaid Tahseen",
+          "team": "Iraq",
+          "rating": 3.63,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ali Jasim",
+          "team": "Iraq",
+          "rating": 6.64,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Mustafa Saadoun",
+          "team": "Iraq",
+          "rating": 6.16,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Akam Hashem",
+          "team": "Iraq",
+          "rating": 5.5,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Zaid Ismael",
+          "team": "Iraq",
+          "rating": 6.61,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Algeria|Argentina": {
+      "home": "Argentina",
+      "away": "Algeria",
+      "home_xg": 1.28,
+      "away_xg": 0.32,
+      "home_shots": 10,
+      "away_shots": 7,
+      "home_sot": 6,
+      "away_sot": 3,
+      "motm": "Lionel Messi",
+      "motm_team": "Argentina",
+      "motm_rating": "9.7",
+      "player_ratings": [
+        {
+          "name": "Lionel Messi",
+          "team": "Argentina",
+          "rating": 9.66,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nicolás Otamendi",
+          "team": "Argentina",
+          "rating": 6.7,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Aïssa Mandi",
+          "team": "Algeria",
+          "rating": 6.48,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Emiliano Martínez",
+          "team": "Argentina",
+          "rating": 7.04,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Riyad Mahrez",
+          "team": "Algeria",
+          "rating": 6.36,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Rodrigo De Paul",
+          "team": "Argentina",
+          "rating": 8.1,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nabil Bentaleb",
+          "team": "Algeria",
+          "rating": 6.75,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ramy Bensebaini",
+          "team": "Algeria",
+          "rating": 6.49,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Gonzalo Montiel",
+          "team": "Argentina",
+          "rating": 6.84,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Lautaro Martínez",
+          "team": "Argentina",
+          "rating": 6.45,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nahuel Molina",
+          "team": "Argentina",
+          "rating": 7.04,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Luca Zidane",
+          "team": "Algeria",
+          "rating": 5.45,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Houssem Aouar",
+          "team": "Algeria",
+          "rating": 5.96,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Cristian Romero",
+          "team": "Argentina",
+          "rating": 7.19,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Facundo Medina",
+          "team": "Argentina",
+          "rating": 7.17,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alexis Mac Allister",
+          "team": "Argentina",
+          "rating": 7.24,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nicolás González",
+          "team": "Argentina",
+          "rating": 7.13,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Amine Gouiri",
+          "team": "Algeria",
+          "rating": 5.83,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lisandro Martínez",
+          "team": "Argentina",
+          "rating": 7.71,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Rayan Aït-Nouri",
+          "team": "Algeria",
+          "rating": 6.26,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Thiago Almada",
+          "team": "Argentina",
+          "rating": 6.98,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Julián Álvarez",
+          "team": "Argentina",
+          "rating": 6.01,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Hicham Boudaoui",
+          "team": "Algeria",
+          "rating": 6.33,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mohamed Amoura",
+          "team": "Algeria",
+          "rating": 6.05,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Enzo Fernández",
+          "team": "Argentina",
+          "rating": 7.58,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Rafik Belghali",
+          "team": "Algeria",
+          "rating": 6.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Farès Chaïbi",
+          "team": "Algeria",
+          "rating": 6.64,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nico Paz",
+          "team": "Argentina",
+          "rating": 6.23,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ibrahim Maza",
+          "team": "Algeria",
+          "rating": 6.26,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Anis Hadj Moussa",
+          "team": "Algeria",
+          "rating": 6.22,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Austria|Jordan": {
+      "home": "Austria",
+      "away": "Jordan",
+      "home_xg": 1.69,
+      "away_xg": 0.47,
+      "home_shots": 11,
+      "away_shots": 12,
+      "home_sot": 5,
+      "away_sot": 7,
+      "motm": "Xaver Schlager",
+      "motm_team": "Austria",
+      "motm_rating": "8.0",
+      "player_ratings": [
+        {
+          "name": "Marko Arnautovic",
+          "team": "Austria",
+          "rating": 7.6,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "David Alaba",
+          "team": "Austria",
+          "rating": 7.24,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Marcel Sabitzer",
+          "team": "Austria",
+          "rating": 7.55,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Phillipp Mwene",
+          "team": "Austria",
+          "rating": 6.43,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Alexander Schlager",
+          "team": "Austria",
+          "rating": 7.4,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Konrad Laimer",
+          "team": "Austria",
+          "rating": 6.74,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ehsan Haddad",
+          "team": "Jordan",
+          "rating": 6.51,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Stefan Posch",
+          "team": "Austria",
+          "rating": 6.84,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Xaver Schlager",
+          "team": "Austria",
+          "rating": 8.01,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Philipp Lienhart",
+          "team": "Austria",
+          "rating": 7.66,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yazeed Yazeed Abulaila",
+          "team": "Jordan",
+          "rating": 5.56,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Romano Schmid",
+          "team": "Austria",
+          "rating": 7.63,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kevin Danso",
+          "team": "Austria",
+          "rating": 6.81,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Mousa Tamari",
+          "team": "Jordan",
+          "rating": 6.44,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Saleem Obaid",
+          "team": "Jordan",
+          "rating": 5.94,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yazan Abu Al-Arab",
+          "team": "Jordan",
+          "rating": 6.49,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Sasa Kalajdzic",
+          "team": "Austria",
+          "rating": 6.53,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nicolas Seiwald",
+          "team": "Austria",
+          "rating": 7.52,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ali Iyad Olwan",
+          "team": "Jordan",
+          "rating": 7.67,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Mo Abualnadi",
+          "team": "Jordan",
+          "rating": 6.27,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Noor Al-Rawabdeh",
+          "team": "Jordan",
+          "rating": 7.89,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Carney Chukwuemeka",
+          "team": "Austria",
+          "rating": 5.91,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nizar Al Rashdan",
+          "team": "Jordan",
+          "rating": 6.94,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Mohannad Abu Taha",
+          "team": "Jordan",
+          "rating": 7.23,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Abdallah Nasib",
+          "team": "Jordan",
+          "rating": 6.4,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Paul Wanner",
+          "team": "Austria",
+          "rating": 6.43,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Odeh Fakhouri",
+          "team": "Jordan",
+          "rating": 6.75,
+          "pos": 2,
           "min": null
         }
       ]
