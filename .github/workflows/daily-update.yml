@@ -76,6 +76,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing staged — skipping commit."
           else
-            git commit -m "live update [skip ci]"
+            # No [skip ci]: the live site is on Netlify, which redeploys on push
+            # and treats [skip ci] as "skip this deploy" — that left dashboard.html
+            # stale. This workflow only triggers on schedule/dispatch (never on
+            # push), so dropping the tag cannot cause a re-trigger loop.
+            git commit -m "live update"
             git push
           fi
