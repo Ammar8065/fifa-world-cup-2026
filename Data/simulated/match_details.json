@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-17T11:45:01Z",
+  "updated_utc": "2026-06-18T11:08:34Z",
   "matches": {
     "Mexico|South Africa": {
       "home": "Mexico",
@@ -1374,7 +1374,7 @@
         {
           "name": "Lawrence Shankland",
           "team": "Scotland",
-          "rating": 6.84,
+          "rating": 6.78,
           "pos": 3,
           "min": null
         },
@@ -1444,7 +1444,7 @@
         {
           "name": "Jean-Ricner Bellegarde",
           "team": "Haiti",
-          "rating": 7.26,
+          "rating": 7.22,
           "pos": 2,
           "min": null
         },
@@ -4112,7 +4112,7 @@
       "away_sot": 7,
       "motm": "Xaver Schlager",
       "motm_team": "Austria",
-      "motm_rating": "8.0",
+      "motm_rating": "8.1",
       "player_ratings": [
         {
           "name": "Marko Arnautovic",
@@ -4166,14 +4166,14 @@
         {
           "name": "Stefan Posch",
           "team": "Austria",
-          "rating": 6.84,
+          "rating": 6.93,
           "pos": 1,
           "min": null
         },
         {
           "name": "Xaver Schlager",
           "team": "Austria",
-          "rating": 8.01,
+          "rating": 8.06,
           "pos": 2,
           "min": null
         },
@@ -4208,7 +4208,7 @@
         {
           "name": "Mousa Tamari",
           "team": "Jordan",
-          "rating": 6.44,
+          "rating": 6.34,
           "pos": 2,
           "min": null
         },
@@ -4222,7 +4222,7 @@
         {
           "name": "Yazan Abu Al-Arab",
           "team": "Jordan",
-          "rating": 6.49,
+          "rating": 6.83,
           "pos": 1,
           "min": null
         },
@@ -4236,14 +4236,14 @@
         {
           "name": "Nicolas Seiwald",
           "team": "Austria",
-          "rating": 7.52,
+          "rating": 7.53,
           "pos": 2,
           "min": null
         },
         {
           "name": "Ali Iyad Olwan",
           "team": "Jordan",
-          "rating": 7.67,
+          "rating": 7.7,
           "pos": 3,
           "min": null
         },
@@ -4292,7 +4292,7 @@
         {
           "name": "Paul Wanner",
           "team": "Austria",
-          "rating": 6.43,
+          "rating": 6.08,
           "pos": 2,
           "min": null
         },
@@ -4300,6 +4300,885 @@
           "name": "Odeh Fakhouri",
           "team": "Jordan",
           "rating": 6.75,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Congo DR|Portugal": {
+      "home": "Portugal",
+      "away": "Congo DR",
+      "home_xg": 0.65,
+      "away_xg": 0.87,
+      "home_shots": 7,
+      "away_shots": 8,
+      "home_sot": 3,
+      "away_sot": 5,
+      "motm": "João Neves",
+      "motm_team": "Portugal",
+      "motm_rating": "8.2",
+      "player_ratings": [
+        {
+          "name": "Cristiano Ronaldo",
+          "team": "Portugal",
+          "rating": 6.65,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Cédric Bakambu",
+          "team": "Congo DR",
+          "rating": 7.09,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Chancel Mbemba",
+          "team": "Congo DR",
+          "rating": 6.97,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "João Cancelo",
+          "team": "Portugal",
+          "rating": 7.1,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Arthur Masuaku",
+          "team": "Congo DR",
+          "rating": 7.61,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Bruno Fernandes",
+          "team": "Portugal",
+          "rating": 7.04,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nélson Semedo",
+          "team": "Portugal",
+          "rating": 6.04,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Bernardo Silva",
+          "team": "Portugal",
+          "rating": 5.67,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Joris Kayembe Ditu",
+          "team": "Congo DR",
+          "rating": 6.56,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yoane Wissa",
+          "team": "Congo DR",
+          "rating": 7.48,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Axel Tuanzebe",
+          "team": "Congo DR",
+          "rating": 6.46,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Charles Pickel",
+          "team": "Congo DR",
+          "rating": 6.04,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Aaron Wan-Bissaka",
+          "team": "Congo DR",
+          "rating": 7.61,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Diogo Costa",
+          "team": "Portugal",
+          "rating": 6.8,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Pedro Neto",
+          "team": "Portugal",
+          "rating": 7.19,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Rafael Leão",
+          "team": "Portugal",
+          "rating": 6.13,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Samuel Moutoussamy",
+          "team": "Congo DR",
+          "rating": 6.4,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Edo Kayembe",
+          "team": "Congo DR",
+          "rating": 7.14,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Lionel Mpasi-Nzau",
+          "team": "Congo DR",
+          "rating": 6.69,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Vitinha",
+          "team": "Portugal",
+          "rating": 6.77,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Steve Kapuadi",
+          "team": "Congo DR",
+          "rating": 6.82,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Nuno Mendes",
+          "team": "Portugal",
+          "rating": 6.64,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Francisco Conceição",
+          "team": "Portugal",
+          "rating": 6.36,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tomás Araújo",
+          "team": "Portugal",
+          "rating": 7.25,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "João Neves",
+          "team": "Portugal",
+          "rating": 8.15,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Renato Veiga",
+          "team": "Portugal",
+          "rating": 6.77,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Noah Sadiki",
+          "team": "Congo DR",
+          "rating": 6.4,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ngal Ayel Mukau",
+          "team": "Congo DR",
+          "rating": 6.28,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Croatia|England": {
+      "home": "England",
+      "away": "Croatia",
+      "home_xg": 3.38,
+      "away_xg": 0.7,
+      "home_shots": 22,
+      "away_shots": 10,
+      "home_sot": 16,
+      "away_sot": 7,
+      "motm": "Harry Kane",
+      "motm_team": "England",
+      "motm_rating": "9.0",
+      "player_ratings": [
+        {
+          "name": "Luka Modric",
+          "team": "Croatia",
+          "rating": 5.92,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ivan Perisic",
+          "team": "Croatia",
+          "rating": 7.87,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Andrej Kramaric",
+          "team": "Croatia",
+          "rating": 6.13,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Harry Kane",
+          "team": "England",
+          "rating": 9.01,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Mateo Kovacic",
+          "team": "Croatia",
+          "rating": 6.79,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "John Stones",
+          "team": "England",
+          "rating": 6.47,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jordan Pickford",
+          "team": "England",
+          "rating": 6.38,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Dominik Livakovic",
+          "team": "Croatia",
+          "rating": 6.52,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Mario Pasalic",
+          "team": "Croatia",
+          "rating": 6.76,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nikola Vlasic",
+          "team": "Croatia",
+          "rating": 5.99,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Declan Rice",
+          "team": "England",
+          "rating": 7.63,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Marcus Rashford",
+          "team": "England",
+          "rating": 7.16,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Petar Musa",
+          "team": "Croatia",
+          "rating": 7.0,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ezri Konsa",
+          "team": "England",
+          "rating": 6.07,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Reece James",
+          "team": "England",
+          "rating": 6.19,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Morgan Rogers",
+          "team": "England",
+          "rating": 6.96,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Djed Spence",
+          "team": "England",
+          "rating": 6.33,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Anthony Gordon",
+          "team": "England",
+          "rating": 6.21,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Josip Stanisic",
+          "team": "Croatia",
+          "rating": 7.18,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Bukayo Saka",
+          "team": "England",
+          "rating": 7.49,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Josko Gvardiol",
+          "team": "Croatia",
+          "rating": 5.68,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jude Bellingham",
+          "team": "England",
+          "rating": 8.3,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Noni Madueke",
+          "team": "England",
+          "rating": 7.49,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Elliot Anderson",
+          "team": "England",
+          "rating": 7.98,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Josip Sutalo",
+          "team": "Croatia",
+          "rating": 6.13,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Marco Pasalic",
+          "team": "Croatia",
+          "rating": 6.18,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Igor Matanovic",
+          "team": "Croatia",
+          "rating": 5.95,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Martin Baturina",
+          "team": "Croatia",
+          "rating": 7.85,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nico O'Reilly",
+          "team": "England",
+          "rating": 6.75,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Petar Sucic",
+          "team": "Croatia",
+          "rating": 7.47,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Luka Vuskovic",
+          "team": "Croatia",
+          "rating": 6.43,
+          "pos": 1,
+          "min": null
+        }
+      ]
+    },
+    "Ghana|Panama": {
+      "home": "Ghana",
+      "away": "Panama",
+      "home_xg": 1.31,
+      "away_xg": 0.73,
+      "home_shots": 8,
+      "away_shots": 11,
+      "home_sot": 4,
+      "away_sot": 6,
+      "motm": "Caleb Yirenkyi",
+      "motm_team": "Ghana",
+      "motm_rating": "8.2",
+      "player_ratings": [
+        {
+          "name": "Jordan Ayew",
+          "team": "Ghana",
+          "rating": 6.86,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Cecilio Waterman",
+          "team": "Panama",
+          "rating": 5.66,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Yoel Bárcenas",
+          "team": "Panama",
+          "rating": 6.73,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Orlando Mosquera",
+          "team": "Panama",
+          "rating": 6.53,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Ismael Díaz",
+          "team": "Panama",
+          "rating": 6.7,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Lawrence Ati-Zigi",
+          "team": "Ghana",
+          "rating": 7.28,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Amir Murillo",
+          "team": "Panama",
+          "rating": 7.57,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jiovany Ramos",
+          "team": "Panama",
+          "rating": 7.52,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Andrés Andrade",
+          "team": "Panama",
+          "rating": 6.96,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Cristian Martínez",
+          "team": "Panama",
+          "rating": 6.29,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Gideon Mensah",
+          "team": "Ghana",
+          "rating": 7.14,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Brandon Thomas-Asante",
+          "team": "Ghana",
+          "rating": 6.53,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jerome Opoku",
+          "team": "Ghana",
+          "rating": 7.4,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Elisha Owusu",
+          "team": "Ghana",
+          "rating": 6.66,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "César Blackman",
+          "team": "Panama",
+          "rating": 6.74,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Antoine Semenyo",
+          "team": "Ghana",
+          "rating": 6.65,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "José Luis Rodriguez",
+          "team": "Panama",
+          "rating": 5.75,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "José Fajardo",
+          "team": "Panama",
+          "rating": 5.94,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Kwasi Sibo",
+          "team": "Ghana",
+          "rating": 6.2,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Carlos Harvey",
+          "team": "Panama",
+          "rating": 6.24,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Kamaldeen Sulemana",
+          "team": "Ghana",
+          "rating": 6.55,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Marvin Senaya",
+          "team": "Ghana",
+          "rating": 7.44,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "José Córdoba",
+          "team": "Panama",
+          "rating": 6.3,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Abdul Fatawu",
+          "team": "Ghana",
+          "rating": 6.6,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ernest Nuamah",
+          "team": "Ghana",
+          "rating": 6.07,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Azarías Londoño",
+          "team": "Panama",
+          "rating": 6.38,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jonas Adjetey",
+          "team": "Ghana",
+          "rating": 7.9,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Caleb Yirenkyi",
+          "team": "Ghana",
+          "rating": 8.21,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Benjamin Asare",
+          "team": "Ghana",
+          "rating": 7.77,
+          "pos": "GK",
+          "min": null
+        }
+      ]
+    },
+    "Colombia|Uzbekistan": {
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "home_xg": 1.22,
+      "away_xg": 1.61,
+      "home_shots": 8,
+      "away_shots": 15,
+      "home_sot": 4,
+      "away_sot": 8,
+      "motm": "Luis Díaz",
+      "motm_team": "Colombia",
+      "motm_rating": "8.9",
+      "player_ratings": [
+        {
+          "name": "Camilo Vargas",
+          "team": "Colombia",
+          "rating": 5.79,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "James Rodríguez",
+          "team": "Colombia",
+          "rating": 6.66,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jefferson Lerma",
+          "team": "Colombia",
+          "rating": 7.49,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Johan Mojica",
+          "team": "Colombia",
+          "rating": 6.75,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Farrukh Sayfiev",
+          "team": "Uzbekistan",
+          "rating": 6.42,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Dostonbek Khamdamov",
+          "team": "Uzbekistan",
+          "rating": 6.68,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Eldor Shomurodov",
+          "team": "Uzbekistan",
+          "rating": 5.49,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Utkir Yusupov",
+          "team": "Uzbekistan",
+          "rating": 4.99,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Otabek Shukurov",
+          "team": "Uzbekistan",
+          "rating": 6.78,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Davinson Sánchez",
+          "team": "Colombia",
+          "rating": 7.48,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Rustamjon Ashurmatov",
+          "team": "Uzbekistan",
+          "rating": 6.33,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Luis Suárez",
+          "team": "Colombia",
+          "rating": 7.08,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jaminton Campaz",
+          "team": "Colombia",
+          "rating": 7.62,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Juan Hernández",
+          "team": "Colombia",
+          "rating": 6.68,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Daniel Muñoz",
+          "team": "Colombia",
+          "rating": 8.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jhon Lucumí",
+          "team": "Colombia",
+          "rating": 6.93,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Luis Díaz",
+          "team": "Colombia",
+          "rating": 8.94,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Akmal Mozgovoy",
+          "team": "Uzbekistan",
+          "rating": 6.22,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Azizbek Amonov",
+          "team": "Uzbekistan",
+          "rating": 5.81,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jhon Arias",
+          "team": "Colombia",
+          "rating": 7.0,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Oston Urunov",
+          "team": "Uzbekistan",
+          "rating": 6.3,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Richard Ríos",
+          "team": "Colombia",
+          "rating": 5.96,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Abbosbek Fayzullayev",
+          "team": "Uzbekistan",
+          "rating": 7.13,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Sherzod Nasrulloev",
+          "team": "Uzbekistan",
+          "rating": 5.66,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Abdulla Abdullaev",
+          "team": "Uzbekistan",
+          "rating": 5.61,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Gustavo Puerta",
+          "team": "Colombia",
+          "rating": 7.75,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Abdukodir Khusanov",
+          "team": "Uzbekistan",
+          "rating": 5.76,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jakhongir Urozov",
+          "team": "Uzbekistan",
+          "rating": 6.11,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Behruzjon Karimov",
+          "team": "Uzbekistan",
+          "rating": 7.48,
           "pos": 2,
           "min": null
         }
