@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-06-18T11:07:25Z",
-  "group_finished": 23,
+  "updated_utc": "2026-06-19T11:17:47Z",
+  "group_finished": 28,
   "group_total": 72,
   "matches": [
     {
@@ -322,7 +322,7 @@
       "away_g": 0,
       "ht_home": 0,
       "ht_away": 0,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -346,11 +346,11 @@
       "away": "South Africa",
       "home_tla": "CZE",
       "away_tla": "RSA",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 1,
+      "ht_home": 1,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -360,11 +360,11 @@
       "away": "Bosnia-Herzegovina",
       "home_tla": "SUI",
       "away_tla": "BIH",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 4,
+      "away_g": 1,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -374,11 +374,11 @@
       "away": "Qatar",
       "home_tla": "CAN",
       "away_tla": "QAT",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 6,
+      "away_g": 0,
+      "ht_home": 3,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -388,11 +388,11 @@
       "away": "Korea Republic",
       "home_tla": "MEX",
       "away_tla": "KOR",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 0,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
