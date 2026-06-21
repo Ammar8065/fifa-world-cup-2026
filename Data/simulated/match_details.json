@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-06-20T10:01:44Z",
+  "updated_utc": "2026-06-21T10:29:41Z",
   "matches": {
     "Mexico|South Africa": {
       "home": "Mexico",
@@ -1867,7 +1867,7 @@
           "name": "Tahith Chong",
           "team": "Curaçao",
           "rating": 7.0,
-          "pos": 2,
+          "pos": 3,
           "min": null
         },
         {
@@ -6903,6 +6903,871 @@
           "team": "Paraguay",
           "rating": 8.32,
           "pos": "GK",
+          "min": null
+        }
+      ]
+    },
+    "Netherlands|Sweden": {
+      "home": "Netherlands",
+      "away": "Sweden",
+      "home_xg": 2.61,
+      "away_xg": 1.01,
+      "home_shots": 10,
+      "away_shots": 16,
+      "home_sot": 8,
+      "away_sot": 11,
+      "motm": "Cody Gakpo",
+      "motm_team": "Netherlands",
+      "motm_rating": "9.3",
+      "player_ratings": [
+        {
+          "name": "Kristoffer Nordfeldt",
+          "team": "Sweden",
+          "rating": 4.58,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Virgil van Dijk",
+          "team": "Netherlands",
+          "rating": 7.06,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Victor Nilsson Lindelöf",
+          "team": "Sweden",
+          "rating": 4.73,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Memphis Depay",
+          "team": "Netherlands",
+          "rating": 6.57,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jesper Karlström",
+          "team": "Sweden",
+          "rating": 5.75,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Denzel Dumfries",
+          "team": "Netherlands",
+          "rating": 8.73,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Frenkie de Jong",
+          "team": "Netherlands",
+          "rating": 7.68,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Donyell Malen",
+          "team": "Netherlands",
+          "rating": 6.37,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Viktor Gyökeres",
+          "team": "Sweden",
+          "rating": 6.96,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Alexander Isak",
+          "team": "Sweden",
+          "rating": 7.94,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Gabriel Gudmundsson",
+          "team": "Sweden",
+          "rating": 6.14,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Guus Til",
+          "team": "Netherlands",
+          "rating": 6.1,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Cody Gakpo",
+          "team": "Netherlands",
+          "rating": 9.3,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Teun Koopmeiners",
+          "team": "Netherlands",
+          "rating": 6.46,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Tijjani Reijnders",
+          "team": "Netherlands",
+          "rating": 6.14,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Gustaf Lagerbielke",
+          "team": "Sweden",
+          "rating": 5.26,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Benjamin Nygren",
+          "team": "Sweden",
+          "rating": 5.63,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Isak Hien",
+          "team": "Sweden",
+          "rating": 4.86,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Brian Brobbey",
+          "team": "Netherlands",
+          "rating": 8.84,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Crysencio Summerville",
+          "team": "Netherlands",
+          "rating": 8.36,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ryan Gravenberch",
+          "team": "Netherlands",
+          "rating": 7.04,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jan Paul van Hecke",
+          "team": "Netherlands",
+          "rating": 7.15,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alexander Bernhardsson",
+          "team": "Sweden",
+          "rating": 6.46,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Anthony Elanga",
+          "team": "Sweden",
+          "rating": 7.42,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Micky van de Ven",
+          "team": "Netherlands",
+          "rating": 7.29,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Bart Verbruggen",
+          "team": "Netherlands",
+          "rating": 7.94,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Taha Abdi Ali",
+          "team": "Sweden",
+          "rating": 6.58,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Yasin Ayari",
+          "team": "Sweden",
+          "rating": 6.18,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Besfort Zeneli",
+          "team": "Sweden",
+          "rating": 6.33,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Lucas Bergvall",
+          "team": "Sweden",
+          "rating": 6.62,
+          "pos": 2,
+          "min": null
+        }
+      ]
+    },
+    "Côte d'Ivoire|Germany": {
+      "home": "Germany",
+      "away": "Côte d'Ivoire",
+      "home_xg": 1.89,
+      "away_xg": 1.22,
+      "home_shots": 16,
+      "away_shots": 9,
+      "home_sot": 11,
+      "away_sot": 7,
+      "motm": "Deniz Undav",
+      "motm_team": "Germany",
+      "motm_rating": "8.7",
+      "player_ratings": [
+        {
+          "name": "Manuel Neuer",
+          "team": "Germany",
+          "rating": 6.8,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Antonio Rüdiger",
+          "team": "Germany",
+          "rating": 6.51,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Joshua Kimmich",
+          "team": "Germany",
+          "rating": 7.56,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jonathan Tah",
+          "team": "Germany",
+          "rating": 7.66,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Leroy Sané",
+          "team": "Germany",
+          "rating": 6.65,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Franck Kessié",
+          "team": "Côte d'Ivoire",
+          "rating": 7.17,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Seko Fofana",
+          "team": "Côte d'Ivoire",
+          "rating": 5.99,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nadiem Amiri",
+          "team": "Germany",
+          "rating": 7.23,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Deniz Undav",
+          "team": "Germany",
+          "rating": 8.74,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ghislain Konan",
+          "team": "Côte d'Ivoire",
+          "rating": 6.59,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Kai Havertz",
+          "team": "Germany",
+          "rating": 6.48,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ibrahim Sangaré",
+          "team": "Côte d'Ivoire",
+          "rating": 7.34,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Yahia Fofana",
+          "team": "Côte d'Ivoire",
+          "rating": 7.0,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Felix Nmecha",
+          "team": "Germany",
+          "rating": 8.19,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nico Schlotterbeck",
+          "team": "Germany",
+          "rating": 6.77,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Odilon Kossounou",
+          "team": "Côte d'Ivoire",
+          "rating": 6.63,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Wilfried Singo",
+          "team": "Côte d'Ivoire",
+          "rating": 7.07,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Amad Diallo",
+          "team": "Côte d'Ivoire",
+          "rating": 6.39,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Jamie Leweling",
+          "team": "Germany",
+          "rating": 6.37,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Evann Guessand",
+          "team": "Côte d'Ivoire",
+          "rating": 5.93,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Emmanuel Agbadou",
+          "team": "Côte d'Ivoire",
+          "rating": 6.4,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Florian Wirtz",
+          "team": "Germany",
+          "rating": 7.84,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jamal Musiala",
+          "team": "Germany",
+          "rating": 7.09,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ange-Yoan Bonny",
+          "team": "Côte d'Ivoire",
+          "rating": 6.11,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Simon Adingra",
+          "team": "Côte d'Ivoire",
+          "rating": 6.07,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Nathaniel Brown",
+          "team": "Germany",
+          "rating": 6.48,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Aleksandar Pavlovic",
+          "team": "Germany",
+          "rating": 6.78,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Christ Inao Oulaï",
+          "team": "Côte d'Ivoire",
+          "rating": 7.48,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Yan Diomande",
+          "team": "Côte d'Ivoire",
+          "rating": 7.09,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Curaçao|Ecuador": {
+      "home": "Ecuador",
+      "away": "Curaçao",
+      "home_xg": 2.91,
+      "away_xg": 0.51,
+      "home_shots": 27,
+      "away_shots": 10,
+      "home_sot": 17,
+      "away_sot": 6,
+      "motm": "Eloy Room",
+      "motm_team": "Curaçao",
+      "motm_rating": "9.3",
+      "player_ratings": [
+        {
+          "name": "Hernán Galindez",
+          "team": "Ecuador",
+          "rating": 7.99,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Eloy Room",
+          "team": "Curaçao",
+          "rating": 9.31,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Leandro Bacuna",
+          "team": "Curaçao",
+          "rating": 6.88,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Enner Valencia",
+          "team": "Ecuador",
+          "rating": 6.49,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Jürgen Locadia",
+          "team": "Curaçao",
+          "rating": 5.96,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Joshua Brenet",
+          "team": "Curaçao",
+          "rating": 7.82,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Juninho Bacuna",
+          "team": "Curaçao",
+          "rating": 6.97,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Kenji Gorré",
+          "team": "Curaçao",
+          "rating": 6.08,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Sherel Floranus",
+          "team": "Curaçao",
+          "rating": 7.26,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Pervis Estupinán",
+          "team": "Ecuador",
+          "rating": 6.26,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Juriën Gaari",
+          "team": "Curaçao",
+          "rating": 7.33,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Tahith Chong",
+          "team": "Curaçao",
+          "rating": 7.3,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Armando Obispo",
+          "team": "Curaçao",
+          "rating": 7.32,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Alan Franco",
+          "team": "Ecuador",
+          "rating": 7.51,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "John Yeboah",
+          "team": "Ecuador",
+          "rating": 7.35,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Roshon van Eijma",
+          "team": "Curaçao",
+          "rating": 6.32,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jordy Alcívar",
+          "team": "Ecuador",
+          "rating": 6.64,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Gonzalo Plata",
+          "team": "Ecuador",
+          "rating": 7.67,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Pedro Vite",
+          "team": "Ecuador",
+          "rating": 8.05,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Piero Hincapié",
+          "team": "Ecuador",
+          "rating": 7.88,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Moisés Caicedo",
+          "team": "Ecuador",
+          "rating": 8.36,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Willian Pacho",
+          "team": "Ecuador",
+          "rating": 7.33,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Jearl Margaritha",
+          "team": "Curaçao",
+          "rating": 5.95,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Livano Comenencia",
+          "team": "Curaçao",
+          "rating": 5.97,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Nilson Angulo",
+          "team": "Ecuador",
+          "rating": 6.73,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Deveron Fonville",
+          "team": "Curaçao",
+          "rating": 6.94,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Kevin Rodríguez",
+          "team": "Ecuador",
+          "rating": 7.07,
+          "pos": 3,
+          "min": null
+        }
+      ]
+    },
+    "Japan|Tunisia": {
+      "home": "Tunisia",
+      "away": "Japan",
+      "home_xg": 0.05,
+      "away_xg": 2.13,
+      "home_shots": 2,
+      "away_shots": 11,
+      "home_sot": 1,
+      "away_sot": 8,
+      "motm": "Ayase Ueda",
+      "motm_team": "Japan",
+      "motm_rating": "9.3",
+      "player_ratings": [
+        {
+          "name": "Ali Abdi",
+          "team": "Tunisia",
+          "rating": 6.69,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ellyes Skhiri",
+          "team": "Tunisia",
+          "rating": 5.43,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Junya Ito",
+          "team": "Japan",
+          "rating": 7.68,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Ko Itakura",
+          "team": "Japan",
+          "rating": 8.26,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Daichi Kamada",
+          "team": "Japan",
+          "rating": 7.72,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ritsu Doan",
+          "team": "Japan",
+          "rating": 7.03,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Takehiro Tomiyasu",
+          "team": "Japan",
+          "rating": 7.39,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Dylan Bronn",
+          "team": "Tunisia",
+          "rating": 5.92,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yan Valery",
+          "team": "Tunisia",
+          "rating": 6.5,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Firas Chaouat",
+          "team": "Tunisia",
+          "rating": 5.77,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Montassar Talbi",
+          "team": "Tunisia",
+          "rating": 5.11,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Hiroki Ito",
+          "team": "Japan",
+          "rating": 7.65,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ayumu Seko",
+          "team": "Japan",
+          "rating": 6.6,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Keito Nakamura",
+          "team": "Japan",
+          "rating": 8.16,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Sebastian Tounekti",
+          "team": "Tunisia",
+          "rating": 5.54,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Yukinari Sugawara",
+          "team": "Japan",
+          "rating": 6.28,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ao Tanaka",
+          "team": "Japan",
+          "rating": 7.48,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Ayase Ueda",
+          "team": "Japan",
+          "rating": 9.26,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Aymen Dahmen",
+          "team": "Tunisia",
+          "rating": 4.86,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Kaishu Sano",
+          "team": "Japan",
+          "rating": 8.08,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Zion Suzuki",
+          "team": "Japan",
+          "rating": 7.36,
+          "pos": "GK",
+          "min": null
+        },
+        {
+          "name": "Anis Ben Slimane",
+          "team": "Tunisia",
+          "rating": 6.65,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Hannibal Mejbri",
+          "team": "Tunisia",
+          "rating": 6.08,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Amine Ben Hamida",
+          "team": "Tunisia",
+          "rating": 6.72,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Yuito Suzuki",
+          "team": "Japan",
+          "rating": 6.14,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Omar Rekik",
+          "team": "Tunisia",
+          "rating": 5.76,
+          "pos": 1,
+          "min": null
+        },
+        {
+          "name": "Ismaël Gharbi",
+          "team": "Tunisia",
+          "rating": 5.97,
+          "pos": 2,
+          "min": null
+        },
+        {
+          "name": "Elias Saad",
+          "team": "Tunisia",
+          "rating": 5.55,
+          "pos": 3,
+          "min": null
+        },
+        {
+          "name": "Junnosuke Suzuki",
+          "team": "Japan",
+          "rating": 6.23,
+          "pos": 1,
           "min": null
         }
       ]
