@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-06-21T10:27:54Z",
-  "group_finished": 36,
+  "updated_utc": "2026-06-22T12:46:26Z",
+  "group_finished": 40,
   "group_total": 72,
   "matches": [
     {
@@ -514,11 +514,11 @@
       "away": "Saudi Arabia",
       "home_tla": "ESP",
       "away_tla": "KSA",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 4,
+      "away_g": 0,
+      "ht_home": 3,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -528,11 +528,11 @@
       "away": "IR Iran",
       "home_tla": "BEL",
       "away_tla": "IRN",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 0,
+      "away_g": 0,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -542,11 +542,11 @@
       "away": "Cape Verde",
       "home_tla": "URU",
       "away_tla": "CPV",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 2,
+      "away_g": 2,
+      "ht_home": 2,
+      "ht_away": 1,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -556,11 +556,11 @@
       "away": "Egypt",
       "home_tla": "NZL",
       "away_tla": "EGY",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 3,
+      "ht_home": 1,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
