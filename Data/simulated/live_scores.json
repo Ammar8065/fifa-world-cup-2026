@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-06-23T10:33:41Z",
-  "group_finished": 44,
+  "updated_utc": "2026-06-24T10:18:41Z",
+  "group_finished": 48,
   "group_total": 72,
   "matches": [
     {
@@ -626,11 +626,11 @@
       "away": "Uzbekistan",
       "home_tla": "POR",
       "away_tla": "UZB",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 5,
+      "away_g": 0,
+      "ht_home": 3,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -640,11 +640,11 @@
       "away": "Ghana",
       "home_tla": "ENG",
       "away_tla": "GHA",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 0,
+      "away_g": 0,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -654,11 +654,11 @@
       "away": "Croatia",
       "home_tla": "PAN",
       "away_tla": "CRO",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 0,
+      "away_g": 1,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -668,11 +668,11 @@
       "away": "Congo DR",
       "home_tla": "COL",
       "away_tla": "COD",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 0,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {

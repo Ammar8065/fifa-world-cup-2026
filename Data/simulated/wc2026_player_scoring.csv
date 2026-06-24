@@ -1,439 +1,439 @@
 player,team,club,position,club_rate,club_matches,exp_goals,sd_goals,p_golden_boot
-Harry Kane,England,Bayern Munich,Forward,0.9057,31,3.134,1.836,0.1738
-Erling Haaland,Norway,Manchester City,Forward,0.698,35,2.976,1.669,0.1405
-Donyell Malen,Netherlands,Roma,Forward,0.6384,18,2.697,1.611,0.1002
-Lionel Messi,Argentina,Inter Miami,Forward,0.6076,12,2.302,1.56,0.0687
-Kylian Mbappé,France,Real Madrid,Forward,0.7059,31,2.208,1.493,0.06
-Deniz Undav,Germany,VfB Stuttgart,Forward,0.5643,29,2.171,1.459,0.0512
-Lautaro Martínez,Argentina,Inter,Forward,0.4942,30,1.871,1.402,0.0346
-Luis Díaz,Colombia,Bayern Munich,Forward (winger),0.4118,32,1.724,1.365,0.0308
-Folarin Balogun,United States,Monaco,Forward,0.3963,30,1.565,1.2,0.0141
-Lamine Yamal,Spain,Barcelona,Forward (winger),0.4721,28,1.551,1.31,0.0227
-Viktor Gyökeres,Sweden,Arsenal,Forward,0.3489,36,1.462,1.138,0.0108
-Ollie Watkins,England,Aston Villa,Forward,0.4217,37,1.461,1.242,0.0173
-Alexander Sørloth,Norway,Atletico Madrid,Forward,0.346,35,1.46,1.191,0.0142
-Nadiem Amiri,Germany,Mainz 05,Midfielder,0.3773,26,1.438,1.192,0.0126
-Ferran Torres,Spain,Barcelona,Forward (winger),0.4311,33,1.421,1.258,0.0172
-Juan Camilo ‘Cucho’ Hernández,Colombia,Real Betis,Forward,0.3268,32,1.39,1.21,0.0135
-Mikel Oyarzabal,Spain,Real Sociedad,Forward,0.4058,34,1.363,1.219,0.0138
-Raphinha,Brazil,Barcelona,Forward (winger),0.4566,22,1.26,1.162,0.0117
-Jean-Philippe Mateta,France,Crystal Palace,Forward,0.3871,32,1.215,1.099,0.0069
-Marcus Thuram,France,Inter,Forward,0.3762,29,1.185,1.105,0.008
-Breel Embolo,Switzerland,Rennes,Forward,0.2632,31,1.181,1.047,0.0063
-Michael Olise,France,Bayern Munich,Forward,0.3682,32,1.158,1.082,0.0072
-Jonathan David,Canada,Juventus,Forward,0.2305,35,1.13,1.018,0.0037
-Ante Budimir,Croatia,Osasuna,Forward,0.4376,37,1.098,1.079,0.0067
-Borja Iglesias,Spain,Celta Vigo,Forward,0.3299,35,1.094,1.071,0.0056
-Bradley Barcola,France,Paris Saint Germain,Forward (winger),0.3442,29,1.067,1.038,0.0059
-Christian Pulisic,United States,AC Milan,Forward,0.2637,30,1.053,1.004,0.0036
-Nico Paz,Argentina,Como,Midfielder,0.2725,35,1.046,1.042,0.0053
-Vinícius Júnior,Brazil,Real Madrid,Forward,0.3791,36,1.044,1.033,0.0051
-Enzo Fernández,Argentina,Chelsea,Midfielder,0.2781,36,1.043,1.03,0.0042
-Noah Okafor,Switzerland,Leeds,Forward,0.2314,28,1.032,0.993,0.003
-Ousmane Dembélé,France,Paris Saint Germain,Forward,0.3222,22,1.008,1.02,0.0049
-Julián Álvarez,Argentina,Atletico Madrid,Forward,0.2619,29,0.986,0.993,0.0027
-Maximilian Beier,Germany,Borussia Dortmund,Forward,0.2459,32,0.955,0.984,0.0038
-Raúl Jiménez,Mexico,Fulham,Forward,0.2673,36,0.952,0.964,0.0028
-Christoph Baumgartner,Austria,RasenBallsport Leipzig,Midfielder,0.4162,33,0.95,0.967,0.0029
-Mohamed Salah,Egypt,Liverpool,Forward (winger),0.2618,27,0.938,0.944,0.0019
-Kai Havertz,Germany,Arsenal,Forward,0.2316,12,0.909,0.951,0.0027
-Cody Gakpo,Netherlands,Liverpool,Forward (winger),0.2175,36,0.907,0.951,0.0026
-Brian Brobbey,Netherlands,Sunderland,Forward,0.2102,31,0.904,0.95,0.0025
-Désiré Doué,France,Paris Saint Germain,Forward (winger),0.2867,23,0.898,0.947,0.0024
-Andrej Kramaric,Croatia,Hoffenheim,Forward,0.3565,34,0.892,0.973,0.003
-Anthony Gordon,England,Newcastle United,Forward (winger),0.2531,26,0.88,0.958,0.003
-Nick Woltemade,Germany,Newcastle United,Forward,0.2269,33,0.866,0.911,0.0015
-Jamal Musiala,Germany,Bayern Munich,Midfielder,0.2249,15,0.859,0.93,0.002
-Yuito Suzuki,Japan,Freiburg,Midfielder,0.1551,25,0.829,0.89,0.0019
-Marcus Rashford,England,Barcelona,Forward (winger),0.2387,32,0.823,0.919,0.0019
-Alexander Isak,Sweden,Liverpool,Forward,0.1921,14,0.799,0.858,0.0008
-Endrick,Brazil,Lyon,Forward,0.2935,16,0.796,0.908,0.0025
-Bukayo Saka,England,Arsenal,Forward (winger),0.2316,31,0.789,0.891,0.0025
-Álex Grimaldo,Spain,Bayer Leverkusen,Defender,0.2314,29,0.772,0.909,0.002
-Jude Bellingham,England,Real Madrid,Midfielder,0.2231,28,0.766,0.879,0.0018
-Ritsu Doan,Japan,Eintracht Frankfurt,Forward (winger),0.1428,31,0.765,0.854,0.0011
-Cristiano Ronaldo,Portugal,Al-Nassr,Forward,0.3411,10,0.761,0.931,0.0026
-Nicolás González,Argentina,Atletico Madrid,Midfielder,0.2018,24,0.759,0.866,0.0012
-Morgan Rogers,England,Aston Villa,Midfielder,0.2161,37,0.757,0.887,0.0016
-Igor Matanovic,Croatia,Freiburg,Forward,0.2976,31,0.753,0.889,0.0014
-Ismaël Koné,Canada,Sassuolo,Midfielder,0.1527,35,0.746,0.842,0.0007
-Patrik Schick,Czechia,Bayer Leverkusen,Forward,0.5421,28,0.741,0.855,0.0016
-Dani Olmo,Spain,Barcelona,Midfielder,0.2204,33,0.734,0.879,0.0018
-Weston McKennie,United States,Juventus,Midfielder,0.1796,36,0.728,0.854,0.0013
-Ismaïla Sarr,Senegal,Crystal Palace,Forward,0.3233,28,0.717,0.848,0.0013
-Malik Tillman,United States,Bayer Leverkusen,Forward,0.1795,29,0.709,0.828,0.0006
-Tijjani Reijnders,Netherlands,Manchester City,Midfielder,0.1662,28,0.705,0.836,0.0009
-Nico Williams,Spain,Athletic Club,Forward (winger),0.2146,25,0.704,0.864,0.0009
-Johan Manzambi,Switzerland,Freiburg,Forward,0.1585,27,0.701,0.829,0.0009
-Florian Wirtz,Germany,Liverpool,Midfielder,0.1797,33,0.698,0.828,0.0007
-Michael Gregoritsch,Austria,Augsburg,Forward,0.2968,17,0.696,0.822,0.001
-Fabian Rieder,Switzerland,Augsburg,Midfielder,0.1527,32,0.688,0.814,0.0008
-Crysencio Summerville,Netherlands,West Ham,Forward,0.164,31,0.688,0.831,0.0008
-Haris Tabakovic,Bosnia-Herzegovina,Borussia M.Gladbach,Forward,0.3787,32,0.684,0.826,0.0009
-Matias Fernandez-Pardo,Belgium,Lille,Forward,0.2936,29,0.684,0.874,0.0019
-Nicolas Jackson,Senegal,Bayern Munich,Forward,0.3092,23,0.683,0.831,0.0016
-Kristian Thorstvedt,Norway,Sassuolo,Midfielder,0.159,32,0.681,0.815,0.001
-Bruno Guimarães,Brazil,Newcastle United,Midfielder,0.2434,29,0.675,0.831,0.0014
-Tajon Buchanan,Canada,Villarreal,Forward (winger),0.1364,35,0.671,0.804,0.0008
-Federico Viñas,Uruguay,Real Oviedo,Forward,0.254,34,0.665,0.822,0.0012
-Denzel Dumfries,Netherlands,Inter,Defender,0.1557,20,0.655,0.799,0.0006
-Kento Shiogai,Japan,Wolfsburg,Forward,0.12,12,0.653,0.805,0.001
-Ermedin Demirovic,Bosnia-Herzegovina,VfB Stuttgart,Forward,0.3565,25,0.648,0.795,0.0009
-Assan Ouédraogo,Germany,RasenBallsport Leipzig,Midfielder,0.1649,19,0.647,0.808,0.0005
-Matheus Cunha,Brazil,Manchester United,Forward,0.2374,33,0.645,0.804,0.0006
-Rafael Leão,Portugal,AC Milan,Forward (winger),0.2863,29,0.635,0.853,0.0019
-Jamie Leweling,Germany,VfB Stuttgart,Midfielder,0.165,32,0.631,0.8,0.0009
-Jørgen Strand Larsen,Norway,Crystal Palace,Forward,0.1423,36,0.618,0.777,0.0009
-Antonio Nusa,Norway,RasenBallsport Leipzig,Forward (winger),0.1438,31,0.617,0.799,0.0008
-Mikel Merino,Spain,Arsenal,Midfielder,0.1903,22,0.614,0.801,0.0012
-Maghnes Akliouche,France,Monaco,Forward,0.1899,31,0.606,0.783,0.0006
-Amine Gouiri,Algeria,Marseille,Forward,0.2978,22,0.605,0.775,0.0008
-Bruno Fernandes,Portugal,Manchester United,Midfielder,0.2728,35,0.598,0.818,0.0014
-Rayan,Brazil,Bournemouth,Forward,0.2169,15,0.596,0.771,0.0007
-Eberechi Eze,England,Arsenal,Midfielder,0.1698,33,0.59,0.771,0.0002
-Víctor Muñoz,Spain,Osasuna,Forward (winger),0.1819,34,0.589,0.777,0.0006
-Ruben Vargas,Switzerland,Sevilla,Forward,0.1311,24,0.586,0.762,0.0006
-Virgil van Dijk,Netherlands,Liverpool,Defender,0.1401,38,0.585,0.756,0.0003
-Leon Goretzka,Germany,Bayern Munich,Midfielder,0.153,31,0.583,0.753,0.0004
-Giuliano Simeone,Argentina,Atletico Madrid,Forward (winger),0.156,31,0.581,0.769,0.0007
-Casemiro,Brazil,Manchester United,Midfielder,0.2127,34,0.574,0.773,0.0007
-Nico Schlotterbeck,Germany,Borussia Dortmund,Defender,0.1506,28,0.572,0.756,0.0002
-Shuto Machino,Japan,Borussia M.Gladbach,Forward,0.1086,32,0.567,0.747,0.0006
-Leo Østigård,Norway,Genoa,Defender,0.13,30,0.56,0.756,0.0004
-Takefusa Kubo,Japan,Real Sociedad,Forward (winger),0.1017,24,0.555,0.742,0.0005
-Yan Diomande,Côte d'Ivoire,RasenBallsport Leipzig,Forward (winger),0.2753,33,0.545,0.729,0.0004
-Omar Marmoush,Egypt,Manchester City,Forward,0.1519,21,0.539,0.725,0.0004
-Malick Thiaw,Germany,Newcastle United,Defender,0.1383,35,0.527,0.731,0.0004
-Adrien Rabiot,France,AC Milan,Midfielder,0.1686,29,0.526,0.723,0.0004
-Brenden Aaronson,United States,Leeds,Midfielder,0.1316,37,0.52,0.711,0.0003
-Morten Thorsby,Norway,Cremonese,Midfielder,0.1193,24,0.519,0.717,0.0004
-Daniel Muñoz,Colombia,Crystal Palace,Defender,0.1227,29,0.518,0.729,0.0005
-Gonçalo Ramos,Portugal,Paris Saint Germain,Forward,0.2334,30,0.515,0.755,0.0006
-Mattias Svanberg,Sweden,Wolfsburg,Midfielder,0.124,24,0.505,0.695,0.0003
-Tani Oluwaseyi,Canada,Villarreal,Forward,0.1038,28,0.504,0.711,0.0004
-Antoine Semenyo,Ghana,Bournemouth,Forward (winger),0.3637,37,0.498,0.681,0.0004
-Nikola Vlasic,Croatia,Torino,Midfielder,0.1959,37,0.496,0.71,0.0004
-Bilal El Khannouss,Morocco,VfB Stuttgart,Midfielder,0.1376,25,0.486,0.706,0.0007
-Amine Sbaï,Morocco,Angers,Forward,0.1417,25,0.484,0.696,0.0005
-Kevin De Bruyne,Belgium,Napoli,Midfielder,0.2074,18,0.478,0.716,0.0004
-Hiroki Ito,Japan,Bayern Munich,Defender,0.0895,16,0.477,0.68,0.0001
-Nicolas Pépé,Côte d'Ivoire,Villarreal,Forward (winger),0.2354,37,0.475,0.677,0.0002
-Eray Cömert,Switzerland,Valencia,Defender,0.1078,17,0.472,0.679,0.0002
-Cristian Romero,Argentina,Tottenham,Defender,0.1255,23,0.471,0.688,0.0004
-Thiago Almada,Argentina,Atletico Madrid,Midfielder,0.1212,27,0.462,0.682,0.0003
-Lucas Paquetá,Brazil,West Ham,Midfielder,0.1642,18,0.46,0.693,0.0003
-Djibril Sow,Switzerland,Sevilla,Midfielder,0.1024,33,0.455,0.666,0.0002
-Justin Kluivert,Netherlands,Bournemouth,Forward (winger),0.1103,20,0.455,0.675,0.0003
-Luka Vuskovic,Croatia,Hamburger SV,Defender,0.1783,28,0.453,0.689,0.0004
-Ao Tanaka,Japan,Leeds,Midfielder,0.0829,28,0.445,0.664,0.0002
-Achraf Hakimi,Morocco,Paris Saint Germain,Defender,0.13,18,0.442,0.665,0.0001
-Leandro Trossard,Belgium,Arsenal,Forward (winger),0.1918,31,0.437,0.691,0.0005
-Denis Zakaria,Switzerland,Monaco,Midfielder,0.0999,24,0.433,0.66,0.0002
-Roberto Junior Fernández,Paraguay,Espanyol,Goalkeeper,0.2016,38,0.432,0.651,0.0003
-Santiago Gimenez,Mexico,AC Milan,Forward,0.1188,16,0.42,0.646,0.0002
-Scott McTominay,Scotland,Napoli,Midfielder,0.306,33,0.416,0.652,0.0002
-Chris Wood,New Zealand,Nottingham Forest,Forward,0.1858,15,0.416,0.619,0.0001
-Silvan Widmer,Switzerland,Mainz 05,Defender,0.0936,27,0.416,0.641,0.0001
-Pavel Sulc,Czechia,Lyon,Midfielder,0.2976,27,0.414,0.646,0.0001
-Jhon Arias,Colombia,Wolverhampton Wanderers,Midfielder,0.0988,23,0.414,0.654,0.0005
-Jarell Quansah,England,Bayer Leverkusen,Defender,0.1178,28,0.414,0.647,0.0001
-Micky van de Ven,Netherlands,Tottenham,Defender,0.0963,35,0.409,0.635,0.0001
-Giovani Lo Celso,Argentina,Real Betis,Midfielder,0.1057,24,0.408,0.64,0.0001
-Julio Enciso,Paraguay,Strasbourg,Forward,0.1836,27,0.403,0.644,0.0002
-Jan Paul van Hecke,Netherlands,Brighton,Defender,0.0928,36,0.397,0.623,0.0
-Gonçalo Guedes,Portugal,Real Sociedad,Forward,0.1787,32,0.397,0.658,0.0002
-Iliman Ndiaye,Senegal,Everton,Forward,0.1787,32,0.396,0.629,0.0001
-Jens Castrop,Korea Republic,Borussia M.Gladbach,Defender,0.1366,26,0.394,0.624,0.0001
-Nuno Mendes,Portugal,Paris Saint Germain,Defender,0.1779,20,0.392,0.658,0.0004
-Ryan Gravenberch,Netherlands,Liverpool,Midfielder,0.0949,36,0.391,0.618,0.0001
-João Neves,Portugal,Paris Saint Germain,Midfielder,0.1778,21,0.391,0.648,0.0003
-Romano Schmid,Austria,Werder Bremen,Midfielder,0.1672,34,0.389,0.623,0.0002
-Valentín Barco,Argentina,Strasbourg,Midfielder,0.102,27,0.389,0.628,0.0002
-Yasin Ayari,Sweden,Brighton,Midfielder,0.0937,29,0.388,0.613,0.0001
-Francisco Conceição,Portugal,Juventus,Forward (winger),0.1747,31,0.386,0.652,0.0004
-Declan Rice,England,Arsenal,Midfielder,0.1091,36,0.385,0.619,0.0001
-Chemsdine Talbi,Morocco,Sunderland,Forward (winger),0.1142,28,0.384,0.62,0.0002
-Aleksandar Pavlovic,Germany,Bayern Munich,Midfielder,0.0998,24,0.379,0.617,0.0003
-Marc Guéhi,England,Crystal Palace,Defender,0.1114,35,0.376,0.615,0.0001
-David Raum,Germany,RasenBallsport Leipzig,Defender,0.095,30,0.375,0.61,0.0001
-Alphonso Davies,Canada,Bayern Munich,Defender,0.0758,13,0.374,0.602,0.0
-Simon Adingra,Côte d'Ivoire,Monaco,Forward (winger),0.1836,14,0.373,0.61,0.0001
-Diego Gómez,Paraguay,Brighton,Midfielder,0.1692,32,0.37,0.617,0.0001
-Nathaniel Brown,Germany,Eintracht Frankfurt,Defender,0.0962,33,0.369,0.605,0.0
-Felix Nmecha,Germany,Borussia Dortmund,Midfielder,0.0972,29,0.368,0.606,0.0001
-Ramy Bensebaini,Algeria,Borussia Dortmund,Defender,0.1796,21,0.367,0.603,0.0
-Vitinha,Portugal,Genoa,Midfielder,0.1628,35,0.356,0.616,0.0002
-Bremer,Brazil,Juventus,Defender,0.1274,26,0.355,0.603,0.0
-Éderson,Brazil,Atalanta,Midfielder,0.1248,30,0.35,0.601,0.0001
-Samú Costa,Portugal,Mallorca,Midfielder,0.159,34,0.35,0.619,0.0002
-Mats Wieffer,Netherlands,Brighton,Midfielder,0.0839,26,0.349,0.587,0.0001
-Daniel Svensson,Sweden,Borussia Dortmund,Defender,0.0817,33,0.348,0.59,0.0001
-Martín Zubimendi,Spain,Arsenal,Midfielder,0.1066,38,0.345,0.597,0.0001
-Patrick Wimmer,Austria,Wolfsburg,Midfielder,0.1464,25,0.344,0.578,0.0002
-Pape Gueye,Senegal,Villarreal,Midfielder,0.1574,31,0.344,0.592,0.0001
-Elliot Anderson,England,Nottingham Forest,Midfielder,0.101,38,0.339,0.589,0.0003
-Ederson,Brazil,Atalanta,Goalkeeper,0.1248,30,0.336,0.584,0.0001
-Angelo Stiller,Germany,VfB Stuttgart,Midfielder,0.0883,34,0.336,0.577,0.0
-Martin Baturina,Croatia,Como,Midfielder,0.1334,29,0.335,0.589,0.0003
-Joshua Kimmich,Germany,Bayern Munich,Defender,0.0829,29,0.333,0.576,0.0001
-Lee Kang-in,Korea Republic,Paris Saint Germain,Forward,0.1151,27,0.331,0.572,0.0001
-Yerry Mina,Colombia,Cagliari,Defender,0.0813,26,0.33,0.58,0.0001
-Noa Lang,Netherlands,Napoli,Forward (winger),0.0793,18,0.329,0.567,0.0
-Jérémy Doku,Belgium,Manchester City,Forward (winger),0.145,30,0.328,0.58,0.0001
-Pedro Neto,Portugal,Chelsea,Forward (winger),0.1449,34,0.325,0.579,0.0002
-Joe Scally,United States,Borussia M.Gladbach,Defender,0.0808,32,0.325,0.57,0.0001
-Manuel Akanji,Switzerland,Inter,Defender,0.0736,33,0.323,0.567,0.0001
-Alexis Mac Allister,Argentina,Liverpool,Midfielder,0.0873,37,0.323,0.566,0.0
-Cédric Bakambu,Congo DR,Real Betis,Forward,0.1851,18,0.32,0.577,0.0002
-Bazoumana Touré,Côte d'Ivoire,Hoffenheim,Forward (winger),0.1609,30,0.318,0.568,0.0001
-Assane Diao,Senegal,Como,Forward,0.1438,17,0.314,0.56,0.0
-Ayoube Amaimouni,Morocco,Eintracht Frankfurt,Forward (winger),0.087,17,0.31,0.559,0.0001
-Antonio Rüdiger,Germany,Real Madrid,Defender,0.0803,18,0.306,0.553,0.0
-Ibrahim Maza,Algeria,Bayer Leverkusen,Midfielder,0.1537,28,0.298,0.545,0.0001
-Noni Madueke,England,Arsenal,Forward (winger),0.0849,26,0.296,0.547,0.0001
-Gabriel Martinelli,Brazil,Arsenal,Forward,0.1083,30,0.296,0.547,0.0
-Federico Valverde,Uruguay,Real Madrid,Midfielder,0.1113,33,0.294,0.551,0.0
-Habib Diarra,Senegal,Sunderland,Midfielder,0.1287,20,0.291,0.539,0.0
-Ronald Araújo,Uruguay,Barcelona,Defender,0.1124,24,0.291,0.54,0.0001
-Ibrahim Mbaye,Senegal,Paris Saint Germain,Forward,0.1311,24,0.287,0.536,0.0001
-Charles De Ketelaere,Belgium,Atalanta,Forward (winger),0.1214,31,0.28,0.546,0.0001
-Tyler Adams,United States,Bournemouth,Midfielder,0.0705,25,0.279,0.524,0.0001
-Josko Gvardiol,Croatia,Manchester City,Defender,0.1104,18,0.279,0.534,0.0
-Lucas Bergvall,Sweden,Tottenham,Midfielder,0.0668,23,0.277,0.529,0.0001
-Luka Sucic,Croatia,Real Sociedad,Midfielder,0.1107,22,0.276,0.541,0.0001
-Warren Zaïre-Emery,France,Paris Saint Germain,Midfielder,0.0857,32,0.274,0.521,0.0
-Ange-Yoan Bonny,Côte d'Ivoire,Inter,Forward,0.1413,33,0.273,0.524,0.0001
-Diego Moreira,Belgium,Strasbourg,Forward,0.1161,27,0.271,0.533,0.0001
-Kaishu Sano,Japan,Mainz 05,Midfielder,0.0505,34,0.269,0.517,0.0
-Remo Freuler,Switzerland,Bologna,Midfielder,0.0589,29,0.268,0.517,0.0001
-Eric Smith,Sweden,St. Pauli,Defender,0.0645,27,0.266,0.517,0.0001
-Pedri,Spain,Barcelona,Midfielder,0.0832,29,0.265,0.516,0.0
-Waldemar Anton,Germany,Borussia Dortmund,Defender,0.0696,32,0.263,0.507,0.0
-Issa Diop,Morocco,Fulham,Defender,0.0758,13,0.263,0.511,0.0
-Álex Baena,Spain,Atletico Madrid,Midfielder,0.0791,27,0.262,0.517,0.0001
-Quinten Timber,Netherlands,Marseille,Midfielder,0.0613,15,0.262,0.512,0.0
-Dan Ndoye,Switzerland,Nottingham Forest,Forward,0.0602,24,0.261,0.509,0.0
-Mario Pasalic,Croatia,Atalanta,Midfielder,0.1012,33,0.256,0.509,0.0
-Cristian Volpato,Australia,Sassuolo,Midfielder,0.0865,24,0.25,0.5,0.0
-Marcus Holmgren Pedersen,Norway,Torino,Defender,0.0581,29,0.25,0.504,0.0
-Che Adams,Scotland,Torino,Forward,0.1801,33,0.249,0.501,0.0
-Iñaki Williams,Ghana,Athletic Club,Forward,0.1819,30,0.248,0.492,0.0
-Marc Pubill,Spain,Atletico Madrid,Defender,0.0753,19,0.247,0.502,0.0001
-Xaver Schlager,Austria,RasenBallsport Leipzig,Midfielder,0.1031,26,0.244,0.491,0.0001
-Konrad Laimer,Austria,Bayern Munich,Midfielder,0.1038,29,0.244,0.49,0.0
-Frenkie de Jong,Netherlands,Barcelona,Midfielder,0.0568,25,0.243,0.497,0.0
-Nicolás Tagliafico,Argentina,Lyon,Defender,0.0635,20,0.243,0.5,0.0
-Santiago Bueno,Uruguay,Wolverhampton Wanderers,Defender,0.0919,29,0.243,0.501,0.0
-Amad Diallo,Côte d'Ivoire,Manchester United,Forward (winger),0.1207,32,0.24,0.486,0.0
-Antonee Robinson,United States,Fulham,Defender,0.061,22,0.237,0.483,0.0
-Daichi Kamada,Japan,Crystal Palace,Midfielder,0.043,28,0.234,0.48,0.0
-Eric García,Spain,Barcelona,Defender,0.0723,34,0.232,0.484,0.0
-Alexis Saelemaekers,Belgium,AC Milan,Forward,0.098,35,0.232,0.492,0.0
-Pathé Ciss,Senegal,Rayo Vallecano,Midfielder,0.1057,29,0.231,0.479,0.0
-Yukinari Sugawara,Japan,Werder Bremen,Defender,0.0421,31,0.231,0.478,0.0
-Rodri,Spain,Manchester City,Midfielder,0.0672,21,0.229,0.481,0.0
-Amadou Onana,Belgium,Aston Villa,Midfielder,0.1002,25,0.229,0.483,0.0
-Nahuel Molina,Argentina,Atletico Madrid,Defender,0.06,26,0.228,0.477,0.0
-Jonathan Tah,Germany,Bayern Munich,Defender,0.0604,28,0.228,0.477,0.0
-João Cancelo,Portugal,Barcelona,Defender,0.1002,16,0.225,0.486,0.0
-Reece James,England,Chelsea,Defender,0.0667,29,0.225,0.479,0.0
-Jhon Lucumí,Colombia,Bologna,Defender,0.0546,29,0.225,0.481,0.0001
-Hakan Calhanoglu,Türkiye,Inter,Midfielder,0.2784,22,0.222,0.508,0.0001
-Nathan Aké,Netherlands,Manchester City,Defender,0.0528,18,0.222,0.472,0.0
-Aurélien Tchouaméni,France,Real Madrid,Midfielder,0.0705,33,0.221,0.472,0.0
-Isak Hien,Sweden,Atalanta,Defender,0.0518,28,0.217,0.462,0.0
-Chris Richards,United States,Crystal Palace,Defender,0.0541,33,0.217,0.46,0.0
-Malo Gusto,France,Chelsea,Defender,0.0673,34,0.214,0.462,0.0
-Oscar Bobb,Norway,Fulham,Forward (winger),0.0495,23,0.211,0.452,0.0001
-Idrissa ‘Gana’ Gueye,Senegal,Udinese,Midfielder,0.0941,19,0.209,0.458,0.0
-Lamine Camara,Senegal,Monaco,Midfielder,0.0964,24,0.209,0.457,0.0
-Maxence Lacroix,France,Crystal Palace,Defender,0.0664,35,0.206,0.453,0.0
-Farès Chaïbi,Algeria,Eintracht Frankfurt,Midfielder,0.1024,28,0.206,0.451,0.0
-Can Uzun,Türkiye,Eintracht Frankfurt,Midfielder,0.259,21,0.206,0.483,0.0002
-Yoane Wissa,Congo DR,Newcastle United,Forward,0.1136,19,0.203,0.449,0.0
-Jules Koundé,France,Barcelona,Defender,0.0644,30,0.2,0.451,0.0
-Carney Chukwuemeka,Austria,Borussia Dortmund,Midfielder,0.0866,28,0.199,0.441,0.0
-Samir Chergui,Algeria,Paris FC,Defender,0.0995,15,0.199,0.445,0.0
-Stefan Posch,Austria,Como,Defender,0.0826,14,0.198,0.443,0.0001
-Brahim Díaz,Morocco,Real Madrid,Forward,0.0576,30,0.198,0.447,0.0
-Tomas Soucek,Czechia,West Ham,Midfielder,0.1421,35,0.198,0.444,0.0
-Josip Stanisic,Croatia,Bayern Munich,Defender,0.0767,26,0.197,0.452,0.0
-Jefferson Lerma,Colombia,Crystal Palace,Midfielder,0.0493,31,0.197,0.443,0.0
-Deiver Machado,Colombia,Lens,Defender,0.047,19,0.197,0.442,0.0
-Kenan Yildiz,Türkiye,Juventus,Forward,0.2389,36,0.196,0.474,0.0001
-Kristijan Jakic,Croatia,Augsburg,Midfielder,0.0762,26,0.195,0.442,0.0
-Gessime Yassine,Morocco,Strasbourg,Midfielder,0.054,12,0.195,0.441,0.0
-Antonio Sanabria,Paraguay,Cremonese,Forward,0.0874,25,0.192,0.446,0.0
-Granit Xhaka,Switzerland,Sunderland,Midfielder,0.0406,34,0.191,0.438,0.0
-Ardon Jashari,Switzerland,AC Milan,Midfielder,0.0421,14,0.189,0.433,0.0
-Neil El Aynaoui,Morocco,Roma,Midfielder,0.0548,25,0.188,0.437,0.0
-Pape Matar Sarr,Senegal,Tottenham,Midfielder,0.0857,26,0.188,0.435,0.0
-Ayumu Seko,Japan,Le Havre,Defender,0.0334,30,0.185,0.423,0.0
-Rafik Belghali,Algeria,Verona,Defender,0.0944,26,0.185,0.428,0.0
-Marc Cucurella,Spain,Chelsea,Defender,0.0541,34,0.184,0.43,0.0
-Evan Ndicka,Côte d'Ivoire,Roma,Defender,0.0924,31,0.183,0.428,0.0
-Michel Aebischer,Switzerland,Pisa,Midfielder,0.0399,35,0.183,0.435,0.0001
-Alexander Prass,Austria,Hoffenheim,Defender,0.0801,32,0.182,0.421,0.0
-Miro Muheim,Switzerland,Hamburger SV,Defender,0.0402,29,0.182,0.429,0.0
-Thomas Meunier,Belgium,Lille,Defender,0.0782,25,0.181,0.429,0.0
-Séko Fofana,Côte d'Ivoire,Rennes,Midfielder,0.0889,12,0.179,0.421,0.0
-Johan Vásquez,Mexico,Genoa,Defender,0.0515,36,0.179,0.42,0.0
-Teun Koopmeiners,Netherlands,Juventus,Midfielder,0.0415,33,0.178,0.421,0.0
-Petar Sucic,Croatia,Inter,Midfielder,0.0703,34,0.176,0.426,0.0
-Marten de Roon,Netherlands,Atalanta,Midfielder,0.0408,34,0.176,0.421,0.0
-Guela Doué,Côte d'Ivoire,Strasbourg,Defender,0.0879,24,0.175,0.412,0.0
-John McGinn,Scotland,Aston Villa,Midfielder,0.1311,30,0.174,0.42,0.0
-Aurèle Amenda,Switzerland,Eintracht Frankfurt,Defender,0.0408,24,0.174,0.414,0.0001
-Luca Jaquez,Switzerland,VfB Stuttgart,Defender,0.0398,14,0.173,0.414,0.0
-Jesper Karlström,Sweden,Udinese,Midfielder,0.0403,36,0.17,0.41,0.0
-William Saliba,France,Arsenal,Defender,0.0543,31,0.17,0.41,0.0
-Maxim De Cuyper,Belgium,Brighton,Defender,0.072,30,0.169,0.417,0.0001
-Hjalmar Ekdal,Sweden,Burnley,Defender,0.041,19,0.166,0.406,0.0
-Antoine Mendy,Senegal,Nice,Defender,0.0747,25,0.165,0.408,0.0
-Marcos Llorente,Spain,Atletico Madrid,Defender,0.0522,29,0.164,0.411,0.0
-Obed Vargas,Mexico,Atletico Madrid,Midfielder,0.0455,12,0.163,0.401,0.0
-Torbjørn Heggem,Norway,Bologna,Defender,0.0372,27,0.163,0.406,0.0
-Kristoffer Ajer,Norway,Brentford,Defender,0.0378,27,0.162,0.403,0.0
-Ibrahima Konaté,France,Liverpool,Defender,0.0524,36,0.162,0.404,0.0
-Dan Burn,England,Newcastle United,Defender,0.048,29,0.161,0.404,0.0
-Aymeric Laporte,Spain,Athletic Club,Defender,0.0526,25,0.161,0.4,0.0
-Duje Caleta-Car,Croatia,Real Sociedad,Defender,0.0654,27,0.16,0.399,0.0
-Anthony Elanga,Sweden,Newcastle United,Forward (winger),0.0381,32,0.159,0.397,0.0
-Bernardo Silva,Portugal,Manchester City,Midfielder,0.072,38,0.157,0.396,0.0
-Carl Starfelt,Sweden,Celta Vigo,Defender,0.0365,19,0.156,0.395,0.0
-Victor Lindelöf,Sweden,Aston Villa,Defender,0.0347,17,0.155,0.389,0.0
-Evann Guessand,Côte d'Ivoire,Aston Villa,Forward,0.0795,21,0.154,0.389,0.0
-Ibrahim Sangaré,Côte d'Ivoire,Nottingham Forest,Midfielder,0.0737,28,0.153,0.387,0.0
-Axel Witsel,Belgium,Girona,Midfielder,0.0662,32,0.152,0.397,0.0
-Zion Suzuki,Japan,Parma Calcio 1913,Goalkeeper,0.0277,20,0.151,0.389,0.0
-Jackson Irvine,Australia,St. Pauli,Midfielder,0.0511,24,0.149,0.387,0.0
-Facundo Medina,Argentina,Marseille,Defender,0.0411,17,0.149,0.384,0.0
-Arthur Theate,Belgium,Eintracht Frankfurt,Defender,0.0644,24,0.149,0.393,0.0
-Pedro Porro,Spain,Tottenham,Defender,0.048,34,0.149,0.384,0.0
-Tarik Muharemovic,Bosnia-Herzegovina,Sassuolo,Defender,0.0826,32,0.148,0.381,0.0001
-Luka Modric,Croatia,AC Milan,Midfielder,0.0586,34,0.148,0.389,0.0
-Lutsharel Geertruida,Netherlands,Sunderland,Defender,0.0335,28,0.147,0.382,0.0
-Marcos Senesi,Argentina,Bournemouth,Defender,0.0383,37,0.146,0.38,0.0
-Julian Ryerson,Norway,Borussia Dortmund,Defender,0.0341,31,0.146,0.378,0.0
-Exequiel Palacios,Argentina,Bayer Leverkusen,Midfielder,0.0391,18,0.146,0.38,0.0
-Sander Berge,Norway,Fulham,Midfielder,0.034,35,0.146,0.38,0.0
-Kobbie Mainoo,England,Manchester United,Midfielder,0.0435,28,0.145,0.382,0.0
-Kim Min-jae,Korea Republic,Bayern Munich,Defender,0.0511,25,0.145,0.38,0.0
-Nabil Bentaleb,Algeria,Lille,Midfielder,0.0726,26,0.145,0.377,0.0
-Philipp Lienhart,Austria,Freiburg,Defender,0.0652,20,0.145,0.377,0.0
-Gavi,Spain,Barcelona,Midfielder,0.0424,11,0.143,0.382,0.0
-Axel Tuanzebe,Congo DR,Burnley,Defender,0.075,14,0.141,0.374,0.0
-Lyle Foster,South Africa,Burnley,Forward,0.1255,26,0.14,0.376,0.0
-Rodrigo Bentancur,Uruguay,Tottenham,Midfielder,0.0534,26,0.138,0.372,0.0
-Rúben Dias,Portugal,Manchester City,Defender,0.0606,26,0.137,0.375,0.0
-Jorrel Hato,Netherlands,Chelsea,Defender,0.0318,22,0.136,0.363,0.0
-Haissem Hassan,Egypt,Real Oviedo,Forward (winger),0.0387,38,0.135,0.363,0.0
-Mathías Olivera,Uruguay,Napoli,Defender,0.0521,25,0.135,0.369,0.0
-Pau Cubarsí,Spain,Barcelona,Defender,0.0404,31,0.135,0.367,0.0
-Jordan Henderson,England,Brentford,Midfielder,0.0394,32,0.135,0.369,0.0
-Nathan Ngoy,Belgium,Lille,Defender,0.0572,29,0.132,0.367,0.0
-Kamaldeen Sulemana,Ghana,Atalanta,Forward,0.0956,25,0.132,0.362,0.0
-Marcel Sabitzer,Austria,Borussia Dortmund,Midfielder,0.0561,26,0.13,0.355,0.0
-Ali Abdi,Tunisia,Nice,Defender,0.1222,22,0.13,0.35,0.0
-Samir El Mourabet,Morocco,Strasbourg,Midfielder,0.0361,33,0.129,0.356,0.0
-Ozan Kabak,Türkiye,Hoffenheim,Defender,0.1626,25,0.128,0.371,0.0
-Diogo Dalot,Portugal,Manchester United,Defender,0.0579,34,0.128,0.361,0.0
-Gabriel Gudmundsson,Sweden,Leeds,Defender,0.0305,32,0.126,0.354,0.0
-Lisandro Martínez,Argentina,Manchester United,Defender,0.0324,18,0.123,0.353,0.0
-Alessandro Circati,Australia,Parma Calcio 1913,Defender,0.0429,31,0.122,0.352,0.0
-Youri Tielemans,Belgium,Aston Villa,Midfielder,0.0529,25,0.122,0.354,0.0
-David Alaba,Austria,Real Madrid,Defender,0.0499,11,0.121,0.348,0.0
-Rani Khedira,Tunisia,Union Berlin,Midfielder,0.1146,32,0.121,0.341,0.0
-Sofyan Amrabat,Morocco,Real Betis,Midfielder,0.0365,17,0.121,0.35,0.0
-David Møller Wolfe,Norway,Wolverhampton Wanderers,Defender,0.0272,22,0.12,0.346,0.0
-Nikola Moro,Croatia,Bologna,Midfielder,0.0468,30,0.12,0.345,0.0
-Ricardo Rodriguez,Switzerland,Real Betis,Defender,0.0273,23,0.12,0.342,0.0
-Koni De Winter,Belgium,AC Milan,Defender,0.0506,26,0.118,0.344,0.0
-Johan Mojica,Colombia,Mallorca,Defender,0.0274,35,0.117,0.344,0.0
-Ryan Christie,Scotland,Bournemouth,Midfielder,0.0817,26,0.116,0.341,0.0
-Ayyoub Bouaddi,Morocco,Lille,Midfielder,0.0348,30,0.114,0.336,0.0
-Djed Spence,England,Tottenham,Defender,0.0358,30,0.113,0.34,0.0
-Krépin Diatta,Senegal,Monaco,Defender,0.0493,18,0.111,0.335,0.0
-Noussair Mazraoui,Morocco,Manchester United,Defender,0.0315,20,0.111,0.333,0.0
-Omar Alderete,Paraguay,Sunderland,Defender,0.0511,33,0.11,0.332,0.0
-Ezri Konsa,England,Aston Villa,Defender,0.0314,34,0.11,0.336,0.0
-Arda Guler,Türkiye,Real Madrid,Midfielder,0.1314,33,0.106,0.339,0.0
-David Affengruber,Austria,Elche,Defender,0.0449,36,0.106,0.328,0.0
-Odilon Kossounou,Côte d'Ivoire,Atalanta,Defender,0.0541,19,0.106,0.325,0.0
-Nico Elvedi,Switzerland,Borussia M.Gladbach,Defender,0.0233,33,0.105,0.324,0.0
-Marco Friedl,Austria,Werder Bremen,Defender,0.044,30,0.105,0.322,0.0
-Manuel Ugarte,Uruguay,Manchester United,Midfielder,0.0407,22,0.105,0.323,0.0
-Lucas Hernández,France,Paris Saint Germain,Defender,0.0336,25,0.105,0.321,0.0
-Connor Metcalfe,Australia,St. Pauli,Midfielder,0.0351,25,0.104,0.322,0.0
-Ladislav Krejci,Czechia,Wolverhampton Wanderers,Defender,0.0759,28,0.103,0.316,0.0
-Marquinhos,Brazil,Paris Saint Germain,Defender,0.0374,14,0.103,0.322,0.0
-Saud Abdulhamid,Saudi Arabia,Lens,Defender,0.0733,25,0.099,0.314,0.0
-Manuel Neuer,Germany,Bayern Munich,Goalkeeper,0.0257,22,0.099,0.314,0.0
-Mark Flekken,Netherlands,Bayer Leverkusen,Goalkeeper,0.024,24,0.099,0.316,0.0
-Aissa Mandi,Algeria,Lille,Defender,0.0471,29,0.097,0.309,0.0
-Charles Pickel,Congo DR,Espanyol,Midfielder,0.0537,24,0.096,0.309,0.0
-Robin Hranac,Czechia,Hoffenheim,Defender,0.0644,29,0.096,0.311,0.0
-Timothy Castagne,Belgium,Fulham,Defender,0.0404,30,0.095,0.317,0.0
-Kendry Páez,Ecuador,Strasbourg,Forward (winger),0.0838,15,0.094,0.324,0.0
-Mark McKenzie,United States,Toulouse,Defender,0.0243,29,0.094,0.307,0.0
-Nicolas Seiwald,Austria,RasenBallsport Leipzig,Midfielder,0.0418,33,0.093,0.302,0.0
-Emmanuel Agbadou,Côte d'Ivoire,Wolverhampton Wanderers,Defender,0.0472,14,0.092,0.306,0.0
-Edin Dzeko,Bosnia-Herzegovina,Fiorentina,Forward,0.0499,11,0.091,0.303,0.0
-Lucas Digne,France,Aston Villa,Defender,0.029,31,0.089,0.297,0.0
-Chancel Mbemba,Congo DR,Lille,Defender,0.0468,13,0.088,0.298,0.0
-Matheus Nunes,Portugal,Manchester City,Defender,0.0389,34,0.088,0.302,0.0
-Moisés Caicedo,Ecuador,Chelsea,Midfielder,0.0766,33,0.085,0.303,0.0
+Erling Haaland,Norway,Manchester City,Forward,0.698,35,3.018,1.678,0.1545
+Donyell Malen,Netherlands,Roma,Forward,0.6384,18,2.683,1.613,0.1073
+Harry Kane,England,Bayern Munich,Forward,0.9057,31,2.511,1.668,0.1037
+Lionel Messi,Argentina,Inter Miami,Forward,0.6076,12,2.276,1.538,0.0712
+Kylian Mbappé,France,Real Madrid,Forward,0.7059,31,2.231,1.511,0.0689
+Deniz Undav,Germany,VfB Stuttgart,Forward,0.5643,29,2.176,1.453,0.0569
+Lautaro Martínez,Argentina,Inter,Forward,0.4942,30,1.873,1.399,0.0406
+Luis Díaz,Colombia,Bayern Munich,Forward (winger),0.4118,32,1.676,1.339,0.0302
+Folarin Balogun,United States,Monaco,Forward,0.3963,30,1.57,1.196,0.0152
+Lamine Yamal,Spain,Barcelona,Forward (winger),0.4721,28,1.526,1.294,0.0223
+Alexander Sørloth,Norway,Atletico Madrid,Forward,0.346,35,1.478,1.206,0.0165
+Nadiem Amiri,Germany,Mainz 05,Midfielder,0.3773,26,1.456,1.201,0.0152
+Viktor Gyökeres,Sweden,Arsenal,Forward,0.3489,36,1.456,1.121,0.0111
+Ferran Torres,Spain,Barcelona,Forward (winger),0.4311,33,1.37,1.238,0.0157
+Juan Camilo ‘Cucho’ Hernández,Colombia,Real Betis,Forward,0.3268,32,1.305,1.155,0.0108
+Mikel Oyarzabal,Spain,Real Sociedad,Forward,0.4058,34,1.297,1.204,0.0148
+Raphinha,Brazil,Barcelona,Forward (winger),0.4566,22,1.24,1.143,0.0111
+Cristiano Ronaldo,Portugal,Al-Nassr,Forward,0.3411,10,1.225,1.13,0.0098
+Jean-Philippe Mateta,France,Crystal Palace,Forward,0.3871,32,1.213,1.107,0.0081
+Marcus Thuram,France,Inter,Forward,0.3762,29,1.192,1.113,0.0087
+Breel Embolo,Switzerland,Rennes,Forward,0.2632,31,1.173,1.068,0.0072
+Ollie Watkins,England,Aston Villa,Forward,0.4217,37,1.171,1.115,0.0084
+Michael Olise,France,Bayern Munich,Forward,0.3682,32,1.162,1.095,0.0081
+Jonathan David,Canada,Juventus,Forward,0.2305,35,1.115,1.01,0.004
+Ante Budimir,Croatia,Osasuna,Forward,0.4376,37,1.091,1.067,0.0079
+Christian Pulisic,United States,AC Milan,Forward,0.2637,30,1.077,1.008,0.0041
+Bradley Barcola,France,Paris Saint Germain,Forward (winger),0.3442,29,1.068,1.048,0.0058
+Borja Iglesias,Spain,Celta Vigo,Forward,0.3299,35,1.044,1.07,0.0064
+Enzo Fernández,Argentina,Chelsea,Midfielder,0.2781,36,1.043,1.04,0.0062
+Noah Okafor,Switzerland,Leeds,Forward,0.2314,28,1.037,1.005,0.0047
+Vinícius Júnior,Brazil,Real Madrid,Forward,0.3791,36,1.03,1.036,0.0059
+Nico Paz,Argentina,Como,Midfielder,0.2725,35,1.021,1.014,0.0046
+Rafael Leão,Portugal,AC Milan,Forward (winger),0.2863,29,1.02,1.027,0.0059
+Ousmane Dembélé,France,Paris Saint Germain,Forward,0.3222,22,1.016,1.018,0.0049
+Julián Álvarez,Argentina,Atletico Madrid,Forward,0.2619,29,0.994,1.009,0.0043
+Bruno Fernandes,Portugal,Manchester United,Midfielder,0.2728,35,0.968,0.984,0.004
+Christoph Baumgartner,Austria,RasenBallsport Leipzig,Midfielder,0.4162,33,0.955,0.948,0.0026
+Raúl Jiménez,Mexico,Fulham,Forward,0.2673,36,0.954,0.968,0.0038
+Maximilian Beier,Germany,Borussia Dortmund,Forward,0.2459,32,0.95,0.96,0.0029
+Mohamed Salah,Egypt,Liverpool,Forward (winger),0.2618,27,0.936,0.936,0.0021
+Cody Gakpo,Netherlands,Liverpool,Forward (winger),0.2175,36,0.935,0.956,0.0031
+Kai Havertz,Germany,Arsenal,Forward,0.2316,12,0.899,0.947,0.0029
+Désiré Doué,France,Paris Saint Germain,Forward (winger),0.2867,23,0.895,0.95,0.0031
+Andrej Kramaric,Croatia,Hoffenheim,Forward,0.3565,34,0.893,0.959,0.0037
+Brian Brobbey,Netherlands,Sunderland,Forward,0.2102,31,0.891,0.935,0.0032
+Nick Woltemade,Germany,Newcastle United,Forward,0.2269,33,0.885,0.933,0.0026
+Jamal Musiala,Germany,Bayern Munich,Midfielder,0.2249,15,0.863,0.908,0.0015
+Yuito Suzuki,Japan,Freiburg,Midfielder,0.1551,25,0.834,0.91,0.0027
+Gonçalo Ramos,Portugal,Paris Saint Germain,Forward,0.2334,30,0.817,0.924,0.0027
+Endrick,Brazil,Lyon,Forward,0.2935,16,0.796,0.897,0.0025
+Alexander Isak,Sweden,Liverpool,Forward,0.1921,14,0.795,0.859,0.0014
+Ritsu Doan,Japan,Eintracht Frankfurt,Forward (winger),0.1428,31,0.772,0.875,0.0016
+Nicolás González,Argentina,Atletico Madrid,Midfielder,0.2018,24,0.768,0.875,0.0015
+Ismaël Koné,Canada,Sassuolo,Midfielder,0.1527,35,0.748,0.84,0.0009
+Igor Matanovic,Croatia,Freiburg,Forward,0.2976,31,0.742,0.872,0.0016
+Álex Grimaldo,Spain,Bayer Leverkusen,Defender,0.2314,29,0.741,0.884,0.0021
+Patrik Schick,Czechia,Bayer Leverkusen,Forward,0.5421,28,0.735,0.842,0.0016
+Malik Tillman,United States,Bayer Leverkusen,Forward,0.1795,29,0.727,0.84,0.0009
+Weston McKennie,United States,Juventus,Midfielder,0.1796,36,0.725,0.846,0.0011
+Anthony Gordon,England,Newcastle United,Forward (winger),0.2531,26,0.712,0.851,0.0011
+Ismaïla Sarr,Senegal,Crystal Palace,Forward,0.3233,28,0.706,0.843,0.0013
+Tijjani Reijnders,Netherlands,Manchester City,Midfielder,0.1662,28,0.704,0.841,0.0012
+Johan Manzambi,Switzerland,Freiburg,Forward,0.1585,27,0.7,0.834,0.0011
+Fabian Rieder,Switzerland,Augsburg,Midfielder,0.1527,32,0.691,0.83,0.0009
+Dani Olmo,Spain,Barcelona,Midfielder,0.2204,33,0.687,0.85,0.0016
+Crysencio Summerville,Netherlands,West Ham,Forward,0.164,31,0.687,0.824,0.001
+Michael Gregoritsch,Austria,Augsburg,Forward,0.2968,17,0.684,0.809,0.0011
+Nicolas Jackson,Senegal,Bayern Munich,Forward,0.3092,23,0.683,0.834,0.0015
+Florian Wirtz,Germany,Liverpool,Midfielder,0.1797,33,0.682,0.828,0.0008
+Kristian Thorstvedt,Norway,Sassuolo,Midfielder,0.159,32,0.678,0.822,0.001
+Haris Tabakovic,Bosnia-Herzegovina,Borussia M.Gladbach,Forward,0.3787,32,0.676,0.81,0.0012
+Nico Williams,Spain,Athletic Club,Forward (winger),0.2146,25,0.673,0.83,0.0013
+Matias Fernandez-Pardo,Belgium,Lille,Forward,0.2936,29,0.667,0.859,0.0016
+Marcus Rashford,England,Barcelona,Forward (winger),0.2387,32,0.666,0.826,0.0015
+Denzel Dumfries,Netherlands,Inter,Defender,0.1557,20,0.664,0.804,0.0009
+Tajon Buchanan,Canada,Villarreal,Forward (winger),0.1364,35,0.663,0.795,0.0007
+Federico Viñas,Uruguay,Real Oviedo,Forward,0.254,34,0.658,0.816,0.0012
+Bruno Guimarães,Brazil,Newcastle United,Midfielder,0.2434,29,0.658,0.821,0.0014
+Kento Shiogai,Japan,Wolfsburg,Forward,0.12,12,0.645,0.798,0.0009
+Bukayo Saka,England,Arsenal,Forward (winger),0.2316,31,0.645,0.823,0.0013
+Gonçalo Guedes,Portugal,Real Sociedad,Forward,0.1787,32,0.631,0.8,0.0009
+Ermedin Demirovic,Bosnia-Herzegovina,VfB Stuttgart,Forward,0.3565,25,0.628,0.782,0.0008
+Assan Ouédraogo,Germany,RasenBallsport Leipzig,Midfielder,0.1649,19,0.627,0.788,0.001
+Matheus Cunha,Brazil,Manchester United,Forward,0.2374,33,0.627,0.806,0.0012
+Francisco Conceição,Portugal,Juventus,Forward (winger),0.1747,31,0.625,0.794,0.0006
+Jamie Leweling,Germany,VfB Stuttgart,Midfielder,0.165,32,0.621,0.783,0.0005
+João Neves,Portugal,Paris Saint Germain,Midfielder,0.1778,21,0.621,0.774,0.0007
+Jude Bellingham,England,Real Madrid,Midfielder,0.2231,28,0.618,0.799,0.0011
+Nuno Mendes,Portugal,Paris Saint Germain,Defender,0.1779,20,0.613,0.776,0.0006
+Antonio Nusa,Norway,RasenBallsport Leipzig,Forward (winger),0.1438,31,0.612,0.774,0.0007
+Jørgen Strand Larsen,Norway,Crystal Palace,Forward,0.1423,36,0.607,0.765,0.0007
+Mikel Merino,Spain,Arsenal,Midfielder,0.1903,22,0.604,0.805,0.0011
+Amine Gouiri,Algeria,Marseille,Forward,0.2978,22,0.601,0.757,0.0004
+Maghnes Akliouche,France,Monaco,Forward,0.1899,31,0.6,0.772,0.0009
+Ruben Vargas,Switzerland,Sevilla,Forward,0.1311,24,0.598,0.763,0.0005
+Morgan Rogers,England,Aston Villa,Midfielder,0.2161,37,0.597,0.788,0.0007
+Víctor Muñoz,Spain,Osasuna,Forward (winger),0.1819,34,0.594,0.78,0.0007
+Shuto Machino,Japan,Borussia M.Gladbach,Forward,0.1086,32,0.594,0.76,0.0005
+Virgil van Dijk,Netherlands,Liverpool,Defender,0.1401,38,0.592,0.763,0.0007
+Leon Goretzka,Germany,Bayern Munich,Midfielder,0.153,31,0.588,0.772,0.0006
+Rayan,Brazil,Bournemouth,Forward,0.2169,15,0.587,0.784,0.0007
+Giuliano Simeone,Argentina,Atletico Madrid,Forward (winger),0.156,31,0.586,0.78,0.0008
+Casemiro,Brazil,Manchester United,Midfielder,0.2127,34,0.583,0.776,0.0008
+Nico Schlotterbeck,Germany,Borussia Dortmund,Defender,0.1506,28,0.579,0.754,0.0003
+Vitinha,Portugal,Genoa,Midfielder,0.1628,35,0.565,0.761,0.0007
+Samú Costa,Portugal,Mallorca,Midfielder,0.159,34,0.553,0.735,0.0003
+Yan Diomande,Côte d'Ivoire,RasenBallsport Leipzig,Forward (winger),0.2753,33,0.549,0.731,0.0005
+Leo Østigård,Norway,Genoa,Defender,0.13,30,0.548,0.74,0.0006
+Takefusa Kubo,Japan,Real Sociedad,Forward (winger),0.1017,24,0.546,0.736,0.0006
+Malick Thiaw,Germany,Newcastle United,Defender,0.1383,35,0.533,0.718,0.0004
+Omar Marmoush,Egypt,Manchester City,Forward,0.1519,21,0.532,0.713,0.0003
+Adrien Rabiot,France,AC Milan,Midfielder,0.1686,29,0.52,0.728,0.0006
+Brenden Aaronson,United States,Leeds,Midfielder,0.1316,37,0.517,0.704,0.0002
+Pedro Neto,Portugal,Chelsea,Forward (winger),0.1449,34,0.515,0.716,0.0005
+Mattias Svanberg,Sweden,Wolfsburg,Midfielder,0.124,24,0.514,0.703,0.0001
+Tani Oluwaseyi,Canada,Villarreal,Forward,0.1038,28,0.509,0.692,0.0001
+Daniel Muñoz,Colombia,Crystal Palace,Defender,0.1227,29,0.507,0.711,0.0003
+Morten Thorsby,Norway,Cremonese,Midfielder,0.1193,24,0.498,0.708,0.0003
+Hiroki Ito,Japan,Bayern Munich,Defender,0.0895,16,0.49,0.69,0.0005
+Eray Cömert,Switzerland,Valencia,Defender,0.1078,17,0.487,0.69,0.0007
+Amine Sbaï,Morocco,Angers,Forward,0.1417,25,0.483,0.693,0.0004
+Eberechi Eze,England,Arsenal,Midfielder,0.1698,33,0.483,0.71,0.0003
+Kevin De Bruyne,Belgium,Napoli,Midfielder,0.2074,18,0.478,0.712,0.0006
+Nikola Vlasic,Croatia,Torino,Midfielder,0.1959,37,0.478,0.695,0.0002
+Cristian Romero,Argentina,Tottenham,Defender,0.1255,23,0.472,0.692,0.0002
+Justin Kluivert,Netherlands,Bournemouth,Forward (winger),0.1103,20,0.467,0.685,0.0004
+Nicolas Pépé,Côte d'Ivoire,Villarreal,Forward (winger),0.2354,37,0.465,0.682,0.0003
+Bilal El Khannouss,Morocco,VfB Stuttgart,Midfielder,0.1376,25,0.464,0.686,0.0006
+Thiago Almada,Argentina,Atletico Madrid,Midfielder,0.1212,27,0.462,0.676,0.0002
+Djibril Sow,Switzerland,Sevilla,Midfielder,0.1024,33,0.461,0.68,0.0003
+Ao Tanaka,Japan,Leeds,Midfielder,0.0829,28,0.449,0.667,0.0001
+Lucas Paquetá,Brazil,West Ham,Midfielder,0.1642,18,0.449,0.675,0.0002
+Roberto Junior Fernández,Paraguay,Espanyol,Goalkeeper,0.2016,38,0.448,0.672,0.0006
+Achraf Hakimi,Morocco,Paris Saint Germain,Defender,0.13,18,0.447,0.676,0.0003
+Leandro Trossard,Belgium,Arsenal,Forward (winger),0.1918,31,0.442,0.69,0.0006
+Antoine Semenyo,Ghana,Bournemouth,Forward (winger),0.3637,37,0.441,0.643,0.0002
+Luka Vuskovic,Croatia,Hamburger SV,Defender,0.1783,28,0.441,0.667,0.0001
+Denis Zakaria,Switzerland,Monaco,Midfielder,0.0999,24,0.434,0.66,0.0002
+Santiago Gimenez,Mexico,AC Milan,Forward,0.1188,16,0.425,0.65,0.0001
+Scott McTominay,Scotland,Napoli,Midfielder,0.306,33,0.418,0.652,0.0003
+Silvan Widmer,Switzerland,Mainz 05,Defender,0.0936,27,0.409,0.634,0.0002
+Pavel Sulc,Czechia,Lyon,Midfielder,0.2976,27,0.406,0.627,0.0001
+Micky van de Ven,Netherlands,Tottenham,Defender,0.0963,35,0.402,0.633,0.0001
+Iliman Ndiaye,Senegal,Everton,Forward,0.1787,32,0.401,0.636,0.0001
+Chris Wood,New Zealand,Nottingham Forest,Forward,0.1858,15,0.399,0.608,0.0
+Giovani Lo Celso,Argentina,Real Betis,Midfielder,0.1057,24,0.399,0.632,0.0003
+Romano Schmid,Austria,Werder Bremen,Midfielder,0.1672,34,0.398,0.624,0.0001
+Jhon Arias,Colombia,Wolverhampton Wanderers,Midfielder,0.0988,23,0.397,0.633,0.0002
+Jan Paul van Hecke,Netherlands,Brighton,Defender,0.0928,36,0.393,0.619,0.0001
+Julio Enciso,Paraguay,Strasbourg,Forward,0.1836,27,0.391,0.632,0.0001
+Valentín Barco,Argentina,Strasbourg,Midfielder,0.102,27,0.389,0.63,0.0001
+Chemsdine Talbi,Morocco,Sunderland,Forward (winger),0.1142,28,0.388,0.624,0.0001
+Aleksandar Pavlovic,Germany,Bayern Munich,Midfielder,0.0998,24,0.387,0.629,0.0001
+Ryan Gravenberch,Netherlands,Liverpool,Midfielder,0.0949,36,0.387,0.624,0.0001
+Yasin Ayari,Sweden,Brighton,Midfielder,0.0937,29,0.383,0.616,0.0
+Jens Castrop,Korea Republic,Borussia M.Gladbach,Defender,0.1366,26,0.382,0.617,0.0002
+Felix Nmecha,Germany,Borussia Dortmund,Midfielder,0.0972,29,0.374,0.611,0.0001
+Alphonso Davies,Canada,Bayern Munich,Defender,0.0758,13,0.373,0.602,0.0002
+David Raum,Germany,RasenBallsport Leipzig,Defender,0.095,30,0.371,0.604,0.0001
+Ramy Bensebaini,Algeria,Borussia Dortmund,Defender,0.1796,21,0.369,0.601,0.0
+Simon Adingra,Côte d'Ivoire,Monaco,Forward (winger),0.1836,14,0.368,0.59,0.0002
+Nathaniel Brown,Germany,Eintracht Frankfurt,Defender,0.0962,33,0.367,0.598,0.0001
+Diego Gómez,Paraguay,Brighton,Midfielder,0.1692,32,0.359,0.6,0.0001
+Martín Zubimendi,Spain,Arsenal,Midfielder,0.1066,38,0.347,0.598,0.0002
+Bremer,Brazil,Juventus,Defender,0.1274,26,0.347,0.597,0.0003
+Angelo Stiller,Germany,VfB Stuttgart,Midfielder,0.0883,34,0.347,0.587,0.0
+João Cancelo,Portugal,Barcelona,Defender,0.1002,16,0.346,0.594,0.0001
+Mats Wieffer,Netherlands,Brighton,Midfielder,0.0839,26,0.346,0.586,0.0
+Ederson,Brazil,Atalanta,Goalkeeper,0.1248,30,0.344,0.596,0.0001
+Patrick Wimmer,Austria,Wolfsburg,Midfielder,0.1464,25,0.342,0.585,0.0001
+Pape Gueye,Senegal,Villarreal,Midfielder,0.1574,31,0.341,0.58,0.0
+Daniel Svensson,Sweden,Borussia Dortmund,Defender,0.0817,33,0.341,0.575,0.0
+Éderson,Brazil,Atalanta,Midfielder,0.1248,30,0.34,0.583,0.0001
+Yerry Mina,Colombia,Cagliari,Defender,0.0813,26,0.337,0.585,0.0001
+Martin Baturina,Croatia,Como,Midfielder,0.1334,29,0.333,0.583,0.0002
+Bazoumana Touré,Côte d'Ivoire,Hoffenheim,Forward (winger),0.1609,30,0.331,0.575,0.0
+Noa Lang,Netherlands,Napoli,Forward (winger),0.0793,18,0.33,0.579,0.0
+Joe Scally,United States,Borussia M.Gladbach,Defender,0.0808,32,0.326,0.568,0.0
+Manuel Akanji,Switzerland,Inter,Defender,0.0736,33,0.325,0.561,0.0001
+Lee Kang-in,Korea Republic,Paris Saint Germain,Forward,0.1151,27,0.322,0.569,0.0
+Alexis Mac Allister,Argentina,Liverpool,Midfielder,0.0873,37,0.322,0.569,0.0
+Jarell Quansah,England,Bayer Leverkusen,Defender,0.1178,28,0.321,0.571,0.0001
+Jérémy Doku,Belgium,Manchester City,Forward (winger),0.145,30,0.321,0.575,0.0
+Joshua Kimmich,Germany,Bayern Munich,Defender,0.0829,29,0.32,0.567,0.0002
+Assane Diao,Senegal,Como,Forward,0.1438,17,0.311,0.556,0.0
+Declan Rice,England,Arsenal,Midfielder,0.1091,36,0.311,0.559,0.0001
+Ibrahim Maza,Algeria,Bayer Leverkusen,Midfielder,0.1537,28,0.308,0.554,0.0002
+Marc Guéhi,England,Crystal Palace,Defender,0.1114,35,0.307,0.564,0.0001
+Ayoube Amaimouni,Morocco,Eintracht Frankfurt,Forward (winger),0.087,17,0.306,0.555,0.0
+Antonio Rüdiger,Germany,Real Madrid,Defender,0.0803,18,0.299,0.547,0.0001
+Federico Valverde,Uruguay,Real Madrid,Midfielder,0.1113,33,0.297,0.55,0.0
+Gabriel Martinelli,Brazil,Arsenal,Forward,0.1083,30,0.294,0.543,0.0001
+Ibrahim Mbaye,Senegal,Paris Saint Germain,Forward,0.1311,24,0.291,0.536,0.0
+Habib Diarra,Senegal,Sunderland,Midfielder,0.1287,20,0.286,0.534,0.0001
+Ronald Araújo,Uruguay,Barcelona,Defender,0.1124,24,0.284,0.533,0.0
+Lucas Bergvall,Sweden,Tottenham,Midfielder,0.0668,23,0.281,0.524,0.0
+Tyler Adams,United States,Bournemouth,Midfielder,0.0705,25,0.28,0.524,0.0001
+Ange-Yoan Bonny,Côte d'Ivoire,Inter,Forward,0.1413,33,0.28,0.529,0.0001
+Charles De Ketelaere,Belgium,Atalanta,Forward (winger),0.1214,31,0.28,0.541,0.0002
+Elliot Anderson,England,Nottingham Forest,Midfielder,0.101,38,0.278,0.53,0.0
+Diego Moreira,Belgium,Strasbourg,Forward,0.1161,27,0.276,0.539,0.0002
+Warren Zaïre-Emery,France,Paris Saint Germain,Midfielder,0.0857,32,0.274,0.523,0.0001
+Dan Ndoye,Switzerland,Nottingham Forest,Forward,0.0602,24,0.273,0.523,0.0001
+Eric Smith,Sweden,St. Pauli,Defender,0.0645,27,0.272,0.518,0.0
+Luka Sucic,Croatia,Real Sociedad,Midfielder,0.1107,22,0.271,0.521,0.0
+Pedri,Spain,Barcelona,Midfielder,0.0832,29,0.271,0.523,0.0
+Kaishu Sano,Japan,Mainz 05,Midfielder,0.0505,34,0.27,0.525,0.0001
+Waldemar Anton,Germany,Borussia Dortmund,Defender,0.0696,32,0.268,0.511,0.0
+Josko Gvardiol,Croatia,Manchester City,Defender,0.1104,18,0.267,0.531,0.0002
+Bernardo Silva,Portugal,Manchester City,Midfielder,0.072,38,0.267,0.522,0.0
+Remo Freuler,Switzerland,Bologna,Midfielder,0.0589,29,0.266,0.514,0.0
+Quinten Timber,Netherlands,Marseille,Midfielder,0.0613,15,0.265,0.519,0.0
+Cristian Volpato,Australia,Sassuolo,Midfielder,0.0865,24,0.254,0.507,0.0
+Álex Baena,Spain,Atletico Madrid,Midfielder,0.0791,27,0.251,0.508,0.0
+Issa Diop,Morocco,Fulham,Defender,0.0758,13,0.25,0.499,0.0
+Amad Diallo,Côte d'Ivoire,Manchester United,Forward (winger),0.1207,32,0.248,0.498,0.0
+Mario Pasalic,Croatia,Atalanta,Midfielder,0.1012,33,0.248,0.498,0.0
+Marcus Holmgren Pedersen,Norway,Torino,Defender,0.0581,29,0.247,0.503,0.0001
+Konrad Laimer,Austria,Bayern Munich,Midfielder,0.1038,29,0.242,0.496,0.0
+Antonee Robinson,United States,Fulham,Defender,0.061,22,0.241,0.488,0.0
+Che Adams,Scotland,Torino,Forward,0.1801,33,0.241,0.484,0.0
+Frenkie de Jong,Netherlands,Barcelona,Midfielder,0.0568,25,0.238,0.489,0.0
+Eric García,Spain,Barcelona,Defender,0.0723,34,0.238,0.497,0.0
+Marc Pubill,Spain,Atletico Madrid,Defender,0.0753,19,0.238,0.49,0.0
+Santiago Bueno,Uruguay,Wolverhampton Wanderers,Defender,0.0919,29,0.237,0.489,0.0
+Nicolás Tagliafico,Argentina,Lyon,Defender,0.0635,20,0.237,0.494,0.0
+Cédric Bakambu,Congo DR,Real Betis,Forward,0.1851,18,0.237,0.483,0.0
+Noni Madueke,England,Arsenal,Forward (winger),0.0849,26,0.235,0.484,0.0
+Pathé Ciss,Senegal,Rayo Vallecano,Midfielder,0.1057,29,0.233,0.486,0.0001
+Amadou Onana,Belgium,Aston Villa,Midfielder,0.1002,25,0.231,0.492,0.0001
+Xaver Schlager,Austria,RasenBallsport Leipzig,Midfielder,0.1031,26,0.231,0.478,0.0001
+Jonathan Tah,Germany,Bayern Munich,Defender,0.0604,28,0.231,0.483,0.0
+Yukinari Sugawara,Japan,Werder Bremen,Defender,0.0421,31,0.229,0.475,0.0
+Daichi Kamada,Japan,Crystal Palace,Midfielder,0.043,28,0.228,0.475,0.0
+Alexis Saelemaekers,Belgium,AC Milan,Forward,0.098,35,0.226,0.484,0.0001
+Nathan Aké,Netherlands,Manchester City,Defender,0.0528,18,0.223,0.464,0.0
+Aurélien Tchouaméni,France,Real Madrid,Midfielder,0.0705,33,0.222,0.467,0.0
+Rodri,Spain,Manchester City,Midfielder,0.0672,21,0.222,0.474,0.0001
+Nahuel Molina,Argentina,Atletico Madrid,Defender,0.06,26,0.221,0.47,0.0
+Hakan Calhanoglu,Türkiye,Inter,Midfielder,0.2784,22,0.22,0.509,0.0001
+Rúben Dias,Portugal,Manchester City,Defender,0.0606,26,0.219,0.47,0.0
+Malo Gusto,France,Chelsea,Defender,0.0673,34,0.219,0.466,0.0001
+Iñaki Williams,Ghana,Athletic Club,Forward,0.1819,30,0.215,0.461,0.0
+Chris Richards,United States,Crystal Palace,Defender,0.0541,33,0.214,0.46,0.0
+Lamine Camara,Senegal,Monaco,Midfielder,0.0964,24,0.211,0.465,0.0
+Maxence Lacroix,France,Crystal Palace,Defender,0.0664,35,0.21,0.456,0.0
+Isak Hien,Sweden,Atalanta,Defender,0.0518,28,0.21,0.457,0.0
+Jhon Lucumí,Colombia,Bologna,Defender,0.0546,29,0.209,0.459,0.0
+Diogo Dalot,Portugal,Manchester United,Defender,0.0579,34,0.209,0.461,0.0
+Farès Chaïbi,Algeria,Eintracht Frankfurt,Midfielder,0.1024,28,0.207,0.452,0.0
+Jules Koundé,France,Barcelona,Defender,0.0644,30,0.206,0.458,0.0
+Can Uzun,Türkiye,Eintracht Frankfurt,Midfielder,0.259,21,0.206,0.488,0.0001
+Idrissa ‘Gana’ Gueye,Senegal,Udinese,Midfielder,0.0941,19,0.205,0.449,0.0
+Oscar Bobb,Norway,Fulham,Forward (winger),0.0495,23,0.204,0.449,0.0
+Jefferson Lerma,Colombia,Crystal Palace,Midfielder,0.0493,31,0.198,0.445,0.0
+Samir Chergui,Algeria,Paris FC,Defender,0.0995,15,0.197,0.447,0.0
+Carney Chukwuemeka,Austria,Borussia Dortmund,Midfielder,0.0866,28,0.197,0.443,0.0
+Brahim Díaz,Morocco,Real Madrid,Forward,0.0576,30,0.196,0.451,0.0
+Stefan Posch,Austria,Como,Defender,0.0826,14,0.194,0.437,0.0
+Tomas Soucek,Czechia,West Ham,Midfielder,0.1421,35,0.192,0.435,0.0
+Ardon Jashari,Switzerland,AC Milan,Midfielder,0.0421,14,0.192,0.438,0.0
+Kristijan Jakic,Croatia,Augsburg,Midfielder,0.0762,26,0.19,0.435,0.0
+Neil El Aynaoui,Morocco,Roma,Midfielder,0.0548,25,0.19,0.438,0.0
+Kenan Yildiz,Türkiye,Juventus,Forward,0.2389,36,0.189,0.457,0.0
+Granit Xhaka,Switzerland,Sunderland,Midfielder,0.0406,34,0.189,0.434,0.0001
+Johan Vásquez,Mexico,Genoa,Defender,0.0515,36,0.189,0.435,0.0
+Antonio Sanabria,Paraguay,Cremonese,Forward,0.0874,25,0.187,0.43,0.0001
+Josip Stanisic,Croatia,Bayern Munich,Defender,0.0767,26,0.186,0.434,0.0
+Miro Muheim,Switzerland,Hamburger SV,Defender,0.0402,29,0.186,0.428,0.0
+Reece James,England,Chelsea,Defender,0.0667,29,0.185,0.431,0.0
+Deiver Machado,Colombia,Lens,Defender,0.047,19,0.185,0.429,0.0
+Rafik Belghali,Algeria,Verona,Defender,0.0944,26,0.185,0.426,0.0
+Alexander Prass,Austria,Hoffenheim,Defender,0.0801,32,0.184,0.424,0.0
+Pape Matar Sarr,Senegal,Tottenham,Midfielder,0.0857,26,0.183,0.428,0.0
+Gessime Yassine,Morocco,Strasbourg,Midfielder,0.054,12,0.183,0.434,0.0
+Evan Ndicka,Côte d'Ivoire,Roma,Defender,0.0924,31,0.182,0.423,0.0
+Ayumu Seko,Japan,Le Havre,Defender,0.0334,30,0.182,0.429,0.0001
+Hjalmar Ekdal,Sweden,Burnley,Defender,0.041,19,0.18,0.419,0.0
+Aurèle Amenda,Switzerland,Eintracht Frankfurt,Defender,0.0408,24,0.18,0.422,0.0
+Séko Fofana,Côte d'Ivoire,Rennes,Midfielder,0.0889,12,0.18,0.422,0.0
+Luca Jaquez,Switzerland,VfB Stuttgart,Defender,0.0398,14,0.178,0.418,0.0
+John McGinn,Scotland,Aston Villa,Midfielder,0.1311,30,0.178,0.422,0.0001
+Marten de Roon,Netherlands,Atalanta,Midfielder,0.0408,34,0.176,0.424,0.0
+Petar Sucic,Croatia,Inter,Midfielder,0.0703,34,0.175,0.413,0.0
+Teun Koopmeiners,Netherlands,Juventus,Midfielder,0.0415,33,0.174,0.414,0.0
+Marc Cucurella,Spain,Chelsea,Defender,0.0541,34,0.174,0.422,0.0
+Michel Aebischer,Switzerland,Pisa,Midfielder,0.0399,35,0.173,0.419,0.0
+Ibrahima Konaté,France,Liverpool,Defender,0.0524,36,0.173,0.414,0.0
+William Saliba,France,Arsenal,Defender,0.0543,31,0.172,0.414,0.0
+Antoine Mendy,Senegal,Nice,Defender,0.0747,25,0.172,0.412,0.0
+Thomas Meunier,Belgium,Lille,Defender,0.0782,25,0.172,0.419,0.0
+Guela Doué,Côte d'Ivoire,Strasbourg,Defender,0.0879,24,0.167,0.412,0.0
+Marcos Llorente,Spain,Atletico Madrid,Defender,0.0522,29,0.166,0.414,0.0
+Jesper Karlström,Sweden,Udinese,Midfielder,0.0403,36,0.166,0.401,0.0
+Duje Caleta-Car,Croatia,Real Sociedad,Defender,0.0654,27,0.165,0.406,0.0
+Aymeric Laporte,Spain,Athletic Club,Defender,0.0526,25,0.164,0.41,0.0001
+Kristoffer Ajer,Norway,Brentford,Defender,0.0378,27,0.163,0.403,0.0
+Maxim De Cuyper,Belgium,Brighton,Defender,0.072,30,0.163,0.408,0.0001
+Torbjørn Heggem,Norway,Bologna,Defender,0.0372,27,0.161,0.398,0.0
+Anthony Elanga,Sweden,Newcastle United,Forward (winger),0.0381,32,0.16,0.394,0.0
+Facundo Medina,Argentina,Marseille,Defender,0.0411,17,0.159,0.397,0.0
+Pedro Porro,Spain,Tottenham,Defender,0.048,34,0.158,0.398,0.0
+Evann Guessand,Côte d'Ivoire,Aston Villa,Forward,0.0795,21,0.157,0.403,0.0
+Philipp Lienhart,Austria,Freiburg,Defender,0.0652,20,0.157,0.398,0.0
+Carl Starfelt,Sweden,Celta Vigo,Defender,0.0365,19,0.156,0.394,0.0
+Axel Witsel,Belgium,Girona,Midfielder,0.0662,32,0.153,0.399,0.0
+Obed Vargas,Mexico,Atletico Madrid,Midfielder,0.0455,12,0.152,0.392,0.0
+Nabil Bentaleb,Algeria,Lille,Midfielder,0.0726,26,0.15,0.385,0.0
+Sander Berge,Norway,Fulham,Midfielder,0.034,35,0.149,0.383,0.0
+Tarik Muharemovic,Bosnia-Herzegovina,Sassuolo,Defender,0.0826,32,0.149,0.387,0.0
+Arthur Theate,Belgium,Eintracht Frankfurt,Defender,0.0644,24,0.148,0.392,0.0
+Kim Min-jae,Korea Republic,Bayern Munich,Defender,0.0511,25,0.147,0.382,0.0
+Victor Lindelöf,Sweden,Aston Villa,Defender,0.0347,17,0.147,0.383,0.0
+Exequiel Palacios,Argentina,Bayer Leverkusen,Midfielder,0.0391,18,0.147,0.383,0.0
+Julian Ryerson,Norway,Borussia Dortmund,Defender,0.0341,31,0.147,0.383,0.0
+Jackson Irvine,Australia,St. Pauli,Midfielder,0.0511,24,0.146,0.386,0.0
+Lyle Foster,South Africa,Burnley,Forward,0.1255,26,0.146,0.376,0.0
+Ibrahim Sangaré,Côte d'Ivoire,Nottingham Forest,Midfielder,0.0737,28,0.145,0.377,0.0
+Zion Suzuki,Japan,Parma Calcio 1913,Goalkeeper,0.0277,20,0.145,0.38,0.0
+Luka Modric,Croatia,AC Milan,Midfielder,0.0586,34,0.144,0.379,0.0
+Lutsharel Geertruida,Netherlands,Sunderland,Defender,0.0335,28,0.144,0.378,0.0
+Marcos Senesi,Argentina,Bournemouth,Defender,0.0383,37,0.143,0.38,0.0
+Yoane Wissa,Congo DR,Newcastle United,Forward,0.1136,19,0.142,0.374,0.0
+Matheus Nunes,Portugal,Manchester City,Defender,0.0389,34,0.14,0.371,0.0
+Rodrigo Bentancur,Uruguay,Tottenham,Midfielder,0.0534,26,0.135,0.368,0.0
+Mathías Olivera,Uruguay,Napoli,Defender,0.0521,25,0.135,0.371,0.0
+Haissem Hassan,Egypt,Real Oviedo,Forward (winger),0.0387,38,0.135,0.366,0.0
+Gavi,Spain,Barcelona,Midfielder,0.0424,11,0.134,0.366,0.0
+Ozan Kabak,Türkiye,Hoffenheim,Defender,0.1626,25,0.134,0.388,0.0001
+Ali Abdi,Tunisia,Nice,Defender,0.1222,22,0.131,0.355,0.0
+Jorrel Hato,Netherlands,Chelsea,Defender,0.0318,22,0.131,0.363,0.0
+Pau Cubarsí,Spain,Barcelona,Defender,0.0404,31,0.13,0.359,0.0
+Gabriel Gudmundsson,Sweden,Leeds,Defender,0.0305,32,0.129,0.354,0.0
+Alessandro Circati,Australia,Parma Calcio 1913,Defender,0.0429,31,0.128,0.359,0.0
+Nathan Ngoy,Belgium,Lille,Defender,0.0572,29,0.126,0.364,0.0
+Lisandro Martínez,Argentina,Manchester United,Defender,0.0324,18,0.125,0.355,0.0
+Marcel Sabitzer,Austria,Borussia Dortmund,Midfielder,0.0561,26,0.124,0.348,0.0
+Dan Burn,England,Newcastle United,Defender,0.048,29,0.124,0.352,0.0
+Rani Khedira,Tunisia,Union Berlin,Midfielder,0.1146,32,0.122,0.341,0.0
+Sofyan Amrabat,Morocco,Real Betis,Midfielder,0.0365,17,0.122,0.347,0.0
+Samir El Mourabet,Morocco,Strasbourg,Midfielder,0.0361,33,0.121,0.35,0.0
+Youri Tielemans,Belgium,Aston Villa,Midfielder,0.0529,25,0.121,0.356,0.0
+Kobbie Mainoo,England,Manchester United,Midfielder,0.0435,28,0.121,0.347,0.0
+Ricardo Rodriguez,Switzerland,Real Betis,Defender,0.0273,23,0.117,0.34,0.0
+David Møller Wolfe,Norway,Wolverhampton Wanderers,Defender,0.0272,22,0.116,0.337,0.0
+Ayyoub Bouaddi,Morocco,Lille,Midfielder,0.0348,30,0.116,0.343,0.0
+Kamaldeen Sulemana,Ghana,Atalanta,Forward,0.0956,25,0.115,0.337,0.0
+Nikola Moro,Croatia,Bologna,Midfielder,0.0468,30,0.115,0.334,0.0
+David Alaba,Austria,Real Madrid,Defender,0.0499,11,0.115,0.336,0.0
+Ryan Christie,Scotland,Bournemouth,Midfielder,0.0817,26,0.115,0.34,0.0
+Noussair Mazraoui,Morocco,Manchester United,Defender,0.0315,20,0.113,0.337,0.0
+Koni De Winter,Belgium,AC Milan,Defender,0.0506,26,0.111,0.337,0.0
+Omar Alderete,Paraguay,Sunderland,Defender,0.0511,33,0.109,0.33,0.0
+Johan Mojica,Colombia,Mallorca,Defender,0.0274,35,0.109,0.332,0.0
+Krépin Diatta,Senegal,Monaco,Defender,0.0493,18,0.108,0.331,0.0
+Manuel Neuer,Germany,Bayern Munich,Goalkeeper,0.0257,22,0.108,0.327,0.0
+Manuel Ugarte,Uruguay,Manchester United,Midfielder,0.0407,22,0.107,0.326,0.0
+Lucas Hernández,France,Paris Saint Germain,Defender,0.0336,25,0.106,0.324,0.0
+Odilon Kossounou,Côte d'Ivoire,Atalanta,Defender,0.0541,19,0.106,0.324,0.0
+Jordan Henderson,England,Brentford,Midfielder,0.0394,32,0.105,0.326,0.0
+David Affengruber,Austria,Elche,Defender,0.0449,36,0.105,0.325,0.0
+Arda Guler,Türkiye,Real Madrid,Midfielder,0.1314,33,0.103,0.336,0.0001
+Nico Elvedi,Switzerland,Borussia M.Gladbach,Defender,0.0233,33,0.103,0.319,0.0
+Marco Friedl,Austria,Werder Bremen,Defender,0.044,30,0.102,0.319,0.0
+Mark Flekken,Netherlands,Bayer Leverkusen,Goalkeeper,0.024,24,0.102,0.317,0.0
+Saud Abdulhamid,Saudi Arabia,Lens,Defender,0.0733,25,0.102,0.316,0.0
+Mark McKenzie,United States,Toulouse,Defender,0.0243,29,0.102,0.319,0.0
+Connor Metcalfe,Australia,St. Pauli,Midfielder,0.0351,25,0.101,0.318,0.0
+Djed Spence,England,Tottenham,Defender,0.0358,30,0.1,0.316,0.0
+Ladislav Krejci,Czechia,Wolverhampton Wanderers,Defender,0.0759,28,0.1,0.311,0.0
+Nicolas Seiwald,Austria,RasenBallsport Leipzig,Midfielder,0.0418,33,0.1,0.317,0.0
+Axel Tuanzebe,Congo DR,Burnley,Defender,0.075,14,0.099,0.313,0.0
+Marquinhos,Brazil,Paris Saint Germain,Defender,0.0374,14,0.099,0.316,0.0
+Emmanuel Agbadou,Côte d'Ivoire,Wolverhampton Wanderers,Defender,0.0472,14,0.097,0.31,0.0
+Lucas Digne,France,Aston Villa,Defender,0.029,31,0.095,0.307,0.0
+Timothy Castagne,Belgium,Fulham,Defender,0.0404,30,0.094,0.307,0.0
+Aissa Mandi,Algeria,Lille,Defender,0.0471,29,0.094,0.3,0.0
+Kendry Páez,Ecuador,Strasbourg,Forward (winger),0.0838,15,0.092,0.32,0.0
+Yvon Mvogo,Switzerland,Lorient,Goalkeeper,0.0195,31,0.09,0.3,0.0
+Ezri Konsa,England,Aston Villa,Defender,0.0314,34,0.089,0.3,0.0
+Edin Dzeko,Bosnia-Herzegovina,Fiorentina,Forward,0.0499,11,0.088,0.295,0.0
+José Sá,Portugal,Wolverhampton Wanderers,Goalkeeper,0.0248,23,0.086,0.296,0.0
+Moisés Caicedo,Ecuador,Chelsea,Midfielder,0.0766,33,0.085,0.304,0.0
+Robin Hranac,Czechia,Hoffenheim,Defender,0.0644,29,0.085,0.29,0.0
 Rayan Aït-Nouri,Algeria,Manchester City,Defender,0.0421,17,0.084,0.288,0.0
-Yvon Mvogo,Switzerland,Lorient,Goalkeeper,0.0195,31,0.084,0.288,0.0
-Marvin Senaya,Ghana,Auxerre,Defender,0.062,25,0.08,0.284,0.0
-Gerónimo Rulli,Argentina,Marseille,Goalkeeper,0.0216,29,0.08,0.28,0.0
-Kevin Danso,Austria,Tottenham,Defender,0.0327,24,0.075,0.272,0.0
-Emiliano Martínez,Argentina,Aston Villa,Goalkeeper,0.0189,32,0.074,0.268,0.0
-Gregor Kobel,Switzerland,Borussia Dortmund,Goalkeeper,0.018,34,0.074,0.272,0.0
-Noah Sadiki,Congo DR,Sunderland,Midfielder,0.0392,33,0.073,0.269,0.0
-Kojo Peprah Oppong,Ghana,Nice,Defender,0.0536,29,0.073,0.269,0.0
-Oliver Baumann,Germany,Hoffenheim,Goalkeeper,0.018,34,0.07,0.264,0.0
-Bart Verbruggen,Netherlands,Brighton,Goalkeeper,0.0164,38,0.069,0.26,0.0
-Robin Roefs,Netherlands,Sunderland,Goalkeeper,0.0176,35,0.068,0.261,0.0
-Alexander Nübel,Germany,VfB Stuttgart,Goalkeeper,0.018,34,0.068,0.259,0.0
-Joan García,Spain,Barcelona,Goalkeeper,0.02,30,0.065,0.257,0.0
-Lewis Ferguson,Scotland,Bologna,Midfielder,0.0468,27,0.063,0.25,0.0
-Brice Samba,France,Rennes,Goalkeeper,0.0189,32,0.06,0.247,0.0
-Marin Pongracic,Croatia,Fiorentina,Defender,0.0248,35,0.06,0.245,0.0
-Elias Saad,Tunisia,Augsburg,Forward,0.0566,10,0.058,0.236,0.0
-Alisson,Brazil,Liverpool,Goalkeeper,0.0225,26,0.058,0.239,0.0
-El Hadji Malick Diouf,Senegal,West Ham,Defender,0.0263,32,0.057,0.239,0.0
-Sead Kolasinac,Bosnia-Herzegovina,Atalanta,Defender,0.0313,19,0.057,0.236,0.0
-Unai Simón,Spain,Athletic Club,Goalkeeper,0.0167,37,0.057,0.237,0.0
-Vladimir Coufal,Czechia,Hoffenheim,Defender,0.0429,34,0.057,0.238,0.0
-Dean Henderson,England,Crystal Palace,Goalkeeper,0.0167,37,0.057,0.237,0.0
-Robin Risser,France,Lens,Goalkeeper,0.0185,33,0.056,0.236,0.0
-David Raya,Spain,Arsenal,Goalkeeper,0.0167,37,0.056,0.237,0.0
-Wilson Isidor,Haiti,Sunderland,Forward,0.1718,32,0.055,0.238,0.0
-Jordan Pickford,England,Everton,Goalkeeper,0.0164,38,0.054,0.234,0.0
-Mike Maignan,France,AC Milan,Goalkeeper,0.0167,37,0.052,0.227,0.0
-Yehvann Diouf,Senegal,Nice,Goalkeeper,0.0225,26,0.052,0.227,0.0
-Aaron Hickey,Scotland,Brentford,Defender,0.0369,21,0.051,0.226,0.0
-José Sá,Portugal,Wolverhampton Wanderers,Goalkeeper,0.0248,23,0.051,0.228,0.0
-Emiliano Martínez,Uruguay,Aston Villa,Midfielder,0.0189,32,0.05,0.224,0.0
-Hannibal Mejbri,Tunisia,Burnley,Midfielder,0.0483,27,0.05,0.219,0.0
-Mory Diaw,Senegal,Le Havre,Goalkeeper,0.02,30,0.046,0.214,0.0
-Thomas Partey,Ghana,Villarreal,Midfielder,0.0305,26,0.046,0.212,0.0
-Moussa Niakhaté,Senegal,Lyon,Defender,0.0212,32,0.045,0.214,0.0
-Renato Veiga,Portugal,Villarreal,Defender,0.021,33,0.043,0.21,0.0
-Thibaut Courtois,Belgium,Real Madrid,Goalkeeper,0.0189,32,0.042,0.204,0.0
-Aaron Wan-Bissaka,Congo DR,West Ham,Defender,0.0232,25,0.042,0.208,0.0
-Mike Penders,Belgium,Strasbourg,Goalkeeper,0.0185,33,0.042,0.205,0.0
-Senne Lammens,Belgium,Manchester United,Goalkeeper,0.0189,32,0.042,0.205,0.0
-Salih Özcan,Türkiye,Borussia Dortmund,Midfielder,0.0463,11,0.041,0.204,0.0
-Ferdi Kadioglu,Türkiye,Brighton,Defender,0.0519,37,0.039,0.201,0.0
-Kwasi Sibo,Ghana,Real Oviedo,Midfielder,0.0267,27,0.037,0.194,0.0
-Ellyes Skhiri,Tunisia,Eintracht Frankfurt,Midfielder,0.0355,25,0.037,0.192,0.0
-Montassar Talbi,Tunisia,Lorient,Defender,0.0329,29,0.034,0.183,0.0
-Alidu Seidu,Ghana,Rennes,Defender,0.0285,21,0.034,0.183,0.0
-Nikola Vasilj,Bosnia-Herzegovina,St. Pauli,Goalkeeper,0.018,34,0.033,0.181,0.0
-Elisha Owusu,Ghana,Auxerre,Midfielder,0.0226,29,0.03,0.173,0.0
-Gideon Mensah,Ghana,Auxerre,Defender,0.0202,30,0.026,0.161,0.0
-Josué Casimir,Haiti,Auxerre,Forward,0.07,31,0.024,0.153,0.0
-Jean-Ricner Bellegarde,Haiti,Wolverhampton Wanderers,Midfielder,0.0517,26,0.018,0.136,0.0
-Carlens Arcus,Haiti,Angers,Defender,0.0257,26,0.008,0.091,0.0
+Gregor Kobel,Switzerland,Borussia Dortmund,Goalkeeper,0.018,34,0.082,0.287,0.0
+Gerónimo Rulli,Argentina,Marseille,Goalkeeper,0.0216,29,0.081,0.285,0.0
+Marvin Senaya,Ghana,Auxerre,Defender,0.062,25,0.079,0.28,0.0
+Kevin Danso,Austria,Tottenham,Defender,0.0327,24,0.077,0.277,0.0
+Renato Veiga,Portugal,Villarreal,Defender,0.021,33,0.076,0.275,0.0
+Robin Roefs,Netherlands,Sunderland,Goalkeeper,0.0176,35,0.076,0.275,0.0
+Emiliano Martínez,Argentina,Aston Villa,Goalkeeper,0.0189,32,0.071,0.267,0.0
+Oliver Baumann,Germany,Hoffenheim,Goalkeeper,0.018,34,0.07,0.265,0.0
+Charles Pickel,Congo DR,Espanyol,Midfielder,0.0537,24,0.069,0.265,0.0
+Bart Verbruggen,Netherlands,Brighton,Goalkeeper,0.0164,38,0.069,0.265,0.0
+Alexander Nübel,Germany,VfB Stuttgart,Goalkeeper,0.018,34,0.066,0.254,0.0
+Lewis Ferguson,Scotland,Bologna,Midfielder,0.0468,27,0.065,0.254,0.0
+Joan García,Spain,Barcelona,Goalkeeper,0.02,30,0.065,0.256,0.0
+Kojo Peprah Oppong,Ghana,Nice,Defender,0.0536,29,0.064,0.252,0.0
+Alisson,Brazil,Liverpool,Goalkeeper,0.0225,26,0.062,0.249,0.0
+Robin Risser,France,Lens,Goalkeeper,0.0185,33,0.061,0.247,0.0
+Marin Pongracic,Croatia,Fiorentina,Defender,0.0248,35,0.06,0.247,0.0
+Brice Samba,France,Rennes,Goalkeeper,0.0189,32,0.06,0.246,0.0
+Wilson Isidor,Haiti,Sunderland,Forward,0.1718,32,0.059,0.246,0.0
+El Hadji Malick Diouf,Senegal,West Ham,Defender,0.0263,32,0.056,0.237,0.0
+Aaron Hickey,Scotland,Brentford,Defender,0.0369,21,0.056,0.24,0.0
+Vladimir Coufal,Czechia,Hoffenheim,Defender,0.0429,34,0.056,0.236,0.0
+Sead Kolasinac,Bosnia-Herzegovina,Atalanta,Defender,0.0313,19,0.055,0.235,0.0
+Elias Saad,Tunisia,Augsburg,Forward,0.0566,10,0.055,0.236,0.0
+Chancel Mbemba,Congo DR,Lille,Defender,0.0468,13,0.055,0.233,0.0
+Unai Simón,Spain,Athletic Club,Goalkeeper,0.0167,37,0.054,0.234,0.0
+Mike Maignan,France,AC Milan,Goalkeeper,0.0167,37,0.052,0.226,0.0
+Hannibal Mejbri,Tunisia,Burnley,Midfielder,0.0483,27,0.052,0.225,0.0
+Yehvann Diouf,Senegal,Nice,Goalkeeper,0.0225,26,0.051,0.224,0.0
+Noah Sadiki,Congo DR,Sunderland,Midfielder,0.0392,33,0.051,0.226,0.0
+Emiliano Martínez,Uruguay,Aston Villa,Midfielder,0.0189,32,0.05,0.225,0.0
+David Raya,Spain,Arsenal,Goalkeeper,0.0167,37,0.05,0.223,0.0
+Dean Henderson,England,Crystal Palace,Goalkeeper,0.0167,37,0.048,0.219,0.0
+Moussa Niakhaté,Senegal,Lyon,Defender,0.0212,32,0.046,0.217,0.0
+Senne Lammens,Belgium,Manchester United,Goalkeeper,0.0189,32,0.045,0.214,0.0
+Jordan Pickford,England,Everton,Goalkeeper,0.0164,38,0.044,0.208,0.0
+Thibaut Courtois,Belgium,Real Madrid,Goalkeeper,0.0189,32,0.044,0.209,0.0
+Ferdi Kadioglu,Türkiye,Brighton,Defender,0.0519,37,0.041,0.203,0.0
+Mory Diaw,Senegal,Le Havre,Goalkeeper,0.02,30,0.041,0.206,0.0
+Mike Penders,Belgium,Strasbourg,Goalkeeper,0.0185,33,0.037,0.192,0.0
+Alidu Seidu,Ghana,Rennes,Defender,0.0285,21,0.035,0.187,0.0
+Thomas Partey,Ghana,Villarreal,Midfielder,0.0305,26,0.035,0.188,0.0
+Ellyes Skhiri,Tunisia,Eintracht Frankfurt,Midfielder,0.0355,25,0.034,0.186,0.0
+Salih Özcan,Türkiye,Borussia Dortmund,Midfielder,0.0463,11,0.034,0.19,0.0
+Aaron Wan-Bissaka,Congo DR,West Ham,Defender,0.0232,25,0.033,0.18,0.0
+Montassar Talbi,Tunisia,Lorient,Defender,0.0329,29,0.033,0.182,0.0
+Kwasi Sibo,Ghana,Real Oviedo,Midfielder,0.0267,27,0.033,0.182,0.0
+Nikola Vasilj,Bosnia-Herzegovina,St. Pauli,Goalkeeper,0.018,34,0.032,0.177,0.0
+Elisha Owusu,Ghana,Auxerre,Midfielder,0.0226,29,0.028,0.166,0.0
+Josué Casimir,Haiti,Auxerre,Forward,0.07,31,0.024,0.154,0.0
+Gideon Mensah,Ghana,Auxerre,Defender,0.0202,30,0.023,0.151,0.0
+Jean-Ricner Bellegarde,Haiti,Wolverhampton Wanderers,Midfielder,0.0517,26,0.015,0.124,0.0
+Carlens Arcus,Haiti,Angers,Defender,0.0257,26,0.008,0.09,0.0
