@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-06-27T09:27:11Z",
-  "group_finished": 66,
+  "updated_utc": "2026-06-28T09:56:06Z",
+  "group_finished": 72,
   "group_total": 72,
   "matches": [
     {
@@ -934,11 +934,11 @@
       "away": "England",
       "home_tla": "PAN",
       "away_tla": "ENG",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 0,
+      "away_g": 2,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -948,11 +948,11 @@
       "away": "Ghana",
       "home_tla": "CRO",
       "away_tla": "GHA",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 2,
+      "away_g": 1,
+      "ht_home": 1,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -962,11 +962,11 @@
       "away": "Portugal",
       "home_tla": "COL",
       "away_tla": "POR",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 0,
+      "away_g": 0,
+      "ht_home": 0,
+      "ht_away": 0,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -976,11 +976,11 @@
       "away": "Uzbekistan",
       "home_tla": "COD",
       "away_tla": "UZB",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 3,
+      "away_g": 1,
+      "ht_home": 0,
+      "ht_away": 1,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -990,11 +990,11 @@
       "away": "Argentina",
       "home_tla": "JOR",
       "away_tla": "ARG",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 1,
+      "away_g": 3,
+      "ht_home": 0,
+      "ht_away": 2,
+      "status": "FINISHED",
       "minute": null
     },
     {
@@ -1004,11 +1004,11 @@
       "away": "Austria",
       "home_tla": "ALG",
       "away_tla": "AUT",
-      "home_g": null,
-      "away_g": null,
-      "ht_home": null,
-      "ht_away": null,
-      "status": "TIMED",
+      "home_g": 3,
+      "away_g": 3,
+      "ht_home": 1,
+      "ht_away": 1,
+      "status": "FINISHED",
       "minute": null
     }
   ]

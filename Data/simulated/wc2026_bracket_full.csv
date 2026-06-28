@@ -6,15 +6,15 @@ match_id,round,date_utc,venue,slot_home,slot_away,home_team,away_team,pred_winne
 77,Round of 32,2026-06-30T17:00:00Z,"AT&T Stadium, Dallas",Runner-up Group E,Runner-up Group I,Côte d'Ivoire,Norway,Norway,0.285,0.715
 78,Round of 32,2026-06-30T21:00:00Z,"MetLife Stadium, East Rutherford",Winner Group I,Best 3rd (Groups C/D/F/G/H),France,Sweden,France,0.8226,0.8226
 79,Round of 32,2026-07-01T01:00:00Z,"Estadio Azteca, Mexico City",Winner Group A,Best 3rd (Groups C/E/F/H/I),Mexico,Ecuador,Ecuador,0.4312,0.5688
-80,Round of 32,2026-07-01T16:00:00Z,"Mercedes-Benz Stadium, Atlanta",Winner Group L,Best 3rd (Groups E/H/I/J/K),England,Algeria,England,0.7932,0.7932
-81,Round of 32,2026-07-01T20:00:00Z,"Lumen Field, Seattle",Winner Group G,Best 3rd (Groups A/E/H/I/J),Belgium,Korea Republic,Belgium,0.6363,0.6363
+80,Round of 32,2026-07-01T16:00:00Z,"Mercedes-Benz Stadium, Atlanta",Winner Group L,Best 3rd (Groups E/H/I/J/K),England,Congo DR,England,0.8533,0.8533
+81,Round of 32,2026-07-01T20:00:00Z,"Lumen Field, Seattle",Winner Group G,Best 3rd (Groups A/E/H/I/J),Belgium,Senegal,Belgium,0.5139,0.5139
 82,Round of 32,2026-07-02T00:00:00Z,"Levi's Stadium, Santa Clara",Winner Group D,Best 3rd (Groups B/E/F/I/J),United States,Bosnia-Herzegovina,United States,0.7022,0.7022
 83,Round of 32,2026-07-02T19:00:00Z,"BMO Field, Toronto",Runner-up Group K,Runner-up Group L,Portugal,Croatia,Portugal,0.5974,0.5974
 84,Round of 32,2026-07-02T23:00:00Z,"SoFi Stadium, Los Angeles",Winner Group H,Runner-up Group J,Spain,Austria,Spain,0.8387,0.8387
-85,Round of 32,2026-07-03T03:00:00Z,"BC Place, Vancouver",Winner Group B,Best 3rd (Groups E/F/G/I/J),Switzerland,IR Iran,Switzerland,0.5807,0.5807
+85,Round of 32,2026-07-03T03:00:00Z,"BC Place, Vancouver",Winner Group B,Best 3rd (Groups E/F/G/I/J),Switzerland,Algeria,Switzerland,0.5899,0.5899
 86,Round of 32,2026-07-03T18:00:00Z,"AT&T Stadium, Dallas",Runner-up Group D,Runner-up Group G,Australia,Egypt,Australia,0.6006,0.6006
 87,Round of 32,2026-07-03T22:00:00Z,"Hard Rock Stadium, Miami",Winner Group J,Runner-up Group H,Argentina,Cape Verde,Argentina,0.9382,0.9382
-88,Round of 32,2026-07-04T01:30:00Z,"GEHA Field at Arrowhead Stadium, Kansas City",Winner Group K,Best 3rd (Groups D/E/I/J/L),Colombia,Senegal,Colombia,0.6356,0.6356
+88,Round of 32,2026-07-04T01:30:00Z,"GEHA Field at Arrowhead Stadium, Kansas City",Winner Group K,Best 3rd (Groups D/E/I/J/L),Colombia,Ghana,Colombia,0.8982,0.8982
 89,Round of 16,2026-07-04T17:00:00Z,"NRG Stadium, Houston",Winner Match 73,Winner Match 75,Canada,Germany,Germany,0.2957,0.7043
 90,Round of 16,2026-07-04T21:00:00Z,"Lincoln Financial Field, Philadelphia",Winner Match 74,Winner Match 77,Brazil,Norway,Brazil,0.6256,0.6256
 91,Round of 16,2026-07-05T20:00:00Z,"MetLife Stadium, East Rutherford",Winner Match 76,Winner Match 78,Netherlands,France,France,0.3758,0.6242
